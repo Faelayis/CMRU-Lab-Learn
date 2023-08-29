@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "franneck94.c-cpp-runner",
+        "formulahendry.code-runner",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-dotnettools.vscode-dotnet-runtime",
+    ]
+}

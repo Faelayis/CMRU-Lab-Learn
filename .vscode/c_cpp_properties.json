@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "CMRU Lab",
+      "includePath": [
+        "${default}",
+        "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"
+      ],
+      "compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe"
+    }
+  ],
+  "version": 4
+}
