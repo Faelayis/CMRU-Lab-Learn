@@ -1,7 +1,7 @@
 ## การพัฒนา
 
 ต้องใช้ [VS Code](https://code.visualstudio.com) เพื่อพัฒนาหรือการสร้าง<br>
-แนะนำ [Windows Terminal](https://sourceforge.net/projects/orwelldevcpp/files/latest/download) เพื่อการทดสอบ<br>
+แนะนำ [Windows Terminal](https://www.microsoft.com/store/productid/9N0DX20HK701?ocid=pdpshare) เพื่อการทดสอบ<br>
 
 ### คอมมหาลัย
 
