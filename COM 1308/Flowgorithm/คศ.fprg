@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Lab"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2566-07-25 09:38:56 AM"/>
+        <attribute name="created" value="TGFiOzIyMi0zODsyNTY2LTA3LTI1OzA5OjI0OjExIEFNOzE4NTI="/>
+        <attribute name="edited" value="TGFiOzIyMi0zODsyNTY2LTA3LTI1OzA5OjM4OjU2IEFNOzE7MTk3NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="BE" type="Integer" array="False" size=""/>
+            <declare name="AD" type="Integer" array="False" size=""/>
+            <input variable="BE"/>
+            <assign variable="AD" expression="BE-543"/>
+            <output expression="AD" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Lab"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2566-07-25 09:56:23 AM"/>
+        <attribute name="created" value="TGFiOzIyMi0zODsyNTY2LTA3LTI1OzA5OjQxOjIyIEFNOzE4NTM="/>
+        <attribute name="edited" value="TGFiOzIyMi0zODsyNTY2LTA3LTI1OzA5OjU2OjIzIEFNOzM7MTk3MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Area" type="Integer" array="False" size=""/>
+            <declare name="WL" type="Integer" array="True" size="2"/>
+            <input variable="WL[0]"/>
+            <input variable="WL[1]"/>
+            <assign variable="Area" expression="2 * WL[0] + WL[1]"/>
+            <output expression="&quot;&#3588;&#3656;&#3634;&#3648;&#3626;&#3657;&#3609;&#3619;&#3629;&#3610;&#3619;&#3641;&#3611; &quot; &amp; Area" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

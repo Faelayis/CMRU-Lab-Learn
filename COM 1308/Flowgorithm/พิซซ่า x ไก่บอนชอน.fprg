@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Lab"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2566-07-18 10:12:09 AM"/>
+        <attribute name="created" value="TGFiOzIyMi0yMTsyNTY2LTA3LTE4OzA5OjQ3OjUzIEFNOzE4NTc="/>
+        <attribute name="edited" value="TGFiOzIyMi0yMTsyNTY2LTA3LTE4OzEwOjEyOjA5IEFNOzE7MTk1MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="String" array="False" size=""/>
+            <input variable="x"/>
+            <if expression="x == &quot;&#3614;&#3636;&#3595;&#3595;&#3656;&#3634;&quot; || x == &quot;1&quot;">
+                <then>
+                    <output expression="&quot;&#3614;&#3636;&#3595;&#3595;&#3656;&#3634; &#3619;&#3634;&#3588;&#3634; 500&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="x == &quot;&#3652;&#3585;&#3656;&#3610;&#3629;&#3609;&#3594;&#3629;&#3609;&quot; || x == &quot;2&quot;">
+                        <then>
+                            <output expression="&quot;&#3652;&#3585;&#3656;&#3610;&#3629;&#3609;&#3594;&#3629;&#3609; &#3619;&#3634;&#3588;&#3634; 300&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="x == &quot;&#3626;&#3648;&#3605;&#3655;&#3585;&quot; || x == &quot;3&quot;">
+                                <then>
+                                    <output expression="&quot;&#3626;&#3648;&#3605;&#3655;&#3585; &#3619;&#3634;&#3588;&#3634; 199 &quot;" newline="True"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
