@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "CMRU Lab",
+      "name": "windows-gcc-x64",
       "includePath": [
         "${default}",
         "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"
