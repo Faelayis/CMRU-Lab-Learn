@@ -3,10 +3,10 @@ on:
     workflow_dispatch:
     push:
         paths:
-            - "*.js"
-            - "*.ts"
-            - "*.md"
-            - "*.json"
+            - "**/*.js"
+            - "**/*.ts"
+            - "**/*.md"
+            - "**/*.json"
             - "!.github/**"
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
-                  node-version: 14
+                  node-version: 16
                   cache: pnpm
 
             - name: Install Dependencies
