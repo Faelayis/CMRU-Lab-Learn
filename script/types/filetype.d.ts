@@ -1,1 +1,1 @@
-export type FileType = "c";
+export type FileType = "c" | "fprg";

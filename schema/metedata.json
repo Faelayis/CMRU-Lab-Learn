@@ -2,7 +2,7 @@
 	"$ref": "#/definitions/MeteData",
 	"definitions": {
 		"FileType": {
-			"const": "c",
+			"enum": ["c", "fprg"],
 			"type": "string"
 		},
 		"MeteData": {
