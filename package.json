@@ -9,6 +9,7 @@
 		"pnpm": ">=8"
 	},
 	"scripts": {
+		"generator:json-schema": "pnpx ts-json-schema-generator --path ./script/types/**/*.d.ts",
 		"preinstall": "npx only-allow pnpm",
 		"prettier": "prettier --write . --ignore-unknown",
 		"script:run": "pnpm tsm ./script/index.ts"
