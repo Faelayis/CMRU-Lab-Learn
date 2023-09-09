@@ -1,0 +1,40 @@
+{
+	"$ref": "#/definitions/MeteData",
+	"definitions": {
+		"FileType": {
+			"const": "c",
+			"type": "string"
+		},
+		"MeteData": {
+			"properties": {
+				"coursecode": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"preview": {
+					"additionalProperties": false,
+					"properties": {
+						"enable": {
+							"const": true,
+							"type": "boolean"
+						},
+						"files": {
+							"items": {
+								"$ref": "#/definitions/FileType"
+							},
+							"maxItems": 1,
+							"minItems": 1,
+							"type": "array"
+						}
+					},
+					"required": ["enable", "files"],
+					"type": "object"
+				}
+			},
+			"required": ["coursecode", "name"],
+			"type": "object"
+		}
+	}
+}
