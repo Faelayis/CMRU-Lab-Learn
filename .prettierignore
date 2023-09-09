@@ -1,0 +1,11 @@
+# github
+.github
+
+# dependency directories
+node_modules
+
+# ignore files for PNPM
+pnpm-lock.yaml
+
+# script update content
+*/*/*.md

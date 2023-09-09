@@ -1,31 +1,71 @@
 {
 	"name": "cmru-lab-learn",
-	"license": "apache-2.0",
+	"packageManager": "pnpm@8.6.12",
 	"author": "Faelayis <48393914+Faelayis@users.noreply.github.com>",
-	"scripts": {
-		"preinstall": "npx only-allow pnpm",
-		"prettier": "prettier --write . --ignore-unknown && pnpm prettier:json",
-		"prettier:json": "pnpm prettier-package-json --write **/package.json --use-tabs false"
-	},
-	"devDependencies": {
-		"prettier": "3.0.3",
-		"prettier-package-json": "2.8.0",
-		"prettier-plugin-sort-json": "3.0.1"
-	},
+	"type": "module",
+	"license": "apache-2.0",
 	"engines": {
 		"node": ">=16",
 		"pnpm": ">=8"
 	},
+	"scripts": {
+		"preinstall": "npx only-allow pnpm",
+		"prettier": "prettier --write . --ignore-unknown",
+		"script:run": "pnpm tsm ./script/index.ts"
+	},
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "4.2.0",
+		"@types/node": "20.6.0",
+		"fast-glob": "3.3.1",
+		"prettier": "3.0.3",
+		"prettier-plugin-pkgsort": "0.2.1",
+		"prettier-plugin-sort-json": "3.0.1",
+		"tslib": "2.6.2",
+		"tsm": "2.3.0",
+		"typescript": "4.6.4"
+	},
 	"prettier": {
+		"bracketSameLine": true,
 		"bracketSpacing": true,
-		"plugins": [
-			"prettier-plugin-sort-json"
-		],
 		"printWidth": 180,
 		"semi": true,
 		"singleQuote": false,
 		"tabWidth": 4,
 		"trailingComma": "all",
-		"useTabs": true
+		"useTabs": true,
+		"overrides": [
+			{
+				"files": [
+					"*.ts",
+					"*.d.ts"
+				],
+				"options": {
+					"plugins": [
+						"@trivago/prettier-plugin-sort-imports"
+					],
+					"importOrderSeparation": true,
+					"importOrderSortSpecifiers": true
+				}
+			},
+			{
+				"files": "*.json",
+				"excludeFiles": [
+					"package.json"
+				],
+				"options": {
+					"plugins": [
+						"prettier-plugin-sort-json"
+					]
+				}
+			},
+			{
+				"files": "package.json",
+				"options": {
+					"plugins": [
+						"prettier-plugin-pkgsort"
+					]
+				}
+			}
+		]
 	}
 }

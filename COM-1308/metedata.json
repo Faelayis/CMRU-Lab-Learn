@@ -1,0 +1,9 @@
+{
+	"$schema": "../schema/metedata.json",
+	"coursecode": "COM-1308",
+	"name": "หลักการออกแบบและการเขียนโปรแกรม",
+	"preview": {
+		"enable": true,
+		"files": ["c"]
+	}
+}

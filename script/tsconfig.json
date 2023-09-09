@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"rootDir": "./",
+		"module": "NodeNext",
+		"target": "ESNext",
+		"strict": true,
+		"alwaysStrict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"inlineSourceMap": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"skipLibCheck": false
+	}
+}
