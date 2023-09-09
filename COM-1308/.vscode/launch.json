@@ -1,15 +1,15 @@
 {
-  "configurations": [
-    {
-      "name": "Debug C/C++ Executable",
-      "type": "cppvsdbg",
-      "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-      "preLaunchTask": "C/C++: gcc.exe build active file",
-      "console": "externalTerminal",
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-    },
-  ],
-  "version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug C/C++ Executable",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+			"preLaunchTask": "C/C++: gcc.exe build active file",
+			"console": "externalTerminal",
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}"
+		}
+	],
+	"version": "0.2.0"
 }

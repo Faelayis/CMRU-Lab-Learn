@@ -1,32 +1,24 @@
 {
-   "tasks": [
-      {
-         "command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
-         "label": "C/C++: gcc.exe build active file",
-         "type": "shell",
-         "presentation": {
-            "close": true,
-            "reveal": "silent",
-            "revealProblems": "onProblem",
-         },
-         "args": [
-            "-fdiagnostics-color=always",
-            "-g",
-            "${file}",
-            "-o",
-            "${fileDirname}\\${fileBasenameNoExtension}.exe",
-         ],
-         "group": {
-            "kind": "build",
-            "isDefault": true,
-         },
-         "options": {
-            "cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin",
-         },
-         "problemMatcher": [
-            "$gcc",
-         ],
-      },
-   ],
-   "version": "2.0.0",
+	"tasks": [
+		{
+			"command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
+			"label": "C/C++: gcc.exe build active file",
+			"type": "shell",
+			"presentation": {
+				"close": true,
+				"reveal": "silent",
+				"revealProblems": "onProblem"
+			},
+			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
+			},
+			"problemMatcher": ["$gcc"]
+		}
+	],
+	"version": "2.0.0"
 }
