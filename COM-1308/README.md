@@ -9,6 +9,7 @@
 
 ต้องใช้ [Dev-C++ 5.11 TDM-GCC](https://sourceforge.net/projects/orwelldevcpp/files/latest/download) หรือเวอร์ชันล่าสุด (น่าจะมีอยู่แล้ว)
 
+<!-- prettier-ignore -->
 > [!WARNING]
 > ต้องติดตั้งใน Path: `C:\Program Files (x86)\Dev-Cpp` เท่านั้น
 
