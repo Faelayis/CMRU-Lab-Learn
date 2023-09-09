@@ -1,0 +1,45 @@
+name: Code Formatter
+on:
+    workflow_dispatch:
+    push:
+        paths:
+            - "*.js"
+            - "*.ts"
+            - "*.md"
+            - "*.json"
+        paths-ignore:
+            - ".github/**"
+
+jobs:
+    format:
+        name: Prettier
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup PNPM
+              uses: pnpm/action-setup@v2
+              with:
+                  run_install: false
+                  version: 8
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 14
+                  cache: pnpm
+
+            - name: Install Dependencies
+              run: pnpm install --ignore-scripts
+
+            - name: Run Prettier
+              run: pnpm run prettier
+
+            - name: Automatically Commit Changed
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  push_options: "--force"
+                  commit_options: "--no-verify"
+                  commit_message: "chore(prettier): code formatting"
+                  skip_checkout: true
