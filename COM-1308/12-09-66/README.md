@@ -19,7 +19,7 @@ main(int argc, char const *argv[])
    printf("\n");
    return 0;
 
-   // output: More 100
+   // output: 20 + 20 + 20 = 60 or 50 + 30 + 40 + 50 = 170
 }
 
 ```
