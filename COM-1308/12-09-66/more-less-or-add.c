@@ -12,7 +12,9 @@ main(int argc, char const *argv[])
 
    r = x[0] + x[1] + x[2];
 
-   (r) <= 100 ? printf("%d + %d + %d = %d", x[0], x[1], x[2], r) : printf("%d + %d + %d = %d", x[0], x[1], x[2], r + 50);
+   ((r) <= 100)
+       ? printf("%d + %d + %d = %d", x[0], x[1], x[2], r)
+       : printf("%d + %d + %d + 50 = %d", x[0], x[1], x[2], r + 50);
 
    printf("\n");
    return 0;
