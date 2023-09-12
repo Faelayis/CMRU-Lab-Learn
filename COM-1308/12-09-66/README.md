@@ -4,7 +4,7 @@
 
 main(int argc, char const *argv[])
 {
-   int i, x[3];
+   int i, x[2];
 
    for (i = 0; i < 3; i++)
    {
@@ -12,7 +12,7 @@ main(int argc, char const *argv[])
       scanf("%i", &x[i]);
    }
 
-   (x[0] + x[1] + x[3]) > 50 ? printf("More 100") : (void)NULL;
+   (x[0] + x[1] + x[2]) > 50 ? printf("More 100") : (void)NULL;
 
    printf("\n");
    return 0;
