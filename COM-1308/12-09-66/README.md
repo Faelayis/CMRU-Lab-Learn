@@ -44,7 +44,7 @@ main()
 
 main(int argc, char const *argv[])
 {
-   int i, x[2], r;
+   int i, x[3], r;
 
    for (i = 0; i < 3; i++)
    {
