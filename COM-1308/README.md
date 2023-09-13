@@ -19,7 +19,7 @@
 -   ต้องใช้ [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
 -   แนะนำ [.NET Runtime Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime)
 
-### Config Structure
+### Config Structure (Windows)
 
 ```text
 .vscode
@@ -80,6 +80,53 @@
 			},
 			"options": {
 				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
+			},
+			"problemMatcher": ["$gcc"]
+		}
+	],
+	"version": "2.0.0"
+}
+```
+
+### Config Structure (Linux)
+
+ต้องใช้ [GCC Compiler](https://gcc.gnu.org/install/)<br>
+
+```text
+.vscode
+├─ c_cpp_properties.json
+└─ tasks.json
+```
+
+`c_cpp_properties.json`
+
+```json
+  "configurations": [
+    {
+      "name": "linux-gcc-x64",
+      "includePath": ["${default}"],
+      "compilerPath": "/usr/bin/gcc"
+    }
+  ],
+  "version": 4
+```
+
+`tasks.json`
+
+```json
+{
+	"tasks": [
+		{
+			"command": "/usr/bin/gcc",
+			"label": "C/C++: gcc build active file",
+			"type": "shell",
+			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "${fileDirname}"
 			},
 			"problemMatcher": ["$gcc"]
 		}

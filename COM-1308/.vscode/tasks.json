@@ -1,8 +1,8 @@
 {
 	"tasks": [
 		{
+			"label": "C/C++: Build active file (Windows)",
 			"command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
-			"label": "C/C++: gcc.exe build active file",
 			"type": "shell",
 			"presentation": {
 				"close": true,
@@ -18,6 +18,28 @@
 				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
 			},
 			"problemMatcher": ["$gcc"]
+		},
+		{
+			"label": "C/C++: Build active file (Linux)",
+			"command": "/usr/bin/gcc",
+			"type": "shell",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": ["$gcc"],
 		}
 	],
 	"version": "2.0.0"

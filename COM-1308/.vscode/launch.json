@@ -1,14 +1,34 @@
 {
 	"configurations": [
 		{
-			"name": "Debug C/C++ Executable",
+			"name": "Debug C/C++ Executable (Windows)",
 			"type": "cppvsdbg",
 			"request": "launch",
 			"program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-			"preLaunchTask": "C/C++: gcc.exe build active file",
+			"preLaunchTask": "C/C++: Build active file (Windows)",
 			"console": "externalTerminal",
 			"stopAtEntry": false,
-			"cwd": "${fileDirname}"
+			"cwd": "${fileDirname}",
+			"externalConsole": true
+		},
+		{
+			"name": "Debug C/C++ Executable (Linux)",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"preLaunchTask": "C/C++: Build active file (Linux)",
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"miDebuggerPath": "gdb"
 		}
 	],
 	"version": "0.2.0"
