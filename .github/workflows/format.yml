@@ -20,17 +20,15 @@ jobs:
             - name: Setup PNPM
               uses: pnpm/action-setup@v2
               with:
-                  run_install: false
-                  version: 8
+                  version: 8.7.5
+                  run_install: |
+                      args: [--ignore-scripts]
 
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
                   node-version: 16
                   cache: pnpm
-
-            - name: Install Dependencies
-              run: pnpm install --ignore-scripts
 
             - name: Run Prettier
               run: pnpm run prettier
