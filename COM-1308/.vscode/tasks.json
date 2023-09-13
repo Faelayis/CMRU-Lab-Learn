@@ -39,7 +39,7 @@
 			"options": {
 				"cwd": "${fileDirname}"
 			},
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": ["$gcc"]
 		}
 	],
 	"version": "2.0.0"
