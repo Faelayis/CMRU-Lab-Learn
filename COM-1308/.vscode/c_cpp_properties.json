@@ -1,18 +1,18 @@
 {
 	"configurations": [
 		{
-			"name": "Windows",
-			"includePath": ["${default}", "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"],
 			"compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
-			"intelliSenseMode": "windows-gcc-x64"
+			"includePath": ["${default}", "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"],
+			"intelliSenseMode": "windows-gcc-x64",
+			"name": "Windows"
 		},
 		{
-			"name": "Linux",
-			"includePath": ["${default}"],
 			"cStandard": "c17",
-			"cppStandard": "gnu++17",
 			"compilerPath": "/usr/bin/gcc",
-			"intelliSenseMode": "linux-gcc-x64"
+			"cppStandard": "gnu++17",
+			"includePath": ["${default}"],
+			"intelliSenseMode": "linux-gcc-x64",
+			"name": "Linux"
 		}
 	],
 	"version": 4

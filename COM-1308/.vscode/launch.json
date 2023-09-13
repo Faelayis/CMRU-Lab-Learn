@@ -1,34 +1,34 @@
 {
 	"configurations": [
 		{
-			"name": "Debug C/C++ Executable (Windows)",
-			"type": "cppvsdbg",
-			"request": "launch",
-			"program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-			"preLaunchTask": "C/C++: Build active file (Windows)",
 			"console": "externalTerminal",
-			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
-			"externalConsole": true
+			"externalConsole": true,
+			"name": "Debug C/C++ Executable (Windows)",
+			"preLaunchTask": "C/C++: Build active file (Windows)",
+			"program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+			"request": "launch",
+			"stopAtEntry": false,
+			"type": "cppvsdbg"
 		},
 		{
-			"name": "Debug C/C++ Executable (Linux)",
-			"type": "cppdbg",
-			"request": "launch",
-			"program": "${fileDirname}/${fileBasenameNoExtension}",
-			"preLaunchTask": "C/C++: Build active file (Linux)",
-			"stopAtEntry": false,
+			"MIMode": "gdb",
 			"cwd": "${fileDirname}",
 			"externalConsole": false,
-			"MIMode": "gdb",
+			"miDebuggerPath": "gdb",
+			"name": "Debug C/C++ Executable (Linux)",
+			"preLaunchTask": "C/C++: Build active file (Linux)",
+			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"request": "launch",
 			"setupCommands": [
 				{
 					"description": "Enable pretty-printing for gdb",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
+					"ignoreFailures": true,
+					"text": "-enable-pretty-printing"
 				}
 			],
-			"miDebuggerPath": "gdb"
+			"stopAtEntry": false,
+			"type": "cppdbg"
 		}
 	],
 	"version": "0.2.0"

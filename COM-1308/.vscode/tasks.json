@@ -1,45 +1,45 @@
 {
 	"tasks": [
 		{
-			"label": "C/C++: Build active file (Windows)",
+			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
 			"command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
-			"type": "shell",
+			"group": {
+				"isDefault": true,
+				"kind": "build"
+			},
+			"label": "C/C++: Build active file (Windows)",
+			"options": {
+				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
+			},
 			"presentation": {
 				"close": true,
 				"reveal": "silent",
 				"revealProblems": "onProblem"
 			},
-			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"options": {
-				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
-			},
-			"problemMatcher": ["$gcc"]
+			"problemMatcher": ["$gcc"],
+			"type": "shell"
 		},
 		{
-			"label": "C/C++: Build active file (Linux)",
-			"command": "/usr/bin/gcc",
-			"type": "shell",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": false,
-				"clear": true
-			},
 			"args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+			"command": "/usr/bin/gcc",
 			"group": {
-				"kind": "build",
-				"isDefault": true
+				"isDefault": true,
+				"kind": "build"
 			},
+			"label": "C/C++: Build active file (Linux)",
 			"options": {
 				"cwd": "${fileDirname}"
 			},
-			"problemMatcher": ["$gcc"]
+			"presentation": {
+				"clear": true,
+				"echo": true,
+				"focus": false,
+				"panel": "shared",
+				"reveal": "always",
+				"showReuseMessage": false
+			},
+			"problemMatcher": ["$gcc"],
+			"type": "shell"
 		}
 	],
 	"version": "2.0.0"
