@@ -56,7 +56,8 @@
 				"options": {
 					"plugins": [
 						"prettier-plugin-sort-json"
-					]
+					],
+					"jsonRecursiveSort": true
 				}
 			},
 			{
