@@ -23,7 +23,7 @@
 		"prettier-plugin-sort-json": "3.0.1",
 		"tslib": "2.6.2",
 		"tsm": "2.3.0",
-		"typescript": "4.6.4"
+		"typescript": "5.2.2"
 	},
 	"prettier": {
 		"bracketSameLine": true,

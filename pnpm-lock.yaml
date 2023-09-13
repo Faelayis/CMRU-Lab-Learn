@@ -30,8 +30,8 @@ devDependencies:
     specifier: 2.3.0
     version: 2.3.0
   typescript:
-    specifier: 4.6.4
-    version: 4.6.4
+    specifier: 5.2.2
+    version: 5.2.2
 
 packages:
 
@@ -842,9 +842,9 @@ packages:
       esbuild: 0.15.18
     dev: true
 
-  /typescript@4.6.4:
-    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
-    engines: {node: '>=4.2.0'}
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
