@@ -68,36 +68,9 @@ int main()
 }
 
 ```
-`1276.c`
-```c 
-#include <stdio.h>
-
-int main()
-{
-   int i, sum;
-
-   for (i = 0; i <= 50; i++)
-   {
-      sum = sum + i;
-   }
-
-   printf("sum = %d\n", sum);
-
-   printf("\n");
-   return 0;
-
-   // output: 1276
-}
-
-```
 `2.2.c`
 ```c 
 #include <stdio.h>
-
-// for (x = 20; x >= 1; x--)
-// {
-//    printf("%d\n", x);
-// }
 
 int main()
 {
@@ -162,9 +135,40 @@ int main()
 
 int main()
 {
+   char x = 'n';
+
+   while (x != 'y')
+   {
+      printf("input: ");
+      scanf("%c", &x);
+   }
+
+   printf("Good Bye");
 
    printf("\n");
    return 0;
+}
+
+```
+`_1276.c`
+```c 
+#include <stdio.h>
+
+int main()
+{
+   int i, sum;
+
+   for (i = 0; i <= 50; i++)
+   {
+      sum = sum + i;
+   }
+
+   printf("sum = %d\n", sum);
+
+   printf("\n");
+   return 0;
+
+   // output: 1276
 }
 
 ```
