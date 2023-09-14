@@ -4,24 +4,29 @@
 
 typedef double (*CalculationFunction)(double);
 
-double inchesToMeters(double inches) {
+double inchesToMeters(double inches)
+{
     return inches * 0.0254;
 }
 
-double metersToInches(double meters) {
+double metersToInches(double meters)
+{
     return meters / 0.0254;
 }
 
-struct MenuItem {
+struct MenuItem
+{
     char item[256];
     CalculationFunction cal;
 };
 
-struct MenuData {
+struct MenuData
+{
     int length;
 };
 
-int main() {
+int main()
+{
     struct MenuItem menus[] = {
         {"Inches to Meters", inchesToMeters},
         {"Meters to Inches", metersToInches},
@@ -32,7 +37,10 @@ int main() {
     };
 
     printf("Conversion menu:\n");
-    for (int i = 0; i < menu.length; i++) {
+
+    int i;
+    for (i = 0; i < menu.length; i++)
+    {
         printf("%d.%s\n", i + 1, menus[i].item);
     }
     printf("\nSelect an option (1-%d): ", menu.length);
@@ -40,14 +48,17 @@ int main() {
     int choice;
     scanf("%d", &choice);
 
-    if (choice >= 1 && choice <= menu.length) {
+    if (choice >= 1 && choice <= menu.length)
+    {
         double input;
 
         printf("\nEnter value: ");
         scanf("%lf", &input);
 
         printf("Result: %0.4f \n", menus[choice - 1].cal(input));
-    } else {
+    }
+    else
+    {
         printf("\nInvalid choice");
     }
 
