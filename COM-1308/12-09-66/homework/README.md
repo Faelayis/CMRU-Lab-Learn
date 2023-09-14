@@ -27,6 +27,8 @@ struct MenuData
 
 int main()
 {
+    int i, choice;
+
     struct MenuItem menus[] = {
         {"Inches to Meters", inchesToMeters},
         {"Meters to Inches", metersToInches},
@@ -37,15 +39,12 @@ int main()
     };
 
     printf("Conversion menu:\n");
-
-    int i;
     for (i = 0; i < menu.length; i++)
     {
         printf("%d.%s\n", i + 1, menus[i].item);
     }
     printf("\nSelect an option (1-%d): ", menu.length);
 
-    int choice;
     scanf("%d", &choice);
 
     if (choice >= 1 && choice <= menu.length)
