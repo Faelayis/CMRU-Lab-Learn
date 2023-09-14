@@ -1,6 +1,5 @@
 `main.c`
-
-```c
+```c 
 #include <stdio.h>
 
 typedef double (*CalculationFunction)(double);

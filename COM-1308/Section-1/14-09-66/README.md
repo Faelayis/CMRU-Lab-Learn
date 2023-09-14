@@ -1,30 +1,5 @@
-`1276.c`
-
-```c
-#include <stdio.h>
-
-int main()
-{
-   int i, sum;
-
-   for (i = 0; i <= 50; i++)
-   {
-      sum = sum + i;
-   }
-
-   printf("sum = %d\n", sum);
-
-   printf("\n");
-   return 0;
-
-   // output: 1276
-}
-
-```
-
-`5.c`
-
-```c
+`1.5.c`
+```c 
 #include <stdio.h>
 
 int main()
@@ -59,10 +34,8 @@ int main()
 }
 
 ```
-
-`6.c`
-
-```c
+`1.6.c`
+```c 
 #include <stdio.h>
 
 int main()
@@ -84,16 +57,114 @@ int main()
    printf("\n");
    return 0;
 
+   // input: Enter number: 5
    /* output:
-   Enter number: 5
-
    1
    1 2
    1 2 3
    1 2 3 4
    1 2 3 4 5
-
    */
+}
+
+```
+`1276.c`
+```c 
+#include <stdio.h>
+
+int main()
+{
+   int i, sum;
+
+   for (i = 0; i <= 50; i++)
+   {
+      sum = sum + i;
+   }
+
+   printf("sum = %d\n", sum);
+
+   printf("\n");
+   return 0;
+
+   // output: 1276
+}
+
+```
+`2.2.c`
+```c 
+#include <stdio.h>
+
+// for (x = 20; x >= 1; x--)
+// {
+//    printf("%d\n", x);
+// }
+
+int main()
+{
+   int x = 20;
+
+   while (x > 0)
+   {
+      printf("%d\n", x);
+      x--;
+   }
+
+   printf("\n");
+   return 0;
+
+   /* ouput:
+   10
+   9
+   8
+   7
+   6
+   5
+   4
+   3
+   2
+   1
+   */
+}
+
+```
+`2.3.c`
+```c 
+#include <stdio.h>
+
+int main()
+{
+   int count, input;
+
+   while (count < 3)
+   {
+      printf("Enter number: ");
+      scanf("%x", &input);
+
+      if ((input % 2) == 0)
+      {
+         printf("Even Number\n");
+      }
+      else
+      {
+         printf("Odd Number\n");
+      }
+      count++;
+   }
+
+   printf("\n");
+   return 0;
+}
+
+```
+`2.4.c`
+```c 
+#include <stdio.h>
+
+int main()
+{
+
+   printf("\n");
+   return 0;
 }
 
 ```
