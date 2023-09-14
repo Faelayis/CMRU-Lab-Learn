@@ -31,7 +31,7 @@ int main() {
         .length = sizeof(menus) / sizeof(menus[0]),
     };
 
-    printf("Utility conversion menu:\n");
+    printf("Conversion menu:\n");
     for (int i = 0; i < menu.length; i++) {
         printf("%d.%s\n", i + 1, menus[i].item);
     }
