@@ -14,7 +14,7 @@
 			"presentation": {
 				"close": true,
 				"reveal": "silent",
-				"revealProblems": "never",
+				"revealProblems": "never"
 			},
 			"problemMatcher": ["$gcc"],
 			"type": "shell"

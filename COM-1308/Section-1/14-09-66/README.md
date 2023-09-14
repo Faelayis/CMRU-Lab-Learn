@@ -1,5 +1,6 @@
 `1276.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -20,8 +21,10 @@ int main()
 }
 
 ```
+
 `5.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -56,8 +59,10 @@ int main()
 }
 
 ```
+
 `6.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
