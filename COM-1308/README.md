@@ -31,17 +31,19 @@
 `c_cpp_properties.json`
 
 ```json
-  "configurations": [
-    {
-      "name": "windows-gcc-x64",
-      "includePath": [
-        "${default}",
-        "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"
-      ],
-      "compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe"
-    }
-  ],
+{
+   "configurations": [
+     {
+       "name": "windows-gcc-x64",
+       "includePath": [
+         "${default}",
+         "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"
+       ],
+       "compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe"
+     }
+   ],
   "version": 4
+}
 ```
 
 `launch.json`
@@ -101,14 +103,16 @@
 `c_cpp_properties.json`
 
 ```json
-  "configurations": [
-    {
-      "name": "linux-gcc-x64",
-      "includePath": ["${default}"],
-      "compilerPath": "/usr/bin/gcc"
-    }
-  ],
-  "version": 4
+{
+   "configurations": [
+     {
+       "name": "linux-gcc-x64",
+       "includePath": ["${default}"],
+       "compilerPath": "/usr/bin/gcc"
+     }
+   ],
+   "version": 4
+}
 ```
 
 `tasks.json`
