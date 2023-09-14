@@ -2,16 +2,16 @@
 
 int main()
 {
-   int input, i, j;
+   int input, x, i;
 
    printf("Enter number: ");
-   scanf("%i", &input);
+   scanf("%x", &input);
 
-   for (i; i <= input; i++)
+   for (x; x <= input; x++)
    {
-      for (j = 1; j <= i; j++)
+      for (i = 1; i <= x; i++)
       {
-         printf("%d ", j);
+         printf("%d ", i);
       }
       printf("\n");
    }
