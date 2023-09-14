@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-// for (x = 20; x >= 1; x--)
-// {
-//    printf("%d\n", x);
-// }
-
 int main()
 {
    int x = 20;
