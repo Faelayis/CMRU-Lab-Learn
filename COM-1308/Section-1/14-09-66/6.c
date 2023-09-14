@@ -19,7 +19,7 @@ int main()
    printf("\n");
    return 0;
 
-   /* output
+   /* output:
    Enter number: 5
 
    1
