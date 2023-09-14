@@ -3,7 +3,6 @@
 		{
 			"console": "externalTerminal",
 			"cwd": "${fileDirname}",
-			"externalConsole": true,
 			"name": "Debug C/C++ Executable (Windows)",
 			"preLaunchTask": "C/C++: Build active file (Windows)",
 			"program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
