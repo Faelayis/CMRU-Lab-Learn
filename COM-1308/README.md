@@ -32,17 +32,14 @@
 
 ```json
 {
-   "configurations": [
-     {
-       "name": "windows-gcc-x64",
-       "includePath": [
-         "${default}",
-         "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"
-       ],
-       "compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe"
-     }
-   ],
-  "version": 4
+	"configurations": [
+		{
+			"name": "windows-gcc-x64",
+			"includePath": ["${default}", "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"],
+			"compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe"
+		}
+	],
+	"version": 4
 }
 ```
 
@@ -104,14 +101,14 @@
 
 ```json
 {
-   "configurations": [
-     {
-       "name": "linux-gcc-x64",
-       "includePath": ["${default}"],
-       "compilerPath": "/usr/bin/gcc"
-     }
-   ],
-   "version": 4
+	"configurations": [
+		{
+			"name": "linux-gcc-x64",
+			"includePath": ["${default}"],
+			"compilerPath": "/usr/bin/gcc"
+		}
+	],
+	"version": 4
 }
 ```
 
