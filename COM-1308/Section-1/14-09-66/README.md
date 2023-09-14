@@ -26,20 +26,33 @@ int main()
 
 int main()
 {
-   int i, j;
+   int x, i;
 
-   for (i = 0; i <= 9; i++)
+   for (x = 0; x <= 10; x++)
    {
-      for (j = 1; j < i; j++)
+      for (i = 1; i <= 10; i++)
       {
-         printf("*");
+         printf("* ");
       }
+      printf("\n");
    }
 
    printf("\n");
    return 0;
 
-   // output:  ************************************
+   /* output:
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    * * * * * * * * * *
+    */
 }
 
 ```
@@ -49,16 +62,16 @@ int main()
 
 int main()
 {
-   int input, i, j;
+   int input, x, i;
 
    printf("Enter number: ");
-   scanf("%i", &input);
+   scanf("%x", &input);
 
-   for (i; i <= input; i++)
+   for (x; x <= input; x++)
    {
-      for (j = 1; j <= i; j++)
+      for (i = 1; i <= x; i++)
       {
-         printf("%d ", j);
+         printf("%d ", i);
       }
       printf("\n");
    }
