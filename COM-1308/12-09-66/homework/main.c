@@ -42,7 +42,6 @@ int main()
         printf("%d.%s\n", i + 1, menus[i].item);
     }
     printf("\nSelect an option (1-%d): ", menu.length);
-
     scanf("%d", &choice);
 
     if (choice >= 1 && choice <= menu.length)
@@ -51,7 +50,6 @@ int main()
 
         printf("\nEnter value: ");
         scanf("%lf", &input);
-
         printf("Result: %0.4f \n", menus[choice - 1].cal(input));
     }
     else
