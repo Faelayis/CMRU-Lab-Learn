@@ -1,5 +1,4 @@
 `minimum.c`<br>
-สร้าง: 15 ก.ย. 2566 21:54<br>
 
 ```c 
 #include <stdio.h>
@@ -41,7 +40,6 @@ main()
 
 ```
 `more-less-or-add.c`<br>
-สร้าง: 15 ก.ย. 2566 21:54<br>
 
 ```c 
 #include <stdio.h>
@@ -70,7 +68,6 @@ main(int argc, char const *argv[])
 
 ```
 `score.c`<br>
-สร้าง: 15 ก.ย. 2566 21:54<br>
 
 ```c 
 #include <stdio.h>
