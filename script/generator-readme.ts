@@ -41,11 +41,11 @@ export default async function generatorReadme(path: string) {
 				}
 
 				try {
-					console.info("[Script]: Reading ");
+					console.info("[Script]: Reading " + file.name);
 
 					const fileData = await fs.readFileSync(file.path, "utf-8");
 
-					fs.stat(file.path, (stats) => {
+					fs.stat(file.path, (error, stats) => {
 						console.log(stats);
 					});
 
