@@ -1,5 +1,6 @@
 import { MeteData } from "./types/metedata.js";
 import { get as utils_time } from "./utils/date-time-format.js";
+import { timeZone } from "./utils/date-time-format.js";
 import { get as utils_get } from "./utils/get.js";
 import { readJsonFile } from "./utils/read.js";
 import { remove as utils_remove } from "./utils/remove-lines.js";
@@ -59,7 +60,7 @@ export default async function generatorReadme(path: string) {
 							: `${
 									date.created.getTime() === date.modified.getTime()
 										? ""
-										: `\nแก้ไขล่าสุด: เวลา ${date.modified.toLocaleTimeString("th-th", { timeStyle: "short" })}<br>`
+										: `\nแก้ไขล่าสุด: เวลา ${date.modified.toLocaleTimeString("th-th", { timeStyle: "short", timeZone })}<br>`
 							  }`
 					}
 					`
@@ -67,7 +68,7 @@ export default async function generatorReadme(path: string) {
 						.map((line) => line.trim())
 						.join("\n");
 
-					if (metedata.preview?.remove && metedata.preview?.remove?.lineremove) {
+					if (metedata.preview?.remove?.enable && metedata.preview?.remove?.lineremove) {
 						folderDataMap
 							.get(folder)
 							.push(

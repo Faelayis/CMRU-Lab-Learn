@@ -1,7 +1,7 @@
-export const get = (date?: Date, options?: Intl.DateTimeFormatOptions): string => {
-	const locales = "th-TH",
-		timeZone = "Asia/Bangkok";
+export const locales = "th-TH",
+	timeZone = "Asia/Bangkok";
 
+export const get = (date?: Date, options?: Intl.DateTimeFormatOptions): string => {
 	const dateFormatter = new Intl.DateTimeFormat(
 			locales,
 			Object.assign(
