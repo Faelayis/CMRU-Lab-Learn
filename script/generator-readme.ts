@@ -46,17 +46,21 @@ export default async function generatorReadme(path: string) {
 					const header = `\`${file.name}\`<br>
 					สร้าง: ${utils_time(file.stats?.birthtime)}<br>
 					${
-						file.stats?.birthtime.getDate() !== file.stats?.mtime.getDate()
-							? `อัปเดต: ${utils_time(file.stats?.mtime)}`
+						file.stats?.birthtime.getDate() !== file.stats?.birthtime.getDate()
+							? `อัปเดต: ${utils_time(file.stats?.birthtime)}`
 							: `${
-									file.stats?.birthtime.getTime() === file.stats?.mtime.getTime()
+									file.stats?.ctime.getTime() === file.stats?.mtime.getTime()
 										? ""
 										: `แก้ไขล่าสุด: เวลา ${file.stats?.mtime.toLocaleTimeString("th-th", { timeStyle: "short" })}<br>`
 							  }`
 					}`
 						.split("\n")
-						.map((line) => line.trim())
-						.join("\n");
+						.map((line) => {
+							console.log(line);
+							return line.trim();
+						})
+						.join("\n")
+						.slice(0, -1);
 
 					if (metedata.preview?.remove && metedata.preview?.remove?.lineremove) {
 						folderDataMap
