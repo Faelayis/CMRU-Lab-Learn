@@ -24,6 +24,7 @@ export default async function generatorReadme(path: string) {
 			ignore: await utils_get.gitignore(),
 			objectMode: true,
 			stats: true,
+			followSymbolicLinks: false,
 		});
 
 		const folderDataMap = new Map();
@@ -40,7 +41,7 @@ export default async function generatorReadme(path: string) {
 				}
 
 				try {
-					console.info("[Script]: Reading " + file.name);
+					console.info("[Script]: Reading " + file.name, file.stats);
 
 					const fileData = await fs.readFileSync(file.path, "utf-8");
 					const header = `\`${file.name}\`<br>

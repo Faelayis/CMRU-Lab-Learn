@@ -15,6 +15,7 @@
 		"script:run": "pnpm tsm ./script/index.ts"
 	},
 	"devDependencies": {
+		"@nodelib/fs.stat": "3.0.0",
 		"@trivago/prettier-plugin-sort-imports": "4.2.0",
 		"@types/node": "20.6.0",
 		"fast-glob": "3.3.1",
