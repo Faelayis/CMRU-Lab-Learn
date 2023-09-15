@@ -1,13 +1,18 @@
 export const get = (date?: Date, options?: Intl.DateTimeFormatOptions): string => {
-	return new Intl.DateTimeFormat(
-		"th-th",
-		Object.assign(
-			{
-				dateStyle: "medium",
-				timeStyle: "short",
-				timeZone: "Asia/Bangkok",
-			} as Intl.DateTimeFormatOptions,
-			options,
+	const locales = "th-TH",
+		timeZone = "Asia/Bangkok";
+
+	const dateFormatter = new Intl.DateTimeFormat(
+			locales,
+			Object.assign(
+				{
+					dateStyle: "medium",
+					timeZone,
+				} as Intl.DateTimeFormatOptions,
+				options,
+			),
 		),
-	).format(date || undefined);
+		timeFormatter = new Intl.DateTimeFormat(locales, { hour: "numeric", minute: "numeric", timeZone });
+
+	return `${dateFormatter.format(date)} เวลา ${timeFormatter.format(date)}`;
 };

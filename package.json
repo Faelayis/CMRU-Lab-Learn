@@ -14,14 +14,16 @@
 		"prettier": "prettier --write . --ignore-unknown",
 		"script:run": "pnpm tsm ./script/index.ts"
 	},
-	"devDependencies": {
-		"@nodelib/fs.stat": "3.0.0",
-		"@trivago/prettier-plugin-sort-imports": "4.2.0",
-		"@types/node": "20.6.0",
+	"dependencies": {
 		"fast-glob": "3.3.1",
+		"git-date-extractor": "4.0.1"
+	},
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "4.2.0",
+		"@types/node": "20.6.1",
 		"prettier": "3.0.3",
 		"prettier-plugin-pkgsort": "0.2.1",
-		"prettier-plugin-sort-json": "3.0.1",
+		"prettier-plugin-sort-json": "3.1.0",
 		"tslib": "2.6.2",
 		"tsm": "2.3.0",
 		"typescript": "5.2.2"

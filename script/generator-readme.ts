@@ -4,6 +4,7 @@ import { get as utils_get } from "./utils/get.js";
 import { readJsonFile } from "./utils/read.js";
 import { remove as utils_remove } from "./utils/remove-lines.js";
 import fg from "fast-glob";
+import gitDate from "git-date-extractor";
 import * as fs from "node:fs";
 
 /**
@@ -24,10 +25,11 @@ export default async function generatorReadme(path: string) {
 			ignore: await utils_get.gitignore(),
 			objectMode: true,
 			stats: true,
-			followSymbolicLinks: false,
+			followSymbolicLinks: true,
 		});
 
 		const folderDataMap = new Map();
+		const filesDate = await gitDate.getStamps({ outputToFile: false, files: files.map((file) => file.path) });
 
 		for await (const file of files) {
 			const match = file.path.match(/\.([^.]+)$/);
@@ -43,21 +45,23 @@ export default async function generatorReadme(path: string) {
 				try {
 					console.info("[Script]: Reading " + file.name);
 
-					const fileData = await fs.readFileSync(file.path, "utf-8");
+					const fileData = await fs.readFileSync(file.path, "utf-8"),
+						fileDate = filesDate[file.path],
+						date = {
+							created: new Date(Number(fileDate.created) * 1000),
+							modified: new Date(Number(fileDate.modified) * 1000),
+						};
 
-					console.info(fs.lstatSync(file.path));
-
-					// สร้าง: ${utils_time(file.stats?.birthtime)}<br>
-					// ${
-					// 	file.stats?.birthtime.getDate() !== file.stats?.birthtime.getDate()
-					// 		? `อัปเดต: ${utils_time(file.stats?.birthtime)}`
-					// 		: `${
-					// 				file.stats?.ctime.getTime() === file.stats?.mtime.getTime()
-					// 					? ""
-					// 					: `แก้ไขล่าสุด: เวลา ${file.stats?.mtime.toLocaleTimeString("th-th", { timeStyle: "short" })}<br>`
-					// 		  }`
-					// }
 					const header = `\`${file.name}\`<br>
+					สร้าง: ${utils_time(date.created)}<br>${
+						date.created.getDate() !== date.modified.getDate()
+							? `\nอัปเดต: ${utils_time(date.modified)}<br>`
+							: `${
+									date.created.getTime() === date.modified.getTime()
+										? ""
+										: `\nแก้ไขล่าสุด: เวลา ${date.modified.toLocaleTimeString("th-th", { timeStyle: "short" })}<br>`
+							  }`
+					}
 					`
 						.split("\n")
 						.map((line) => line.trim())
