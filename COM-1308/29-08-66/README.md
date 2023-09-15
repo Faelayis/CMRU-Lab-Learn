@@ -1,4 +1,6 @@
-`calculator.c`
+`calculator.c`<br>
+สร้าง: 15 ก.ย. 2566 20:54<br>
+`
 ```c 
 #include <stdio.h>
 
