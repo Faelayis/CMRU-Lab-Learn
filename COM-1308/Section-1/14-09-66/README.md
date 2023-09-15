@@ -1,5 +1,6 @@
 `1.5.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -34,8 +35,10 @@ int main()
 }
 
 ```
+
 `1.6.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -68,8 +71,10 @@ int main()
 }
 
 ```
+
 `2.2.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -100,8 +105,10 @@ int main()
 }
 
 ```
+
 `2.3.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -129,8 +136,10 @@ int main()
 }
 
 ```
+
 `2.4.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
@@ -150,8 +159,10 @@ int main()
 }
 
 ```
+
 `_1276.c`
-```c 
+
+```c
 #include <stdio.h>
 
 int main()
