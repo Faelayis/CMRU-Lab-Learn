@@ -55,12 +55,8 @@ export default async function generatorReadme(path: string) {
 							  }`
 					}`
 						.split("\n")
-						.map((line) => {
-							console.log(line);
-							return line.trim();
-						})
-						.join("\n")
-						.slice(0, -1);
+						.map((line) => line.trim())
+						.join("\n");
 
 					if (metedata.preview?.remove && metedata.preview?.remove?.lineremove) {
 						folderDataMap
@@ -75,7 +71,7 @@ export default async function generatorReadme(path: string) {
 									"\n```\n",
 							);
 					} else {
-						folderDataMap.get(folder).push(header + "`\n" + "```" + match[1] + " \n" + fileData + "\n```\n");
+						folderDataMap.get(folder).push(header + "\n" + "```" + match[1] + " \n" + fileData + "\n```\n");
 					}
 				} catch (error) {
 					console.error("[Script]: Error Reading:", error);
