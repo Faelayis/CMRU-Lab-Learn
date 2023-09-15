@@ -1,4 +1,5 @@
 `computer-with-tabs.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>
@@ -19,6 +20,7 @@ int main()
 
 ```
 `computer.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>
@@ -40,6 +42,7 @@ int main()
 
 ```
 `getch.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>
@@ -63,6 +66,7 @@ int main()
 
 ```
 `getchar.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>
@@ -86,6 +90,7 @@ int main()
 
 ```
 `test.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>
@@ -104,6 +109,7 @@ int main()
 
 ```
 `the-sum-is.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>

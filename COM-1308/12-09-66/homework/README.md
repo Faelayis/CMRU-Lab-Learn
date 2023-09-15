@@ -1,4 +1,5 @@
 `main.c`<br>
+สร้าง: 16 ก.ย. 2566 เวลา 00:20<br>
 
 ```c 
 #include <stdio.h>
