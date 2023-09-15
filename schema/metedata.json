@@ -1,12 +1,35 @@
 {
 	"$ref": "#/definitions/MeteData",
 	"definitions": {
+		"CommentParameter": {
+			"additionalProperties": false,
+			"properties": {
+				"as": {
+					"additionalProperties": false,
+					"properties": {
+						"block": {
+							"type": "boolean"
+						},
+						"one": {
+							"type": "boolean"
+						}
+					},
+					"type": "object"
+				}
+			},
+			"required": ["as"],
+			"type": "object"
+		},
 		"FileType": {
 			"enum": ["c", "fprg"],
 			"type": "string"
 		},
 		"MeteData": {
+			"additionalProperties": false,
 			"properties": {
+				"$schema": {
+					"type": "string"
+				},
 				"coursecode": {
 					"type": "string"
 				},
@@ -17,23 +40,39 @@
 					"additionalProperties": false,
 					"properties": {
 						"enable": {
-							"const": true,
 							"type": "boolean"
 						},
 						"files": {
 							"items": {
 								"$ref": "#/definitions/FileType"
 							},
-							"maxItems": 1,
-							"minItems": 1,
 							"type": "array"
+						},
+						"remove": {
+							"additionalProperties": false,
+							"properties": {
+								"comment": {
+									"$ref": "#/definitions/CommentParameter"
+								},
+								"enable": {
+									"type": "boolean"
+								},
+								"lineremove": {
+									"items": {
+										"type": "string"
+									},
+									"type": "array"
+								}
+							},
+							"required": ["enable"],
+							"type": "object"
 						}
 					},
 					"required": ["enable", "files"],
 					"type": "object"
 				}
 			},
-			"required": ["coursecode", "name"],
+			"required": ["$schema", "coursecode", "name"],
 			"type": "object"
 		}
 	}

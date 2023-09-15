@@ -1,6 +1,8 @@
 import { MeteData } from "./types/metedata.js";
+import { get as utils_time } from "./utils/date-time-format.js";
 import { get as utils_get } from "./utils/get.js";
 import { readJsonFile } from "./utils/read.js";
+import { remove as utils_remove } from "./utils/remove-lines.js";
 import fg from "fast-glob";
 import * as fs from "fs";
 
@@ -29,7 +31,7 @@ export default async function generatorReadme(path: string) {
 		for await (const file of files) {
 			const match = file.path.match(/\.([^.]+)$/);
 
-			if (match?.[1] && metedata.preview?.files.includes(match[1] as never)) {
+			if (match?.[1] && metedata.preview?.files?.includes(match[1] as never)) {
 				const folder = file.path.replace(`/${file.name}`, "");
 
 				if (!folderDataMap.has(folder)) {
@@ -39,9 +41,38 @@ export default async function generatorReadme(path: string) {
 
 				try {
 					console.info("[Script]: Reading " + file.name);
-					const fileData = await fs.readFileSync(file.path, "utf-8");
 
-					folderDataMap.get(folder).push("`" + file.name + "`\n" + "```" + match[1] + " \n" + fileData + "\n```\n");
+					const fileData = await fs.readFileSync(file.path, "utf-8");
+					const header = `\`${file.name}\`<br>
+					สร้าง: ${utils_time(file.stats?.birthtime)}<br>
+					${
+						file.stats?.birthtime.getDate() !== file.stats?.mtime.getDate()
+							? `อัปเดต: ${utils_time(file.stats?.mtime)}`
+							: `${
+									file.stats?.birthtime.getTime() === file.stats?.mtime.getTime()
+										? ""
+										: `แก้ไขล่าสุด: เวลา ${file.stats?.mtime.toLocaleTimeString("th-th", { timeStyle: "short" })}<br>`
+							  }`
+					}`
+						.split("\n")
+						.map((line) => line.trim())
+						.join("\n");
+
+					if (metedata.preview?.remove && metedata.preview?.remove?.lineremove) {
+						folderDataMap
+							.get(folder)
+							.push(
+								header +
+									"\n" +
+									"```" +
+									match[1] +
+									" \n" +
+									utils_remove.lines(fileData, metedata.preview?.remove?.lineremove, metedata.preview?.remove?.comment) +
+									"\n```\n",
+							);
+					} else {
+						folderDataMap.get(folder).push(header + "`\n" + "```" + match[1] + " \n" + fileData + "\n```\n");
+					}
 				} catch (error) {
 					console.error("[Script]: Error Reading:", error);
 				}
