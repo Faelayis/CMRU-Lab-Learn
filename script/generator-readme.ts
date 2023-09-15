@@ -4,7 +4,7 @@ import { get as utils_get } from "./utils/get.js";
 import { readJsonFile } from "./utils/read.js";
 import { remove as utils_remove } from "./utils/remove-lines.js";
 import fg from "fast-glob";
-import * as fs from "fs";
+import * as fs from "node:fs";
 
 /**
  *
@@ -41,9 +41,14 @@ export default async function generatorReadme(path: string) {
 				}
 
 				try {
-					console.info("[Script]: Reading " + file.name, file.stats);
+					console.info("[Script]: Reading ");
 
 					const fileData = await fs.readFileSync(file.path, "utf-8");
+
+					fs.stat(file.path, (stats) => {
+						console.log(stats);
+					});
+
 					const header = `\`${file.name}\`<br>
 					สร้าง: ${utils_time(file.stats?.birthtime)}<br>
 					${
