@@ -2,7 +2,7 @@
 สร้าง: 14 ก.ย. 2566 เวลา 11:41<br>
 แก้ไขล่าสุด: เวลา 14:02<br>
 
-```c 
+```c
 #include <stdio.h>
 
 typedef double (*CalculationFunction)(double);
