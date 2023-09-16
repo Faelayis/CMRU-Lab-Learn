@@ -8,6 +8,7 @@
 			"program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
 			"request": "launch",
 			"stopAtEntry": false,
+			"suppressMultipleSessionWarning": true,
 			"type": "cppvsdbg"
 		},
 		{
@@ -27,6 +28,7 @@
 				}
 			],
 			"stopAtEntry": false,
+			"suppressMultipleSessionWarning": true,
 			"type": "cppdbg"
 		}
 	],

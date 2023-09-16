@@ -1,15 +1,17 @@
 {
 	"configurations": [
 		{
+			"cStandard": "${default}",
 			"compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
+			"cppStandard": "${default}",
 			"includePath": ["${default}", "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"],
 			"intelliSenseMode": "windows-gcc-x64",
 			"name": "Windows"
 		},
 		{
-			"cStandard": "c17",
+			"cStandard": "${default}",
 			"compilerPath": "/usr/bin/gcc",
-			"cppStandard": "gnu++17",
+			"cppStandard": "${default}",
 			"includePath": ["${default}"],
 			"intelliSenseMode": "linux-gcc-x64",
 			"name": "Linux"

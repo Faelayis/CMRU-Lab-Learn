@@ -12,11 +12,14 @@
 				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
 			},
 			"presentation": {
-				"close": true,
+				"clear": true,
+				"echo": false,
+				"focus": false,
+				"panel": "shared",
 				"reveal": "silent",
-				"revealProblems": "never"
+				"showReuseMessage": false
 			},
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": "$gcc",
 			"type": "shell"
 		},
 		{
@@ -38,7 +41,7 @@
 				"reveal": "always",
 				"showReuseMessage": false
 			},
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": "$gcc",
 			"type": "shell"
 		}
 	],

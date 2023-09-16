@@ -2,12 +2,9 @@
 
 ## การพัฒนา
 
-ต้องใช้ [VS Code](https://code.visualstudio.com) เพื่อพัฒนาหรือการสร้าง<br>
 แนะนำ [Windows Terminal](https://www.microsoft.com/store/productid/9N0DX20HK701?ocid=pdpshare) เพื่อการทดสอบ<br>
-
-### คอมมหาลัย
-
-ต้องใช้ [Dev-C++ 5.11 TDM-GCC](https://sourceforge.net/projects/orwelldevcpp/files/latest/download) หรือเวอร์ชันล่าสุด (น่าจะมีอยู่แล้ว)
+ต้องใช้ [VS Code](https://code.visualstudio.com) เพื่อพัฒนาหรือการสร้าง<br>
+ต้องใช้ [Dev-C++ 5.11 TDM-GCC](https://sourceforge.net/projects/orwelldevcpp/files/latest/download) หรือ เวอร์ชันล่าสุด (คอมมหาลัย น่าจะมีอยู่แล้ว)
 
 <!-- prettier-ignore -->
 > [!WARNING]
@@ -17,15 +14,18 @@
 
 -   ต้องใช้ [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 -   ต้องใช้ [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
--   แนะนำ [.NET Runtime Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime)
+<!-- -   แนะนำ [.NET Runtime Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime) -->
 
-### Config Structure (Windows)
+### การกำหนดค่า 
+-  [Linux](./README_LINUX.md)
+
+### Windows
 
 ```text
-.vscode
-├─ c_cpp_properties.json
-├─ launch.json
-└─ tasks.json
+📂.vscode
+├─📄c_cpp_properties.json
+├─📄launch.json
+└─📄tasks.json
 ```
 
 `c_cpp_properties.json`
@@ -56,6 +56,7 @@
 			"preLaunchTask": "C/C++: gcc.exe build active file",
 			"console": "externalTerminal",
 			"stopAtEntry": false,
+			"suppressMultipleSessionWarning": true,
 			"cwd": "${fileDirname}"
 		}
 	],
@@ -80,54 +81,13 @@
 			"options": {
 				"cwd": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin"
 			},
-			"problemMatcher": ["$gcc"]
-		}
-	],
-	"version": "2.0.0"
-}
-```
-
-### Config Structure (Linux)
-
-ต้องใช้ [GCC Compiler](https://gcc.gnu.org/install/)<br>
-
-```text
-.vscode
-├─ c_cpp_properties.json
-└─ tasks.json
-```
-
-`c_cpp_properties.json`
-
-```json
-{
-	"configurations": [
-		{
-			"name": "linux-gcc-x64",
-			"includePath": ["${default}"],
-			"compilerPath": "/usr/bin/gcc"
-		}
-	],
-	"version": 4
-}
-```
-
-`tasks.json`
-
-```json
-{
-	"tasks": [
-		{
-			"command": "/usr/bin/gcc",
-			"label": "C/C++: gcc build active file",
-			"type": "shell",
-			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}"],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"options": {
-				"cwd": "${fileDirname}"
+			"presentation": {
+				"clear": true,
+				"echo": false,
+				"focus": false,
+				"panel": "shared",
+				"reveal": "silent",
+				"showReuseMessage": false
 			},
 			"problemMatcher": ["$gcc"]
 		}
@@ -135,3 +95,12 @@
 	"version": "2.0.0"
 }
 ```
+
+### เสร็จสิ้น
+
+กด F5 ในไฟล์ที่ต้องการเพื่อทดสอบ<br>
+กด Shift + F5 เพื่อยกเลิก
+
+<!-- prettier-ignore -->
+> [!NOTE]
+> [ทางลัดอื่นๆ](https://code.visualstudio.com/docs/editor/debugging#_debug-actions)
