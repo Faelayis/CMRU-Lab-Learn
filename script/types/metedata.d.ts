@@ -1,3 +1,4 @@
+/* eslint-disable typescript-sort-keys/interface */
 import { FileType } from "./filetype.js";
 import { CommentParameter } from "./remove-lines.ts";
 

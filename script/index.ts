@@ -1,6 +1,8 @@
+/* eslint-disable unicorn/prefer-top-level-await */
+import fg from "fast-glob";
+
 import generatorReadme from "./generator-readme.js";
 import { get as utils_get } from "./utils/get.js";
-import fg from "fast-glob";
 
 (async () => {
 	const metedata = await fg(["**/metedata.json"], {

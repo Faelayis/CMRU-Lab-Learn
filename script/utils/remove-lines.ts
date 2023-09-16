@@ -1,15 +1,15 @@
 import { CommentParameter } from "../types/remove-lines.js";
 
 export const remove = {
-	lines(text: string, linesToRemove: string[], commentParameter?: CommentParameter): string {
+	lines(text: string, linesToRemove?: string[], commentParameter?: CommentParameter): string {
 		try {
 			const lines = (commentParameter ? remove.comment(text, commentParameter) : text).split("\n"),
-				filteredLines = lines.filter((line) => !linesToRemove.some((pattern) => line.includes(pattern))),
+				filteredLines = lines.filter((line) => !linesToRemove?.some((pattern) => line.includes(pattern))),
 				updatedText = filteredLines.join("\n");
 
 			return updatedText;
-		} catch (err) {
-			console.error(`Error linesToRemove : ${err}`);
+		} catch (error) {
+			console.error("[Script]: Error Remove Lines:", error);
 			return text;
 		}
 	},
@@ -19,7 +19,7 @@ export const remove = {
 		if (parameter?.as.one) {
 			regex = /\/\/[^\n]*\n?/g;
 		} else if (parameter?.as.block) {
-			regex = /\/\*[\s\S]*?\*\//g;
+			regex = /\/\*[\S\s]*?\*\//g;
 		}
 
 		return parameter ? text.replace(regex, "") : text;

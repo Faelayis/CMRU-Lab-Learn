@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from "node:fs";
 
 export const get = {
 	gitignore(filePath?: string): string[] {
@@ -8,8 +8,8 @@ export const get = {
 				filteredPatterns = patterns.filter((pattern) => pattern !== "" && !pattern.startsWith("#"));
 
 			return filteredPatterns;
-		} catch (err) {
-			console.error(`Error reading .gitignore file: ${err}`);
+		} catch (error) {
+			console.error("[Script]: Error Reading .gitignore:", error);
 			return [];
 		}
 	},
