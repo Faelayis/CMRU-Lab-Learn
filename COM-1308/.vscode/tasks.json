@@ -1,7 +1,7 @@
 {
 	"tasks": [
 		{
-			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
+			"args": ["-fdiagnostics-color=always", "-O2", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
 			"command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
 			"group": {
 				"isDefault": true,

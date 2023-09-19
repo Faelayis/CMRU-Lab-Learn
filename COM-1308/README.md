@@ -73,8 +73,8 @@
 		{
 			"command": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
 			"label": "C/C++: gcc.exe build active file",
-			"type": "cppbuild",
-			"args": ["-fdiagnostics-color=always", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
+			"type": "shell",
+			"args": ["-fdiagnostics-color=always", "-O2", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
 			"group": {
 				"kind": "build",
 				"isDefault": true
