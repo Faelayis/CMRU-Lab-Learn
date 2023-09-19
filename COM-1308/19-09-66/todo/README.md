@@ -1,6 +1,6 @@
 `main.c`<br>
 สร้าง: 19 ก.ย. 2566 เวลา 10:54<br>
-แก้ไขล่าสุด: เวลา 11:01<br>
+แก้ไขล่าสุด: เวลา 11:41<br>
 
 ```c
 #include <stdio.h>
@@ -24,6 +24,11 @@ int multiply(int a, int b)
 
 int divide(int a, int b)
 {
+   if (b == 0)
+   {
+      printf("\nError: division by zero\n");
+      return 0;
+   }
    return a / b;
 }
 
