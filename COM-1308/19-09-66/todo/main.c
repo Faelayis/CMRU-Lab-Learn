@@ -55,6 +55,7 @@ int main()
    }
    printf("\nSelect an option (1-%d): ", menu.length);
    scanf("%d", &choice);
+   printf("\n");
 
    if (choice >= 1 && choice <= menu.length)
    {
@@ -76,3 +77,17 @@ int main()
    printf("\n");
    return 0;
 }
+
+/* Previews
+  Math Menu:
+  1.+
+  2.-
+  3.x
+  4.%
+
+  Select an option (1-4): 1
+
+  Enter number 1: 1
+  Enter number 2: 1
+  Result: 2
+*/
