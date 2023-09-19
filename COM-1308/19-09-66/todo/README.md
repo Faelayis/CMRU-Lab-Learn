@@ -1,5 +1,7 @@
 `main.c`<br>
 สร้าง: 19 ก.ย. 2566 เวลา 10:54<br>
+แก้ไขล่าสุด: เวลา 11:01<br>
+
 ```c
 #include <stdio.h>
 
@@ -58,6 +60,7 @@ int main()
    }
    printf("\nSelect an option (1-%d): ", menu.length);
    scanf("%d", &choice);
+   printf("\n");
 
    if (choice >= 1 && choice <= menu.length)
    {
@@ -80,4 +83,17 @@ int main()
    return 0;
 }
 
+/* Previews
+  Math Menu:
+  1.+
+  2.-
+  3.x
+  4.%
+
+  Select an option (1-4): 1
+
+  Enter number 1: 1
+  Enter number 2: 1
+  Result: 2
+*/
 ```
