@@ -1,5 +1,7 @@
 `main.c`<br>
 สร้าง: 21 ก.ย. 2566 เวลา 13:58<br>
+แก้ไขล่าสุด: เวลา 14:13<br>
+
 ```c
 #include <stdio.h>
 
@@ -8,7 +10,6 @@ void clearScreen()
 #ifdef _WIN32
    system("cls");
 #else
-
    system("clear");
 #endif
 }
@@ -21,6 +22,7 @@ int main()
    do
    {
       clearScreen();
+
       printf("Enter a number: ");
       scanf("%d", &num);
 
@@ -38,4 +40,18 @@ int main()
    return 0;
 }
 
+/* Previews
+  # take 1
+  Enter a number: 10
+
+  # take 2
+  Enter a number: 50
+
+  # take 2
+  Enter a number: 30
+
+  # end
+  Enter another number ? (y/n): y
+  Maximum number is 50
+*/
 ```
