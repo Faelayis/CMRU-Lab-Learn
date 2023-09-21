@@ -46,6 +46,6 @@ int main()
   Enter a number: 30
 
   # end
-  Enter another number ? (y/n): y
+  Enter another number ? (y/n): n
   Maximum number is 50
 */
