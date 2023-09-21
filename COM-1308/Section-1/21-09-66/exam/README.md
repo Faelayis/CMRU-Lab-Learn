@@ -1,6 +1,6 @@
 `main.c`<br>
 สร้าง: 21 ก.ย. 2566 เวลา 13:58<br>
-แก้ไขล่าสุด: เวลา 14:13<br>
+แก้ไขล่าสุด: เวลา 14:15<br>
 
 ```c
 #include <stdio.h>
@@ -47,7 +47,7 @@ int main()
   # take 2
   Enter a number: 50
 
-  # take 2
+  # take 3
   Enter a number: 30
 
   # end
