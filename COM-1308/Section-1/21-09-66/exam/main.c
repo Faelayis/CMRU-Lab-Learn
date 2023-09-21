@@ -5,7 +5,6 @@ void clearScreen()
 #ifdef _WIN32
    system("cls");
 #else
-
    system("clear");
 #endif
 }
@@ -18,6 +17,7 @@ int main()
    do
    {
       clearScreen();
+
       printf("Enter a number: ");
       scanf("%d", &num);
 
@@ -34,3 +34,18 @@ int main()
    printf("\n");
    return 0;
 }
+
+/* Previews
+  # take 1
+  Enter a number: 10
+
+  # take 2
+  Enter a number: 50
+
+  # take 2
+  Enter a number: 30
+
+  # end
+  Enter another number ? (y/n): y
+  Maximum number is 50
+*/
