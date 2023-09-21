@@ -1,6 +1,6 @@
 `main.c`<br>
 สร้าง: 21 ก.ย. 2566 เวลา 13:58<br>
-แก้ไขล่าสุด: เวลา 14:15<br>
+แก้ไขล่าสุด: เวลา 14:27<br>
 
 ```c
 #include <stdio.h>
@@ -51,7 +51,7 @@ int main()
   Enter a number: 30
 
   # end
-  Enter another number ? (y/n): y
+  Enter another number ? (y/n): n
   Maximum number is 50
 */
 ```
