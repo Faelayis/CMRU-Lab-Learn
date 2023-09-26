@@ -1,5 +1,7 @@
 `left_side.c`<br>
 สร้าง: 26 ก.ย. 2566 เวลา 11:46<br>
+แก้ไขล่าสุด: เวลา 11:49<br>
+
 ```c
 #include <stdio.h>
 
@@ -28,6 +30,8 @@ int main() {
 ```
 `right_angled.c`<br>
 สร้าง: 26 ก.ย. 2566 เวลา 11:46<br>
+แก้ไขล่าสุด: เวลา 11:49<br>
+
 ```c
 #include <stdio.h>
 
@@ -58,8 +62,10 @@ int main() {
 }
 
 ```
-`right_side.c`<br>
+`triangle.c`<br>
 สร้าง: 26 ก.ย. 2566 เวลา 11:46<br>
+แก้ไขล่าสุด: เวลา 11:49<br>
+
 ```c
 #include <stdio.h>
 
