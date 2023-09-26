@@ -1,5 +1,6 @@
 `main.c`<br>
 สร้าง: 19 ก.ย. 2566 เวลา 21:29<br>
+อัปเดต: 26 ก.ย. 2566 เวลา 09:36<br>
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -62,7 +63,9 @@ int main()
       clearScreen();
 
       printf("Area Calculation Menu:\n");
-      for (int i = 0; i < menu.length; i++)
+
+      int i = 0;
+      for (i; i < menu.length; i++)
       {
          printf("%d. %s\n", i + 1, menus[i].item);
       }
