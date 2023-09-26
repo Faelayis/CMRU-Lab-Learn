@@ -2,18 +2,18 @@
 	"configurations": [
 		{
 			"cStandard": "c99",
+			"compilerArgs": ["-std=c11", "-std=gun11"],
 			"compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
 			"cppStandard": "gnu++11",
-			"compilerArgs": ["-std=c11", "-std=gun11"],
 			"includePath": ["${default}", "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"],
 			"intelliSenseMode": "windows-gcc-x64",
 			"name": "Windows"
 		},
 		{
 			"cStandard": "c99",
+			"compilerArgs": ["-std=c11", "-std=gun11"],
 			"compilerPath": "/usr/bin/gcc",
 			"cppStandard": "gnu++11",
-			"compilerArgs": ["-std=c11", "-std=gun11"],
 			"includePath": ["${default}"],
 			"intelliSenseMode": "linux-gcc-x64",
 			"name": "Linux"

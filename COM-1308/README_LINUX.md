@@ -24,7 +24,7 @@
 			"cppStandard": "gnu++11",
 			"includePath": ["${default}"],
 			"compilerPath": "/usr/bin/gcc",
-			"compilerArgs": ["-std=c11", "-std=gun11"],
+			"compilerArgs": ["-std=c11", "-std=gun11"]
 		}
 	],
 	"version": 4
