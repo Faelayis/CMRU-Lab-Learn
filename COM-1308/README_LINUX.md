@@ -20,8 +20,11 @@
 	"configurations": [
 		{
 			"name": "linux-gcc-x64",
+			"cStandard": "c99",
+			"cppStandard": "gnu++11",
 			"includePath": ["${default}"],
-			"compilerPath": "/usr/bin/gcc"
+			"compilerPath": "/usr/bin/gcc",
+			"compilerArgs": ["-std=c11", "-std=gun11"],
 		}
 	],
 	"version": 4

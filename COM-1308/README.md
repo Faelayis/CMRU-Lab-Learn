@@ -36,8 +36,11 @@
 	"configurations": [
 		{
 			"name": "windows-gcc-x64",
+			"cStandard": "c99",
+			"cppStandard": "gnu++11",
 			"includePath": ["${default}", "C:/Program Files (x86)/Dev-Cpp/MinGW64/**"],
-			"compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe"
+			"compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
+			"compilerArgs": ["-std=c11", "-std=gun11"],
 		}
 	],
 	"version": 4

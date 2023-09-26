@@ -59,7 +59,9 @@ int main()
       clearScreen();
 
       printf("Area Calculation Menu:\n");
-      for (int i = 0; i < menu.length; i++)
+
+      int i = 0;
+      for (i; i < menu.length; i++)
       {
          printf("%d. %s\n", i + 1, menus[i].item);
       }
