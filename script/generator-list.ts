@@ -23,7 +23,7 @@ export default async function generateList(path: string) {
 
 		console.info(`[Script]: Config metadata.json`, metedata);
 
-		if (metedata.preview?.enable) {
+		if (metedata.preview?.list) {
 			const files = await fg([`${path.split("/")[0]}/**/*`], {
 					onlyFiles: true,
 					ignore: await utils_get.gitignore(),

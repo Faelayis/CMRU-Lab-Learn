@@ -5,6 +5,7 @@
 	"preview": {
 		"enable": true,
 		"files": ["c"],
+		"list": true,
 		"remove": {
 			"enable": false,
 			"lineremove": ["printf(\"\\n\");", "return 0;"]

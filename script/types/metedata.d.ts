@@ -9,6 +9,7 @@ export interface MeteData {
 	preview?: {
 		enable: boolean;
 		files: FileType[];
+		list?: boolean;
 		remove?: {
 			enable: boolean;
 			comment?: CommentParameter;

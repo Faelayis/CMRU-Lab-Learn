@@ -48,6 +48,9 @@
 							},
 							"type": "array"
 						},
+						"list": {
+							"type": "boolean"
+						},
 						"remove": {
 							"additionalProperties": false,
 							"properties": {
