@@ -21,7 +21,7 @@
 			"type": "object"
 		},
 		"FileType": {
-			"enum": ["c", "fprg"],
+			"enum": ["c", "py", "fprg"],
 			"type": "string"
 		},
 		"MeteData": {

@@ -1,1 +1,1 @@
-export type FileType = "c" | "fprg";
+export type FileType = "c" | "py" | "fprg";
