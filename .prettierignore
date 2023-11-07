@@ -8,5 +8,5 @@ node_modules
 pnpm-lock.yaml
 
 # script update content
-LIST.md
+*/LIST.md
 */*/**/*.md
