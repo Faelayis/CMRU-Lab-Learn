@@ -17,7 +17,7 @@
 		"git-date-extractor": "4.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "20.8.10",
+		"@types/node": "20.9.0",
 		"@typescript-eslint/eslint-plugin": "6.10.0",
 		"@typescript-eslint/parser": "6.10.0",
 		"eslint": "8.53.0",
@@ -35,8 +35,8 @@
 		"typescript": "5.2.2"
 	},
 	"engines": {
-		"node": ">=16",
-		"pnpm": ">=8.7.5"
+		"node": ">=18",
+		"pnpm": ">=8.10.2"
 	},
 	"eslintConfig": {
 		"env": {
@@ -90,7 +90,7 @@
 			}
 		]
 	},
-	"packageManager": "pnpm@8.7.5",
+	"packageManager": "pnpm@8.10.2",
 	"prettier": {
 		"bracketSameLine": true,
 		"bracketSpacing": true,
