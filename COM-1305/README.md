@@ -9,6 +9,7 @@
 คำสั่งสำหลับติดตั้ง Python 3.12.0 แบบด่วน<br>
 
 [![](https://img.shields.io/badge/PowerShell-5391FE?logo=PowerShell&logoColor=white)](https://aka.ms/powershell-release?tag=stable)
+
 ```ps1
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex "&{$((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Faelayis/CMRU-Lab-Learn/main/setup/install_python.ps1'))}"
 ```
@@ -20,6 +21,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 -   แนะนำ [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
 
 ### Windows
+
 <!-- prettier-ignore -->
 > [!WARNING]
 > อาจจะต้องสร้าง [Python Environment](https://code.visualstudio.com/docs/python/environments#_manually-specify-an-interpreter) ก่อน
