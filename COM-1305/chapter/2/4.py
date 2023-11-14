@@ -5,4 +5,4 @@ length = 400
 
 area_rectangle = width * length
 
-print("พื้นที่สี่เหลี่ยมผืนผ้า:", area_rectangle)
+print("พื้นที่สี่เหลี่ยมผืนผ้า: ", area_rectangle)

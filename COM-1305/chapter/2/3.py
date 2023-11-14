@@ -5,4 +5,4 @@ height = 20
 
 area_triangle = 0.5 * base * height
 
-print("พื้นที่สามเหลี่ยม:", area_triangle)
+print("พื้นที่สามเหลี่ยม: ", area_triangle)
