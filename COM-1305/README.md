@@ -9,7 +9,9 @@
 ### ส่วนขยาย
 
 -   ต้องใช้ [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
--   แนะนำ [autopep8](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8)
+-   แนะนำ [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8)
+-   แนะนำ [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
+-   แนะนำ [Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
 -   แนะนำ [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
 
 ### Windows
