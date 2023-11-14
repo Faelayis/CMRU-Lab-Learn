@@ -6,6 +6,7 @@ on:
             - "script/**"
             - "**/*.fprg"
             - "**/*.c"
+            - "**/*.py"
 
 jobs:
     update:
