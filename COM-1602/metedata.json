@@ -1,5 +1,9 @@
 {
 	"$schema": "../schema/metedata.json",
 	"coursecode": "COM 1602-63",
-	"name": "ระบบฐานข้อมูล 1"
+	"name": "ระบบฐานข้อมูล 1",
+	"preview": {
+		"enable": true,
+		"files": ["sql"]
+	}
 }
