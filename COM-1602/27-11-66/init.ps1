@@ -1,7 +1,6 @@
 Set-Location C:\xampp\mysql\bin
 
 use faelayis
-use panida
 
 alter table supplier461 modify name_sup varchar(30);
 
