@@ -9,3 +9,6 @@ reg add "HKCU\Keyboard Layout\Toggle" /v "Language Hotkey" /t REG_SZ /d "1" /f
 
 # Enable "Let me use a different input method for each app window"
 Set-WinLanguageBarOption -UseLegacySwitchMode
+
+# Change the Execution Policy
+Set-ExecutionPolicy RemoteSigned
