@@ -4,7 +4,7 @@
 			"name": "การเขียนโปรแกรมภาษาคอมพิวเตอร์",
 			"path": "./COM-1305"
 		},
-				{
+		{
 			"name": "ระบบฐานข้อมูล 1",
 			"path": "./COM-1602"
 		},
@@ -14,6 +14,8 @@
 		}
 	],
 	"settings": {
+		"editor.tabSize": 3,
+		"editor.useTabStops": true,
 		"debug.openDebug": "neverOpen"
 	}
 }

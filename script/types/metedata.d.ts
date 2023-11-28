@@ -6,6 +6,7 @@ export interface MeteData {
 	$schema: string;
 	coursecode: string;
 	name: string;
+	complete?: string;
 	preview?: {
 		enable: boolean;
 		files: FileType[];

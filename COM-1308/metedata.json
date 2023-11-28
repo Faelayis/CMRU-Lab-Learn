@@ -1,5 +1,6 @@
 {
 	"$schema": "../schema/metedata.json",
+	"complete": "10-10-2566",
 	"coursecode": "COM-1308-63",
 	"name": "หลักการออกแบบและการเขียนโปรแกรม",
 	"preview": {
