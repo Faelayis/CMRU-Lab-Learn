@@ -1,0 +1,5 @@
+{
+	"[sql]": {
+		"editor.defaultFormatter": "mtxr.sqltools"
+	}
+}

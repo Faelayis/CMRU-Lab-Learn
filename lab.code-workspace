@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "Root",
+			"path": "./"
+		},
+		{
 			"name": "การเขียนโปรแกรมภาษาคอมพิวเตอร์",
 			"path": "./COM-1305"
 		},
@@ -16,6 +20,11 @@
 	"settings": {
 		"editor.tabSize": 3,
 		"editor.useTabStops": true,
-		"debug.openDebug": "neverOpen"
+		"debug.openDebug": "neverOpen",
+		"sqltools.highlightQuery": false,
+		"sqltools.format": {
+			"linesBetweenQueries": 2,
+			"reservedWordCase": "upper"
+		}
 	}
 }
