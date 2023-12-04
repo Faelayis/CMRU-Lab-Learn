@@ -5,6 +5,18 @@
 			"path": "./"
 		},
 		{
+			"name": "Github",
+			"path": "./.github"
+		},
+		{
+			"name": "Script",
+			"path": "./script"
+		},
+		{
+			"name": "Setup",
+			"path": "./setup"
+		},
+		{
 			"name": "การเขียนโปรแกรมภาษาคอมพิวเตอร์",
 			"path": "./COM-1305"
 		},
@@ -18,6 +30,11 @@
 		}
 	],
 	"settings": {
+		"files.exclude": {
+			".github": true,
+			"COM-*": true,
+			"Script": true
+		},
 		"editor.tabSize": 3,
 		"editor.useTabStops": true,
 		"debug.openDebug": "neverOpen",
