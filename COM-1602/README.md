@@ -23,7 +23,6 @@
 		"editor.defaultFormatter": "mtxr.sqltools"
 	}
 }
-
 ```
 
 ### เสร็จสิ้น
