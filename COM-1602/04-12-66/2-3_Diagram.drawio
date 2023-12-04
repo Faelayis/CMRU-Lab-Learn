@@ -1,20 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2023-12-04T07:43:10.351Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="yBXCterLJFcHIyWrzdCn" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-04T09:37:49.980Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="pgDU9fXV8TJ5PCsvrydQ" version="22.1.5" type="github">
   <diagram name="Page-1" id="8Gk2jwWGp6PCqlP09vF2">
-    <mxGraphModel dx="1195" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1000" math="0" shadow="0">
+    <mxGraphModel dx="2049" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="600" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="vinHfMNbz0QVOYfKeV6w-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;sketch=1;curveFitting=1;jiggle=2;" edge="1" parent="1" source="vinHfMNbz0QVOYfKeV6w-1" target="vinHfMNbz0QVOYfKeV6w-2">
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startSize=13;sourcePerimeterSpacing=3;startArrow=ERmandOne;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;endSize=13;targetPerimeterSpacing=3;" edge="1" parent="1" source="vinHfMNbz0QVOYfKeV6w-1" target="vinHfMNbz0QVOYfKeV6w-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="vinHfMNbz0QVOYfKeV6w-1" value="&lt;h1&gt;บริษัท&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
-          <mxGeometry x="40" y="80" width="160" height="60" as="geometry" />
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-1" value="&lt;h1&gt;บริษัท&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="193" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="vinHfMNbz0QVOYfKeV6w-2" value="&lt;h1&gt;การซื้อสินค้า&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="80" width="160" height="60" as="geometry" />
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmandOne;endFill=0;startArrow=ERmany;startFill=0;endSize=13;startSize=13;strokeWidth=2;" edge="1" parent="1" source="vinHfMNbz0QVOYfKeV6w-2" target="vinHfMNbz0QVOYfKeV6w-8">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="vinHfMNbz0QVOYfKeV6w-5" value="&lt;h1&gt;ซื้อ&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
-          <mxGeometry x="570" y="30" width="60" height="70" as="geometry" />
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-2" value="&lt;h1&gt;การซื้อสินค้า&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="193" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-8" value="&lt;h1&gt;ผู้ซื้อ&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="193" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-10" value="&lt;h1&gt;สินค้า&lt;br&gt;&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="418" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;endFill=0;strokeWidth=2;endSize=13;startSize=13;startArrow=ERmandOne;startFill=0;" edge="1" parent="1" source="vinHfMNbz0QVOYfKeV6w-15" target="vinHfMNbz0QVOYfKeV6w-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="263" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;endSize=13;startSize=13;startArrow=ERmany;startFill=0;endArrow=ERmandOne;endFill=0;" edge="1" parent="1" source="vinHfMNbz0QVOYfKeV6w-15" target="vinHfMNbz0QVOYfKeV6w-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vinHfMNbz0QVOYfKeV6w-15" value="&lt;h1&gt;รายละเอียดการซื้อสินค้า&lt;br&gt;&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="418" width="160" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
