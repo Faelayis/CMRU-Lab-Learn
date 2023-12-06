@@ -44,15 +44,6 @@ VALUES ('BC001', 'P01', 100),
 SELECT *
 FROM DetailOrder_461;
 ```
-`init.ps1`<br>
-สร้าง: 4 ธ.ค. 2566 เวลา 17:04<br>
-```ps1
-Set-Location C:\xampp\mysql\bin
-.\mysql.exe -u root -p
-
-use faelayis
-
-```
 `product.sql`<br>
 สร้าง: 6 ธ.ค. 2566 เวลา 16:35<br>
 ```sql
