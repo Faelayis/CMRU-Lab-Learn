@@ -67,8 +67,8 @@ export default async function generateReadme(path: string) {
 												: `\nแก้ไขล่าสุด: เวลา ${date.modified.toLocaleTimeString("th-th", {
 														timeStyle: "short",
 														timeZone,
-												  })}<br>\n`
-									  }`
+													})}<br>\n`
+										}`
 									: `\nอัปเดต: ${utils_time(date.modified)}<br>`
 							}`
 							.split("\n")
