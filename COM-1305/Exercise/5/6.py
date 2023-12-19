@@ -4,6 +4,6 @@ def multiplication_table(x):
 
 
 try:
-    multiplication_table(int(input("Enter Number :")))
+    multiplication_table(int(input("Enter Number : ")))
 except ValueError:
     print("Please enter a number only.")
