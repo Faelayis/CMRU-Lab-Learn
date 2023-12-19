@@ -4,6 +4,7 @@
 	"name": "ระบบฐานข้อมูล 1",
 	"preview": {
 		"enable": true,
-		"files": ["sql", "ps1"]
+		"files": ["sql", "ps1"],
+		"list": true
 	}
 }
