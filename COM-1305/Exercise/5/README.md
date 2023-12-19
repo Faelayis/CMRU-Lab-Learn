@@ -64,13 +64,13 @@ print("Good bye")
 ```
 `4.3.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
-แก้ไขล่าสุด: เวลา 11:14<br>
+แก้ไขล่าสุด: เวลา 11:23<br>
 
 ```py
 character = "n"
 
 while character != "y":
-    character = input("Enter y/n :")
+    character = input("Enter y/n : ")
 
 print("Good bye")
 
@@ -129,7 +129,7 @@ for x in range(5):
 ```
 `6.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
-แก้ไขล่าสุด: เวลา 11:20<br>
+แก้ไขล่าสุด: เวลา 11:23<br>
 
 ```py
 def multiplication_table(x):
@@ -138,7 +138,7 @@ def multiplication_table(x):
 
 
 try:
-    multiplication_table(int(input("Enter Number :")))
+    multiplication_table(int(input("Enter Number : ")))
 except ValueError:
     print("Please enter a number only.")
 
