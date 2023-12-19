@@ -9,16 +9,16 @@
 ### ส่วนขยาย
 
 -   ต้องใช้ [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
--   ต้องใช้ [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-<!-- -   แนะนำ [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) -->
+-   ต้องใช้ [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) <!-- -   แนะนำ [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) -->
 -   แนะนำ [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
 -   แนะนำ [Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
 -   แนะนำ [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
 
 ### Windows
 
-คำสั่งสำหลับติดตั้ง Python 3.12.0 แบบด่วน<br>
+สำหลับติดตั้ง Python 3.12.0 แบบด่วน<br>
 
+[![](https://img.shields.io/badge/Microsoft%20Store-005FB8?logo=microsoftstore&logoColor=white)](https://www.microsoft.com/store/productId/9NCVDN91XZQP)
 [![](https://img.shields.io/badge/PowerShell-5391FE?logo=PowerShell&logoColor=white)](https://aka.ms/powershell-release?tag=stable)
 
 ```ps1
