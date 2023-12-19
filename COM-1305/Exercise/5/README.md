@@ -129,12 +129,17 @@ for x in range(5):
 ```
 `6.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
+แก้ไขล่าสุด: เวลา 11:20<br>
+
 ```py
 def multiplication_table(x):
     for number in range(1, 13):
         print(f"{x} x {number} = {x * number}")
 
 
-multiplication_table(5)
+try:
+    multiplication_table(int(input("Enter Number :")))
+except ValueError:
+    print("Please enter a number only.")
 
 ```
