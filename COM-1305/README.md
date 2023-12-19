@@ -70,8 +70,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 	"python.createEnvironment.contentButton": "show",
 	"python.testing.autoTestDiscoverOnSaveEnabled": true
 }
-
 ```
+
 ### เสร็จสิ้น
 
 กด F5 ในไฟล์ที่ต้องการเพื่อทดสอบ<br>
