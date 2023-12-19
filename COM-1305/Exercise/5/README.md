@@ -64,11 +64,13 @@ print("Good bye")
 ```
 `4.3.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
-```py
-ch = "n"
+แก้ไขล่าสุด: เวลา 11:14<br>
 
-while ch != "y":
-    ch = input("Enter y/n :")
+```py
+character = "n"
+
+while character != "y":
+    character = input("Enter y/n :")
 
 print("Good bye")
 
@@ -88,14 +90,16 @@ print(sum)
 ```
 `4.5.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
+แก้ไขล่าสุด: เวลา 11:14<br>
+
 ```py
 sum = 0
 count = 1
 
 while count <= 5:
     try:
-        num = int(input(f"Enter Number {count}: "))
-        sum += num
+        number = int(input(f"Enter Number {count}: "))
+        sum += number
         count += 1
     except ValueError:
         print("Please enter a number.")
@@ -114,9 +118,11 @@ for x in range(1, 4):
 ```
 `5.2.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
+แก้ไขล่าสุด: เวลา 11:14<br>
+
 ```py
-for x in range(1, 6):
-    for i in range(x):
+for x in range(5):
+    for i in range(x + 1):
         print("*", end=" ")
     print("")
 
