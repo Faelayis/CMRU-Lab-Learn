@@ -3,4 +3,7 @@ def multiplication_table(x):
         print(f"{x} x {number} = {x * number}")
 
 
-multiplication_table(5)
+try:
+    multiplication_table(int(input("Enter Number :")))
+except ValueError:
+    print("Please enter a number only.")
