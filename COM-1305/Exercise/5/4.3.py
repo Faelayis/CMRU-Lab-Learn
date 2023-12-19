@@ -1,6 +1,6 @@
-ch = "n"
+character = "n"
 
-while ch != "y":
-    ch = input("Enter y/n :")
+while character != "y":
+    character = input("Enter y/n :")
 
 print("Good bye")

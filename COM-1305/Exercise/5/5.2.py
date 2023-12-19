@@ -1,4 +1,4 @@
-for x in range(1, 6):
-    for i in range(x):
+for x in range(5):
+    for i in range(x + 1):
         print("*", end=" ")
     print("")

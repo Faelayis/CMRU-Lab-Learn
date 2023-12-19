@@ -3,8 +3,8 @@ count = 1
 
 while count <= 5:
     try:
-        num = int(input(f"Enter Number {count}: "))
-        sum += num
+        number = int(input(f"Enter Number {count}: "))
+        sum += number
         count += 1
     except ValueError:
         print("Please enter a number.")
