@@ -27,7 +27,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 <!-- prettier-ignore -->
 > [!WARNING]
-> อาจจะต้องสร้าง [Python Environment](https://code.visualstudio.com/docs/python/environments#_manually-specify-an-interpreter) ก่อน
+> อาจจะต้องสร้าง [Python Environment](https://code.visualstudio.com/docs/python/environments#_manually-specify-an-interpreter) ถ้าลงครั้งแรก
 
 ```text
 📂.vscode
