@@ -3,3 +3,7 @@ node_modules/
 
 # C/C++ Windows build output
 *.exe
+
+# Python virtual environment
+.venv
+.conda
