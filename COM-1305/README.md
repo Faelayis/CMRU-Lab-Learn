@@ -52,6 +52,26 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 }
 ```
 
+`settings.json`
+
+```json
+{
+	"[python]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true
+	},
+	"isort.args": ["--profile", "black"],
+	"python.analysis.autoFormatStrings": true,
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.typeCheckingMode": "basic",
+	"python.createEnvironment.contentButton": "show",
+	"python.testing.autoTestDiscoverOnSaveEnabled": true
+}
+
+```
 ### เสร็จสิ้น
 
 กด F5 ในไฟล์ที่ต้องการเพื่อทดสอบ<br>
