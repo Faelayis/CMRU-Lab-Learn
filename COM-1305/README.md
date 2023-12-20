@@ -16,7 +16,7 @@
 
 ### Windows
 
-สำหลับติดตั้ง Python 3.12.0 แบบด่วน<br>
+สำหลับติดตั้ง Python 3.12 แบบด่วน<br>
 
 [![](https://img.shields.io/badge/Microsoft%20Store-005FB8?logo=microsoftstore&logoColor=white)](https://www.microsoft.com/store/productId/9NCVDN91XZQP)
 [![](https://img.shields.io/badge/PowerShell-5391FE?logo=PowerShell&logoColor=white)](https://aka.ms/powershell-release?tag=stable)
