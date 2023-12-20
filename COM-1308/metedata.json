@@ -2,6 +2,7 @@
 	"$schema": "../schema/metedata.json",
 	"complete": "10-10-2566",
 	"coursecode": "COM-1308-63",
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16390",
 	"name": "หลักการออกแบบและการเขียนโปรแกรม",
 	"preview": {
 		"enable": true,

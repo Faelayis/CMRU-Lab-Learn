@@ -37,6 +37,9 @@
 				"coursecode": {
 					"type": "string"
 				},
+				"info": {
+					"type": "string"
+				},
 				"name": {
 					"type": "string"
 				},
