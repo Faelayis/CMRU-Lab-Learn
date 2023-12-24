@@ -42,6 +42,7 @@
 		"sqltools.format": {
 			"linesBetweenQueries": 2,
 			"reservedWordCase": "upper"
-		}
+		},
+		"editor.inlayHints.enabled": "on"
 	}
 }

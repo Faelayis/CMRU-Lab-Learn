@@ -26,7 +26,7 @@ export default async function generateReadme(path: string) {
 		if (metedata.preview?.enable) {
 			const files = await fg([`${path.split("/")[0]}/**`], {
 					onlyFiles: true,
-					ignore: await utils_get.gitignore(),
+					ignore: utils_get.gitignore(),
 					objectMode: true,
 					stats: true,
 					followSymbolicLinks: true,
