@@ -1,15 +1,18 @@
 {
 	"[python]": {
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
+			"source.fixAll": true,
+			"source.organizeImports": true
 		},
-		"editor.defaultFormatter": "ms-python.black-formatter",
-		"editor.formatOnSave": true
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
 	},
+	"flake8.args": ["--ignore=E501"],
 	"isort.args": ["--profile", "black"],
 	"python.analysis.autoFormatStrings": true,
 	"python.analysis.autoImportCompletions": true,
-	"python.analysis.inlayHints.callArgumentNames": "all",
+	"python.analysis.inlayHints.callArgumentNames": "off",
 	"python.analysis.inlayHints.functionReturnTypes": true,
 	"python.analysis.inlayHints.pytestParameters": true,
 	"python.analysis.inlayHints.variableTypes": true,

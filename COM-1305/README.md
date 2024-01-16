@@ -9,10 +9,11 @@
 ### ส่วนขยาย
 
 -   ต้องใช้ [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
--   ต้องใช้ [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) <!-- -   แนะนำ [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) -->
--   แนะนำ [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
+-   ต้องใช้ [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+<!-- -   แนะนำ [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) -->
 -   แนะนำ [Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
 -   แนะนำ [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
+-   แนะนำ [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8)
 
 ### Windows
 
