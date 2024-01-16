@@ -23,27 +23,8 @@ print(Y)
 # output : ('Hello', 'Python', 'Hello', 'Python', 'Hello', 'Python')
 
 ```
-`11..py`<br>
-สร้าง: 16 ม.ค. 2567 เวลา 11:52<br>
-```py
-from importlib import import_module
-
-lib = import_module("11_lib")
-
-# รับปีที่ผู้ใช้ป้อนเข้ามา
-year = input("Enter a year: ")
-
-# แปลงปีเป็นตัวเลขไทย
-thai_year = "".join(lib.tp_thai_digits[int(digit)] for digit in year)
-print(f"Thai year: {thai_year}")
-
-# แปลงปีเป็นคำอ่านตัวเลขไทย
-thai_year_words = " ".join(lib.tp_digit_words[int(digit)] for digit in year)
-print(f"Thai year words: {thai_year_words}")
-
-```
-`11_lib.py`<br>
-สร้าง: 16 ม.ค. 2567 เวลา 11:52<br>
+`11.py`<br>
+สร้าง: 16 ม.ค. 2567 เวลา 11:56<br>
 ```py
 # ตัวเลขไทย
 tp_thai_digits = ("๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙")
@@ -61,6 +42,17 @@ tp_digit_words = (
     "แปด",
     "เก้า",
 )
+
+# รับปีที่ผู้ใช้ป้อนเข้ามา
+year = input("Enter a year: ")
+
+# แปลงปีเป็นตัวเลขไทย
+thai_year = "".join(tp_thai_digits[int(digit)] for digit in year)
+print(f"Thai year: {thai_year}")
+
+# แปลงปีเป็นคำอ่านตัวเลขไทย
+thai_year_words = " ".join(tp_digit_words[int(digit)] for digit in year)
+print(f"Thai year words: {thai_year_words}")
 
 ```
 `2.py`<br>
