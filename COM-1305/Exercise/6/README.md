@@ -13,48 +13,6 @@ for item in a:
 # True
 
 ```
-`10.py`<br>
-สร้าง: 16 ม.ค. 2567 เวลา 11:52<br>
-```py
-X = ("Hello", "Python")
-Y = X * 3
-print(Y)
-
-# output : ('Hello', 'Python', 'Hello', 'Python', 'Hello', 'Python')
-
-```
-`11.py`<br>
-สร้าง: 16 ม.ค. 2567 เวลา 11:56<br>
-```py
-# ตัวเลขไทย
-tp_thai_digits = ("๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙")
-
-# คำอ่านตัวเลขไทย
-tp_digit_words = (
-    "ศูนย์",
-    "หนึ่ง",
-    "สอง",
-    "สาม",
-    "สี่",
-    "ห้า",
-    "หก",
-    "เจ็ด",
-    "แปด",
-    "เก้า",
-)
-
-# รับปีที่ผู้ใช้ป้อนเข้ามา
-year = input("Enter a year: ")
-
-# แปลงปีเป็นตัวเลขไทย
-thai_year = "".join(tp_thai_digits[int(digit)] for digit in year)
-print(f"Thai year: {thai_year}")
-
-# แปลงปีเป็นคำอ่านตัวเลขไทย
-thai_year_words = " ".join(tp_digit_words[int(digit)] for digit in year)
-print(f"Thai year words: {thai_year_words}")
-
-```
 `2.py`<br>
 สร้าง: 16 ม.ค. 2567 เวลา 11:52<br>
 ```py
@@ -237,5 +195,47 @@ C = A + B
 print(C)
 
 # output: (10, 20, 30, 40, 50, 'a', 'b', 'c', 'd', 'e')
+
+```
+`10.py`<br>
+สร้าง: 16 ม.ค. 2567 เวลา 11:52<br>
+```py
+X = ("Hello", "Python")
+Y = X * 3
+print(Y)
+
+# output : ('Hello', 'Python', 'Hello', 'Python', 'Hello', 'Python')
+
+```
+`11.py`<br>
+สร้าง: 16 ม.ค. 2567 เวลา 11:56<br>
+```py
+# ตัวเลขไทย
+tp_thai_digits = ("๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙")
+
+# คำอ่านตัวเลขไทย
+tp_digit_words = (
+    "ศูนย์",
+    "หนึ่ง",
+    "สอง",
+    "สาม",
+    "สี่",
+    "ห้า",
+    "หก",
+    "เจ็ด",
+    "แปด",
+    "เก้า",
+)
+
+# รับปีที่ผู้ใช้ป้อนเข้ามา
+year = input("Enter a year: ")
+
+# แปลงปีเป็นตัวเลขไทย
+thai_year = "".join(tp_thai_digits[int(digit)] for digit in year)
+print(f"Thai year: {thai_year}")
+
+# แปลงปีเป็นคำอ่านตัวเลขไทย
+thai_year_words = " ".join(tp_digit_words[int(digit)] for digit in year)
+print(f"Thai year words: {thai_year_words}")
 
 ```
