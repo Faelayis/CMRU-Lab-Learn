@@ -8,6 +8,7 @@ import { get as utils_time, timeZone } from "./utils/date-time-format.js";
 import { get as utils_get } from "./utils/get.js";
 import { readJsonFile } from "./utils/read.js";
 import { remove as utils_remove } from "./utils/remove-lines.js";
+import { sortFiles } from "./utils/sort.js";
 
 /**
  * Generate README.md.
@@ -37,7 +38,13 @@ export default async function generateReadme(path: string) {
 					files: files.map((file) => file.path),
 				});
 
-			for await (const file of files) {
+			// files.sort((a, b) => {
+			// 	const aNumber = Number.parseInt(a.name, 10),
+			// 		bNumber = Number.parseInt(b.name, 10);
+			// 	return aNumber - bNumber;
+			// });
+
+			for await (const file of sortFiles(files)) {
 				const match = file.path.match(/\.([^.]+)$/);
 
 				if (match?.[1] && metedata.preview?.files?.includes(match[1] as never)) {

@@ -8,6 +8,7 @@ import { MeteData } from "./types/metedata.js";
 import { get as utils_time } from "./utils/date-time-format.js";
 import { get as utils_get } from "./utils/get.js";
 import { readJsonFile } from "./utils/read.js";
+import { sortFiles } from "./utils/sort.js";
 
 /**
  * Generate list.md with a table summarizing files in folders and subfolders.
@@ -37,7 +38,7 @@ export default async function generateList(path: string) {
 					files: files.map((file) => file.path),
 				});
 
-			for await (const file of files) {
+			for await (const file of sortFiles(files)) {
 				const match = file.path.match(/\.([^.]+)$/);
 
 				if (match?.[1] && metedata.preview?.files?.includes(match[1] as never)) {
