@@ -1,6 +1,6 @@
 `select.sql`<br>
 สร้าง: 22 ม.ค. 2567 เวลา 14:43<br>
-แก้ไขล่าสุด: เวลา 15:09<br>
+แก้ไขล่าสุด: เวลา 15:43<br>
 
 ```sql
 -- 1
@@ -28,7 +28,7 @@ SELECT d.IdProduct, SUM(d.Amount) AS TotalAmount, p.Price, SUM(d.Amount * p.Pric
 SELECT IdProduct, Sum(Amount) as Total FROM DetailOrder_461 GROUP BY IdProduct HAVING Sum(Amount);
 
 -- 9
-SELECT b.IdProduct, b.NameProduct, Sum(a.Amount) as Total FROM DetailOrder_461 a, Product_461 b WHERE a.IdProduct = b.IdProduct GROUP BY b.IdProduct HAVING Sum(a.Amount) > 100;
+SELECT b.IdBillorder, b.id_sup, s.name_sup FROM Billorder_461 AS b INNER JOIN Supplier_461 AS s ON b.id_sup = s.id_sup ORDER BY s.name_sup;
 
 -- 10
 SELECT * FROM Product_461 WHERE NameProduct LIKE '%80 g.%';
