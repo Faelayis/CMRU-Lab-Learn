@@ -1,6 +1,6 @@
 `init.ps1`<br>
 สร้าง: 20 พ.ย. 2566 เวลา 15:58<br>
-อัปเดต: 4 ธ.ค. 2566 เวลา 17:04<br>
+อัปเดต: 22 ม.ค. 2567 เวลา 15:09<br>
 ```ps1
 Set-Location C:\xampp\mysql\bin
 .\mysql.exe -u root -p
@@ -9,7 +9,7 @@ create database faelayis;
 use faelayis
 
 # Create Table
-create table supplier461 (
+create table Supplier_461 (
    id_sup char(5) not null,
    name_sup varchar(20),
    address varchar(50),
@@ -17,19 +17,18 @@ create table supplier461 (
 ) engine = myisam;
 
 # Insert Table
-insert into supplier461 values('SP001', 'Somjai Company', '120 Changphuak Chiangmai'),
+insert into Supplier_461 values('SP001', 'Somjai Company', '120 Changphuak Chiangmai'),
                        ('SP002', 'ABC Company', '50 Chotana road Chiangmai'),
                        ('SP003', 'Paper Service', '50 Intayonyot road Lamphun'),
                        ('SP004', 'ComTect', '33 Moo 3 T.Baanklan Lamphun'),
                        ('SP005', 'Parada Company', '102 T.Changphuak');
 
 # Show Table Data
-select * from supplier461;
+select * from Supplier_461;
 ```
 `schema.sql`<br>
 สร้าง: 20 พ.ย. 2566 เวลา 16:25<br>
-แก้ไขล่าสุด: เวลา 16:38<br>
-
+อัปเดต: 22 ม.ค. 2567 เวลา 15:09<br>
 ```sql
 -- Create database
 CREATE DATABASE faelayis;
@@ -38,7 +37,7 @@ CREATE DATABASE faelayis;
 USE faelayis;
 
 -- Create table
-CREATE TABLE supplier461 (
+CREATE TABLE Supplier_461 (
    id_sup CHAR(5) NOT NULL,
    name_sup VARCHAR(20),
    address VARCHAR(50),
@@ -46,7 +45,7 @@ CREATE TABLE supplier461 (
 ) ENGINE = MyISAM;
 
 -- Insert data into the table
-INSERT INTO supplier461 VALUES
+INSERT INTO Supplier_461 VALUES
    ('SP001', 'Somjai Company', '120 Changphuak Chiangmai'),
    ('SP002', 'ABC Company', '50 Chotana road Chiangmai'),
    ('SP003', 'Paper Service', '50 Intayonyot road Lamphun'),
@@ -54,6 +53,6 @@ INSERT INTO supplier461 VALUES
    ('SP005', 'Parada Company', '102 T.Changphuak');
 
 -- Show table data
-SELECT * FROM supplier461;
+SELECT * FROM Supplier_461;
 
 ```
