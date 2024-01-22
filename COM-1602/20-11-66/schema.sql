@@ -5,7 +5,7 @@ CREATE DATABASE faelayis;
 USE faelayis;
 
 -- Create table
-CREATE TABLE supplier461 (
+CREATE TABLE Supplier_461 (
    id_sup CHAR(5) NOT NULL,
    name_sup VARCHAR(20),
    address VARCHAR(50),
@@ -13,7 +13,7 @@ CREATE TABLE supplier461 (
 ) ENGINE = MyISAM;
 
 -- Insert data into the table
-INSERT INTO supplier461 VALUES
+INSERT INTO Supplier_461 VALUES
    ('SP001', 'Somjai Company', '120 Changphuak Chiangmai'),
    ('SP002', 'ABC Company', '50 Chotana road Chiangmai'),
    ('SP003', 'Paper Service', '50 Intayonyot road Lamphun'),
@@ -21,4 +21,4 @@ INSERT INTO supplier461 VALUES
    ('SP005', 'Parada Company', '102 T.Changphuak');
 
 -- Show table data
-SELECT * FROM supplier461;
+SELECT * FROM Supplier_461;
