@@ -237,6 +237,8 @@ print(dict1)
 ```
 `14.py`<br>
 สร้าง: 23 ม.ค. 2567 เวลา 11:12<br>
+แก้ไขล่าสุด: เวลา 11:27<br>
+
 ```py
 students = {
     525: "รวิพล ธูปทอง",
@@ -251,7 +253,7 @@ keys = list(students.keys())
 
 
 # Functions แสดงรหัสนักศึกษาและชื่อทุกคน
-def ShowAllStudent(*args):
+def ShowAllStudent(*args) -> None:
     """
     แสดงรายชื่อนักเรียนทั้งหมดหรือรายชื่อที่ระบุ (ถ้ามี) พร้อมรหัสนักเรียน
 
@@ -260,7 +262,7 @@ def ShowAllStudent(*args):
 
     """
 
-    def getIndex(key):
+    def getIndex(key) -> int:
         return list(students).index(key) + 1
 
     if args:
