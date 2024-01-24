@@ -1,8 +1,7 @@
 /* eslint-disable unicorn/prefer-top-level-await */
 import fg from "fast-glob";
 
-import generateList from "./generator-list.js";
-import generatorReadme from "./generator-readme.js";
+import generateReadme, { GeneratorType } from "./generator-readme.js";
 import { get as utils_get } from "./utils/get.js";
 
 (async () => {
@@ -12,7 +11,8 @@ import { get as utils_get } from "./utils/get.js";
 	});
 
 	for (const path of metedata) {
-		await generatorReadme(path);
-		await generateList(path);
+		for (const type of Object.values(GeneratorType)) {
+			await generateReadme(path, type);
+		}
 	}
 })();

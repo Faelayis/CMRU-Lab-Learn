@@ -3,10 +3,10 @@
 .idea/discord.xml
 
 # Dependency directories
-node_modules/
+**/node_modules/**
 
 # C/C++ Windows build output
-*.exe
+**.exe
 
 # Python virtual environment
 .venv
