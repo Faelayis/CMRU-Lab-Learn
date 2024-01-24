@@ -3,7 +3,7 @@ import * as fs from "node:fs/promises";
 import fg, { Entry } from "fast-glob";
 import gitDate from "git-date-extractor";
 
-import { ImagePreview } from "./markdown/image.js";
+import { ImageHeader, ImagePreview } from "./markdown/image.js";
 import { encodeFilePath } from "./markdown/string.js";
 import { MeteData } from "./types/metedata.js";
 import { get as utils_time, timeZone } from "./utils/date-time-format.js";
@@ -89,7 +89,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 			await fs.writeFile(`${path.split("/")[0]}/LIST.md`, listContent.sort().join("\n"));
 		} else if (type === GeneratorType.Readme) {
 			for (const [folder, markdownContent] of folderDataMap) {
-				await fs.writeFile(`${folder}/README.md`, markdownContent.join("")).then(() => {
+				await fs.writeFile(`${folder}/README.md`, await ImageHeader(markdownContent, folder)).then(() => {
 					console.info(`[Script]: Generator ${`${folder}/README.md`} Done.`);
 				});
 			}
