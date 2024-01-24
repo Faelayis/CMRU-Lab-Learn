@@ -1,3 +1,5 @@
+![Preview Image](./README.png)
+
 `billorder.sql`<br>
 สร้าง: 6 ธ.ค. 2566 เวลา 16:35<br>
 ```sql
