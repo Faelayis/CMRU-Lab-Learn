@@ -1,3 +1,17 @@
+`1.py`<br>
+สร้าง: 23 ม.ค. 2567 เวลา 11:12<br>
+```py
+txt = "The best things in life are free!"
+
+if "free" in txt:
+    print(("Yes, 'free' is present"))
+else:
+    print(("No, 'free' is not present"))
+
+# NOTE: Output
+# Yes, 'free' is present
+
+```
 `2.py`<br>
 สร้าง: 23 ม.ค. 2567 เวลา 11:12<br>
 ```py
@@ -108,20 +122,6 @@ print("Difference:", s1.difference(s2))
 # Union: {1, 2, 3, 4, 5, 6, 7, 8}
 # Intersection: {4, 5}
 # Difference: {1, 2, 3}
-
-```
-`1.py`<br>
-สร้าง: 23 ม.ค. 2567 เวลา 11:12<br>
-```py
-txt = "The best things in life are free!"
-
-if "free" in txt:
-    print(("Yes, 'free' is present"))
-else:
-    print(("No, 'free' is not present"))
-
-# NOTE: Output
-# Yes, 'free' is present
 
 ```
 `8.py`<br>

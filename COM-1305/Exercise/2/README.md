@@ -1,3 +1,11 @@
+`1.py`<br>
+สร้าง: 21 พ.ย. 2566 เวลา 11:10<br>
+```py
+grade = 3.75
+
+print("Grade = ", grade)
+
+```
 `1.2.py`<br>
 สร้าง: 21 พ.ย. 2566 เวลา 11:10<br>
 ```py
@@ -18,12 +26,12 @@ print(num2)
 print("%d + %d = %d" % (num1, num2, num1 + num2))
 
 ```
-`1.py`<br>
+`2.py`<br>
 สร้าง: 21 พ.ย. 2566 เวลา 11:10<br>
 ```py
-grade = 3.75
+text = " Hello... \n Python Programming"
 
-print("Grade = ", grade)
+print(text)
 
 ```
 `2.2.py`<br>
@@ -72,12 +80,13 @@ CMRU = cm + " " + r + " " + u
 print(CMRU)
 
 ```
-`2.py`<br>
+`3.py`<br>
 สร้าง: 21 พ.ย. 2566 เวลา 11:10<br>
 ```py
-text = " Hello... \n Python Programming"
-
-print(text)
+grade = input("Enter Grade :")
+section = input("Enter Section :")
+subject = input("Enter Subject :")
+avg = input("Enter avg :")
 
 ```
 `3.1.py`<br>
@@ -105,15 +114,6 @@ number1 = int(input("Enter Number 1 :"))
 number2 = int(input("Enter Number 2 :"))
 
 print(number1 + number2)
-
-```
-`3.py`<br>
-สร้าง: 21 พ.ย. 2566 เวลา 11:10<br>
-```py
-grade = input("Enter Grade :")
-section = input("Enter Section :")
-subject = input("Enter Subject :")
-avg = input("Enter avg :")
 
 ```
 `4.py`<br>
