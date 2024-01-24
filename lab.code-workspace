@@ -17,18 +17,21 @@
 			"path": "./setup"
 		},
 		{
-			"name": "การเขียนโปรแกรมภาษาคอมพิวเตอร์ [Python]",
+			"name": "[Python] การเขียนโปรแกรมภาษาคอมพิวเตอร์",
 			"path": "./COM-1305"
 		},
 		{
-			"name": "ระบบฐานข้อมูล 1 [SQL]",
-			"path": "./COM-1602"
+			"name": "[C] หลักการออกแบบและการเขียนโปรแกรม",
+			"path": "./COM-1308"
 		},
 		{
-			"name": "หลักการออกแบบและการเขียนโปรแกรม [C]",
-			"path": "./COM-1308"
+			"name": "[SQL] ระบบฐานข้อมูล 1",
+			"path": "./COM-1602"
 		}
 	],
+	"extensions": {
+		"recommendations": ["esbenp.prettier-vscode"]
+	},
 	"settings": {
 		"files.exclude": {
 			".github": true,
