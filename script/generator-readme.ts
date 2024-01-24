@@ -3,6 +3,7 @@ import * as fs from "node:fs/promises";
 import fg, { Entry } from "fast-glob";
 import gitDate from "git-date-extractor";
 
+import { ImagePreview } from "./markdown/image.js";
 import { encodeFilePath } from "./markdown/string.js";
 import { MeteData } from "./types/metedata.js";
 import { get as utils_time, timeZone } from "./utils/date-time-format.js";
@@ -72,7 +73,8 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 							metedata.preview?.remove?.enable && (metedata.preview?.remove?.lineremove || metedata.preview?.remove?.comment)
 								? utils_remove.lines(fileData, metedata.preview?.remove?.lineremove, metedata.preview?.remove?.comment)
 								: fileData;
-					folderDataMap.get(folder)!.push(`${header}\n\`\`\`${match[1]}\n${content}\n\`\`\`\n`);
+
+					folderDataMap.get(folder)!.push(`${header}\n${await ImagePreview(file, fs)}\`\`\`${match[1]}\n${content}\n\`\`\`\n`);
 				}
 			}
 		}
