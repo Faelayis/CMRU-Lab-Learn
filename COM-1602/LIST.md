@@ -7,6 +7,14 @@
 [detail_order.sql](04-12-66/detail_order.sql) | 6 ธ.ค. 2566 เวลา 16:35 | - 
 [product.sql](04-12-66/product.sql) | 6 ธ.ค. 2566 เวลา 16:35 | - 
 
+## 05-02-67
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[product.sql](05-02-67/product.sql) | 29 ม.ค. 2567 เวลา 16:33 | - 
+[product_app.sql](05-02-67/product_app.sql) | 29 ม.ค. 2567 เวลา 16:33 | - 
+[update-delete.sql](05-02-67/update-delete.sql) | 29 ม.ค. 2567 เวลา 16:33 | - 
+
 ## 20-11-66
 
 ชื่อ | สร้าง | แก้ไข
