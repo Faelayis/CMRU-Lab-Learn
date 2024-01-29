@@ -1,7 +1,7 @@
 `table.sql`<br>
 สร้าง: 29 ม.ค. 2567 เวลา 15:53<br>
 ```sql
--- 1 แสดงรายละเอียดการสร้างตารางสินค้า (Product) ด้วยคำสั่ง Show Create Table 
+-- 1 แสดงรายละเอียดการสร้างตารางสินค้า (Product) ด้วยคำสั่ง Show Create Table
 SHOW CREATE TABLE Product_461;
 
 -- 2 แก้ไขโครงสร้างตารางสินค้า (Product) โดยเปลี่ยน Field nameproduct  เป็น Varchar(35)
@@ -28,7 +28,7 @@ CREATE TABLE ProductCOPY1 SELECT * FROM Product_461 WHERE Price > 150;
 -- 9 คัดลอกตารางเฉพาะเรคคอร์ดที่มีรหัสสินค้าขึ้นต้นด้วย P ในตารางสินค้า (Product)   ไว้ตารางใหม่ชื่อ ProductCOPY2
 CREATE TABLE ProductCOPY2 SELECT * FROM Product_461 WHERE idproduct LIKE 'P%';
 
--- 10 แสดงข้อมูลทั้งหมดในตาราง ProductCOPY1 
+-- 10 แสดงข้อมูลทั้งหมดในตาราง ProductCOPY1
 SELECT * FROM ProductCOPY1;
 
 -- 11 แสดงโครงสร้างตาราง ProductCOPY1 ด้วยคำสั่ง Show Columns
@@ -37,13 +37,14 @@ SHOW COLUMNS FROM ProductCOPY1;
 -- 12 คัดลอกตารางทั้งหมดจากตาราง ProductCOPY1  เป็น ProductDEL
 CREATE TABLE ProductDEL LIKE ProductCOPY1;
 
--- 13 เปลี่ยนชื่อตาราง ProductDEL เป็น ProductDROP 
+-- 13 เปลี่ยนชื่อตาราง ProductDEL เป็น ProductDROP
 RENAME TABLE ProductDEL TO ProductDROP;
 
--- 14 ลบฟิลด์ NumStock ในตาราง ProductDROP 
+-- 14 ลบฟิลด์ NumStock ในตาราง ProductDROP
 ALTER TABLE ProductDROP DROP Numstock;
 
 -- 15 ลบตารางชื่อ ProductDROP
 DROP TABLE ProductDROP;
+
 
 ```
