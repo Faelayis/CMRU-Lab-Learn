@@ -1,5 +1,7 @@
 `table.sql`<br>
 สร้าง: 29 ม.ค. 2567 เวลา 15:53<br>
+แก้ไขล่าสุด: เวลา 16:20<br>
+
 ```sql
 -- 1 แสดงรายละเอียดการสร้างตารางสินค้า (Product) ด้วยคำสั่ง Show Create Table
 SHOW CREATE TABLE Product_461;
@@ -45,6 +47,5 @@ ALTER TABLE ProductDROP DROP Numstock;
 
 -- 15 ลบตารางชื่อ ProductDROP
 DROP TABLE ProductDROP;
-
 
 ```
