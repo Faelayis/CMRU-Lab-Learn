@@ -9,6 +9,7 @@ on:
             - "**/*.py"
             - "**/*.ps1"
             - "**/*.sql"
+            - "**/*.php"
 
 jobs:
     update:
