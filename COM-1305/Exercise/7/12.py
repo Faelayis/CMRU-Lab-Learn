@@ -2,15 +2,15 @@ options = {"A": "การบวกเลข", "S": "การลบเลข", 
 
 
 def add(number1, number2):
-    print(f"Result: {number1 + number2}")
+    return number1 + number2
 
 
 def sub(number1, number2):
-    print(f"Result: {number1 - number2}")
+    return number1 - number2
 
 
 def mul(number1, number2):
-    print(f"Result: {number1 * number2}")
+    return number1 * number2
 
 
 def showMenu():
@@ -43,10 +43,13 @@ choice = createInputChoice()
 
 
 if choice == "A":
-    add(*createInputNumber())
+    result = add(*createInputNumber())
+    print("Result: ", result)
 elif choice == "S":
-    sub(*createInputNumber())
+    result = sub(*createInputNumber())
+    print("Result: ", result)
 elif choice == "M":
-    mul(*createInputNumber())
+    result = mul(*createInputNumber())
+    print("Result: ", result)
 
 print("\n")
