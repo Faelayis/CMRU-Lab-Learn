@@ -168,6 +168,8 @@ print("The area is: ", triangle_area)
 ```
 `8.1.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 11:07<br>
+
 ```py
 def sumA(*n) -> None:
     a = 0
@@ -179,20 +181,34 @@ def sumA(*n) -> None:
 sumA(3, 4, 12, 1)
 sumA(10, 20, 30)
 
+# NOTE: Output
+# 20
+# 60
+
 ```
 `8.2.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 11:07<br>
+
 ```py
 def printkv(**kv):
     print(type(kv))
     print(kv)
 
 
-printkv(name="Oranuch", age=51, sex="หญิง")
+printkv(name="Manaka Mukaido", age=14, sex="หญิง")
+
+# NOTE: Output
+# <class 'dict'>
+# {'name': 'Manaka Mukaido', 'age': 14, 'sex': 'หญิง'}
 
 ```
 `9.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 11:07<br>
+
+
+![9.py](./9.png)
 ```py
 def sumA(*n):
     a = 0
@@ -206,10 +222,13 @@ result = sumA(*numbers)
 
 print("Sum: ", result)
 print("Average: ", result / len(numbers))
+print()
 
 ```
 `10.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 11:07<br>
+
 ```py
 def primeNum(num):
     if num % 2 == 0:
@@ -223,9 +242,17 @@ result = primeNum(x)
 
 print("ตัวเลขที่ป้อนเป็น ", result)
 
+# NOTE: Input
+# ป้อนตัวเลข : 14
+
+# NOTE: Output
+# ตัวเลขที่ป้อนเป็นเลขคู่
+
 ```
 `11.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 11:07<br>
+
 ```py
 def Tri(b, h):
     Area = 0.5 * b * h
@@ -237,5 +264,12 @@ y = int(input("ป้อนตัวเลข: "))
 result = Tri(x, y)
 
 print("พื้นที่สามเหลี่ยมเท่ากับ ", result)
+
+# NOTE: Input
+# ป้อนตัวเลข : 10
+# ป้อนตัวเลข : 50
+
+# NOTE: Output
+# พื้นที่สามเหลี่ยมเท่ากับ 250.0
 
 ```
