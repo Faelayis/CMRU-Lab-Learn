@@ -30,6 +30,8 @@ SumNumber(5)
 ```
 `3.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 12:01<br>
+
 
 ![3.py](./3.png)
 ```py
@@ -37,15 +39,15 @@ options = {"A": "การบวกเลข", "S": "การลบเลข", 
 
 
 def add(number1, number2):
-    return number1 + number2
+    print(f"Result: {number1 + number2}")
 
 
 def sub(number1, number2):
-    return number1 - number2
+    print(f"Result: {number1 - number2}")
 
 
 def mul(number1, number2):
-    return number1 * number2
+    print(f"Result: {number1 * number2}")
 
 
 def showMenu():
@@ -78,14 +80,11 @@ choice = createInputChoice()
 
 
 if choice == "A":
-    result = add(*createInputNumber())
-    print("Result: ", result)
+    add(*createInputNumber())
 elif choice == "S":
-    result = sub(*createInputNumber())
-    print("Result: ", result)
+    sub(*createInputNumber())
 elif choice == "M":
-    result = mul(*createInputNumber())
-    print("Result: ", result)
+    mul(*createInputNumber())
 
 print("\n")
 
@@ -271,5 +270,67 @@ print("พื้นที่สามเหลี่ยมเท่ากับ 
 
 # NOTE: Output
 # พื้นที่สามเหลี่ยมเท่ากับ 250.0
+
+```
+`12.py`<br>
+สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
+แก้ไขล่าสุด: เวลา 12:01<br>
+
+```py
+options = {"A": "การบวกเลข", "S": "การลบเลข", "M": "การคูณเลข"}
+
+
+def add(number1, number2):
+    return number1 + number2
+
+
+def sub(number1, number2):
+    return number1 - number2
+
+
+def mul(number1, number2):
+    return number1 * number2
+
+
+def showMenu():
+    print("*******************")
+    print("     Main Menu     ")
+    print("*******************")
+    for key, value in options.items():
+        print(f" {key} - {value}")
+    print("*******************\n")
+
+
+def createInputChoice():
+    choice = input("Enter your choice: ")
+
+    if choice.upper() in options:
+        print(f"You selected: {options[choice.upper()]}\n")
+        return choice.upper()
+    else:
+        print("Invalid choice! \n")
+
+
+def createInputNumber():
+    number1 = int(input("Enter First Number: "))
+    number2 = int(input("Enter Second Number: "))
+    return number1, number2
+
+
+showMenu()
+choice = createInputChoice()
+
+
+if choice == "A":
+    result = add(*createInputNumber())
+    print("Result: ", result)
+elif choice == "S":
+    result = sub(*createInputNumber())
+    print("Result: ", result)
+elif choice == "M":
+    result = mul(*createInputNumber())
+    print("Result: ", result)
+
+print("\n")
 
 ```
