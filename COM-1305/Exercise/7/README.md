@@ -205,7 +205,7 @@ printkv(name="Manaka Mukaido", age=14, sex="หญิง")
 ```
 `9.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 11:07<br>
+แก้ไขล่าสุด: เวลา 11:29<br>
 
 
 ![9.py](./9.png)
@@ -220,14 +220,14 @@ def sumA(*n):
 numbers = [int(num) for num in input("Enter numbers: ").split()]
 result = sumA(*numbers)
 
-print("Sum: ", result)
-print("Average: ", result / len(numbers))
+print("Sum:", result)
+print("Average:", result / len(numbers))
 print()
 
 ```
 `10.py`<br>
 สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 11:07<br>
+แก้ไขล่าสุด: เวลา 11:29<br>
 
 ```py
 def primeNum(num):
@@ -243,7 +243,7 @@ result = primeNum(x)
 print("ตัวเลขที่ป้อนเป็น ", result)
 
 # NOTE: Input
-# ป้อนตัวเลข : 14
+# ป้อนตัวเลขที่ : 14
 
 # NOTE: Output
 # ตัวเลขที่ป้อนเป็นเลขคู่
