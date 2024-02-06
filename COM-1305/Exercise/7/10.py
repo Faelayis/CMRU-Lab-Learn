@@ -11,7 +11,7 @@ result = primeNum(x)
 print("ตัวเลขที่ป้อนเป็น ", result)
 
 # NOTE: Input
-# ป้อนตัวเลข : 14
+# ป้อนตัวเลขที่ : 14
 
 # NOTE: Output
 # ตัวเลขที่ป้อนเป็นเลขคู่

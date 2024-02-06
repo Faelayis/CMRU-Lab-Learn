@@ -8,6 +8,6 @@ def sumA(*n):
 numbers = [int(num) for num in input("Enter numbers: ").split()]
 result = sumA(*numbers)
 
-print("Sum: ", result)
-print("Average: ", result / len(numbers))
+print("Sum:", result)
+print("Average:", result / len(numbers))
 print()
