@@ -10,3 +10,4 @@ result = sumA(*numbers)
 
 print("Sum: ", result)
 print("Average: ", result / len(numbers))
+print()
