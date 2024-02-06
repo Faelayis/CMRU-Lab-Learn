@@ -1,7 +1,3 @@
-# JetBrains IDE
-.idea/dictionaries/*
-.idea/discord.xml
-
 # Dependency directories
 **/node_modules/**
 
