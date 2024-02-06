@@ -11,3 +11,6 @@
 # Python virtual environment
 .venv
 .conda
+
+# Cache
+__pycache__
