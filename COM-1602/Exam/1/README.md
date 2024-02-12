@@ -1,5 +1,7 @@
 `index.sql`<br>
 สร้าง: 12 ก.พ. 2567 เวลา 16:50<br>
+แก้ไขล่าสุด: เวลา 17:13<br>
+
 ```sql
 -- 4
 ALTER TABLE product
@@ -38,15 +40,22 @@ SELECT *,
    (Quantity * UnitPrice) - (Quantity * UnitCost) AS Profit
 FROM sales_461;
 
---13
-SELECT product.Category,
+-- 13
+SELECT p.Category,
    sum(x.Profit) AS sumprofit
-FROM product_461 AS product
-   INNER JOIN profit_461 AS profit ON product.ProductID = profit.ProductID
-GROUP BY product.Category;
+FROM product_461 AS p
+   INNER JOIN profit_461 AS x ON p.ProductID = x.ProductID
+GROUP BY p.Category;
 
--- 12
--- ???
 -- 14
--- ???
+SELECT ResellerID,
+   sum(profit) AS sumprofit
+FROM profit_461
+GROUP BY ResellerID;
+
+-- 15
+SELECT Category,
+   COUNT(*) AS TotalProducts
+FROM product_461
+GROUP BY Category;
 ```
