@@ -8,6 +8,7 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnType": true
 	},
+	"eslint.enable": false,
 	"flake8.args": ["--ignore=E501"],
 	"isort.args": ["--profile", "black"],
 	"python.analysis.autoFormatStrings": true,
