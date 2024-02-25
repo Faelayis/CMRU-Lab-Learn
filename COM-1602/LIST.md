@@ -59,3 +59,9 @@
 ---| ----| ---
 [index.sql](Exam/1/index.sql) | 12 ก.พ. 2567 เวลา 16:50 | 12 ก.พ. 2567 เวลา 17:13
 [order.sql](Exam/1/order.sql) | 12 ก.พ. 2567 เวลา 17:22 | - 
+
+## Project/Details of work system
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[schema.sql](Project/Details%20of%20work%20system/schema.sql) | 25 ก.พ. 2567 เวลา 23:03 | - 
