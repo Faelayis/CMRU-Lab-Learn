@@ -80,6 +80,15 @@
 					},
 					"required": ["enable", "files"],
 					"type": "object"
+				},
+				"time_formats": {
+					"additionalProperties": false,
+					"properties": {
+						"folder": {
+							"type": "string"
+						}
+					},
+					"type": "object"
 				}
 			},
 			"required": ["$schema", "coursecode", "name"],

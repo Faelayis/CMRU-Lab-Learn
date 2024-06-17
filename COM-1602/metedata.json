@@ -7,5 +7,8 @@
 		"enable": true,
 		"files": ["sql", "ps1", "php"],
 		"list": true
+	},
+	"time_formats": {
+		"folder": "dd-mm-yy"
 	}
 }

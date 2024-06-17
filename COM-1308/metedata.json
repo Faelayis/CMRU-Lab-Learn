@@ -12,5 +12,8 @@
 			"enable": false,
 			"lineremove": ["printf(\"\\n\");", "return 0;"]
 		}
+	},
+	"time_formats": {
+		"folder": "dd-mm-yy"
 	}
 }

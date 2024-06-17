@@ -8,6 +8,9 @@ export interface MeteData {
 	name: string;
 	info?: string;
 	complete?: string;
+	time_formats?: {
+		folder?: string;
+	};
 	preview?: {
 		enable: boolean;
 		files: FileType[];
