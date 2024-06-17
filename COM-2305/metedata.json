@@ -1,0 +1,11 @@
+{
+	"$schema": "../schema/metedata.json",
+	"coursecode": "COM 2305-63",
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16401",
+	"name": "การเขียนโปรแกรมเว็บ",
+	"preview": {
+		"enable": false,
+		"files": [],
+		"list": false
+	}
+}

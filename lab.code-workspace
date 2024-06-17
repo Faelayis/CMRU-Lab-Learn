@@ -28,6 +28,10 @@
 			"name": "[SQL] ระบบฐานข้อมูล 1",
 			"path": "./COM-1602",
 		},
+		{
+			"name": "[?] การเขียนโปรแกรมเว็บ",
+			"path": "./COM-2305",
+		},
 	],
 	"extensions": {
 		"recommendations": ["esbenp.prettier-vscode"],
