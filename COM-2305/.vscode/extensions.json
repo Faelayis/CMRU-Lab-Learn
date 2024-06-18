@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"formulahendry.auto-rename-tag",
+		"formulahendry.auto-close-tag",
+		"Zignd.html-css-class-completion",
+		"ecmel.vscode-html-css",
+		"george-alisson.html-preview-vscode"
+	]
+}
