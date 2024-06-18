@@ -10,6 +10,7 @@ on:
             - "**/*.ps1"
             - "**/*.sql"
             - "**/*.php"
+            - "**/*.html"
 
 jobs:
     update:

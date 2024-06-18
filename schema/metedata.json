@@ -21,7 +21,7 @@
 			"type": "object"
 		},
 		"FileType": {
-			"enum": ["c", "py", "fprg", "ps1", "sql", "php"],
+			"enum": ["c", "py", "fprg", "ps1", "sql", "php", "html"],
 			"type": "string"
 		},
 		"MeteData": {
