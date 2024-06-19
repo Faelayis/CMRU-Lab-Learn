@@ -10,7 +10,7 @@
 		"preinstall": "npx only-allow pnpm",
 		"prettier": "prettier --write . --ignore-unknown",
 		"prettier:package-json": "pnpx prettier-package-json --write ./package.json --use-tabs false",
-		"script:run": "pnpm tsm ./script/index.ts",
+		"script:run": "node --import tsx script/index.ts",
 		"start": "pnpm run script:run"
 	},
 	"dependencies": {
@@ -18,7 +18,8 @@
 		"git-date-extractor": "4.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "20.14.2",
+		"@types/node": "20.14.5",
+		"tsx": "4.15.6",
 		"@typescript-eslint/eslint-plugin": "7.13.1",
 		"@typescript-eslint/parser": "7.13.1",
 		"eslint": "9.5.0",
@@ -32,7 +33,6 @@
 		"prettier": "3.3.2",
 		"prettier-plugin-sort-json": "4.0.0",
 		"tslib": "2.6.3",
-		"tsm": "2.3.0",
 		"typescript": "5.4.5"
 	},
 	"engines": {
