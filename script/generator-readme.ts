@@ -29,6 +29,8 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 	try {
 		const metedata = (await readJsonFile(path)) as MeteData;
 
+		if (!metedata.preview?.enable) return console.info(`[Script]: Preview is disable`);
+
 		console.info(`[Script]: Config metedata.json`, metedata);
 
 		const files = await fg([`${path.split("/")[0]}/**/*`], {
@@ -86,7 +88,10 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 				const folderHierarchy = folder.split("/").slice(1).join("/");
 				listContent.push(`\n## ${folderHierarchy}\n\nชื่อ | สร้าง | แก้ไข\n---| ----| ---\n${rows.join("\n")}`);
 			}
-			await fs.writeFile(`${path.split("/")[0]}/LIST.md`, listContent.sort().join("\n"));
+
+			if (listContent.length) {
+				await fs.writeFile(`${path.split("/")[0]}/LIST.md`, listContent.sort().join("\n"));
+			}
 		} else if (type === GeneratorType.Readme) {
 			for (const [folder, markdownContent] of folderDataMap) {
 				await fs.writeFile(`${folder}/README.md`, await ImageHeader(markdownContent, folder)).then(() => {

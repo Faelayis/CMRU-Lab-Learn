@@ -13,6 +13,7 @@ import { get as utils_get } from "./utils/get.js";
 	for (const path of metedata) {
 		for (const type of Object.values(GeneratorType)) {
 			await generateReadme(path, type);
+			console.log("[Script]: Done! \n");
 		}
 	}
 })();
