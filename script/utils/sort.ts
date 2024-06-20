@@ -1,6 +1,6 @@
 import { Entry } from "fast-glob";
 
-export function sortFiles(files: Entry[]): Entry[] {
+export async function sortFiles(files: Entry[]): Promise<Entry[]> {
 	files.sort((a, b) => {
 		const aBase = a.path.split("/").pop()?.split(".").slice(0, -1).join("."),
 			bBase = b.path.split("/").pop()?.split(".").slice(0, -1).join("."),

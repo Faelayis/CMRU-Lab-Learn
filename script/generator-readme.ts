@@ -46,7 +46,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 				files: files.map((file) => file.path),
 			});
 
-		for await (const file of sortFiles(files)) {
+		for await (const file of await sortFiles(files)) {
 			const match = file.path.match(/\.([^.]+)$/);
 
 			if (match?.[1] && metedata.preview?.files?.includes(match[1] as never)) {
