@@ -34,7 +34,7 @@ DocumentRoot "COM-2305"
 
 `app.js` <br>
 
-_ESM_
+**ESM**
 
 ```js
 import express from "express"; // นำเข้าโมดูล express, path, serve-index
@@ -56,7 +56,7 @@ app.listen(3000, () => {
 ```
 
 <details>
-<summary>ES6</summary>
+<summary><a style='font-weight: bold'>ES6</a></summary>
 
 ```js
 const express = require("express");
