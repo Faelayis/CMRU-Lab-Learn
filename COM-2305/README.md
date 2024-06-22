@@ -3,7 +3,7 @@
 ## การพัฒนา
 
 แนะนำ [VS Code](https://code.visualstudio.com) เพื่อพัฒนา<br>
-ต้องใช้ [XAMPP](./README.md#xampp) หรือ [NodeJS](./README.md#nodejs-expressjs)
+ต้องใช้ [XAMPP](./README.md#xampp) หรือ [NodeJS](./README.md#nodejs-expressjs) (ทางเลือก)
 
 ### ส่วนขยาย
 
@@ -32,23 +32,31 @@ DocumentRoot "COM-2305"
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
 -   ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
 
-`app.js` **ESM**
+`app.js` <br>
+
+_ESM_
 
 ```js
-import express from "express";
+import express from "express"; // นำเข้าโมดูล express, path, serve-index
 import path from "path";
 import serveIndex from "serve-index";
 
 const app = express();
 
+// กำหนดให้ express ใช้ static files จากโฟลเดอร์ปัจจุบัน
 app.use(express.static(path.resolve(__dirname, ".")));
+
+// กำหนดเส้นทางหลักให้ใช้ serveIndex แสดงรายการไฟล์ในโฟลเดอร์ปัจจุบัน
 app.use("/", serveIndex(path.resolve(__dirname, "."), { icons: true }));
+
+// เริ่มต้นเซิร์ฟเวอร์ให้ฟังที่พอร์ต 3000
 app.listen(3000, () => {
 	console.log("Server is running on http://localhost:3000");
 });
 ```
 
-`app.js` **ES6**
+<details>
+<summary>ES6</summary>
 
 ```js
 const express = require("express");
@@ -63,3 +71,5 @@ app.listen(3000, function () {
 	console.log("Server is running on http://localhost:3000");
 });
 ```
+
+</details>
