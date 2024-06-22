@@ -32,7 +32,16 @@ DocumentRoot "COM-2305"
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
 -   ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
 
-`app.js` <br>
+<ol>
+  <li>ติดตั้ง Node.js และ npm แล้วตรวจสอบว่า Node.js และ npm ติดตั้งแล้วโดยใช้คำสั่ง <code>node -v && npm -v</code>
+  </li>
+  <li>สร้างโปรเจกต์ใหม่ เปิดเทอร์มินัลหรือ Command Prompt แล้วสร้างโฟลเดอร์ใหม่สำหรับโปรเจกต์แล้วใช้คำสั้ง <code>npm init -y</code></li>
+  <li>ติดตั้ง dependencies ติดตั้ง Express และ serve-index ด้วย npm <code>npm install express serve-index</code></li>
+  <li>สร้างไฟล์ <a href="#appjs">app.js</a></li>
+  <li>เริ่มเซิร์ฟเวอร์ด้วยคำสั่ง <code>node app.js</code></li>
+</ol>
+
+#### `app.js` <br>
 
 ESM
 
