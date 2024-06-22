@@ -3,7 +3,7 @@
 ## การพัฒนา
 
 แนะนำ [VS Code](https://code.visualstudio.com) เพื่อพัฒนา<br>
-ต้องใช้ [XAMPP](./README.md#xampp) หรือ [NodeJS](./README.md#nodejs-expressjs) (ทางเลือก)
+ต้องใช้ [XAMPP](#xampp) หรือ [NodeJS](#nodejs-expressjs) (ทางเลือก)
 
 ### ส่วนขยาย
 
