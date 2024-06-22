@@ -22,7 +22,7 @@
 `xampp\apache\conf\httpd.conf`
 
 ```
-Listen 1111
+Listen 3000
 DocumentRoot "COM-2305"
 ```
 
@@ -32,7 +32,7 @@ DocumentRoot "COM-2305"
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
 -   ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
 
-`app.js`
+`app.js` **ESM**
 
 ```js
 import express from "express";
@@ -43,8 +43,23 @@ const app = express();
 
 app.use(express.static(path.resolve(__dirname, ".")));
 app.use("/", serveIndex(path.resolve(__dirname, "."), { icons: true }));
-
 app.listen(3000, () => {
+	console.log("Server is running on http://localhost:3000");
+});
+```
+
+`app.js` **ES6**
+
+```js
+const express = require("express");
+const path = require("path");
+const serveIndex = require("serve-index");
+
+const app = express();
+
+app.use(express.static(path.join(__dirname, ".")));
+app.use("/", serveIndex(path.join(__dirname, "."), { icons: true }));
+app.listen(3000, function () {
 	console.log("Server is running on http://localhost:3000");
 });
 ```
