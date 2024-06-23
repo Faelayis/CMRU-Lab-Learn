@@ -37,7 +37,7 @@ DocumentRoot "COM-2305"
   </li>
   <li>สร้างโปรเจกต์ใหม่ เปิดเทอร์มินัลหรือ Command Prompt แล้วสร้างโฟลเดอร์ใหม่สำหรับโปรเจกต์แล้วใช้คำสั้ง <code>npm init -y</code></li>
   <li>ติดตั้ง dependencies ติดตั้ง Express และ serve-index ด้วย npm <code>npm install express serve-index</code></li>
-  <li>สร้างไฟล์ <a href="#appjs">app.js</a></li>
+  <li>สร้างไฟล์ <a href="#appjs-">app.js</a></li>
   <li>เริ่มเซิร์ฟเวอร์ด้วยคำสั่ง <code>node app.js</code></li>
 </ol>
 
