@@ -12,19 +12,6 @@ for number in range(1, 11, 2):
     print(number)
 
 ```
-`4.3.py`<br>
-สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
-แก้ไขล่าสุด: เวลา 11:23<br>
-
-```py
-character = "n"
-
-while character != "y":
-    character = input("Enter y/n : ")
-
-print("Good bye")
-
-```
 `3.1.py`<br>
 สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
 ```py
@@ -71,6 +58,19 @@ i = 9
 while i > 0:
     i -= 1
     print("Happy Day")
+
+print("Good bye")
+
+```
+`4.3.py`<br>
+สร้าง: 19 ธ.ค. 2566 เวลา 11:09<br>
+แก้ไขล่าสุด: เวลา 11:23<br>
+
+```py
+character = "n"
+
+while character != "y":
+    character = input("Enter y/n : ")
 
 print("Good bye")
 

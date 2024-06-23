@@ -46,7 +46,6 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 				files: files.map((file) => file.path),
 			});
 
-		// Sorting files synchronously before proceeding with async tasks
 		const sortedFiles = sortFiles(files);
 
 		for (const file of sortedFiles) {
@@ -64,8 +63,8 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 
 				const fileDate = filesDate[file.path],
 					date = {
-						created: new Date(Number(fileDate.created) * 1000),
-						modified: new Date(Number(fileDate.modified) * 1000),
+						created: new Date(Number(fileDate.created) * 1000 ?? 0),
+						modified: new Date(Number(fileDate.modified) * 1000 ?? 0),
 					};
 
 				if (type === GeneratorType.List) {
