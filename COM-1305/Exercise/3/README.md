@@ -1,5 +1,5 @@
 `1..py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 try:
     x = int(input("Enter X : "))
@@ -12,7 +12,7 @@ except ValueError:
 
 ```
 `1.1.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 try:
     Score = int(input("Enter Score : "))
@@ -27,7 +27,7 @@ print("Good Bye")
 
 ```
 `2..py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 try:
     x = int(input("Enter X : "))
@@ -45,7 +45,7 @@ print("Good Bye")
 
 ```
 `2.1.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 try:
     Score = int(input("Enter Score : "))
@@ -60,7 +60,7 @@ except ValueError:
 
 ```
 `3.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 number = int(input("Enter an integer : "))
 
@@ -73,7 +73,7 @@ else:
 
 ```
 `4.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 def calculate(income):
     if income <= 5000:
@@ -107,7 +107,7 @@ print(f"รายได้สุทธิ: {net_income:.2f} บาท")
 
 ```
 `5.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 def getGrade(score):
     if score >= 80 & score <= 100:
@@ -135,7 +135,7 @@ except ValueError:
 
 ```
 `6.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 def add(x, y):
     return x + y
@@ -171,7 +171,7 @@ else:
 
 ```
 `7.py`<br>
-สร้าง: 28 พ.ย. 2566 เวลา 11:15<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```py
 try:
     Score = int(input("Enter Score : "))

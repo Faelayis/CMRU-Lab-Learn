@@ -1,7 +1,7 @@
 ![Preview Image](./README.png)
 
 `billorder.sql`<br>
-สร้าง: 6 ธ.ค. 2566 เวลา 16:35<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```sql
 -- Create Billorder Table
 CREATE TABLE Billorder_461 (
@@ -21,7 +21,7 @@ SELECT *
 FROM Billorder_461;
 ```
 `detail_order.sql`<br>
-สร้าง: 6 ธ.ค. 2566 เวลา 16:35<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```sql
 -- Create DetailOrder Table
 CREATE TABLE DetailOrder_461 (
@@ -47,7 +47,7 @@ SELECT *
 FROM DetailOrder_461;
 ```
 `product.sql`<br>
-สร้าง: 6 ธ.ค. 2566 เวลา 16:35<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```sql
 -- Create Product Table
 CREATE TABLE Product_461 (

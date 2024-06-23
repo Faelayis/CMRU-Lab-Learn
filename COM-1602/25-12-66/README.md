@@ -1,5 +1,5 @@
 `data.sql`<br>
-สร้าง: 25 ธ.ค. 2566 เวลา 14:35<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```sql
 -- Insert into Books
 INSERT INTO Books (id, title, author, publisher, volume, call_number) VALUES
@@ -41,7 +41,7 @@ INSERT INTO FineRate (rate_id, book_limit, fine_rate) VALUES
 ('A1', 7, 5);
 ```
 `schema.sql`<br>
-สร้าง: 25 ธ.ค. 2566 เวลา 14:35<br>
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```sql
 -- Create database
 CREATE DATABASE faelayis;

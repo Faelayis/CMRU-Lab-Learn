@@ -1,7 +1,5 @@
 `select.sql`<br>
-สร้าง: 22 ม.ค. 2567 เวลา 14:43<br>
-แก้ไขล่าสุด: เวลา 15:43<br>
-
+สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
 ```sql
 -- 1
 SELECT * FROM Supplier_461 WHERE address LIKE '%Changphuak%';
