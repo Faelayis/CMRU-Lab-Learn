@@ -1,6 +1,6 @@
 import { Entry } from "fast-glob";
 
-export function sortFiles(files: Entry[]): Entry[] {
+export async function sortFiles(files: Entry[]): Promise<Entry[]> {
 	const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base", usage: "sort" });
 	const sortedFiles = [...files];
 
@@ -18,10 +18,7 @@ export function sortFiles(files: Entry[]): Entry[] {
 			return aNumber - bNumber;
 		}
 
-		const aDecimal = aParts[1] || "";
-		const bDecimal = bParts[1] || "";
-
-		return collator.compare(aDecimal, bDecimal);
+		return collator.compare(aBase, bBase);
 	});
 
 	return sortedFiles;

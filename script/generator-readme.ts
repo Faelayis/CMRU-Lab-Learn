@@ -46,7 +46,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 				files: files.map((file) => file.path),
 			});
 
-		const sortedFiles = sortFiles(files);
+		const sortedFiles = await sortFiles(files);
 
 		for (const file of sortedFiles) {
 			const match = file.path.match(/\.([^.]+)$/);
