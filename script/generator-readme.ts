@@ -61,8 +61,8 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 
 				const fileDate = filesDate[file.path],
 					date = {
-						created: new Date(Number(fileDate.created) * 1000),
-						modified: new Date(Number(fileDate.modified) * 1000),
+						created: new Date(Number(fileDate?.created) * 1000 || 0),
+						modified: new Date(Number(fileDate?.modified) * 1000 || 0),
 					};
 
 				if (type === GeneratorType.List) {
@@ -84,7 +84,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 		if (type === GeneratorType.List) {
 			const listContent = [];
 
-			for (const [folder, rows] of folderDataMap) {
+			for (const [folder, rows] of Array.from(folderDataMap.entries()).sort()) {
 				const folderHierarchy = folder.split("/").slice(1).join("/");
 				listContent.push(`\n## ${folderHierarchy}\n\nชื่อ | สร้าง | แก้ไข\n---| ----| ---\n${rows.join("\n")}`);
 			}
