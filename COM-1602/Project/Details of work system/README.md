@@ -1,5 +1,5 @@
 `schema.sql`<br>
-สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
+สร้าง: 25 ก.พ. 2567 เวลา 23:03<br>
 ```sql
 CREATE TABLE `Reservation`(
    `QueueNumber` INT NOT NULL,

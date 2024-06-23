@@ -1,5 +1,5 @@
 `product.sql`<br>
-สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
+สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
 ```sql
 CREATE TABLE products (
    product_code VARCHAR(10),
@@ -12,7 +12,7 @@ VALUES ('C01', 'Water Color'  ,  50),
        ('C02', 'Color Pencils', 120);
 ```
 `product_app.sql`<br>
-สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
+สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
 ```sql
 CREATE TABLE products (
    product_code VARCHAR(10),
@@ -28,7 +28,7 @@ VALUES ('C01', 'Water Color Art', 250),
        ('C05', 'Black Color'    ,  50);
 ```
 `update-delete.sql`<br>
-สร้าง: 23 มิ.ย. 2567 เวลา 12:39<br>
+สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
 ```sql
 
 ```
