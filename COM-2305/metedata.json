@@ -4,7 +4,7 @@
 	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16401",
 	"name": "การเขียนโปรแกรมเว็บ",
 	"preview": {
-		"enable": false,
+		"enable": true,
 		"files": ["html"],
 		"list": false
 	},
