@@ -29,7 +29,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 	try {
 		const metedata = (await readJsonFile(path)) as MeteData;
 
-		if (!metedata.preview?.enable) return console.info(`[Script]: Preview is disable`);
+		if (!metedata.preview?.enable) return console.info(`[Script]: Preview is disabled`);
 
 		console.info(`[Script]: Config metedata.json`, metedata);
 
@@ -46,7 +46,10 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 				files: files.map((file) => file.path),
 			});
 
-		for await (const file of await sortFiles(files)) {
+		// Sorting files synchronously before proceeding with async tasks
+		const sortedFiles = sortFiles(files);
+
+		for (const file of sortedFiles) {
 			const match = file.path.match(/\.([^.]+)$/);
 
 			if (match?.[1] && metedata.preview?.files?.includes(match[1] as never)) {
@@ -61,8 +64,8 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 
 				const fileDate = filesDate[file.path],
 					date = {
-						created: new Date(Number(fileDate?.created) * 1000 || 0),
-						modified: new Date(Number(fileDate?.modified) * 1000 || 0),
+						created: new Date(Number(fileDate.created) * 1000),
+						modified: new Date(Number(fileDate.modified) * 1000),
 					};
 
 				if (type === GeneratorType.List) {
