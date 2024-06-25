@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import serveIndex from "serve-index";
 
-const ignore = [".vscode", "index.ts", "node_modules", "package.json", "pnpm-lock.yaml", "README.md"];
+const ignore = [".vscode", "node_modules", "package.json"];
 const app = express();
 
 app.use(express.static(path.resolve(__dirname, ".")));
@@ -14,7 +14,9 @@ app.use(
 			if (ignore.includes(filename)) {
 				return false;
 			}
-
+			if (["md", "ts", "yaml"].includes(filename?.split(".")[1])) {
+				return false;
+			}
 			return true;
 		},
 	}),
