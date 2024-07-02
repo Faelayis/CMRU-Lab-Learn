@@ -14,6 +14,9 @@ importers:
       serve-index:
         specifier: 1.9.1
         version: 1.9.1
+      sphp:
+        specifier: 0.6.3
+        version: 0.6.3
     devDependencies:
       '@types/express':
         specifier: 4.17.21
@@ -301,6 +304,9 @@ packages:
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
     engines: {node: '>= 0.4'}
+
+  sphp@0.6.3:
+    resolution: {integrity: sha512-rB/3K4iClf2gIrqH1kO6p2jmIkAeGaL0QbcTz7nKuswdZuDgeP4/XtzqfHkE0+2UOTk5NFRtt9f/gVujY+KtWw==}
 
   statuses@1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
@@ -674,6 +680,8 @@ snapshots:
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
       object-inspect: 1.13.1
+
+  sphp@0.6.3: {}
 
   statuses@1.5.0: {}
 

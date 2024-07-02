@@ -12,6 +12,7 @@
 -   แนะนำ [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
 -   แนะนำ [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
 -   แนะนำ [HTML Preview](https://marketplace.visualstudio.com/items?itemName=george-alisson.html-preview-vscode)
+-   แนะนำ [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 
 ### การกำหนดค่า
 
@@ -31,6 +32,7 @@ DocumentRoot "COM-2305"
 -   ต้องใช้ [NodeJS](https://nodejs.org/en) เวอร์ชัน 18 หรือมากกว่า
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
 -   ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
+-   ต้องใช้ [sphp](https://www.npmjs.com/package/sphp) และ [PHP Engine](https://www.php.net/downloads.php)
 
 <ol>
   <li>ติดตั้ง Node.js และ npm แล้วตรวจสอบว่า Node.js และ npm ติดตั้งแล้วโดยใช้คำสั่ง <code>node -v && npm -v</code>
@@ -49,14 +51,18 @@ ESM
 import express from "express"; // นำเข้าโมดูล express, path, serve-index
 import path from "path";
 import serveIndex from "serve-index";
+import sphp from "sphp";
 
 const app = express();
+const path_resolve = path.resolve(__dirname, ".");
 
-// กำหนดให้ express ใช้ static files จากโฟลเดอร์ปัจจุบัน
-app.use(express.static(path.resolve(__dirname, ".")));
+// กำหนดให้ express และ sphp ใช้ static files จากโฟลเดอร์ปัจจุบัน
+// และกำหนด PHP server เพื่อให้มีจำนวน การทำงาน ขั้นต่ำที่ 10 และสูงสุดที่ 20 ในการจัดการการทำงานของเว็บแอปพลิเคชัน PHP ที่มีการใช้งานหนักหรือมีการเข้าถึงพร้อมกันมากๆ
+app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
+app.use(express.static(path_resolve));
 
 // กำหนดเส้นทางหลักให้ใช้ serveIndex แสดงรายการไฟล์ในโฟลเดอร์ปัจจุบัน
-app.use("/", serveIndex(path.resolve(__dirname, "."), { icons: true }));
+app.use("/", serveIndex(path_resolve), { icons: true });
 
 // เริ่มต้นเซิร์ฟเวอร์ให้ฟังที่พอร์ต 3000
 app.listen(3000, () => {
@@ -71,11 +77,14 @@ app.listen(3000, () => {
 const express = require("express");
 const path = require("path");
 const serveIndex = require("serve-index");
+const sphp = require("sphp");
 
 const app = express();
+const path_resolve = path.join(__dirname, ".");
 
-app.use(express.static(path.join(__dirname, ".")));
-app.use("/", serveIndex(path.join(__dirname, "."), { icons: true }));
+app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
+app.use(express.static(path_resolve));
+app.use("/", serveIndex(path_resolve, { icons: true }));
 app.listen(3000, function () {
 	console.log("Server is running on http://localhost:3000");
 });
