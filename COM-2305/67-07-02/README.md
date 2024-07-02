@@ -1,0 +1,41 @@
+`form.html`<br>
+สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+```html
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>form</title>
+	</head>
+	<body>
+		<div>
+			<form method="post">
+				ชื่อ-สกุล <input type="text" name="name" required />
+				<br />
+				เพศ
+				<input type="radio" name="sex" id="" value="M" /> ชาย <input type="radio" name="sex" id="" value="F" /> หญิง
+				<br />
+				เบอร์โทรศัพท์ <input type="tel" name="tel" /> <br />
+				อายุ <input type="number" name="age" /><br />
+				วันเกิด <input type="date" name="birthday" /><br />
+				email <input type="email" name="email" /><br />
+				upload file <input type="file" name="file" /><br />
+				งานที่สนใจ <br />
+				<input type="checkbox" name="c1" id="" /> เล่นเกม <br />
+				<input type="checkbox" name="c2" id="" /> เล่นหน้าคุณ <br />
+				ข้อเสนอแนะ <br />
+				<textarea name="comment" id="" cols="30" rows="10">Hello Worlds</textarea> <br />
+				จังหวัด
+				<select name="p">
+					<option value="cr">เชียงใหม่</option>
+					<option value="cn">เชียงราย</option>
+				</select>
+				<br />
+				<button type="reset">reset</button>
+				<button type="submit">submit</button>
+			</form>
+		</div>
+	</body>
+</html>
+
+```
