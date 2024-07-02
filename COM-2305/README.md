@@ -45,36 +45,8 @@ DocumentRoot "COM-2305"
 
 #### `app.js` <br>
 
-ESM
-
 ```js
-import express from "express"; // นำเข้าโมดูล express, path, serve-index
-import path from "path";
-import serveIndex from "serve-index";
-import sphp from "sphp";
-
-const app = express();
-const path_resolve = path.resolve(__dirname, ".");
-
-// กำหนดให้ express และ sphp ใช้ static files จากโฟลเดอร์ปัจจุบัน
-// และกำหนด PHP server เพื่อให้มีจำนวน การทำงาน ขั้นต่ำที่ 10 และสูงสุดที่ 20 ในการจัดการการทำงานของเว็บแอปพลิเคชัน PHP ที่มีการใช้งานหนักหรือมีการเข้าถึงพร้อมกันมากๆ
-app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
-app.use(express.static(path_resolve));
-
-// กำหนดเส้นทางหลักให้ใช้ serveIndex แสดงรายการไฟล์ในโฟลเดอร์ปัจจุบัน
-app.use("/", serveIndex(path_resolve), { icons: true });
-
-// เริ่มต้นเซิร์ฟเวอร์ให้ฟังที่พอร์ต 3000
-app.listen(3000, () => {
-	console.log("Server is running on http://localhost:3000");
-});
-```
-
-<details>
-<summary>ES6</summary>
-
-```js
-const express = require("express");
+const express = require("express"); // นำเข้าโมดูล express, path, serve-index, sphp
 const path = require("path");
 const serveIndex = require("serve-index");
 const sphp = require("sphp");
@@ -82,10 +54,36 @@ const sphp = require("sphp");
 const app = express();
 const path_resolve = path.join(__dirname, ".");
 
+// กำหนดให้ express และ sphp ใช้ static files จากโฟลเดอร์ปัจจุบัน
+// และกำหนด PHP server เพื่อให้มีจำนวน การทำงาน ขั้นต่ำที่ 10 และสูงสุดที่ 20 ในการจัดการการทำงานของเว็บแอปพลิเคชัน PHP ที่มีการใช้งานหนักหรือมีการเข้าถึงพร้อมกันมากๆ
 app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
 app.use(express.static(path_resolve));
+
+// กำหนดเส้นทางหลักให้ใช้ serveIndex แสดงรายการไฟล์ในโฟลเดอร์ปัจจุบัน
 app.use("/", serveIndex(path_resolve, { icons: true }));
+
+// เริ่มต้นเซิร์ฟเวอร์ให้ฟังที่พอร์ต 3000
 app.listen(3000, function () {
+	console.log("Server is running on http://localhost:3000");
+});
+```
+
+<details>
+<summary>ESM</summary>
+
+```js
+import express from "express";
+import path from "path";
+import serveIndex from "serve-index";
+import sphp from "sphp";
+
+const app = express();
+const path_resolve = path.resolve(__dirname, ".");
+
+app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
+app.use(express.static(path_resolve));
+app.use("/", serveIndex(path_resolve), { icons: true });
+app.listen(3000, () => {
 	console.log("Server is running on http://localhost:3000");
 });
 ```
