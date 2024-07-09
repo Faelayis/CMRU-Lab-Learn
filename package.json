@@ -20,8 +20,8 @@
 	"devDependencies": {
 		"@types/node": "20.14.10",
 		"tsx": "4.16.2",
-		"@typescript-eslint/eslint-plugin": "7.15.0",
-		"@typescript-eslint/parser": "7.15.0",
+		"@typescript-eslint/eslint-plugin": "7.16.0",
+		"@typescript-eslint/parser": "7.16.0",
 		"eslint": "9.6.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-import": "2.29.1",
@@ -91,7 +91,7 @@
 			}
 		]
 	},
-	"packageManager": "pnpm@9.4.0",
+	"packageManager": "pnpm@9.5.0",
 	"prettier": {
 		"bracketSameLine": true,
 		"bracketSpacing": true,
