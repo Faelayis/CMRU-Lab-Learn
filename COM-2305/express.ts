@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import serveIndex from "serve-index";
 import sphp from "sphp";
+import ip from "ip";
 
 const ignore = [".vscode", "node_modules", "package.json"],
 	app = express(),
@@ -28,5 +29,8 @@ app.use(
 sphp.setOptions({ minSpareWorkers: 10, maxWorkers: 20 });
 
 app.listen(3000, () => {
-	console.log("Server is running on http://localhost:3000");
+	console.log(`Server running at
+   > Local:    http://localhost:3000
+   > Network:  http://${ip.address()}:3000
+   \n`);
 });
