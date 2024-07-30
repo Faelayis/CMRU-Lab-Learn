@@ -158,12 +158,7 @@ echo "ผลหาร:  $result <br>";
 ```
 `4.php`<br>
 สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 30 ก.ค. 2567 เวลา 17:20<br>
-```php
-
-```
-`5.php`<br>
-สร้าง: 30 ก.ค. 2567 เวลา 17:20<br>
+อัปเดต: 30 ก.ค. 2567 เวลา 20:23<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -171,22 +166,87 @@ echo "ผลหาร:  $result <br>";
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> แบบฝึกหัดข้อที่5 </title>
 </head>
 
 <body>
-
-   <form method="post" action="upload.php" enctype="multipart/form-data">
-
-      อัปโหลดรูปภาพ <input type="file" id="pict" name="pict"> <br><br>
-      <input type="submit" name="bt" value="ตกลง">
-
+   <form method="post" action="">
+      <label for="radius">กรอกค่ารัศมี:</label>
+      <input type="number" name="radius" id="radius" required>
+      <br>
+      <input type="radio" name="calculation" value="area" required>
+      <label for="area">คำนวณพื้นที่</label>
+      <br>
+      <input type="radio" name="calculation" value="perimeter" required>
+      <label for="perimeter">คำนวณเส้นรอบวง</label>
+      <br>
+      <input type="submit" name="submit">
    </form>
-   <hr>
 
+   <?php
+   function calculateCircleArea($radius) {
+      return 3.14 * $radius * $radius;
+   }
+
+   function calculateCirclePerimeter($radius) {
+      return 2 * 3.14 * $radius;
+   }
+
+   if (isset($_POST["submit"])) {
+      $radius = $_POST["radius"];
+      $calculation = $_POST["calculation"];
+
+      echo "<br>";
+      if ($calculation == "area") {
+         $result = calculateCircleArea($radius);
+         echo "พื้นที่ของวงกลมคือ: " . $result;
+      } elseif ($calculation == "perimeter") {
+         $result = calculateCirclePerimeter($radius);
+         echo "เส้นรอบวงของวงกลมคือ: " . $result;
+      }
+   }
+   ?>
 </body>
 
 </html>
+```
+`5..php`<br>
+สร้าง: 30 ก.ค. 2567 เวลา 17:20<br>
+แก้ไขล่าสุด: เวลา 20:24<br>
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+   <form method="post" action="./5.API.php" enctype="multipart/form-data">
+      อัปโหลดรูปภาพ <input type="file" name="pict"> <br>
+      <input type="submit" name="submit" value="ตกลง">
+   </form>
+</body>
+
+</html>
+```
+`5.API.php`<br>
+สร้าง: 30 ก.ค. 2567 เวลา 20:23<br>
+```php
+<?php
+if (isset($_POST['submit'])) {
+   $img = $_FILES['pict']['name'];
+   $tmp = $_FILES['pict']['tmp_name'];
+
+   echo "ชื่อไฟล์ $img <br>";
+   echo "ตำแหน่งที่เก็บ $tmp <br>";
+   echo $tmp;
+
+   move_uploaded_file($tmp, "image/" . $img);
+   echo '<img sre= "image/">';
+}
+
 ```
 `6..php`<br>
 สร้าง: 30 ก.ค. 2567 เวลา 17:20<br>
