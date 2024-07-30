@@ -54,11 +54,13 @@ const sphp = require("sphp");
 const app = express();
 const path_resolve = path.join(__dirname, ".");
 
+// กำหนดให้ แปลงข้อมูล JSON ที่ส่งมากับ request และ แปลงข้อมูลที่ส่งมากับ request ในรูปแบบ URL-encoded
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // กำหนดให้ express และ sphp ใช้ static files จากโฟลเดอร์ปัจจุบัน
+app.use(sphp.express(path_resolve));
 // และกำหนด PHP server เพื่อให้มีจำนวน การทำงาน ขั้นต่ำที่ 10 และสูงสุดที่ 20 ในการจัดการการทำงานของเว็บแอปพลิเคชัน PHP ที่มีการใช้งานหนักหรือมีการเข้าถึงพร้อมกันมากๆ
-app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
+sphp.setOptions({ minSpareWorkers: 10, maxWorkers: 20 });
 app.use(express.static(path_resolve));
 
 // กำหนดเส้นทางหลักให้ใช้ serveIndex แสดงรายการไฟล์ในโฟลเดอร์ปัจจุบัน
@@ -84,7 +86,8 @@ const path_resolve = path.resolve(__dirname, ".");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
+app.use(sphp.express(path_resolve));
+sphp.setOptions({ minSpareWorkers: 10, maxWorkers: 20 });
 app.use(express.static(path_resolve));
 app.use("/", serveIndex(path_resolve), { icons: true });
 app.listen(3000, () => {

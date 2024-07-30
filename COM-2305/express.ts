@@ -10,7 +10,7 @@ const ignore = [".vscode", "node_modules", "package.json"],
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
+app.use(sphp.express(path_resolve));
 app.use(express.static(path_resolve));
 app.use(
 	"/",
@@ -28,7 +28,11 @@ app.use(
 	}),
 );
 
-sphp.setOptions({ minSpareWorkers: 10, maxWorkers: 20 });
+sphp.setOptions({
+	minSpareWorkers: 10,
+	maxWorkers: 20,
+	preLoadScript: "./sphp/pre_load.php",
+});
 
 app.listen(3000, () => {
 	console.log(`Server running at
