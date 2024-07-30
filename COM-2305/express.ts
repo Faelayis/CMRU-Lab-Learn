@@ -8,6 +8,8 @@ const ignore = [".vscode", "node_modules", "package.json"],
 	app = express(),
 	path_resolve = path.resolve(__dirname, ".");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
 app.use(express.static(path_resolve));
 app.use(

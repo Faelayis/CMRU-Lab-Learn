@@ -54,6 +54,8 @@ const sphp = require("sphp");
 const app = express();
 const path_resolve = path.join(__dirname, ".");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 // กำหนดให้ express และ sphp ใช้ static files จากโฟลเดอร์ปัจจุบัน
 // และกำหนด PHP server เพื่อให้มีจำนวน การทำงาน ขั้นต่ำที่ 10 และสูงสุดที่ 20 ในการจัดการการทำงานของเว็บแอปพลิเคชัน PHP ที่มีการใช้งานหนักหรือมีการเข้าถึงพร้อมกันมากๆ
 app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
@@ -80,6 +82,8 @@ import sphp from "sphp";
 const app = express();
 const path_resolve = path.resolve(__dirname, ".");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(sphp.express(path_resolve, { minSpareWorkers: 10, maxWorkers: 20 }));
 app.use(express.static(path_resolve));
 app.use("/", serveIndex(path_resolve), { icons: true });
