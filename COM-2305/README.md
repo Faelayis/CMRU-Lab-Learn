@@ -18,6 +18,9 @@
 
 ### XAMPP
 
+<details>
+<summary>เลิกใช้</summary>
+
 -   ต้องใช้ [XAMPP](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/xampp-windows-x64-8.2.12-0-VS16-installer.exe/download) เวอร์ชัน 8.2.X หรือมากกว่า
 
 `xampp\apache\conf\httpd.conf`
@@ -26,6 +29,8 @@
 Listen 3000
 DocumentRoot "COM-2305"
 ```
+
+</details>
 
 ### NodeJS (Express.js)
 
