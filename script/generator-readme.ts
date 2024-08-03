@@ -62,9 +62,11 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 				console.info("[Script]: Reading " + file.name);
 
 				const fileDate = filesDate[file.path],
+					createdTimestamp = Number(fileDate.created) * 1000,
+					modifiedTimestamp = Number(fileDate.modified) * 1000,
 					date = {
-						created: new Date(Number(fileDate.created) * 1000 ?? 0),
-						modified: new Date(Number(fileDate.modified) * 1000 ?? 0),
+						created: new Date(createdTimestamp || 0),
+						modified: new Date(modifiedTimestamp || 0),
 					};
 
 				if (type === GeneratorType.List) {
@@ -86,12 +88,12 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 		if (type === GeneratorType.List) {
 			const listContent = [];
 
-			for (const [folder, rows] of Array.from(folderDataMap.entries()).sort()) {
+			for (const [folder, rows] of [...folderDataMap.entries()].sort()) {
 				const folderHierarchy = folder.split("/").slice(1).join("/");
 				listContent.push(`\n## ${folderHierarchy}\n\nชื่อ | สร้าง | แก้ไข\n---| ----| ---\n${rows.join("\n")}`);
 			}
 
-			if (listContent.length) {
+			if (listContent.length > 0) {
 				await fs.writeFile(`${path.split("/")[0]}/LIST.md`, listContent.sort().join("\n"));
 			}
 		} else if (type === GeneratorType.Readme) {
