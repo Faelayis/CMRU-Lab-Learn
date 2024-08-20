@@ -18,11 +18,11 @@
 		"git-date-extractor": "4.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "22.1.0",
-		"tsx": "4.16.5",
-		"@typescript-eslint/eslint-plugin": "7.18.0",
-		"@typescript-eslint/parser": "7.18.0",
-		"eslint": "8.56.0",
+		"@types/node": "22.4.1",
+		"tsx": "4.17.0",
+		"@typescript-eslint/eslint-plugin": "8.2.0",
+		"@typescript-eslint/parser": "8.2.0",
+		"eslint": "8",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-import": "2.29.1",
 		"eslint-plugin-prettier": "5.2.1",
@@ -88,10 +88,19 @@
 					"typescript-sort-keys/interface": "warn",
 					"typescript-sort-keys/string-enum": "warn"
 				}
+			},
+			{
+				"files": [
+					"./COM-2305/**/*.js"
+				],
+				"env": {
+					"es6": true,
+					"browser": true
+				}
 			}
 		]
 	},
-	"packageManager": "pnpm@9.6.0",
+	"packageManager": "pnpm@9.7.1",
 	"prettier": {
 		"bracketSameLine": true,
 		"bracketSpacing": true,

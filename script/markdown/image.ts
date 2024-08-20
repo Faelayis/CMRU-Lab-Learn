@@ -1,8 +1,9 @@
 import * as fs from "node:fs/promises";
-import { basename, dirname, extname, join } from "node:path";
+import path from "node:path";
 
 import type { Entry } from "fast-glob";
 
+const { basename, dirname, extname, join } = path;
 const imageExtensions = [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg", ".webp"];
 
 export async function ImageHeader(markdownContent: string[], folder: string): Promise<string> {
@@ -16,7 +17,7 @@ export async function ImageHeader(markdownContent: string[], folder: string): Pr
 			readmeContent = `![Preview Image](${imagePath.replace(folder, ".")})\n\n` + readmeContent;
 			break;
 		} catch {
-			undefined;
+			/* empty */
 		}
 	}
 
@@ -35,7 +36,7 @@ export async function ImagePreview(file: Entry, fileSystem: typeof fs) {
 			imagePreview = `\n![${file.name}](./${imageName})\n`;
 			break;
 		} catch {
-			undefined;
+			/* empty */
 		}
 	}
 
