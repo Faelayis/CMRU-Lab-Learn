@@ -1,0 +1,62 @@
+{
+	"application": {
+		"dpi_aware": true,
+		"single_instance_guid": ""
+	},
+	"chrome": {
+		"cache_path": "webcache",
+		"command_line_switches": {},
+		"context_menu": {
+			"devtools": true,
+			"enable_menu": true,
+			"navigation": true,
+			"open_in_external_browser": true,
+			"print": true,
+			"view_source": true
+		},
+		"devtools_F12": true,
+		"enable_downloads": true,
+		"external_drag": true,
+		"external_navigation": true,
+		"log_file": "debug.log",
+		"log_severity": "default",
+		"reload_page_F5": true,
+		"remote_debugging_port": 0
+	},
+	"debugging": {
+		"log_file": "debug.log",
+		"log_level": "DEBUG4",
+		"show_console": false,
+		"subprocess_show_console": false
+	},
+	"main_window": {
+		"always_on_top": false,
+		"center_on_screen": true,
+		"default_size": [1200, 700],
+		"disable_maximize_button": false,
+		"icon": "",
+		"maximum_size": [0, 0],
+		"minimize_to_tray": false,
+		"minimize_to_tray_message": "Minimized to tray",
+		"minimum_size": [640, 480],
+		"start_fullscreen": false,
+		"start_maximized": false,
+		"title": "PHP Desktop (COM-2305)"
+	},
+	"popup_window": {
+		"center_relative_to_parent": true,
+		"default_size": [800, 600],
+		"fixed_title": "",
+		"icon": ""
+	},
+	"web_server": {
+		"404_handler": "/pretty-urls.php",
+		"cgi_extensions": ["php"],
+		"cgi_interpreter": "php/php-cgi.exe",
+		"cgi_temp_dir": "",
+		"hide_files": [".vscode", "node_modules", "pnpm-lock.yaml", "package.json", "express.ts", "*.md"],
+		"index_files": ["index.html", "index.php"],
+		"listen_on": ["127.0.0.1", 0],
+		"www_directory": "../"
+	}
+}

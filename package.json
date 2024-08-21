@@ -52,6 +52,9 @@
 			"eslint:recommended",
 			"prettier"
 		],
+		"ignorePatterns": [
+			"./COM-2305/phpdesktop"
+		],
 		"plugins": [
 			"import",
 			"simple-import-sort",

@@ -3,7 +3,7 @@
 ## การพัฒนา
 
 แนะนำ [VS Code](https://code.visualstudio.com) เพื่อพัฒนา<br>
-ต้องใช้ [XAMPP](#xampp) หรือ [NodeJS](#nodejs-expressjs) (ทางเลือก)
+ต้องใช้ [XAMPP](#xampp) หรือ [PHP Desktop](https://github.com/cztomczak/phpdesktop) และ [NodeJS](#nodejs-expressjs) (ทางเลือก)
 
 ### ส่วนขยาย
 
@@ -33,6 +33,12 @@ DocumentRoot "COM-2305"
 </details>
 
 ### NodeJS (Express.js)
+
+<!-- prettier-ignore -->
+> [!WARNING]
+> ***พบปัญหา***
+> เมื่อคุณใช้ฟังก์ชัน setcookie() หรือ $_SESSION หลายครั้งภายในสคริปต์เดียวกัน
+> PHP จะส่งเฉพาะที่กำหนดในบรรทัดสุดท้ายไปยังเบราว์เซอร์เท่านั้น
 
 -   ต้องใช้ [NodeJS](https://nodejs.org/en) เวอร์ชัน 18 หรือมากกว่า
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
