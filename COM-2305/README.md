@@ -5,6 +5,11 @@
 แนะนำ [VS Code](https://code.visualstudio.com) เพื่อพัฒนา<br>
 ต้องใช้ [XAMPP](#xampp) หรือ [PHP Desktop](https://github.com/cztomczak/phpdesktop) และ [NodeJS](#nodejs-expressjs) (ทางเลือก)
 
+<!-- prettier-ignore -->
+> [!TIP]
+> **แนะนำ**
+> PHP Desktop ง่ายต่อการพัฒนาอย่างมาก
+
 ### ส่วนขยาย
 
 -   แนะนำ [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
@@ -18,8 +23,13 @@
 
 ### XAMPP
 
-<details>
-<summary>เลิกใช้</summary>
+<!-- prettier-ignore -->
+> [!CAUTION]
+> **เลิกใช้**
+> ไม่แนะนำเนื่องจากการตั้งค่าที่เสียเวลา
+
+<!-- <details>
+<summary>รายละเอียด</summary>
 
 -   ต้องใช้ [XAMPP](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/xampp-windows-x64-8.2.12-0-VS16-installer.exe/download) เวอร์ชัน 8.2.X หรือมากกว่า
 
@@ -30,15 +40,15 @@ Listen 3000
 DocumentRoot "COM-2305"
 ```
 
-</details>
+</details> -->
 
 ### NodeJS (Express.js)
 
 <!-- prettier-ignore -->
 > [!WARNING]
-> ***พบปัญหา***
-> เมื่อคุณใช้ฟังก์ชัน setcookie() หรือ $_SESSION หลายครั้งภายในสคริปต์เดียวกัน
-> PHP จะส่งเฉพาะที่กำหนดในบรรทัดสุดท้ายไปยังเบราว์เซอร์เท่านั้น
+> **พบปัญหา**
+> เมื่อคุณใช้ฟังก์ชัน `setcookie()` หรือ `$_SESSION` หลายครั้งภายในสคริปต์เดียวกัน <br>
+> *PHP* จะส่งเฉพาะที่กำหนดในบรรทัดสุดท้ายไปยังเบราว์เซอร์เท่านั้น
 
 -   ต้องใช้ [NodeJS](https://nodejs.org/en) เวอร์ชัน 18 หรือมากกว่า
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
