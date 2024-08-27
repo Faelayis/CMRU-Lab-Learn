@@ -113,6 +113,30 @@
 [6..php](Exercise/5/6..php) | 30 ก.ค. 2567 เวลา 17:20 | - 
 [6.API.php](Exercise/5/6.API.php) | 30 ก.ค. 2567 เวลา 17:20 | - 
 
+## Exercise/6/cookie
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[login.php](Exercise/6/cookie/login.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+[logout.php](Exercise/6/cookie/logout.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+[setcookie.php](Exercise/6/cookie/setcookie.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+[welcome.php](Exercise/6/cookie/welcome.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+
+## Exercise/6/login
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[index.php](Exercise/6/login/index.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+
+## Exercise/6/session
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[login.php](Exercise/6/session/login.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+[logout.php](Exercise/6/session/logout.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+[session.php](Exercise/6/session/session.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+[welcome.php](Exercise/6/session/welcome.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
+
 ## sphp
 
 ชื่อ | สร้าง | แก้ไข
