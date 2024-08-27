@@ -46,6 +46,12 @@
 [rand.php](67-07-23/rand.php) | 23 ก.ค. 2567 เวลา 16:42 | - 
 [round.php](67-07-23/round.php) | 23 ก.ค. 2567 เวลา 16:42 | - 
 
+## 67-08-27
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[index.php](67-08-27/index.php) | 27 ส.ค. 2567 เวลา 15:47 | 27 ส.ค. 2567 เวลา 15:51
+
 ## Exercise/1
 
 ชื่อ | สร้าง | แก้ไข
@@ -121,12 +127,6 @@
 [logout.php](Exercise/6/cookie/logout.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
 [setcookie.php](Exercise/6/cookie/setcookie.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
 [welcome.php](Exercise/6/cookie/welcome.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
-
-## Exercise/6/login
-
-ชื่อ | สร้าง | แก้ไข
----| ----| ---
-[index.php](Exercise/6/login/index.php) | 27 ส.ค. 2567 เวลา 15:47 | - 
 
 ## Exercise/6/session
 
