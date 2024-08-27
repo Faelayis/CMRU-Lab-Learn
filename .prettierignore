@@ -10,3 +10,6 @@ pnpm-lock.yaml
 # script update content
 */LIST.md
 */*/**/*.md
+
+# PHP Desktop
+COM-2305/phpdesktop/*
