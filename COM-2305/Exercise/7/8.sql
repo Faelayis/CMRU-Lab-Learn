@@ -1,0 +1,3 @@
+DROP TABLE faculty;
+
+SHOW TABLES;

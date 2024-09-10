@@ -1,0 +1,5 @@
+SHOW TABLES;
+
+DESCRIBE student;
+
+DESCRIBE faculty;

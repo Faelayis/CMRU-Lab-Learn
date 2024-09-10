@@ -1,0 +1,3 @@
+USE myproject;
+
+SHOW TABLES;

@@ -1,0 +1,1 @@
+CREATE TABLE student (Student_id VARCHAR(10) PRIMARY KEY, Student_name VARCHAR(50), Student_surname VARCHAR(50), Student_tel VARCHAR(10), Fac_id INT(3), FOREIGN KEY (Fac_id) REFERENCES faculty (Fac_id));
