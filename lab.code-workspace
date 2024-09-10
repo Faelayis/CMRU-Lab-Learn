@@ -51,6 +51,7 @@
 			"linesBetweenQueries": 2,
 			"reservedWordCase": "upper",
 		},
+		"prettier.documentSelectors": ["**/*.sql"],
 		"editor.inlayHints.enabled": "on",
 	},
 }

@@ -19,12 +19,12 @@
 	},
 	"devDependencies": {
 		"@types/node": "22.4.1",
-		"tsx": "4.17.0",
 		"@typescript-eslint/eslint-plugin": "8.2.0",
 		"@typescript-eslint/parser": "8.2.0",
 		"eslint": "8",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-import": "2.29.1",
+		"prettier-plugin-sql": "0.18.1",
 		"eslint-plugin-prettier": "5.2.1",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"eslint-plugin-sort-destructure-keys": "2.0.0",
@@ -33,6 +33,7 @@
 		"prettier": "3.3.3",
 		"prettier-plugin-sort-json": "4.0.0",
 		"tslib": "2.6.3",
+		"tsx": "4.17.0",
 		"typescript": "5.5.4"
 	},
 	"engines": {
@@ -121,6 +122,22 @@
 						"prettier-plugin-sort-json"
 					],
 					"jsonRecursiveSort": true
+				}
+			},
+			{
+				"files": [
+					"*.sql"
+				],
+				"options": {
+					"denseOperators": false,
+					"indentStyle": "standard",
+					"functionCase": "upper",
+					"linesBetweenQueries": 1,
+					"expressionWidth": 180,
+					"newlineBeforeSemicolon": false,
+					"plugins": [
+						"prettier-plugin-sql"
+					]
 				}
 			}
 		]

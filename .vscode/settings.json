@@ -11,5 +11,6 @@
 	"files.exclude": {
 		"**/*.exe": true,
 		"**/node_modules": true
-	}
+	},
+	"prettier.documentSelectors": ["**/*.sql"]
 }
