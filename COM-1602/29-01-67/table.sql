@@ -1,5 +1,6 @@
 -- 1 แสดงรายละเอียดการสร้างตารางสินค้า (Product) ด้วยคำสั่ง Show Create Table
-SHOW CREATE TABLE Product_461;
+SHOW
+CREATE TABLE Product_461;
 
 -- 2 แก้ไขโครงสร้างตารางสินค้า (Product) โดยเปลี่ยน Field nameproduct  เป็น Varchar(35)
 ALTER TABLE Product_461 MODIFY nameproduct VARCHAR(35);
@@ -17,19 +18,42 @@ DESCRIBE Product_461;
 CREATE TABLE ProductBAK LIKE Product_461;
 
 -- 7 คัดลอกตารางเฉพาะโครงสร้างตารางสินค้า (Product) ไปไว้ตารางใหม่ชื่อ ProductSTRU
-CREATE TABLE ProductSTRU SELECT * FROM Product_461 WHERE 1 = 0;
+CREATE TABLE ProductSTRU
+SELECT
+	*
+FROM
+	Product_461
+WHERE
+	1 = 0;
 
 -- 8 คัดลอกตารางเฉพาะเรคคอร์ดที่มีราคาสินค้า (Price) มากกว่า 150 บาท ในตารางสินค้า (Product)   ไว้ตารางใหม่ชื่อ ProductCOPY1
-CREATE TABLE ProductCOPY1 SELECT * FROM Product_461 WHERE Price > 150;
+CREATE TABLE ProductCOPY1
+SELECT
+	*
+FROM
+	Product_461
+WHERE
+	Price > 150;
 
 -- 9 คัดลอกตารางเฉพาะเรคคอร์ดที่มีรหัสสินค้าขึ้นต้นด้วย P ในตารางสินค้า (Product)   ไว้ตารางใหม่ชื่อ ProductCOPY2
-CREATE TABLE ProductCOPY2 SELECT * FROM Product_461 WHERE idproduct LIKE 'P%';
+CREATE TABLE ProductCOPY2
+SELECT
+	*
+FROM
+	Product_461
+WHERE
+	idproduct LIKE 'P%';
 
 -- 10 แสดงข้อมูลทั้งหมดในตาราง ProductCOPY1
-SELECT * FROM ProductCOPY1;
+SELECT
+	*
+FROM
+	ProductCOPY1;
 
 -- 11 แสดงโครงสร้างตาราง ProductCOPY1 ด้วยคำสั่ง Show Columns
-SHOW COLUMNS FROM ProductCOPY1;
+SHOW COLUMNS
+FROM
+	ProductCOPY1;
 
 -- 12 คัดลอกตารางทั้งหมดจากตาราง ProductCOPY1  เป็น ProductDEL
 CREATE TABLE ProductDEL LIKE ProductCOPY1;
@@ -38,7 +62,8 @@ CREATE TABLE ProductDEL LIKE ProductCOPY1;
 RENAME TABLE ProductDEL TO ProductDROP;
 
 -- 14 ลบฟิลด์ NumStock ในตาราง ProductDROP
-ALTER TABLE ProductDROP DROP Numstock;
+ALTER TABLE ProductDROP
+DROP Numstock;
 
 -- 15 ลบตารางชื่อ ProductDROP
 DROP TABLE ProductDROP;
