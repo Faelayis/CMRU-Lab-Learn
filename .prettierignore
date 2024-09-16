@@ -13,3 +13,7 @@ pnpm-lock.yaml
 
 # PHP Desktop
 COM-2305/phpdesktop/*
+
+# sql
+COM-1602/Exam/1/order.sql
+COM-2305/67-09-16/database.sql
