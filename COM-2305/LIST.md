@@ -52,6 +52,37 @@
 ---| ----| ---
 [index.php](67-08-27/index.php) | 27 ส.ค. 2567 เวลา 15:47 | 27 ส.ค. 2567 เวลา 15:51
 
+## 67-09-16
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[database.sql](67-09-16/database.sql) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[index.html](67-09-16/index.html) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[script.js](67-09-16/script.js) | 17 ก.ย. 2567 เวลา 01:33 | - 
+
+## 67-09-16/functions
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[previous_page.php](67-09-16/functions/previous_page.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+
+## 67-09-16/php/faculty
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[add.php](67-09-16/php/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[delete.php](67-09-16/php/faculty/delete.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[get.php](67-09-16/php/faculty/get.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[table.php](67-09-16/php/faculty/table.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+
+## 67-09-16/sidebar/faculty
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[add.php](67-09-16/sidebar/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[report.php](67-09-16/sidebar/faculty/report.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[search.php](67-09-16/sidebar/faculty/search.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+
 ## Exam/67-09-03
 
 ชื่อ | สร้าง | แก้ไข
@@ -163,6 +194,13 @@
 [15.sql](Exercise/7/15.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
 [16.sql](Exercise/7/16.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
 [17.sql](Exercise/7/17.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
+
+## Exercise/8
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[3.php](Exercise/8/3.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[connected_database.php](Exercise/8/connected_database.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
 
 ## sphp
 
