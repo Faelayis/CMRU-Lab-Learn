@@ -42,6 +42,8 @@
 			"COM-*": true,
 			"Script": true,
 			"node_modules": true,
+         "LIST.md": true,
+			"*/**/README.md": true,
 		},
 		"editor.tabSize": 3,
 		"editor.useTabStops": true,
