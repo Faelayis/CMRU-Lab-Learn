@@ -57,8 +57,8 @@
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
 [database.sql](67-09-16/database.sql) | 17 ก.ย. 2567 เวลา 01:33 | - 
-[index.html](67-09-16/index.html) | 17 ก.ย. 2567 เวลา 01:33 | - 
-[script.js](67-09-16/script.js) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[index.html](67-09-16/index.html) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
+[script.js](67-09-16/script.js) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
 
 ## 67-09-16/functions
 
@@ -70,9 +70,9 @@
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[add.php](67-09-16/php/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
-[delete.php](67-09-16/php/faculty/delete.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
-[get.php](67-09-16/php/faculty/get.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[add.php](67-09-16/php/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
+[delete.php](67-09-16/php/faculty/delete.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
+[get.php](67-09-16/php/faculty/get.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
 [table.php](67-09-16/php/faculty/table.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
 
 ## 67-09-16/sidebar/faculty
@@ -80,7 +80,7 @@
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
 [add.php](67-09-16/sidebar/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
-[report.php](67-09-16/sidebar/faculty/report.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[report.php](67-09-16/sidebar/faculty/report.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
 [search.php](67-09-16/sidebar/faculty/search.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
 
 ## Exam/67-09-03
@@ -180,7 +180,7 @@
 ---| ----| ---
 [2.sql](Exercise/7/2.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
 [3.sql](Exercise/7/3.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
-[4.sql](Exercise/7/4.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
+[4.sql](Exercise/7/4.sql) | 10 ก.ย. 2567 เวลา 16:55 | 18 ก.ย. 2567 เวลา 21:12
 [5.sql](Exercise/7/5.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
 [6.sql](Exercise/7/6.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
 [7.sql](Exercise/7/7.sql) | 10 ก.ย. 2567 เวลา 16:55 | - 
@@ -199,7 +199,7 @@
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[3.php](Exercise/8/3.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[3.php](Exercise/8/3.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
 [connected_database.php](Exercise/8/connected_database.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
 
 ## sphp

@@ -12,8 +12,10 @@ CREATE DATABASE myproject;
 ```
 `4.sql`<br>
 สร้าง: 10 ก.ย. 2567 เวลา 16:55<br>
+อัปเดต: 18 ก.ย. 2567 เวลา 21:12<br>
 ```sql
 DROP DATABASE myproject;
+
 ```
 `5.sql`<br>
 สร้าง: 10 ก.ย. 2567 เวลา 16:55<br>

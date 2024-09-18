@@ -1,73 +1,75 @@
 `add.php`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
+อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
 ```php
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   include("../../../Exercise/8/connected_database.php");
+if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
+include("../../../Exercise/8/connected_database.php");
 
-   $fac_id = $_POST['id'];
-   $fac_name = $_POST['name'];
+$faculty_id = $_POST['id'];
+$faculty_name = $_POST['name'];
 
-   $sql = "INSERT INTO faculty (Fac_id, Fac_name) VALUES (?, ?)";
-   $stmt = mysqli_prepare($db, $sql);
-   mysqli_stmt_bind_param($stmt, "is", $fac_id, $fac_name);
+$query = "INSERT INTO faculty (Fac_id, Fac_name) VALUES (?, ?)";
+$stmt = mysqli_prepare($db, $query);
 
-   if (mysqli_stmt_execute($stmt)) {
-      include("../../functions/previous_page.php");
-   } else {
-      switch (mysqli_errno($db)) {
-         case '1062':
-            include("../../functions/previous_page.php");
-            break;
+mysqli_stmt_bind_param($stmt, "is", $faculty_id, $faculty_name);
 
-         default:
-            echo "Error: " . $sql . "<br>" . mysqli_error($db);
-            break;
-      }
+if (mysqli_stmt_execute($stmt)) {
+   include("../../functions/previous_page.php");
+} else {
+   switch (mysqli_errno($db)) {
+      case '1062':
+         include("../../functions/previous_page.php");
+         break;
+      default:
+         echo "Error: " . $query . "<br>" . mysqli_error($db);
+         break;
    }
-
-   mysqli_stmt_close($stmt);
-   mysqli_close($db);
 }
+
+mysqli_stmt_close($stmt);
+mysqli_close($db);
 
 ```
 `delete.php`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
+อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
 ```php
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   include("../../../Exercise/8/connected_database.php");
+if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
+include("../../../Exercise/8/connected_database.php");
 
-   $fac_id = $_POST['Fac_id'];
-   $sql = "DELETE FROM faculty WHERE Fac_id = ?";
+$faculty_id = $_POST['Fac_id'];
+$query = "DELETE FROM faculty WHERE Fac_id = ?";
 
-   if ($stmt = mysqli_prepare($db, $sql)) {
-      mysqli_stmt_bind_param($stmt, "i", $fac_id);
+if ($stmt = mysqli_prepare($db, $query)) {
+   mysqli_stmt_bind_param($stmt, "i", $faculty_id);
 
-      if (mysqli_stmt_execute($stmt)) {
-         header("Location: " . $_SERVER['HTTP_REFERER']);
-         exit();
-      } else {
-         echo "Error deleting record: " . mysqli_error($db);
-      }
-
-      mysqli_stmt_close($stmt);
+   if (mysqli_stmt_execute($stmt)) {
+      header("Location: " . $_SERVER['HTTP_REFERER']);
+      exit();
    } else {
-      echo "Error preparing statement: " . mysqli_error($db);
+      echo "Error deleting record: " . mysqli_error($db);
    }
-
-   mysqli_close($db);
+} else {
+   echo "Error preparing statement: " . mysqli_error($db);
 }
+
+mysqli_stmt_close($stmt);
+mysqli_close($db);
 
 ```
 `get.php`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
+อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
 ```php
 <?php
 include("../../../Exercise/8/connected_database.php");
 
 $query = "SELECT Fac_id, Fac_name FROM faculty";
 $result = mysqli_query($db, $query);
+
+mysqli_close($db);
 
 ```
 `table.php`<br>

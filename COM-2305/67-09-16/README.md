@@ -80,6 +80,7 @@ COMMIT;
 ```
 `index.html`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
+อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -109,10 +110,10 @@ COMMIT;
 			<div class="flex-1 p-4" id="main-content">
 				<!-- <header class="mb-4">
 					<h1 class="text-2xl font-bold">Hello World</h1>
-				</header> -->
-				<!-- <main>
-            <p>content</p>
-         </main> -->
+				</header>
+				<main>
+					<p>content</p>
+				</main> -->
 			</div>
 		</div>
 	</body>
@@ -121,9 +122,8 @@ COMMIT;
 ```
 `script.js`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
+อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
 ```js
-// @ts-nocheck
-
 document.addEventListener("DOMContentLoaded", function () {
 	const links = document.querySelectorAll(".sidebar-link");
 	const mainContent = document.getElementById("main-content");
@@ -133,16 +133,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	links.forEach((link) => {
-		link.addEventListener("click", function (e) {
-			e.preventDefault();
+		link.addEventListener("click", function (event) {
+			event.preventDefault();
 			const url = this.getAttribute("href");
 
 			if (url === "") {
-				return (mainContent.innerHTML = "<p>404 Not Found</p>");
+				return (mainContent.innerHTML = "<p>Error 404 Not Found</p>");
 			}
 
 			localStorage.setItem("lastUrl", url);
-
 			loadContent(url);
 		});
 	});
