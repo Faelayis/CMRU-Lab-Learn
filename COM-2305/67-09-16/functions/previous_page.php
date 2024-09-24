@@ -1,3 +1,5 @@
 <?php
-header("Location: " . $_SERVER['HTTP_REFERER']);
-exit();
+function previousPage() {
+   header("Location: " . $_SERVER['HTTP_REFERER']);
+   exit();
+}
