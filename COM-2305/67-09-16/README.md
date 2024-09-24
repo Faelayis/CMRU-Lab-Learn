@@ -80,7 +80,7 @@ COMMIT;
 ```
 `index.html`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
+อัปเดต: 24 ก.ย. 2567 เวลา 17:27<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -88,7 +88,14 @@ COMMIT;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans" rel="stylesheet" />
 		<script src="./script.js"></script>
+		<script src="./functions/editFaculty.js"></script>
+		<style>
+			body {
+				font-family: "Noto Sans", sans-serif;
+			}
+		</style>
 	</head>
 
 	<body class="bg-gray-900 text-white">
@@ -97,8 +104,8 @@ COMMIT;
 			<div class="w-64 bg-gray-800 p-4">
 				<h2 class="text-xl font-bold mb-4">คณะวิชา</h2>
 				<ul>
-					<li class="mb-2"><a href="" class="block p-2 rounded hover:bg-gray-700 sidebar-link">Search</a></li>
-					<li class="mb-2"><a href="./sidebar/faculty/add.php" class="block p-2 rounded hover:bg-gray-700 sidebar-link">Add</a></li>
+					<li class="mb-2"><a href="./sidebar/faculty/search.php" class="block p-2 rounded hover:bg-gray-700 sidebar-link">Search</a></li>
+					<li class="mb-2"><a href="./sidebar/faculty/add.php" class="block p-2 rounded hover:bg-gray-700 sidebar-link">Add/Edit</a></li>
 					<li class="mb-2"><a href="./sidebar/faculty/report.php" class="block p-2 rounded hover:bg-gray-700 sidebar-link">Report</a></li>
 				</ul>
 				<h3 class="text-lg font-semibold mt-4 mb-2">Test</h3>
@@ -122,7 +129,7 @@ COMMIT;
 ```
 `script.js`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
+อัปเดต: 24 ก.ย. 2567 เวลา 17:27<br>
 ```js
 document.addEventListener("DOMContentLoaded", function () {
 	const links = document.querySelectorAll(".sidebar-link");
@@ -136,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		link.addEventListener("click", function (event) {
 			event.preventDefault();
 			const url = this.getAttribute("href");
+			console.info(`Loading :${url}`);
 
 			if (url === "") {
 				return (mainContent.innerHTML = "<p>Error 404 Not Found</p>");
@@ -147,7 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	function loadContent(url) {
-		fetch(url)
+		const searchParams = new URLSearchParams(window.location.search);
+		const fullUrl = `${url}?${searchParams.toString()}`;
+
+		fetch(fullUrl)
 			.then((response) => response.text())
 			.then((data) => {
 				mainContent.innerHTML = data;

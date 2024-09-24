@@ -57,31 +57,34 @@
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
 [database.sql](67-09-16/database.sql) | 17 ก.ย. 2567 เวลา 01:33 | - 
-[index.html](67-09-16/index.html) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
-[script.js](67-09-16/script.js) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
+[index.html](67-09-16/index.html) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
+[script.js](67-09-16/script.js) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 
 ## 67-09-16/functions
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
+[editFaculty.js](67-09-16/functions/editFaculty.js) | 24 ก.ย. 2567 เวลา 17:27 | - 
 [previous_page.php](67-09-16/functions/previous_page.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 16:53
 
 ## 67-09-16/php/faculty
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[add.php](67-09-16/php/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
-[delete.php](67-09-16/php/faculty/delete.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
+[add.php](67-09-16/php/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
+[delete.php](67-09-16/php/faculty/delete.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 [get.php](67-09-16/php/faculty/get.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
+[save.php](67-09-16/php/faculty/save.php) | 24 ก.ย. 2567 เวลา 17:27 | - 
+[search.php](67-09-16/php/faculty/search.php) | 24 ก.ย. 2567 เวลา 17:27 | - 
 [table.php](67-09-16/php/faculty/table.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
 
 ## 67-09-16/sidebar/faculty
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[add.php](67-09-16/sidebar/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[add.php](67-09-16/sidebar/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 [report.php](67-09-16/sidebar/faculty/report.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
-[search.php](67-09-16/sidebar/faculty/search.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[search.php](67-09-16/sidebar/faculty/search.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 
 ## Exam/67-09-03
 
