@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		link.addEventListener("click", function (event) {
 			event.preventDefault();
 			const url = this.getAttribute("href");
+			console.info(`Loading :${url}`);
 
 			if (url === "") {
 				return (mainContent.innerHTML = "<p>Error 404 Not Found</p>");
@@ -21,7 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	function loadContent(url) {
-		fetch(url)
+		const searchParams = new URLSearchParams(window.location.search);
+		const fullUrl = `${url}?${searchParams.toString()}`;
+
+		fetch(fullUrl)
 			.then((response) => response.text())
 			.then((data) => {
 				mainContent.innerHTML = data;

@@ -1,5 +1,7 @@
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
+
+include("../../functions/previous_page.php");
 include("../../../Exercise/8/connected_database.php");
 
 $faculty_id = $_POST['id'];
@@ -11,11 +13,11 @@ $stmt = mysqli_prepare($db, $query);
 mysqli_stmt_bind_param($stmt, "is", $faculty_id, $faculty_name);
 
 if (mysqli_stmt_execute($stmt)) {
-   include("../../functions/previous_page.php");
+   previousPage();
 } else {
    switch (mysqli_errno($db)) {
       case '1062':
-         include("../../functions/previous_page.php");
+         previousPage();
          break;
       default:
          echo "Error: " . $query . "<br>" . mysqli_error($db);
