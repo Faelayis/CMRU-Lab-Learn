@@ -64,7 +64,7 @@
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[previous_page.php](67-09-16/functions/previous_page.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
+[previous_page.php](67-09-16/functions/previous_page.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 16:53
 
 ## 67-09-16/php/faculty
 
