@@ -1,0 +1,18 @@
+{
+	"configurations": [
+		{
+			"args": [],
+			"console": "internalConsole",
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"name": "Run PHP Desktop",
+			"preLaunchTask": "",
+			"program": "${workspaceFolder}/phpdesktop/phpdesktop-chrome.exe",
+			"request": "launch",
+			"stopAtEntry": false,
+			"type": "cppvsdbg"
+		}
+	],
+	"version": "0.2.0"
+}
