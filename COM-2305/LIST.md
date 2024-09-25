@@ -74,7 +74,7 @@
 [add.php](67-09-16/php/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 [delete.php](67-09-16/php/faculty/delete.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 [get.php](67-09-16/php/faculty/get.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
-[save.php](67-09-16/php/faculty/save.php) | 24 ก.ย. 2567 เวลา 17:27 | - 
+[save.php](67-09-16/php/faculty/save.php) | 24 ก.ย. 2567 เวลา 17:27 | 25 ก.ย. 2567 เวลา 09:10
 [search.php](67-09-16/php/faculty/search.php) | 24 ก.ย. 2567 เวลา 17:27 | - 
 [table.php](67-09-16/php/faculty/table.php) | 17 ก.ย. 2567 เวลา 01:33 | - 
 
@@ -84,7 +84,7 @@
 ---| ----| ---
 [add.php](67-09-16/sidebar/faculty/add.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
 [report.php](67-09-16/sidebar/faculty/report.php) | 17 ก.ย. 2567 เวลา 01:33 | 18 ก.ย. 2567 เวลา 21:13
-[search.php](67-09-16/sidebar/faculty/search.php) | 17 ก.ย. 2567 เวลา 01:33 | 24 ก.ย. 2567 เวลา 17:27
+[search.php](67-09-16/sidebar/faculty/search.php) | 17 ก.ย. 2567 เวลา 01:33 | 25 ก.ย. 2567 เวลา 09:10
 
 ## Exam/67-09-03
 

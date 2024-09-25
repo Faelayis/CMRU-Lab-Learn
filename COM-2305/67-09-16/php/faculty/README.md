@@ -78,6 +78,7 @@ mysqli_close($db);
 ```
 `save.php`<br>
 สร้าง: 24 ก.ย. 2567 เวลา 17:27<br>
+อัปเดต: 25 ก.ย. 2567 เวลา 09:10<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -92,7 +93,7 @@ function addFaculty($db, $id, $name) {
    if ($stmt) {
       mysqli_stmt_bind_param($stmt, "is", $id, $name);
       if (mysqli_stmt_execute($stmt)) {
-         echo "Record added successfully.";;
+         echo "Record added successfully.";
       } else {
          echo "Error adding record: " . mysqli_stmt_error($stmt);
       }
