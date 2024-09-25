@@ -11,7 +11,7 @@ function addFaculty($db, $id, $name) {
    if ($stmt) {
       mysqli_stmt_bind_param($stmt, "is", $id, $name);
       if (mysqli_stmt_execute($stmt)) {
-         echo "Record added successfully.";;
+         echo "Record added successfully.";
       } else {
          echo "Error adding record: " . mysqli_stmt_error($stmt);
       }

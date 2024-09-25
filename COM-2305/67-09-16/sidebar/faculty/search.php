@@ -21,8 +21,8 @@
                <?php
                include("../../php/faculty/search.php");
 
-               if ($result->num_rows > 0) {
-                  while ($row = $result->fetch_assoc()) {
+               if (mysqli_num_rows($result) > 0) {
+                  while ($row = mysqli_fetch_assoc($result)) {
                      echo "<tr>";
                      echo "<td class='px-4 py-2'>" . htmlspecialchars($row['Fac_id']) . "</td>";
                      echo "<td class='px-4 py-2'>" . htmlspecialchars($row['Fac_name']) . "</td>";

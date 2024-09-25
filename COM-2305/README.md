@@ -49,11 +49,12 @@ DocumentRoot "COM-2305"
 > **พบปัญหา**
 > เมื่อคุณใช้ฟังก์ชัน `setcookie()` หรือ `$_SESSION` หลายครั้งภายในสคริปต์เดียวกัน <br>
 > *PHP* จะส่งเฉพาะที่กำหนดในบรรทัดสุดท้ายไปยังเบราว์เซอร์เท่านั้น
+> แนะนำต้องใช้ PHP Engine Old Stable เพื่อแก้ปัญหา
 
 -   ต้องใช้ [NodeJS](https://nodejs.org/en) เวอร์ชัน 18 หรือมากกว่า
 -   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
 -   ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
--   ต้องใช้ [sphp](https://www.npmjs.com/package/sphp) และ [PHP Engine](https://www.php.net/downloads.php)
+-   ต้องใช้ [sphp](https://www.npmjs.com/package/sphp) และ [PHP Engine](https://windows.php.net/download#php-8.2) เวอร์ชัน 8.2.12 (cgi-fcgi)
 
 <ol>
   <li>ติดตั้ง Node.js และ npm แล้วตรวจสอบว่า Node.js และ npm ติดตั้งแล้วโดยใช้คำสั่ง <code>node -v && npm -v</code>
