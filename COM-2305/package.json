@@ -7,7 +7,7 @@
 	},
 	"dependencies": {
 		"ip": "2.0.1",
-		"express": "4.19.2",
+		"express": "4.21.0",
 		"serve-index": "1.9.1",
 		"sphp": "0.6.3"
 	},
