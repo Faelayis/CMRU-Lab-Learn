@@ -6,11 +6,16 @@
 	"name": "หลักการออกแบบและการเขียนโปรแกรม",
 	"preview": {
 		"enable": true,
-		"files": ["c"],
+		"files": [
+			"c"
+		],
 		"list": true,
 		"remove": {
 			"enable": false,
-			"lineremove": ["printf(\"\\n\");", "return 0;"]
+			"lineremove": [
+				"printf(\"\\n\");",
+				"return 0;"
+			]
 		}
 	},
 	"time_formats": {

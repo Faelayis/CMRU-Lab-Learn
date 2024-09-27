@@ -5,7 +5,12 @@
 	"name": "การเขียนโปรแกรมเว็บ",
 	"preview": {
 		"enable": true,
-		"files": ["html", "php", "js", "sql"],
+		"files": [
+			"html",
+			"php",
+			"js",
+			"sql"
+		],
 		"list": false
 	},
 	"time_formats": {

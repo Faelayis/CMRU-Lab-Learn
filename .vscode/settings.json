@@ -12,5 +12,7 @@
 		"**/*.exe": true,
 		"**/node_modules": true
 	},
-	"prettier.documentSelectors": ["**/*.sql"]
+	"prettier.documentSelectors": [
+		"**/*.sql"
+	]
 }

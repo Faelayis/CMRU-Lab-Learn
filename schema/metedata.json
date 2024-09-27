@@ -17,11 +17,22 @@
 					"type": "object"
 				}
 			},
-			"required": ["as"],
+			"required": [
+				"as"
+			],
 			"type": "object"
 		},
 		"FileType": {
-			"enum": ["c", "py", "fprg", "ps1", "sql", "php", "html", "js"],
+			"enum": [
+				"c",
+				"py",
+				"fprg",
+				"ps1",
+				"sql",
+				"php",
+				"html",
+				"js"
+			],
 			"type": "string"
 		},
 		"MeteData": {
@@ -74,11 +85,16 @@
 									"type": "array"
 								}
 							},
-							"required": ["enable"],
+							"required": [
+								"enable"
+							],
 							"type": "object"
 						}
 					},
-					"required": ["enable", "files"],
+					"required": [
+						"enable",
+						"files"
+					],
 					"type": "object"
 				},
 				"time_formats": {
@@ -91,7 +107,11 @@
 					"type": "object"
 				}
 			},
-			"required": ["$schema", "coursecode", "name"],
+			"required": [
+				"$schema",
+				"coursecode",
+				"name"
+			],
 			"type": "object"
 		}
 	}

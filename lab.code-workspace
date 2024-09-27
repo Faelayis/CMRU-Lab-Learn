@@ -2,39 +2,41 @@
 	"folders": [
 		{
 			"name": "📂 Root",
-			"path": "./",
+			"path": "./"
 		},
 		{
 			"name": "😺 Github",
-			"path": "./.github",
+			"path": "./.github"
 		},
 		{
 			"name": "📄 Script",
-			"path": "./script",
+			"path": "./script"
 		},
 		{
 			"name": "🪄 Setup",
-			"path": "./setup",
+			"path": "./setup"
 		},
 		{
 			"name": "[Python] การเขียนโปรแกรมภาษาคอมพิวเตอร์",
-			"path": "./COM-1305",
+			"path": "./COM-1305"
 		},
 		{
 			"name": "[C] หลักการออกแบบและการเขียนโปรแกรม",
-			"path": "./COM-1308",
+			"path": "./COM-1308"
 		},
 		{
 			"name": "[SQL] ระบบฐานข้อมูล 1",
-			"path": "./COM-1602",
+			"path": "./COM-1602"
 		},
 		{
 			"name": "[HTML,PHP] การเขียนโปรแกรมเว็บ",
-			"path": "./COM-2305",
-		},
+			"path": "./COM-2305"
+		}
 	],
 	"extensions": {
-		"recommendations": ["esbenp.prettier-vscode"],
+		"recommendations": [
+			"esbenp.prettier-vscode"
+		]
 	},
 	"settings": {
 		"files.exclude": {
@@ -43,7 +45,7 @@
 			"Script": true,
 			"node_modules": true,
 			"LIST.md": true,
-			"*/**/README.md": true,
+			"*/**/README.md": true
 		},
 		"editor.tabSize": 3,
 		"editor.useTabStops": true,
@@ -51,9 +53,11 @@
 		"sqltools.highlightQuery": false,
 		"sqltools.format": {
 			"linesBetweenQueries": 2,
-			"reservedWordCase": "upper",
+			"reservedWordCase": "upper"
 		},
-		"prettier.documentSelectors": ["**/*.sql"],
-		"editor.inlayHints.enabled": "on",
-	},
+		"prettier.documentSelectors": [
+			"**/*.sql"
+		],
+		"editor.inlayHints.enabled": "on"
+	}
 }

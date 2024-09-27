@@ -5,7 +5,9 @@
 	"name": "การเขียนโปรแกรมภาษาคอมพิวเตอร์",
 	"preview": {
 		"enable": true,
-		"files": ["py"],
+		"files": [
+			"py"
+		],
 		"list": true
 	},
 	"time_formats": {
