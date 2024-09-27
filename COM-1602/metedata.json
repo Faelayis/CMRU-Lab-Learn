@@ -4,7 +4,7 @@
 	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16391",
 	"name": "ระบบฐานข้อมูล 1",
 	"preview": {
-		"enable": true,
+		"enable": false,
 		"files": [
 			"sql",
 			"ps1",
