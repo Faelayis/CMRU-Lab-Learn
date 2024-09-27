@@ -116,12 +116,16 @@
 		"useTabs": true,
 		"overrides": [
 			{
-				"files": "*.json",
+				"files": [
+					"*.json",
+					"*.code-workspace"
+				],
 				"options": {
+					"jsonRecursiveSort": true,
+					"parser": "json-stringify",
 					"plugins": [
 						"prettier-plugin-sort-json"
-					],
-					"jsonRecursiveSort": true
+					]
 				}
 			},
 			{
