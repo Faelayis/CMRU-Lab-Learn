@@ -222,23 +222,24 @@
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[enum.php](Project/api/reservation/enum.php) | 1 ต.ค. 2567 เวลา 03:36 | - 
-[get.php](Project/api/reservation/get.php) | 1 ต.ค. 2567 เวลา 03:36 | - 
-[post.php](Project/api/reservation/post.php) | 1 ต.ค. 2567 เวลา 03:36 | - 
+[delete.php](Project/api/reservation/delete.php) | 1 ต.ค. 2567 เวลา 14:47 | - 
+[enum.php](Project/api/reservation/enum.php) | 1 ต.ค. 2567 เวลา 03:36 | 1 ต.ค. 2567 เวลา 14:47
+[get.php](Project/api/reservation/get.php) | 1 ต.ค. 2567 เวลา 03:36 | 1 ต.ค. 2567 เวลา 14:47
+[post.php](Project/api/reservation/post.php) | 1 ต.ค. 2567 เวลา 03:36 | 1 ต.ค. 2567 เวลา 14:47
 [schema.sql](Project/api/reservation/schema.sql) | 1 ต.ค. 2567 เวลา 03:36 | - 
 
 ## Project/api/student
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[get.php](Project/api/student/get.php) | 1 ต.ค. 2567 เวลา 03:36 | - 
+[get.php](Project/api/student/get.php) | 1 ต.ค. 2567 เวลา 03:36 | 1 ต.ค. 2567 เวลา 14:47
 [schema.sql](Project/api/student/schema.sql) | 1 ต.ค. 2567 เวลา 03:36 | - 
 
 ## Project/function
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[previous_page.php](Project/function/previous_page.php) | 17 ก.ย. 2567 เวลา 01:33 | 1 ต.ค. 2567 เวลา 03:36
+[page.php](Project/function/page.php) | 1 ต.ค. 2567 เวลา 14:47 | - 
 
 ## Project/function/reservation
 
