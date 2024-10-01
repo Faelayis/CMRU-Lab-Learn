@@ -1,5 +1,6 @@
 <?php
-header('Content-Type: application/json');
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: *");
 
 include("../connected.php");
 
@@ -21,7 +22,6 @@ if ($stmt = mysqli_prepare($db, $query)) {
    echo json_encode(array("error" => "Failed to prepare the SQL statement."));
    exit();
 }
-
 
 mysqli_stmt_close($stmt);
 mysqli_close($db);

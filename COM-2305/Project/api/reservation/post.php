@@ -1,12 +1,13 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
+// header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: *");
 
-header("Content-Type: application/json; charset=UTF-8");
+if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
 
 include("../connected.php");
 include("../../function/reservation/valid-reservation.php");
 include("../../function/reservation/valid-student.php");
-include("../../function/previous_page.php");
+include("../../function/page.php");
 
 $reservation_date = $_POST['reservation_date'];
 $student_id = $_POST['student_id'];
@@ -55,5 +56,6 @@ if (mysqli_stmt_execute($stmt)) {
 }
 
 previousPage();
+
 mysqli_stmt_close($stmt);
 mysqli_close($db);
