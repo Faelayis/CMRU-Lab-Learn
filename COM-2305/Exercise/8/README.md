@@ -1,19 +1,20 @@
 `3.1.html`<br>
 สร้าง: 30 ก.ย. 2567 เวลา 23:57<br>
+อัปเดต: 1 ต.ค. 2567 เวลา 13:24<br>
 ```html
 <form method="post" action="./3.2.php">
-   <input type="hidden" id="fac_id" name="fac_id">
-   <div class="mb-4">
-      <label for="id">Id</label>
-      <input type="number" id="id" name="id">
-   </div>
-   <div class="mb-4">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name">
-   </div>
-   <button type="submit">Submit</button>
+	<input type="hidden" id="fac_id" name="fac_id" />
+	<div class="mb-4">
+		<label for="id">Id</label>
+		<input type="number" id="id" name="id" />
+	</div>
+	<div class="mb-4">
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name" />
+	</div>
+	<button type="submit">Submit</button>
 </form>
-</div>
+
 ```
 `3.2.php`<br>
 สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
