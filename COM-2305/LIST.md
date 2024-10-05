@@ -228,7 +228,7 @@
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[delete.php](Project/api/reservation/delete.php) | 1 ต.ค. 2567 เวลา 14:47 | 6 ต.ค. 2567 เวลา 02:16
+[delete.php](Project/api/reservation/delete.php) | 1 ต.ค. 2567 เวลา 14:47 | 6 ต.ค. 2567 เวลา 02:18
 [enum.php](Project/api/reservation/enum.php) | 1 ต.ค. 2567 เวลา 03:36 | 1 ต.ค. 2567 เวลา 14:47
 [get.php](Project/api/reservation/get.php) | 1 ต.ค. 2567 เวลา 03:36 | 1 ต.ค. 2567 เวลา 14:47
 [post.php](Project/api/reservation/post.php) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 02:16

@@ -1,10 +1,10 @@
 `delete.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 14:47<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 02:16<br>
+อัปเดต: 6 ต.ค. 2567 เวลา 02:18<br>
 ```php
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+// header("Content-Type: application/json; charset=UTF-8");
 
 include("../connected.php");
 include("../../function/reservation/get_enum_values.php");
