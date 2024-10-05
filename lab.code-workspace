@@ -43,8 +43,8 @@
 			".github": true,
 			"COM-*": true,
 			"Script": true,
-			"node_modules": true,
 			"LIST.md": true,
+			"**/node_modules": true,
 			"*/**/README.md": true
 		},
 		"editor.tabSize": 3,
