@@ -1,5 +1,6 @@
 `page.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 14:47<br>
+อัปเดต: 6 ต.ค. 2567 เวลา 02:16<br>
 ```php
 <?php
 class PageType {
@@ -7,17 +8,8 @@ class PageType {
    const HTTP = 'HTTP';
 }
 
-function previousPage(PageType $type): void {
-   switch ($type) {
-      case PageType::JS:
-         echo "<script>window.history.back();</script>";
-         break;
-      case PageType::HTTP:
-         header("Location: " . $_SERVER['HTTP_REFERER']);
-         break;
-      default:
-         throw new InvalidArgumentException("Invalid page type");
-   }
+function previousPage() {
+   header("Location: " . $_SERVER['HTTP_REFERER']);
    exit();
 }
 

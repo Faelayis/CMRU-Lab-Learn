@@ -33,7 +33,28 @@ mysqli_close($db);
 ```
 `schema.sql`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
+อัปเดต: 6 ต.ค. 2567 เวลา 02:16<br>
 ```sql
-CREATE TABLE `student list` (`id` int(11) NOT NULL, `section` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `status` varchar(50) DEFAULT NULL)
+CREATE TABLE `student list` (`id` int(11) PRIMARY KEY, `section` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `status` varchar(50) DEFAULT NULL)
+
+```
+`values.sql`<br>
+สร้าง: 6 ต.ค. 2567 เวลา 02:16<br>
+```sql
+INSERT INTO
+	`student list` (id, section, name)
+SELECT
+	66143000,
+	0,
+	'Test'
+WHERE
+	NOT EXISTS (
+		SELECT
+			1
+		FROM
+			`student list`
+		WHERE
+			id = 66143000
+	);
 
 ```

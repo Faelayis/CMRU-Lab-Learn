@@ -14,6 +14,7 @@ function get_enum_values($db, $table, $column) {
 ```
 `valid-reservation.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
+อัปเดต: 6 ต.ค. 2567 เวลา 02:16<br>
 ```php
 <?php
 include("get_enum_values.php");
@@ -25,8 +26,6 @@ $fields_to_validate = [
    'day_of_week' => $valid_days_of_week,
    'time_slot_1' => $valid_time_slots,
    'goto_slot_1' => $valid_goto_slots,
-   'time_slot_2' => $valid_time_slots,
-   'goto_slot_2' => $valid_goto_slots
 ];
 
 ```
