@@ -1,0 +1,22 @@
+{
+	"name": "project",
+	"mysql": {
+		"name": "com_2305-project"
+	},
+	"type": "module",
+	"main": "mysql.ts",
+	"scripts": {
+		"dev": "nodemon"
+	},
+	"dependencies": {
+		"crypto": "1.0.1",
+		"mysql2": "3.11.3"
+	},
+	"devDependencies": {
+		"nodemon": "3.1.7"
+	},
+	"nodemonConfig": {
+		"ext": "sql",
+		"exec": "tsx watch mysql.ts"
+	}
+}

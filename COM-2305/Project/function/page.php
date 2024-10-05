@@ -4,17 +4,8 @@ class PageType {
    const HTTP = 'HTTP';
 }
 
-function previousPage(PageType $type): void {
-   switch ($type) {
-      case PageType::JS:
-         echo "<script>window.history.back();</script>";
-         break;
-      case PageType::HTTP:
-         header("Location: " . $_SERVER['HTTP_REFERER']);
-         break;
-      default:
-         throw new InvalidArgumentException("Invalid page type");
-   }
+function previousPage() {
+   header("Location: " . $_SERVER['HTTP_REFERER']);
    exit();
 }
 

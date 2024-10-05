@@ -6,9 +6,7 @@ CREATE TABLE `reservations` (
 	`day_of_week` ENUM ('วันจันทร์', 'วันอังคาร', 'วันพุธ', 'วันพฤหัสบดี', 'วันศุกร์', 'วันเสาร์', 'วันอาทิตย์') NOT NULL,
 	`time_slot_1` ENUM ('07:30', '10:00', '15:00', '16:30', '17:45') NOT NULL,
 	`goto_slot_1` ENUM ('ไปแม่ริม', 'ไปเวียงบัว') NOT NULL,
-	`time_slot_2` ENUM ('07:30', '10:00', '15:00', '16:30', '17:45') NOT NULL,
-	`goto_slot_2` ENUM ('ไปแม่ริม', 'ไปเวียงบัว') NOT NULL,
-	PRIMARY KEY (`reservation_id`),
-	UNIQUE KEY `unique_student_date` (`student_id`, `reservation_date`),
-	FOREIGN KEY (`student_id`) REFERENCES `student list` (`id`)
+	`time_slot_2` ENUM ('07:30', '10:00', '15:00', '16:30', '17:45'),
+	`goto_slot_2` ENUM ('ไปแม่ริม', 'ไปเวียงบัว'),
+	PRIMARY KEY (`reservation_id`)
 );

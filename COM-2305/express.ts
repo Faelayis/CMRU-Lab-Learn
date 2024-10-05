@@ -6,7 +6,7 @@ import ip from "ip";
 import serveIndex from "serve-index";
 import sphp from "sphp";
 
-const ignore = new Set([".vscode", "node_modules", "package.json"]),
+const ignore = new Set([".vscode", "node_modules", "package.json", "tailwind.config.ts"]),
 	app = express(),
 	path_resolve = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".");
 
@@ -22,7 +22,7 @@ app.use(
 			if (ignore.has(filename)) {
 				return false;
 			}
-			if (["md", "ts", "yaml"].includes(filename?.split(".")[1])) {
+			if (["md", "ts", "yaml", "sql"].includes(filename?.split(".")[1])) {
 				return false;
 			}
 			return true;

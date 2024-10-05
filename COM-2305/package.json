@@ -1,18 +1,23 @@
 {
 	"name": "com-2305",
 	"scripts": {
-		"dev": "pnpm run start",
-		"start": "node --import tsx ./express.js",
+		"project": "pnpm --filter=project",
+		"start": "tsx ./express.ts",
+		"dev": "pnpm -w --filter=* \"/start|dev/\"",
 		"linux-xampp": "sudo /opt/lampp/./manager-linux-x64.run"
 	},
+	"workspaces": [
+		"Project/**"
+	],
 	"dependencies": {
-		"ip": "2.0.1",
 		"express": "4.21.0",
+		"ip": "2.0.1",
 		"serve-index": "1.9.1",
 		"sphp": "0.6.3"
 	},
 	"devDependencies": {
-		"@types/express": "4.17.21",
+		"tsx": "4.19.1",
+		"@types/express": "5.0.0",
 		"@types/serve-index": "1.9.4"
 	}
 }
