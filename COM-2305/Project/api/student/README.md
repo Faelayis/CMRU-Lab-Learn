@@ -1,6 +1,6 @@
 `get.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
-อัปเดต: 1 ต.ค. 2567 เวลา 14:47<br>
+อัปเดต: 6 ต.ค. 2567 เวลา 14:24<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -11,24 +11,42 @@ include("../connected.php");
 $query = "SELECT * FROM `student list`";
 $students = array();
 
-if ($stmt = mysqli_prepare($db, $query)) {
-   mysqli_stmt_execute($stmt);
-   $result = mysqli_stmt_get_result($stmt);
+try {
+   if ($stmt = mysqli_prepare($db, $query)) {
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
 
-   if (mysqli_num_rows($result) > 0) {
-      while ($row = mysqli_fetch_assoc($result)) {
-         $students[] = $row;
+      if (mysqli_num_rows($result) > 0) {
+         while ($row = mysqli_fetch_assoc($result)) {
+            $students[] = $row;
+         }
+         http_response_code(200);
+         $response = [
+            'status_code' => http_response_code(),
+            'data' => $students
+         ];
+      } else {
+         http_response_code(404);
+         $response = [
+            'status_code' => http_response_code(),
+            'error' => 'No students found.'
+         ];
       }
+      mysqli_stmt_close($stmt);
+   } else {
+      throw new Exception('Failed to prepare the SQL statement.');
    }
-
-   echo json_encode($students);
-} else {
-   echo json_encode(array("error" => "Failed to prepare the SQL statement."));
+} catch (Exception $e) {
+   http_response_code(500);
+   $response = [
+      'status_code' => http_response_code(),
+      'error' => 'Internal server error: ' . $e->getMessage()
+   ];
+} finally {
+   mysqli_close($db);
+   echo json_encode($response);
    exit();
 }
-
-mysqli_stmt_close($stmt);
-mysqli_close($db);
 
 ```
 `schema.sql`<br>

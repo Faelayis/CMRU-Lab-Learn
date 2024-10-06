@@ -1,7 +1,6 @@
 `index.html`<br>
 สร้าง: 6 ต.ค. 2567 เวลา 02:16<br>
-แก้ไขล่าสุด: เวลา 03:45<br>
-
+อัปเดต: 6 ต.ค. 2567 เวลา 14:24<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -53,8 +52,11 @@
 					},
 					events: async (fetchInfo, successCallback, failureCallback) => {
 						try {
+							console.log("Fetching events...");
 							const response = await fetch("http://localhost:3000/Project/api/reservation/get.php?student_id=66143000");
+							console.log("Response:", response);
 							const data = await response.json();
+							console.log("Data:", data);
 							const events = data.flatMap((event) =>
 								[
 									{
@@ -85,6 +87,7 @@
 							);
 							successCallback(events);
 						} catch (error) {
+							console.error("Error fetching events:", error);
 							failureCallback(error);
 						}
 					},
@@ -95,38 +98,38 @@
 							confirmButtonText: "ยืนยัน",
 							cancelButtonText: "ยกเลิก",
 						});
-
 						if (result.isConfirmed) {
 							const eventsToRemove = calendar.getEvents().filter((event) => event.startStr === info.event.startStr);
+
 							try {
-								const deletePromises = eventsToRemove.map((event) =>
-									fetch("http://localhost:3000/Project/api/reservation/delete.php", {
-										method: "POST",
-										headers: {
-											"Content-Type": "application/json",
-										},
-										body: JSON.stringify({
-											reservation_date: event.startStr,
-											student_id: "66143000",
-											day_of_week: new Date(event.startStr).toLocaleDateString("th-TH", { weekday: "long" }),
-											time_slot_1: event.extendedProps.time_slot_1,
-											goto_slot_1: event.extendedProps.goto_slot_1,
-											time_slot_2: event.extendedProps.time_slot_2,
-											goto_slot_2: event.extendedProps.goto_slot_2,
-										}),
+								console.log("Deleting event:", info.event);
+								const response = await fetch("http://localhost:3000/Project/api/reservation/delete.php", {
+									method: "POST",
+									headers: {
+										"Content-Type": "application/json",
+									},
+									body: JSON.stringify({
+										reservation_date: info.event.startStr,
+										student_id: "66143000",
+										day_of_week: new Date(info.event.startStr).toLocaleDateString("th-TH", { weekday: "long" }),
+										time_slot_1: info.event.extendedProps.time_slot_1,
+										goto_slot_1: info.event.extendedProps.goto_slot_1,
+										time_slot_2: info.event.extendedProps.time_slot_2,
+										goto_slot_2: info.event.extendedProps.goto_slot_2,
 									}),
-								);
+								});
+								console.log("Response:", response);
+								const data = await response.json();
+								console.log("Data:", data);
 
-								const responses = await Promise.all(deletePromises);
-								const data = await Promise.all(responses.map((response) => response.json()));
-
-								if (data.every((res) => res.success)) {
+								if (response.ok) {
 									eventsToRemove.forEach((event) => event.remove());
 									Swal.fire("ลบแล้ว!", "การจองทั้งหมดในวันนี้ถูกลบแล้ว", "success");
 								} else {
 									Swal.fire("ผิดพลาด!", "เกิดข้อผิดพลาดในการลบการจอง", "error");
 								}
 							} catch (error) {
+								console.error("Error deleting event:", error);
 								Swal.fire("ผิดพลาด!", "เกิดข้อผิดพลาดในการลบการจอง", "error");
 							}
 						}
@@ -136,28 +139,28 @@
                   <select class="swal2-select" id="goto_slot_1" required>
                      <option value="ไปแม่ริม">ไปแม่ริม</option>
                      <option value="ไปเวียงบัว">ไปเวียงบัว</option>
-                  </select><br/>
-                  <select class="swal2-select" id="time_slot_1" required>
-                     <option value="07:30">07:30</option>
-                     <option value="10:00">10:00</option>
-                     <option value="15:00">15:00</option>
-                     <option value="16:30">16:30</option>
-                     <option value="17:45">17:45</option>
-                  </select><br/>
-                  <select class="swal2-select" id="goto_slot_2">
-                     <option value="">-</option>
-                     <option value="ไปแม่ริม">ไปแม่ริม</option>
-                     <option value="ไปเวียงบัว">ไปเวียงบัว</option>
-                  </select><br/>
-                  <select class="swal2-select" id="time_slot_2">
-                     <option value="">-</option>
-                     <option value="07:30">07:30</option>
-                     <option value="10:00">10:00</option>
-                     <option value="15:00">15:00</option>
-                     <option value="16:30">16:30</option>
-                     <option value="17:45">17:45</option>
-                  </select><br/>
-               `;
+                     </select><br/>
+                     <select class="swal2-select" id="time_slot_1" required>
+                       <option value="07:30">07:30</option>
+                       <option value="10:00">10:00</option>
+                       <option value="15:00">15:00</option>
+                       <option value="16:30">16:30</option>
+                       <option value="17:45">17:45</option>
+                     </select><br/>
+                     <select class="swal2-select" id="goto_slot_2">
+                       <option value="">-</option>
+                       <option value="ไปแม่ริม">ไปแม่ริม</option>
+                       <option value="ไปเวียงบัว">ไปเวียงบัว</option>
+                     </select><br/>
+                     <select class="swal2-select" id="time_slot_2">
+                       <option value="">-</option>
+                       <option value="07:30">07:30</option>
+                       <option value="10:00">10:00</option>
+                       <option value="15:00">15:00</option>
+                       <option value="16:30">16:30</option>
+                       <option value="17:45">17:45</option>
+                     </select><br/>
+                  `;
 
 						const result = await Swal.fire({
 							title: "",
@@ -232,6 +235,7 @@
 							}
 
 							try {
+								console.log("Posting reservations:", reservations);
 								const responses = await Promise.all(
 									reservations.map((reservation) =>
 										fetch("http://localhost:3000/Project/api/reservation/post.php", {
@@ -243,14 +247,17 @@
 										}),
 									),
 								);
+								console.log("Responses:", responses);
 								const data = await Promise.all(responses.map((response) => response.json()));
+								console.log("Data:", data);
 
-								if (data.every((res) => res.success)) {
+								if (responses.every((response) => response.ok)) {
 									Swal.fire("จองแล้ว!", "", "success");
 								} else {
 									Swal.fire("ผิดพลาด!", "เกิดข้อผิดพลาดในการจองรถ", "error");
 								}
 							} catch (error) {
+								console.error("Error posting reservations:", error);
 								Swal.fire("ผิดพลาด!", "เกิดข้อผิดพลาดในการจองรถ", "error");
 							}
 						}
