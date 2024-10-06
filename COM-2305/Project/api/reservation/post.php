@@ -2,6 +2,8 @@
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 
+include("../connected.php");
+
 $response = [];
 
 try {
@@ -11,10 +13,8 @@ try {
       exit;
    }
 
-   include("../connected.php");
    include("../../function/reservation/valid-reservation.php");
    include("../../function/reservation/valid-student.php");
-   include("../../function/page.php");
 
    $reservation_date = $_POST['reservation_date'];
    $student_id = $_POST['student_id'];
