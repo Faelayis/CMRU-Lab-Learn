@@ -216,7 +216,7 @@
 
 ชื่อ | สร้าง | แก้ไข
 ---| ----| ---
-[index.html](Project/index.html) | 6 ต.ค. 2567 เวลา 02:16 | 6 ต.ค. 2567 เวลา 14:24
+[index.html](Project/index.html) | 6 ต.ค. 2567 เวลา 02:16 | 6 ต.ค. 2567 เวลา 20:52
 
 ## Project/api
 
@@ -231,7 +231,7 @@
 [delete.php](Project/api/reservation/delete.php) | 1 ต.ค. 2567 เวลา 14:47 | 6 ต.ค. 2567 เวลา 14:24
 [enum.php](Project/api/reservation/enum.php) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 14:24
 [get.php](Project/api/reservation/get.php) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 14:24
-[post.php](Project/api/reservation/post.php) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 14:24
+[post.php](Project/api/reservation/post.php) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 20:52
 [schema.sql](Project/api/reservation/schema.sql) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 02:16
 
 ## Project/api/student
@@ -255,6 +255,16 @@
 [get_enum_values.php](Project/function/reservation/get_enum_values.php) | 1 ต.ค. 2567 เวลา 03:36 | - 
 [valid-reservation.php](Project/function/reservation/valid-reservation.php) | 1 ต.ค. 2567 เวลา 03:36 | 6 ต.ค. 2567 เวลา 02:16
 [valid-student.php](Project/function/reservation/valid-student.php) | 1 ต.ค. 2567 เวลา 03:36 | - 
+
+## Project/script
+
+ชื่อ | สร้าง | แก้ไข
+---| ----| ---
+[alerts.js](Project/script/alerts.js) | 6 ต.ค. 2567 เวลา 20:52 | - 
+[calendar.js](Project/script/calendar.js) | 6 ต.ค. 2567 เวลา 20:52 | - 
+[events.js](Project/script/events.js) | 6 ต.ค. 2567 เวลา 20:52 | - 
+[fetch.js](Project/script/fetch.js) | 6 ต.ค. 2567 เวลา 20:52 | - 
+[utils.js](Project/script/utils.js) | 6 ต.ค. 2567 เวลา 20:52 | - 
 
 ## sphp
 

@@ -157,11 +157,13 @@ try {
 ```
 `post.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 14:24<br>
+อัปเดต: 6 ต.ค. 2567 เวลา 20:52<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
+
+include("../connected.php");
 
 $response = [];
 
@@ -172,10 +174,8 @@ try {
       exit;
    }
 
-   include("../connected.php");
    include("../../function/reservation/valid-reservation.php");
    include("../../function/reservation/valid-student.php");
-   include("../../function/page.php");
 
    $reservation_date = $_POST['reservation_date'];
    $student_id = $_POST['student_id'];
