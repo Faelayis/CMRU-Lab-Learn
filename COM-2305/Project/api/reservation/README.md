@@ -1,10 +1,11 @@
 `delete.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 14:47<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 14:24<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
 
 include("../connected.php");
 include("../../function/reservation/get_enum_values.php");
@@ -109,11 +110,12 @@ try {
 ```
 `get.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 14:24<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
 
 include("../connected.php");
 
@@ -157,11 +159,12 @@ try {
 ```
 `post.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 20:52<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
 
 include("../connected.php");
 
