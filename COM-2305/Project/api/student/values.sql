@@ -1,5 +1,5 @@
 INSERT INTO
-	`student list` (id, section, name)
+	`student` (id, section, name)
 SELECT
 	66143000,
 	0,
@@ -9,7 +9,7 @@ WHERE
 		SELECT
 			1
 		FROM
-			`student list`
+			`student`
 		WHERE
 			id = 66143000
 	);

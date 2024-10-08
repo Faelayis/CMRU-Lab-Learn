@@ -1,6 +1,6 @@
 <?php
 function is_valid_student($db, $student_id) {
-   $student_check_query = "SELECT id FROM `student list` WHERE id = ?";
+   $student_check_query = "SELECT id FROM `student` WHERE id = ?";
    $student_check_stmt = mysqli_prepare($db, $student_check_query);
 
    mysqli_stmt_bind_param($student_check_stmt, "i", $student_id);
