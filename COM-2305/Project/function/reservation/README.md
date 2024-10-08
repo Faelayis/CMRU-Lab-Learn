@@ -31,10 +31,11 @@ $fields_to_validate = [
 ```
 `valid-student.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:04<br>
 ```php
 <?php
 function is_valid_student($db, $student_id) {
-   $student_check_query = "SELECT id FROM `student list` WHERE id = ?";
+   $student_check_query = "SELECT id FROM `student` WHERE id = ?";
    $student_check_stmt = mysqli_prepare($db, $student_check_query);
 
    mysqli_stmt_bind_param($student_check_stmt, "i", $student_id);

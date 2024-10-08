@@ -1,14 +1,15 @@
 `get.php`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 14:24<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:04<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
 
 include("../connected.php");
 
-$query = "SELECT * FROM `student list`";
+$query = "SELECT * FROM `student`";
 $students = array();
 
 try {
@@ -51,16 +52,17 @@ try {
 ```
 `schema.sql`<br>
 สร้าง: 1 ต.ค. 2567 เวลา 03:36<br>
-อัปเดต: 6 ต.ค. 2567 เวลา 02:16<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:04<br>
 ```sql
-CREATE TABLE `student list` (`id` int(11) PRIMARY KEY, `section` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `status` varchar(50) DEFAULT NULL)
+CREATE TABLE `student` (`id` int(11) PRIMARY KEY, `section` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `status` varchar(50) DEFAULT NULL)
 
 ```
 `values.sql`<br>
 สร้าง: 6 ต.ค. 2567 เวลา 02:16<br>
+อัปเดต: 8 ต.ค. 2567 เวลา 13:04<br>
 ```sql
 INSERT INTO
-	`student list` (id, section, name)
+	`student` (id, section, name)
 SELECT
 	66143000,
 	0,
@@ -70,7 +72,7 @@ WHERE
 		SELECT
 			1
 		FROM
-			`student list`
+			`student`
 		WHERE
 			id = 66143000
 	);
