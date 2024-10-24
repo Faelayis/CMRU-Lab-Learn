@@ -24,15 +24,9 @@ export enum GeneratorType {
  */
 export default async function generateReadme(path: string, type: GeneratorType) {
 	console.info(`[Script]: Runs Generator ${type}`);
-	console.info("[Script]: Found " + path);
 
 	try {
 		const metedata = (await readJsonFile(path)) as MeteData;
-
-		if (!metedata.preview?.enable) return console.info(`[Script]: Preview is disabled`);
-
-		console.info(`[Script]: Config metedata.json`, metedata);
-
 		const files = await fg([`${path.split("/")[0]}/**/*`], {
 				onlyFiles: true,
 				ignore: [...utils_get.gitignore(), "**.md", "**/metedata.json"],
@@ -118,7 +112,7 @@ function formatFileRow(file: Entry, date: { created: Date; modified: Date }) {
 
 function formatHeader(file: Entry, date: { created: Date; modified: Date }) {
 	return `\`${file.name}\`<br>
-        สร้าง: ${utils_time(date.created)}<br>${
+      สร้าง: ${utils_time(date.created)}<br>${
 			date.created.getDate() === date.modified.getDate()
 				? `${
 						date.created.getTime() === date.modified.getTime()
