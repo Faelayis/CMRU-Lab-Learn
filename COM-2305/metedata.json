@@ -12,7 +12,7 @@
 			"js",
 			"sql"
 		],
-		"list": false
+		"list": true
 	},
 	"time_formats": {
 		"folder": "yy-mm-dd"
