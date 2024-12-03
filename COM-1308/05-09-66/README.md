@@ -1,23 +1,3 @@
-`computer-with-tabs.c`<br>
-สร้าง: 5 ก.ย. 2566 เวลา 11:47<br>
-```c
-#include <stdio.h>
-
-int main()
-{
-   char ch = 'A', str[] = "computer";
-
-   printf("%3c", ch);
-   printf("%15.8s ", str);
-   printf("%-15.8s ", str);
-
-   printf("\n");
-   return 0;
-
-   // output:  A       computer computer
-}
-
-```
 `computer.c`<br>
 สร้าง: 5 ก.ย. 2566 เวลา 11:47<br>
 ```c
@@ -36,6 +16,26 @@ int main()
    return 0;
 
    // output: A 65 computer computer
+}
+
+```
+`computer-with-tabs.c`<br>
+สร้าง: 5 ก.ย. 2566 เวลา 11:47<br>
+```c
+#include <stdio.h>
+
+int main()
+{
+   char ch = 'A', str[] = "computer";
+
+   printf("%3c", ch);
+   printf("%15.8s ", str);
+   printf("%-15.8s ", str);
+
+   printf("\n");
+   return 0;
+
+   // output:  A       computer computer
 }
 
 ```
