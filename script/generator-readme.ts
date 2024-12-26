@@ -4,7 +4,6 @@ import fg, { Entry } from "fast-glob";
 import gitDate from "git-date-extractor";
 
 import { ImageHeader, ImagePreview } from "./markdown/image.js";
-import { encodeFilePath } from "./markdown/string.js";
 import { MeteData } from "./types/metedata.js";
 import { get as utils_time, timeZone } from "./utils/date-time-format.js";
 import { get as utils_get } from "./utils/get.js";
@@ -63,18 +62,23 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 						modified: new Date(modifiedTimestamp || 0),
 					};
 
-				if (type === GeneratorType.List) {
-					const row = formatFileRow(file, date);
-					folderDataMap.get(folder)!.push(row);
-				} else if (type === GeneratorType.Readme) {
-					const fileData = await fs.readFile(file.path, "utf8"),
-						header = formatHeader(file, date),
-						content =
-							metedata.preview?.remove?.enable && (metedata.preview?.remove?.lineremove || metedata.preview?.remove?.comment)
-								? utils_remove.lines(fileData, metedata.preview?.remove?.lineremove, metedata.preview?.remove?.comment)
-								: fileData;
+				if (type === GeneratorType.List || type === GeneratorType.Readme) {
+					const fileData = await fs.readFile(file.path, "utf8");
+					const header = formatHeader(file, date);
+					const content =
+						metedata.preview?.remove?.enable && (metedata.preview?.remove?.lineremove || metedata.preview?.remove?.comment)
+							? utils_remove.lines(fileData, metedata.preview?.remove?.lineremove, metedata.preview?.remove?.comment)
+							: fileData;
 
-					folderDataMap.get(folder)!.push(`${header}\n${await ImagePreview(file, fs)}\`\`\`${match[1]}\n${content}\n\`\`\`\n`);
+					let fileContent = `${header}\n`;
+
+					if (type === GeneratorType.Readme) {
+						fileContent += `${await ImagePreview(file, fs)}`;
+					}
+
+					fileContent += `\`\`\`${match[1]}\n${content}\n\`\`\`\n`;
+
+					folderDataMap.get(folder)!.push(fileContent);
 				}
 			}
 		}
@@ -84,7 +88,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 
 			for (const [folder, rows] of [...folderDataMap.entries()].sort()) {
 				const folderHierarchy = folder.split("/").slice(1).join("/");
-				listContent.push(`\n## ${folderHierarchy}\n\nชื่อ | สร้าง | แก้ไข\n---| ----| ---\n${rows.join("\n")}`);
+				listContent.push(`\n## ${folderHierarchy}\n\n${rows.join("\n")}`);
 			}
 
 			if (listContent.length > 0) {
@@ -100,14 +104,6 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 	} catch (error) {
 		console.error("[Script]: Error:", error);
 	}
-}
-
-function formatFileRow(file: Entry, date: { created: Date; modified: Date }) {
-	const link = `[${file.name}](${encodeFilePath(file.path)})`,
-		createdTime = utils_time(date.created),
-		modifiedTime = utils_time(date.modified);
-
-	return date.created.getTime() === date.modified.getTime() ? `${link} | ${createdTime} | - ` : `${link} | ${createdTime} | ${modifiedTime}`;
 }
 
 function formatHeader(file: Entry, date: { created: Date; modified: Date }) {
