@@ -66,7 +66,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 
 				if (type === GeneratorType.List || type === GeneratorType.Readme) {
 					const fileData = await fs.readFile(file.path, "utf8");
-					const header = formatHeader(file, date);
+					const header = formatHeader(file, date, type);
 					const content =
 						metedata.preview?.remove?.enable && (metedata.preview?.remove?.lineremove || metedata.preview?.remove?.comment)
 							? utils_remove.lines(fileData, metedata.preview?.remove?.lineremove, metedata.preview?.remove?.comment)
@@ -76,9 +76,7 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 						type === GeneratorType.List
 							? (() => {
 									const lines = content.split("\n");
-									return lines.length > LIST_MAX_LINES
-										? `${lines.slice(0, LIST_MAX_LINES).join("\n")}\n......` // แสดงเฉพาะ MAX_LINES บรรทัดแรก พร้อม "......"
-										: content;
+									return lines.length > LIST_MAX_LINES ? `${lines.slice(0, LIST_MAX_LINES).join("\n")}\n......` : content;
 								})()
 							: content;
 
@@ -118,8 +116,8 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 	}
 }
 
-function formatHeader(file: Entry, date: { created: Date; modified: Date }) {
-	return `\`${file.name}\`<br>
+function formatHeader(file: Entry, date: { created: Date; modified: Date }, type?: GeneratorType) {
+	return `${type === GeneratorType.List ? "##### " : ""}\`${file.name}\`<br>
       สร้าง: ${utils_time(date.created)}<br>${
 			date.created.getDate() === date.modified.getDate()
 				? `${
