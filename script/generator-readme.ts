@@ -11,6 +11,8 @@ import { readJsonFile } from "./utils/read.js";
 import { remove as utils_remove } from "./utils/remove-lines.js";
 import { sortFiles } from "./utils/sort.js";
 
+const LIST_MAX_LINES = 300;
+
 export enum GeneratorType {
 	List = "list",
 	Readme = "readme",
@@ -70,13 +72,23 @@ export default async function generateReadme(path: string, type: GeneratorType) 
 							? utils_remove.lines(fileData, metedata.preview?.remove?.lineremove, metedata.preview?.remove?.comment)
 							: fileData;
 
+					const trimmedContent =
+						type === GeneratorType.List
+							? (() => {
+									const lines = content.split("\n");
+									return lines.length > LIST_MAX_LINES
+										? `${lines.slice(0, LIST_MAX_LINES).join("\n")}\n......` // แสดงเฉพาะ MAX_LINES บรรทัดแรก พร้อม "......"
+										: content;
+								})()
+							: content;
+
 					let fileContent = `${header}\n`;
 
 					if (type === GeneratorType.Readme) {
 						fileContent += `${await ImagePreview(file, fs)}`;
 					}
 
-					fileContent += `\`\`\`${match[1]}\n${content}\n\`\`\`\n`;
+					fileContent += `\`\`\`${match[1]}\n${trimmedContent}\n\`\`\`\n`;
 
 					folderDataMap.get(folder)!.push(fileContent);
 				}
