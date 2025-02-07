@@ -1,11 +1,12 @@
 {
-	"name": "project",
+	"name": "com-2305-project",
 	"mysql": {
 		"name": "com_2305-project"
 	},
 	"type": "module",
 	"main": "mysql.ts",
 	"scripts": {
+		"start": "bun mysql.ts",
 		"dev": "nodemon"
 	},
 	"dependencies": {
@@ -17,6 +18,6 @@
 	},
 	"nodemonConfig": {
 		"ext": "sql",
-		"exec": "tsx watch mysql.ts"
+		"exec": "bun --watch mysql.ts"
 	}
 }

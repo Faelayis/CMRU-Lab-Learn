@@ -17,21 +17,21 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Setup PNPM
-              uses: pnpm/action-setup@v2
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v2
               with:
-                  version: ${{ vars.PNPM_VERSION }}
-                  run_install: |
-                      args: [--ignore-scripts]
+                  bun-version: ${{ vars.BUN_VERSION }}
+
+            - name: Install Dependencies
+              run: bun install --ignore-scripts
 
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ vars.NODE_VERSION }}
-                  cache: pnpm
 
             - name: Run Prettier
-              run: pnpm run prettier
+              run: bun run prettier
 
             - name: Automatically Commit Changed
               uses: stefanzweifel/git-auto-commit-action@v4

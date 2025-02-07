@@ -54,7 +54,7 @@
 		"cgi_extensions": ["php"],
 		"cgi_interpreter": "php/php-cgi.exe",
 		"cgi_temp_dir": "",
-		"hide_files": [".vscode", "node_modules", "sphp", "phpdesktop", ".gitignore", "pnpm-lock.yaml", "package.json", "express.ts", "*.md"],
+		"hide_files": [".vscode", "node_modules", "sphp", "phpdesktop", ".gitignore", "bun-lock", "package.json", "express.ts", "*.md"],
 		"index_files": ["index.html", "index.php"],
 		"listen_on": ["127.0.0.1", 3000],
 		"www_directory": "../"
