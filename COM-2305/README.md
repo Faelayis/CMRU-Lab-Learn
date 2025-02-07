@@ -12,12 +12,12 @@
 
 ### ส่วนขยาย
 
--   แนะนำ [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
--   แนะนำ [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
--   แนะนำ [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
--   แนะนำ [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
--   แนะนำ [HTML Preview](https://marketplace.visualstudio.com/items?itemName=george-alisson.html-preview-vscode)
--   แนะนำ [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
+- แนะนำ [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+- แนะนำ [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+- แนะนำ [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+- แนะนำ [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+- แนะนำ [HTML Preview](https://marketplace.visualstudio.com/items?itemName=george-alisson.html-preview-vscode)
+- แนะนำ [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 
 ### การกำหนดค่า
 
@@ -51,10 +51,10 @@ DocumentRoot "COM-2305"
 > *PHP* จะส่งเฉพาะที่กำหนดในบรรทัดสุดท้ายไปยังเบราว์เซอร์เท่านั้น <br>
 > ต้องใช้ PHP Engine ของ XAMPP `C:\xampp\php` เพื่อแก้ไขปัญหา
 
--   ต้องใช้ [NodeJS](https://nodejs.org/en) เวอร์ชัน 18 หรือมากกว่า
--   ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
--   ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
--   ต้องใช้ [sphp](https://www.npmjs.com/package/sphp) เวอร์ชัน 0.6.3 หรือมากกว่า
+- ต้องใช้ [NodeJS](https://nodejs.org/en) เวอร์ชัน 18 หรือมากกว่า
+- ต้องใช้ [Express](https://nodejs.org/en) เวอร์ชัน 5.X หรือมากกว่า
+- ต้องใช้ [serve-index](https://www.npmjs.com/package/serve-index) เวอร์ชัน 1.9.X หรือมากกว่า
+- ต้องใช้ [sphp](https://www.npmjs.com/package/sphp) เวอร์ชัน 0.6.3 หรือมากกว่า
 
 <ol>
   <li>ติดตั้ง Node.js และ npm แล้วตรวจสอบว่า Node.js และ npm ติดตั้งแล้วโดยใช้คำสั่ง <code>node -v && npm -v</code>

@@ -8,7 +8,7 @@
 
 ### ส่วนขยาย
 
--   แนะนำ [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+- แนะนำ [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
 
 ```text
 📂.vscode
