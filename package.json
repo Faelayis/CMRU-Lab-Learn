@@ -14,26 +14,26 @@
 		"script:run": "bun run script/index.ts"
 	},
 	"dependencies": {
-		"fast-glob": "3.3.2",
+		"fast-glob": "3.3.3",
 		"git-date-extractor": "4.0.1"
 	},
 	"devDependencies": {
 		"@types/bun": "1.2.2",
-		"@types/node": "22.7.0",
-		"@typescript-eslint/eslint-plugin": "8.7.0",
-		"@typescript-eslint/parser": "8.7.0",
-		"eslint": "8",
-		"eslint-config-prettier": "9.1.0",
-		"eslint-plugin-import": "2.30.0",
-		"eslint-plugin-prettier": "5.2.1",
+		"@types/node": "22.13.1",
+		"@typescript-eslint/eslint-plugin": "8.23.0",
+		"@typescript-eslint/parser": "8.23.0",
+		"eslint": "8.57.1",
+		"eslint-config-prettier": "10.0.1",
+		"eslint-plugin-import": "2.31.0",
+		"eslint-plugin-prettier": "5.2.3",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"eslint-plugin-sort-destructure-keys": "2.0.0",
-		"eslint-plugin-typescript-sort-keys": "3.2.0",
-		"eslint-plugin-unicorn": "55.0.0",
-		"prettier": "3.3.3",
-		"prettier-plugin-sort-json": "4.0.0",
+		"eslint-plugin-typescript-sort-keys": "3.3.0",
+		"eslint-plugin-unicorn": "56.0.1",
+		"prettier": "3.4.2",
+		"prettier-plugin-sort-json": "4.1.1",
 		"prettier-plugin-sql": "0.18.1",
-		"typescript": "5.6.2"
+		"typescript": "5.7.3"
 	},
 	"engines": {
 		"bun": ">=1.5",
