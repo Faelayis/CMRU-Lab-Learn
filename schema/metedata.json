@@ -31,7 +31,8 @@
 				"sql",
 				"php",
 				"html",
-				"js"
+				"js",
+				"ts"
 			],
 			"type": "string"
 		},

@@ -4,13 +4,15 @@ on:
     push:
         paths:
             - "script/**"
-            - "**/*.fprg"
             - "**/*.c"
             - "**/*.py"
+            - "**/*.fprg"
             - "**/*.ps1"
             - "**/*.sql"
             - "**/*.php"
             - "**/*.html"
+            - "**/*.js"
+            - "**/*.ts"
 
 jobs:
     update:
