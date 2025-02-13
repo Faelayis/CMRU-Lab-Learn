@@ -8,7 +8,7 @@
 
 ## รายวิชา
 
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
 <!-- course-start -->
 
 |รหัส|วิชา|เริ่มต้น|โฟลเดอร์|โค้ดทั้งหมด|สิ่งที่ใช้|
@@ -20,3 +20,4 @@
 | [COM 2303 63](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2814) | การวิเคราะห์และออกแบบขั้นตอนวิธี | [⚙️](./COM-2303/README.md) | [📁](./COM-2303/) | [📑](./COM-2303/LIST.md) | <a href="#" target="_blank"><img width="20px" src="./resources/ts.svg" alt="TypeScript"/></a> |
 
 <!-- course-end -->
+<!-- prettier-ignore-end -->
