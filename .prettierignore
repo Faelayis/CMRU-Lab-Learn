@@ -1,6 +1,9 @@
 # github
 .github
 
+# icon resources
+resources
+
 # dependency directories
 node_modules
 
