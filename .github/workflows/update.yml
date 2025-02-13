@@ -38,7 +38,7 @@ jobs:
                   node-version: ${{ vars.NODE_VERSION }}
 
             - name: Run Script
-              run: bun script:run
+              run: bun generator:docs
 
             - name: Automatically Commit Changed
               uses: stefanzweifel/git-auto-commit-action@v4

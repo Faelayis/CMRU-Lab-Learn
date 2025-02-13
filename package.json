@@ -3,15 +3,15 @@
 	"license": "apache-2.0",
 	"author": "Faelayis <48393914+Faelayis@users.noreply.github.com>",
 	"type": "module",
+	"module": "script/index.ts",
 	"scripts": {
 		"eslint:fix": "eslint . --fix",
 		"eslint:lint": "eslint .",
-		"generator:docs": "bunx ts-json-schema-generator --path ./script/types/**/*.d.ts",
+		"generator:docs": "bun run script/index.ts",
 		"generator:json-schema": "bunx ts-json-schema-generator --path ./script/types/**/*.d.ts",
 		"preinstall": "npx only-allow bun",
 		"prettier": "prettier --write . --ignore-unknown",
-		"prettier:package-json": "bunx prettier-package-json --write ./package.json --use-tabs false",
-		"script:run": "bun run script/index.ts"
+		"prettier:package-json": "bunx prettier-package-json --write ./package.json --use-tabs false"
 	},
 	"dependencies": {
 		"fast-glob": "3.3.3",
