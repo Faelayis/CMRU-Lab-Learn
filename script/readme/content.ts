@@ -3,13 +3,13 @@ import * as fs from "node:fs/promises";
 import fg, { Entry } from "fast-glob";
 import gitDate from "git-date-extractor";
 
-import { ImageHeader, ImagePreview } from "./markdown/image.js";
-import { MeteData } from "./types/metedata.js";
-import { get as utils_time, timeZone } from "./utils/date-time-format.js";
-import { get as utils_get } from "./utils/get.js";
-import { readJsonFile } from "./utils/read.js";
-import { remove as utils_remove } from "./utils/remove-lines.js";
-import { sortFiles } from "./utils/sort.js";
+import { ImageHeader, ImagePreview } from "../markdown/image.js";
+import { MeteData } from "../types/metedata.js";
+import { get as utils_time, timeZone } from "../utils/date-time-format.js";
+import { get as utils_get } from "../utils/get.js";
+import { readJsonFile } from "../utils/read.js";
+import { remove as utils_remove } from "../utils/remove-lines.js";
+import { sortFiles } from "../utils/sort.js";
 
 const LIST_MAX_LINES = 300;
 
@@ -23,7 +23,7 @@ export enum GeneratorType {
  *
  * @param path - Path to metadata.json file.
  */
-export default async function generateReadme(path: string, type: GeneratorType) {
+export default async function generateContent(path: string, type: GeneratorType) {
 	console.info(`[Script]: Runs Generator ${type}`);
 
 	try {

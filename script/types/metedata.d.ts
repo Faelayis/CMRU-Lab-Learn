@@ -3,6 +3,7 @@ import { FileType } from "./filetype.js";
 import { CommentParameter } from "./remove-lines.ts";
 
 export interface MeteData {
+	index: number;
 	$schema: string;
 	coursecode: string;
 	name: string;

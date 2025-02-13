@@ -39,6 +39,9 @@
 		"MeteData": {
 			"additionalProperties": false,
 			"properties": {
+				"index": {
+					"type": "number"
+				},
 				"$schema": {
 					"type": "string"
 				},
@@ -109,6 +112,7 @@
 				}
 			},
 			"required": [
+				"index",
 				"$schema",
 				"coursecode",
 				"name"
