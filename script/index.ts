@@ -27,6 +27,13 @@ import { readJsonFile } from "./utils/read.js";
 
 		metedataList.push(metedata);
 
+		// if (metedata.complete) {
+		// 	const date = new Date(metedata.complete.split("-").reverse().join("-"));
+		// 	console.log(`[Script]: The course is complete ${date.toLocaleDateString("en-US", { timeZone: "Asia/Bangkok" })}`);
+		// } else {
+		// 	await Promise.all(Object.values(GeneratorType).map((type) => generateContent(path, type)));
+		// }
+
 		await Promise.all(Object.values(GeneratorType).map((type) => generateContent(path, type)));
 	}
 
