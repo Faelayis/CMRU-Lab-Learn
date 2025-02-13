@@ -25,7 +25,7 @@ export async function generateIcons(files: string[]): Promise<string> {
 			const icon = icons[file];
 
 			if (typeof icon === "string") {
-				return `<img width="20px" src="./resources/${icon}" alt="${file.toUpperCase()}"/>`;
+				return `<a href="#" target="_blank"><img width="20px" src="./resources/${icon}" alt="${file.toUpperCase()}"/></a>`;
 			}
 
 			if (icon) {
@@ -34,7 +34,7 @@ export async function generateIcons(files: string[]): Promise<string> {
 
 				await saveIconToFile(icon, iconFilePath);
 
-				return `<img width="20px" src="./resources/${iconFileName}" alt="${icon.title}"/>`;
+				return `<a href="#" target="_blank"><img width="20px" src="./resources/${iconFileName}" alt="${icon.title}"/></a>`;
 			} else {
 				return "";
 			}
