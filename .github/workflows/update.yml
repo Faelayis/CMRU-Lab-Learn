@@ -30,7 +30,7 @@ jobs:
                   bun-version: ${{ vars.BUN_VERSION }}
 
             - name: Install Dependencies
-              run: bun install --ignore-scripts
+              run: bun install --production --ignore-scripts
 
             - name: Setup Node
               uses: actions/setup-node@v3
