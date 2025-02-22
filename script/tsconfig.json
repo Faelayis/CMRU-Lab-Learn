@@ -4,15 +4,27 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"inlineSourceMap": true,
-		"module": "NodeNext",
+		"module": "ESNext",
 		"noImplicitAny": true,
 		"rootDir": "./",
-		"skipLibCheck": false,
 		"strict": true,
 		"strictBindCallApply": true,
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
-		"target": "ESNext"
+		"target": "ESNext",
+		"lib": [
+			"ESNext"
+		],
+		"moduleDetection": "force",
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noPropertyAccessFromIndexSignature": true
 	}
 }
