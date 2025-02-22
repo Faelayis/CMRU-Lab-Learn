@@ -1,7 +1,7 @@
 {
 	"index": 2,
 	"$schema": "../schema/metedata.json",
-	"coursecode": "COM-1305-63",
+	"coursecode": "COM 1305-63",
 	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2784",
 	"complete": "20-02-2567",
 	"name": "การเขียนโปรแกรมภาษาคอมพิวเตอร์",
