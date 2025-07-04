@@ -35,6 +35,10 @@
 		{
 			"name": "[TS] การวิเคราะห์และออกแบบขั้นตอนวิธี",
 			"path": "COM-2303"
+		},
+		{
+			"name": "[JAVA] การเขียนโปรแกรมเชิงวัตถุ",
+			"path": "COM-3302"
 		}
 	],
 	"extensions": {
@@ -51,6 +55,9 @@
 			"**/node_modules": true,
 			"*/**/README.md": true
 		},
+		"java.debug.settings.console": "externalTerminal",
+		"java.format.settings.profile": "GoogleStyle",
+		"java.debug.settings.hotCodeReplace": "auto",
 		"editor.tabSize": 3,
 		"editor.useTabStops": true,
 		"debug.openDebug": "neverOpen",
