@@ -16,25 +16,25 @@
 	"dependencies": {
 		"fast-glob": "3.3.3",
 		"git-date-extractor": "4.0.1",
-		"simple-icons": "14.6.0"
+		"simple-icons": "15.4.0"
 	},
 	"devDependencies": {
-		"@types/bun": "1.2.2",
-		"@types/node": "22.13.2",
-		"@typescript-eslint/eslint-plugin": "8.24.0",
-		"@typescript-eslint/parser": "8.24.0",
+		"@types/bun": "1.2.18",
+		"@types/node": "24.0.10",
+		"@typescript-eslint/eslint-plugin": "8.35.1",
+		"@typescript-eslint/parser": "8.35.1",
 		"eslint": "8.57.1",
-		"eslint-config-prettier": "10.0.1",
-		"eslint-plugin-import": "2.31.0",
-		"eslint-plugin-prettier": "5.2.3",
+		"eslint-config-prettier": "10.1.5",
+		"eslint-plugin-import": "2.32.0",
+		"eslint-plugin-prettier": "5.5.1",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"eslint-plugin-sort-destructure-keys": "2.0.0",
 		"eslint-plugin-typescript-sort-keys": "3.3.0",
-		"eslint-plugin-unicorn": "56.0.1",
-		"prettier": "3.5.1",
+		"eslint-plugin-unicorn": "59.0.1",
+		"prettier": "3.6.2",
 		"prettier-plugin-sort-json": "4.1.1",
-		"prettier-plugin-sql": "0.18.1",
-		"typescript": "5.7.3"
+		"prettier-plugin-sql": "0.19.1",
+		"typescript": "5.8.3"
 	},
 	"engines": {
 		"bun": ">=1.5",
@@ -105,7 +105,7 @@
 			}
 		]
 	},
-	"packageManager": "bun@1.2.2",
+	"packageManager": "bun@1.2.18",
 	"prettier": {
 		"bracketSameLine": true,
 		"bracketSpacing": true,
