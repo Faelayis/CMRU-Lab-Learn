@@ -8,6 +8,10 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
 	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always"
+	},
+	"editor.formatOnSave": true,
 	"files.exclude": {
 		"**/*.exe": true,
 		"**/node_modules": true
