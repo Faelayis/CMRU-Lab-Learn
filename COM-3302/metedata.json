@@ -1,0 +1,18 @@
+{
+	"index": 5,
+	"$schema": "../schema/metedata.json",
+	"coursecode": "COM 3302-63",
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2882",
+	"complete": null,
+	"name": "การเขียนโปรแกรมเชิงวัตถุ",
+	"preview": {
+		"enable": true,
+		"files": [
+			"java"
+		],
+		"list": true
+	},
+	"time_formats": {
+		"folder": "yy-mm-dd"
+	}
+}

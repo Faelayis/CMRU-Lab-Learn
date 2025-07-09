@@ -1,0 +1,12 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Run Java Current File",
+			"request": "launch",
+			"mainClass": "${file}",
+			"console": "externalTerminal"
+		}
+	],
+	"version": "0.2.0"
+}
