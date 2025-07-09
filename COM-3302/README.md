@@ -8,8 +8,8 @@
 
 ### ส่วนขยาย
 
-- ต้องใช้ [Language Support for Java(TM) by Red Hat](ttps://marketplace.visualstudio.com/items?itemName=redhat.java)
-- ต้องใช้ [Debugger for Java](hhttps://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)
+- ต้องใช้ [Language Support for Java(TM) by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java)
+- ต้องใช้ [Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)
 
 ### Windows
 
