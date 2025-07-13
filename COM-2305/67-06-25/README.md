@@ -1,5 +1,5 @@
 `form.html`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,7 @@
 
 ```
 `link.html`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -38,7 +38,7 @@
 
 ```
 `table.html`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -91,7 +91,7 @@
 
 ```
 `text.html`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">

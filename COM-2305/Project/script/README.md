@@ -1,5 +1,5 @@
 `alerts.js`<br>
-สร้าง: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 เวลา 20:52<br>
 ```js
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
@@ -66,7 +66,7 @@ export { showDeleteConfirmation, showErrorMessage, showReservationForm, showSucc
 
 ```
 `calendar.js`<br>
-สร้าง: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 เวลา 20:52<br>
 ```js
 /* eslint-disable no-undef */
 import { handleEventClick, handleSelect } from "./events.js";
@@ -96,7 +96,7 @@ export { calendar };
 
 ```
 `events.js`<br>
-สร้าง: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 เวลา 20:52<br>
 ```js
 /* eslint-disable no-undef */
 
@@ -210,7 +210,7 @@ export { handleEventClick, handleSelect };
 
 ```
 `fetch.js`<br>
-สร้าง: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 เวลา 20:52<br>
 ```js
 /* eslint-disable no-undef */
 
@@ -260,7 +260,7 @@ export { fetchEvents };
 
 ```
 `utils.js`<br>
-สร้าง: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 เวลา 20:52<br>
 ```js
 function addEvent(calendar, date, time_slot_1, goto_slot_1, time_slot_2, goto_slot_2) {
 	calendar.addEvent({

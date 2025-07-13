@@ -1,6 +1,6 @@
 `add.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Update: 24 ก.ย. 2567 เวลา 17:27<br>
 ```php
 <style>
    input::-webkit-outer-spin-button,
@@ -67,8 +67,8 @@
 </body>
 ```
 `report.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 18 ก.ย. 2567 เวลา 21:13<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Update: 18 ก.ย. 2567 เวลา 21:13<br>
 ```php
 <?php
 include("../../php/faculty/get.php");
@@ -104,8 +104,8 @@ include("../../php/faculty/get.php");
 </body>
 ```
 `search.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 25 ก.ย. 2567 เวลา 09:10<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Update: 25 ก.ย. 2567 เวลา 09:10<br>
 ```php
 <body>
    <h1 class="text-2xl font-bold mb-4">Faculty Data</h1>

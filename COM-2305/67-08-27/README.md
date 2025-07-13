@@ -1,6 +1,6 @@
 `index.php`<br>
-สร้าง: 27 ส.ค. 2567 เวลา 15:47<br>
-แก้ไขล่าสุด: เวลา 15:51<br>
+Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Last edited: Time 15:51<br>
 
 ```php
 <!DOCTYPE html>

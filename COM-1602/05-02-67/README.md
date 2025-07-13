@@ -1,6 +1,6 @@
 `product.sql`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 10 ก.ย. 2567 เวลา 16:53<br>
 ```sql
 CREATE TABLE products (product_code VARCHAR(10), product_type VARCHAR(50), price_per_unit DECIMAL(10, 2));
 
@@ -12,8 +12,8 @@ VALUES
 
 ```
 `product_app.sql`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 10 ก.ย. 2567 เวลา 16:53<br>
 ```sql
 CREATE TABLE products (product_code VARCHAR(10), product_type VARCHAR(50), price_per_unit DECIMAL(10, 2));
 
@@ -28,7 +28,7 @@ VALUES
 
 ```
 `update-delete.sql`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
 ```sql
 
 ```

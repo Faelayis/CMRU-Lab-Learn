@@ -1,6 +1,6 @@
 `1.php`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $christ = 2024;
@@ -11,8 +11,8 @@ echo "ปีพุทธศักราช: $buddhist";
 
 ```
 `2.php`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $thaiArray = array(
@@ -34,8 +34,8 @@ foreach ($thaiArray as $number) {
 
 ```
 `3.php`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +105,7 @@ foreach ($thaiArray as $number) {
 </html>
 ```
 `4.php`<br>
-สร้าง: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +147,7 @@ foreach ($thaiArray as $number) {
 </html>
 ```
 `5.php`<br>
-สร้าง: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -197,7 +197,7 @@ foreach ($thaiArray as $number) {
 </html>
 ```
 `6.php`<br>
-สร้าง: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -257,8 +257,8 @@ foreach ($thaiArray as $number) {
 </html>
 ```
 `7.php`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $name = "Fae";
@@ -283,8 +283,8 @@ do {
 
 ```
 `8.php`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -323,7 +323,7 @@ do {
 </html>
 ```
 `8.1.php`<br>
-สร้าง: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $input = $_GET["input"];
@@ -334,7 +334,7 @@ for ($count = 1; $count <= 12; $count++) {
 
 ```
 `8.2.php`<br>
-สร้าง: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $input = $_GET["input"];
@@ -347,7 +347,7 @@ while ($count <= 12) {
 
 ```
 `8.3.php`<br>
-สร้าง: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $input = $_GET["input"];
@@ -360,8 +360,8 @@ do {
 
 ```
 `9.php`<br>
-สร้าง: 29 ม.ค. 2567 เวลา 16:33<br>
-อัปเดต: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```php
 <?php
 $days = array(

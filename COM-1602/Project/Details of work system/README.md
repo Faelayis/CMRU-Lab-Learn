@@ -1,6 +1,6 @@
 `schema.sql`<br>
-สร้าง: 25 ก.พ. 2567 เวลา 23:03<br>
-อัปเดต: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 25 ก.พ. 2567 เวลา 23:03<br>
+Update: 10 ก.ย. 2567 เวลา 16:53<br>
 ```sql
 CREATE TABLE `Reservation` (
 	`QueueNumber` INT NOT NULL,

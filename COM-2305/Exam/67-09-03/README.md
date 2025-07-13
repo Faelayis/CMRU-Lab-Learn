@@ -1,5 +1,5 @@
 `index.php`<br>
-สร้าง: 3 ก.ย. 2567 เวลา 14:21<br>
+Create: 3 ก.ย. 2567 เวลา 14:21<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">

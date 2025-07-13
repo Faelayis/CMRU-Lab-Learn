@@ -1,5 +1,5 @@
 `login.php`<br>
-สร้าง: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
 </html>
 ```
 `logout.php`<br>
-สร้าง: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ```php
 <?php
 session_start();
@@ -35,7 +35,7 @@ header("Refresh:0; url=welcome.php");
 
 ```
 `session.php`<br>
-สร้าง: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ```php
 <?php
 session_start();
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ```
 `welcome.php`<br>
-สร้าง: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ```php
 <?php
 session_start();

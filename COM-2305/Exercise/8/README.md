@@ -1,6 +1,6 @@
 `3.1.html`<br>
-สร้าง: 30 ก.ย. 2567 เวลา 23:57<br>
-อัปเดต: 1 ต.ค. 2567 เวลา 13:24<br>
+Create: 30 ก.ย. 2567 เวลา 23:57<br>
+Update: 1 ต.ค. 2567 เวลา 13:24<br>
 ```html
 <form method="post" action="./3.2.php">
 	<input type="hidden" id="fac_id" name="fac_id" />
@@ -17,8 +17,8 @@
 
 ```
 `3.2.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Update: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -42,8 +42,8 @@ mysqli_close($db);
 
 ```
 `4.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Update: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -55,8 +55,8 @@ mysqli_close($db);
 
 ```
 `5.php`<br>
-สร้าง: 24 ก.ย. 2567 เวลา 17:27<br>
-อัปเดต: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 24 ก.ย. 2567 เวลา 17:27<br>
+Update: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -81,8 +81,8 @@ mysqli_close($db);
 
 ```
 `6.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
-อัปเดต: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Update: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -108,7 +108,7 @@ mysqli_close($db);
 
 ```
 `7.php`<br>
-สร้าง: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -130,7 +130,7 @@ if ($stmt) {
 
 ```
 `8.php`<br>
-สร้าง: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -200,7 +200,7 @@ function deleteStudent($db, $id) {
 
 ```
 `9.php`<br>
-สร้าง: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 30 ก.ย. 2567 เวลา 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -270,7 +270,7 @@ function deleteTeacher($db, $id) {
 
 ```
 `connected_database.php`<br>
-สร้าง: 17 ก.ย. 2567 เวลา 01:33<br>
+Create: 17 ก.ย. 2567 เวลา 01:33<br>
 ```php
 <?php
 $servername = "localhost";

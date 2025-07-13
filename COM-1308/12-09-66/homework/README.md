@@ -1,6 +1,6 @@
 `main.c`<br>
-สร้าง: 14 ก.ย. 2566 เวลา 11:41<br>
-แก้ไขล่าสุด: เวลา 14:02<br>
+Create: 14 ก.ย. 2566 เวลา 11:41<br>
+Last edited: Time 14:02<br>
 
 ```c
 #include <stdio.h>

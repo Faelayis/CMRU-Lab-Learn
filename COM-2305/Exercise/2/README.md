@@ -1,5 +1,5 @@
 `1.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <?php
 $studentID = "123456789";
@@ -12,7 +12,7 @@ echo "Section: " . $section;
 
 ```
 `2.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <?php
 $studentID = "123456789";
@@ -25,7 +25,7 @@ print "Section: " . $section;
 
 ```
 `3.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <?php
 $courseID = "COM 2305-63";
@@ -38,7 +38,7 @@ printf("หน่วยกิต: %d", $credits);
 
 ```
 `4.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <?php
 $courseID = "COM 2305-63";
@@ -51,7 +51,7 @@ echo $courseInfo;
 
 ```
 `5.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +89,7 @@ echo $courseInfo;
 </html>
 ```
 `6.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +117,7 @@ echo $courseInfo;
 </html>
 ```
 `7.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -156,7 +156,7 @@ echo $courseInfo;
 </html>
 ```
 `8.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -193,7 +193,7 @@ echo $courseInfo;
 </html>
 ```
 `9.php`<br>
-สร้าง: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">

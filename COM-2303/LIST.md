@@ -2,7 +2,7 @@
 ## Exam/68-02-12
 
 ##### `bubble-sort.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function BubbleSort(array: number[]): number[] {
 	let n = array.length;
@@ -26,7 +26,7 @@ export function BubbleSort(array: number[]): number[] {
 ```
 
 ##### `euclids-algorithm.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function EuclidsAlgorithm(a: number, b: number): number {
 	while (b !== 0) {
@@ -41,7 +41,7 @@ export function EuclidsAlgorithm(a: number, b: number): number {
 ```
 
 ##### `factorial-n.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function Factorial(n: number): number {
 	let result = 1;
@@ -56,7 +56,7 @@ export function Factorial(n: number): number {
 ```
 
 ##### `fibonacci.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function Fibonacci(n: number): number {
 	let a = 0,
@@ -75,7 +75,7 @@ export function Fibonacci(n: number): number {
 ```
 
 ##### `insertion-sort.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function InsertionSort(array: number[]): number[] {
 	for (let index = 1; index < array.length; index++) {
@@ -94,7 +94,7 @@ export function InsertionSort(array: number[]): number[] {
 ```
 
 ##### `maximum-element.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function MaximumElement(array: number[]): number {
 	let max = array[0];
@@ -111,7 +111,7 @@ export function MaximumElement(array: number[]): number {
 ```
 
 ##### `merge-sort.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function MergeSort(array: number[]): number[] {
 	if (array.length <= 1) return array;
@@ -142,7 +142,7 @@ function merge(left: number[], right: number[]): number[] {
 ```
 
 ##### `power-a.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function Power(base: number, exponent: number): number {
 	let result = 1;
@@ -157,7 +157,7 @@ export function Power(base: number, exponent: number): number {
 ```
 
 ##### `quick-sort.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function QuickSort(array: number[]): number[] {
 	if (array.length <= 1) return array;
@@ -175,7 +175,7 @@ export function QuickSort(array: number[]): number[] {
 ```
 
 ##### `selection-sort.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function SelectionSort(array: number[]): number[] {
 	for (let index = 0; index < array.length - 1; index++) {
@@ -193,7 +193,7 @@ export function SelectionSort(array: number[]): number[] {
 ```
 
 ##### `sieve-of-eratosthenes.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 export function SieveOfEratosthenes(limit: number): number[] {
 	const primes = Array.from({ length: limit + 1 }, () => true);
@@ -219,7 +219,7 @@ export function SieveOfEratosthenes(limit: number): number[] {
 ```
 
 ##### `test.ts`<br>
-สร้าง: 13 ก.พ. 2568 เวลา 18:58<br>
+Create: 13 ก.พ. 2568 เวลา 18:58<br>
 ```ts
 import { BubbleSort } from "./bubble-sort";
 import { EuclidsAlgorithm } from "./euclids-algorithm";

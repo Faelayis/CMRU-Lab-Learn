@@ -1,6 +1,6 @@
 `init.ps1`<br>
-สร้าง: 27 พ.ย. 2566 เวลา 16:55<br>
-อัปเดต: 4 ธ.ค. 2566 เวลา 17:04<br>
+Create: 27 พ.ย. 2566 เวลา 16:55<br>
+Update: 4 ธ.ค. 2566 เวลา 17:04<br>
 ```ps1
 Set-Location C:\xampp\mysql\bin
 .\mysql.exe -u root -p

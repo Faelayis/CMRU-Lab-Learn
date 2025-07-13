@@ -1,6 +1,6 @@
 `1.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def DisplayNumber(num):
@@ -15,8 +15,8 @@ DisplayNumber(1)
 
 ```
 `2.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def SumNumber(number):
@@ -33,8 +33,8 @@ SumNumber(5)
 
 ```
 `3.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 
 ![3.py](./3.png)
@@ -94,8 +94,8 @@ print("\n")
 
 ```
 `4.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def Add(number1, number2) -> None:
@@ -117,8 +117,8 @@ Add(x, y)
 
 ```
 `5.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 
 ![5.py](./5.png)
@@ -133,8 +133,8 @@ multiplication_table(int(input("Enter a number: ")))
 
 ```
 `6.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def fNum(num):
@@ -154,8 +154,8 @@ fNum(7)
 
 ```
 `7.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def calculate_triangle_area(base, height):
@@ -178,8 +178,8 @@ print("The area is: ", triangle_area)
 
 ```
 `8.1.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def sumA(*n) -> None:
@@ -198,8 +198,8 @@ sumA(10, 20, 30)
 
 ```
 `8.2.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def printkv(**kv):
@@ -215,8 +215,8 @@ printkv(name="Manaka Mukaido", age=14, sex="หญิง")
 
 ```
 `9.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 
 ![9.py](./9.png)
@@ -237,8 +237,8 @@ print()
 
 ```
 `10.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def primeNum(num):
@@ -261,8 +261,8 @@ print("ตัวเลขที่ป้อนเป็น ", result)
 
 ```
 `11.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 def Tri(b, h):
@@ -285,8 +285,8 @@ print("พื้นที่สามเหลี่ยมเท่ากับ 
 
 ```
 `12.py`<br>
-สร้าง: 6 ก.พ. 2567 เวลา 10:57<br>
-แก้ไขล่าสุด: เวลา 12:07<br>
+Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Last edited: Time 12:07<br>
 
 ```py
 options = {"A": "การบวกเลข", "S": "การลบเลข", "M": "การคูณเลข"}

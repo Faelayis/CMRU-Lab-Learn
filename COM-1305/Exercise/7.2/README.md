@@ -1,5 +1,5 @@
 `1.py`<br>
-สร้าง: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 เวลา 11:39<br>
 ```py
 from datetime import date
 
@@ -17,7 +17,7 @@ display_birthdate(1, 1, 1999)
 
 ```
 `2.py`<br>
-สร้าง: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 เวลา 11:39<br>
 ```py
 import datetime
 
@@ -35,7 +35,7 @@ print("Your birthday is : ", birth_date)
 
 ```
 `3.py`<br>
-สร้าง: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 เวลา 11:39<br>
 ```py
 import datetime
 
@@ -60,7 +60,7 @@ print(f"Create Custom Time : {create_time(*numbers)}")
 
 ```
 `4.py`<br>
-สร้าง: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 เวลา 11:39<br>
 ```py
 import math
 
@@ -84,7 +84,7 @@ print(f"ค่า tan = {tan_value}")
 
 ```
 `5.py`<br>
-สร้าง: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 เวลา 11:39<br>
 
 ![5.py](./5.png)
 ```py
