@@ -1,0 +1,18 @@
+{
+	"$schema": "../schema/metedata.json",
+	"complete": null,
+	"coursecode": "COM 3410-63",
+	"index": 5,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16405",
+	"name": "พื้นฐานวิทยาการข้อมูล",
+	"preview": {
+		"enable": true,
+		"files": [
+			"py"
+		],
+		"list": true
+	},
+	"time_formats": {
+		"folder": "yy-mm-dd"
+	}
+}
