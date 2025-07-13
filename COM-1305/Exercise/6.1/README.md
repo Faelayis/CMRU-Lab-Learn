@@ -1,6 +1,6 @@
 `1.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 a = [99, 5000.75, "Cat", True]
 
@@ -15,8 +15,8 @@ for item in a:
 
 ```
 `2.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 aeiou: list[str] = ["a", "e", "I", "o", "u"]
 
@@ -31,8 +31,8 @@ for x in aeiou:
 
 ```
 `3.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 num: list[int] = [10, 20, 30, 40, 50]
 
@@ -47,8 +47,8 @@ print(num)
 
 ```
 `4.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 program: list[str] = ["Python", "C", "PHP", "ASP"]
 
@@ -61,8 +61,8 @@ else:
 
 ```
 `5.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 numbers: list[int] = [99, 10, 20, 50, 15]
 
@@ -90,8 +90,8 @@ print(numbers)
 
 ```
 `6.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 p = ["Python", "C", "PHP", "ASP"]
 
@@ -127,8 +127,8 @@ print(p)
 
 ```
 `7.1.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 a = (10, 2000.75, "Cat", "One")
 print(a[0], a[1], a[2], a[3])
@@ -139,8 +139,8 @@ print(a)
 
 ```
 `7.2.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 L1 = ["a", "e", "i", "o", "u"]
 my_tuple = tuple(L1)
@@ -163,8 +163,8 @@ print("Good Bye")
 
 ```
 `7.3.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 L1 = ["a", "e", "i", "o", "u"]
 my_tuple = tuple(L1)
@@ -184,8 +184,8 @@ type(my_tuple)
 
 ```
 `8.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 x = ("apple", "banana", "cherry")
 y = list(x)
@@ -197,8 +197,8 @@ print(x)
 
 ```
 `9.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 A = (10, 20, 30, 40, 50)
 B = ("a", "b", "c", "d", "e")
@@ -209,8 +209,8 @@ print(C)
 
 ```
 `10.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 X = ("Hello", "Python")
 Y = X * 3
@@ -220,8 +220,8 @@ print(Y)
 
 ```
 `11.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:56<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:56<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 # ตัวเลขไทย
 tp_thai_digits = ("๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙")

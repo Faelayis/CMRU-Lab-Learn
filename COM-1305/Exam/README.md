@@ -1,5 +1,5 @@
 `5-20-67.py`<br>
-Create: 20 ก.พ. 2567 เวลา 10:38<br>
+Create: 20 ก.พ. 2567 time 10:38<br>
 ```py
 def find_zodiac(year):
     zodiac = [
@@ -53,8 +53,8 @@ main()
 
 ```
 `12-26-66.py`<br>
-Create: 20 ธ.ค. 2566 เวลา 02:21<br>
-Update: 26 ธ.ค. 2566 เวลา 09:09<br>
+Create: 20 ธ.ค. 2566 time 02:21<br>
+Update: 26 ธ.ค. 2566 time 09:09<br>
 ```py
 month = {
     1: "มกราคม",
@@ -80,8 +80,8 @@ else:
 
 ```
 `test.py`<br>
-Create: 26 ธ.ค. 2566 เวลา 09:25<br>
-Update: 16 ม.ค. 2567 เวลา 08:48<br>
+Create: 26 ธ.ค. 2566 time 09:25<br>
+Update: 16 ม.ค. 2567 time 08:48<br>
 ```py
 text = input("ป้อนสัญลักษณ์พิเศษ : ")
 num = int(input("ป้อนตัวเลข : "))

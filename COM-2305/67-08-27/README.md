@@ -1,5 +1,5 @@
 `index.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 Last edited: Time 15:51<br>
 
 ```php

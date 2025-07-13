@@ -1,5 +1,5 @@
 `main.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 Last edited: Time 11:41<br>
 
 ```c

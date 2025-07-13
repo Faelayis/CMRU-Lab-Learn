@@ -1,5 +1,5 @@
 `1.1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import datetime
 
@@ -16,7 +16,7 @@ print(today)
 
 ```
 `1.2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import datetime
 
@@ -31,7 +31,7 @@ print(t.hour, t.minute, t.second, t.microsecond)
 
 ```
 `2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import time
 
@@ -49,7 +49,7 @@ print(time.asctime())
 
 ```
 `3.1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import random
 
@@ -67,7 +67,7 @@ print(random.choices(a))
 
 ```
 `3.2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import random
 
@@ -80,7 +80,7 @@ print(random.random())
 
 ```
 `4.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import statistics
 
@@ -100,7 +100,7 @@ print(statistics.variance(gpas))
 
 ```
 `5.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import math
 
@@ -115,7 +115,7 @@ print("sin(0) : ", math.sin(0))
 
 ```
 `6.1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 str = "this is string example....wow!!!"
 print("Length of the string: ", len(str))
@@ -125,7 +125,7 @@ print("Length of the string: ", len(str))
 
 ```
 `6.2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 str = "this is really a string example....wow!!!"
 print("Max character: " + max(str))
@@ -138,7 +138,7 @@ print("ตัวเลขที่มำกที่สุด ", max(num))
 
 ```
 `6.3.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 str = "THIS IS STRING EXAMPLE....WOW!!!"
 print(str.lower())

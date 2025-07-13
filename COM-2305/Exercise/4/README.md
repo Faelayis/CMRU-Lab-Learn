@@ -1,5 +1,5 @@
 `1.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $originalSalary = 12345.6789;
@@ -10,7 +10,7 @@ echo "เงินเดือนหลังปัดเศษ: " . $roundedSal
 
 ```
 `2.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $numbers = [10, 5, 8, 3, 12];
@@ -32,7 +32,7 @@ echo "Minimum number: " . $min . "<br>";
 
 ```
 `3.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +87,7 @@ Create: 23 ก.ค. 2567 เวลา 16:42<br>
 </html>
 ```
 `4.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 // แสดงชื่อและนามสกุลนักศึกษาเป็นภาษาอังกฤษ
@@ -120,7 +120,7 @@ echo "Current date: " . date("Y-m-d") . "<br>";
 
 ```
 `5.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $array = array(
@@ -159,7 +159,7 @@ echo "วัน {$array["day"][$dayOfWeek]}ที่ {$dayOfMonth} {$array["mont
 
 ```
 `6.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 echo "<h3> ฟังก์ชัน md5() <br>";

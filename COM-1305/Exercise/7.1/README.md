@@ -1,5 +1,5 @@
 `1.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -15,7 +15,7 @@ DisplayNumber(1)
 
 ```
 `2.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -33,7 +33,7 @@ SumNumber(5)
 
 ```
 `3.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 
@@ -94,7 +94,7 @@ print("\n")
 
 ```
 `4.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -117,7 +117,7 @@ Add(x, y)
 
 ```
 `5.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 
@@ -133,7 +133,7 @@ multiplication_table(int(input("Enter a number: ")))
 
 ```
 `6.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -154,7 +154,7 @@ fNum(7)
 
 ```
 `7.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -178,7 +178,7 @@ print("The area is: ", triangle_area)
 
 ```
 `8.1.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -198,7 +198,7 @@ sumA(10, 20, 30)
 
 ```
 `8.2.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -215,7 +215,7 @@ printkv(name="Manaka Mukaido", age=14, sex="หญิง")
 
 ```
 `9.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 
@@ -237,7 +237,7 @@ print()
 
 ```
 `10.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -261,7 +261,7 @@ print("ตัวเลขที่ป้อนเป็น ", result)
 
 ```
 `11.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -285,7 +285,7 @@ print("พื้นที่สามเหลี่ยมเท่ากับ 
 
 ```
 `12.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py

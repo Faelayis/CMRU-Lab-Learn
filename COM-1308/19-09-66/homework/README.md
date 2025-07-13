@@ -1,6 +1,6 @@
 `main.c`<br>
-Create: 19 ก.ย. 2566 เวลา 21:29<br>
-Update: 26 ก.ย. 2566 เวลา 09:36<br>
+Create: 19 ก.ย. 2566 time 21:29<br>
+Update: 26 ก.ย. 2566 time 09:36<br>
 ```c
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,5 +1,5 @@
 `get_enum_values.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
 ```php
 <?php
 function get_enum_values($db, $table, $column) {
@@ -13,8 +13,8 @@ function get_enum_values($db, $table, $column) {
 
 ```
 `valid-reservation.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 6 ต.ค. 2567 เวลา 02:16<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 6 ต.ค. 2567 time 02:16<br>
 ```php
 <?php
 include("get_enum_values.php");
@@ -30,8 +30,8 @@ $fields_to_validate = [
 
 ```
 `valid-student.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```php
 <?php
 function is_valid_student($db, $student_id) {

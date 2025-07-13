@@ -1,6 +1,6 @@
 `select.sql`<br>
-Create: 22 ม.ค. 2567 เวลา 14:43<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 22 ม.ค. 2567 time 14:43<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- 1
 SELECT

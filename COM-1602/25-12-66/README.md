@@ -1,6 +1,6 @@
 `data.sql`<br>
-Create: 25 ธ.ค. 2566 เวลา 14:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 25 ธ.ค. 2566 time 14:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Insert into Books
 INSERT INTO
@@ -54,8 +54,8 @@ VALUES
 
 ```
 `schema.sql`<br>
-Create: 25 ธ.ค. 2566 เวลา 14:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 25 ธ.ค. 2566 time 14:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create database
 CREATE DATABASE faelayis;

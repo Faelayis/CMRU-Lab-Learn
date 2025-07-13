@@ -1,5 +1,5 @@
 `1.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 txt = "The best things in life are free!"
 
@@ -13,7 +13,7 @@ else:
 
 ```
 `2.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 fruits = ["apple", "banana", "Cherry"]
 x, y, z = fruits
@@ -25,7 +25,7 @@ print(x, y, z)
 
 ```
 `3.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 x = {10, 20, 30, 40, 50}
 y = {1, "One", 2, "two"}
@@ -50,7 +50,7 @@ for i in z:
 
 ```
 `4.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 setA = set("abracadabra")
 setB = set("alacazam")
@@ -67,7 +67,7 @@ print(setC)
 
 ```
 `5.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 x = {10, 20, 30, 40, 50}
 print("จ ำนวนข้อมูลในเซตทั้งหมด คือ ", len(x))
@@ -85,7 +85,7 @@ print("ชนิดของตัวแปร x คือ ", type(x))
 
 ```
 `6.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 s1 = {1, 3, 5, 7, 9}
 
@@ -109,7 +109,7 @@ print(s1)
 
 ```
 `7.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 s1 = {1, 2, 3, 4, 5}
 s2 = {4, 5, 6, 7, 8}
@@ -125,7 +125,7 @@ print("Difference:", s1.difference(s2))
 
 ```
 `8.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 
@@ -143,7 +143,7 @@ print("-" * 20)
 
 ```
 `9.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 
@@ -169,7 +169,7 @@ for k in dict1:
 
 ```
 `10.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 d1 = dict1.values()
@@ -186,7 +186,7 @@ for i in d1:
 
 ```
 `11.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 
@@ -202,7 +202,7 @@ for i, j in dict1.items():
 
 ```
 `12.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 dict2 = dict1.copy()
@@ -216,7 +216,7 @@ print(dict3)
 
 ```
 `13.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 print(dict1.get(3))
@@ -236,7 +236,7 @@ print(dict1)
 
 ```
 `14.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 Last edited: Time 11:27<br>
 
 ```py

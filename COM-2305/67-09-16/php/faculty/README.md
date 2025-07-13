@@ -1,6 +1,6 @@
 `add.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -34,8 +34,8 @@ mysqli_close($db);
 
 ```
 `delete.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -64,8 +64,8 @@ mysqli_close($db);
 
 ```
 `get.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 18 ก.ย. 2567 เวลา 21:13<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 18 ก.ย. 2567 time 21:13<br>
 ```php
 <?php
 include("../../../Exercise/8/connected_database.php");
@@ -77,8 +77,8 @@ mysqli_close($db);
 
 ```
 `save.php`<br>
-Create: 24 ก.ย. 2567 เวลา 17:27<br>
-Update: 25 ก.ย. 2567 เวลา 09:10<br>
+Create: 24 ก.ย. 2567 time 17:27<br>
+Update: 25 ก.ย. 2567 time 09:10<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -140,7 +140,7 @@ mysqli_close($db);
 
 ```
 `search.php`<br>
-Create: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "GET") return;
@@ -167,7 +167,7 @@ mysqli_close($db);
 
 ```
 `table.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
 ```php
 <?php
 include("../../../Exercise/8/connected_database.php");

@@ -1,6 +1,6 @@
 `index.html`<br>
-Create: 6 ต.ค. 2567 เวลา 02:16<br>
-Update: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 02:16<br>
+Update: 6 ต.ค. 2567 time 20:52<br>
 ```html
 <!doctype html>
 <html lang="en">

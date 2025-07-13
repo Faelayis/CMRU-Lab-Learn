@@ -1,5 +1,5 @@
 `test.php`<br>
-Create: 5 ก.พ. 2567 เวลา 16:00<br>
+Create: 5 ก.พ. 2567 time 16:00<br>
 
 ![test.php](./test.png)
 ```php

@@ -1,5 +1,5 @@
 `asterisk.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -18,7 +18,7 @@ int main() {
 
 ```
 `asterisk_box.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -46,7 +46,7 @@ int main() {
 
 ```
 `pyramid_12345.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -74,7 +74,7 @@ int main() {
 
 ```
 `pyramid_reverse.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 

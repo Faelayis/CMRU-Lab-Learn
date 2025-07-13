@@ -1,6 +1,6 @@
 `delete.php`<br>
-Create: 1 ต.ค. 2567 เวลา 14:47<br>
-Update: 8 ต.ค. 2567 เวลา 13:05<br>
+Create: 1 ต.ค. 2567 time 14:47<br>
+Update: 8 ต.ค. 2567 time 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -75,8 +75,8 @@ try {
 
 ```
 `enum.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 6 ต.ค. 2567 เวลา 14:24<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 6 ต.ค. 2567 time 14:24<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -109,8 +109,8 @@ try {
 
 ```
 `get.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:05<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -158,8 +158,8 @@ try {
 
 ```
 `post.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:05<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -257,8 +257,8 @@ exit;
 
 ```
 `schema.sql`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 6 ต.ค. 2567 เวลา 02:16<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 6 ต.ค. 2567 time 02:16<br>
 ```sql
 CREATE TABLE `reservations` (
 	`reservation_id` int(11) NOT NULL AUTO_INCREMENT,

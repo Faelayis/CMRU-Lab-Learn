@@ -1,5 +1,5 @@
 `_1276.c`<br>
-Create: 14 ก.ย. 2566 เวลา 15:00<br>
+Create: 14 ก.ย. 2566 time 15:00<br>
 Last edited: Time 16:41<br>
 
 ```c
@@ -24,7 +24,7 @@ int main()
 
 ```
 `1.5.c`<br>
-Create: 14 ก.ย. 2566 เวลา 15:00<br>
+Create: 14 ก.ย. 2566 time 15:00<br>
 Last edited: Time 16:11<br>
 
 ```c
@@ -63,7 +63,7 @@ int main()
 
 ```
 `1.6.c`<br>
-Create: 14 ก.ย. 2566 เวลา 15:00<br>
+Create: 14 ก.ย. 2566 time 15:00<br>
 Last edited: Time 16:11<br>
 
 ```c
@@ -100,7 +100,7 @@ int main()
 
 ```
 `2.2.c`<br>
-Create: 14 ก.ย. 2566 เวลา 16:11<br>
+Create: 14 ก.ย. 2566 time 16:11<br>
 Last edited: Time 16:41<br>
 
 ```c
@@ -135,7 +135,7 @@ int main()
 
 ```
 `2.3.c`<br>
-Create: 14 ก.ย. 2566 เวลา 16:11<br>
+Create: 14 ก.ย. 2566 time 16:11<br>
 ```c
 #include <stdio.h>
 
@@ -165,7 +165,7 @@ int main()
 
 ```
 `2.4.c`<br>
-Create: 14 ก.ย. 2566 เวลา 16:11<br>
+Create: 14 ก.ย. 2566 time 16:11<br>
 Last edited: Time 16:41<br>
 
 ```c

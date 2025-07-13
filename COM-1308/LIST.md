@@ -2,7 +2,7 @@
 ## 05-09-66
 
 ##### `computer.c`<br>
-Create: 5 ก.ย. 2566 เวลา 11:47<br>
+Create: 5 ก.ย. 2566 time 11:47<br>
 ```c
 #include <stdio.h>
 
@@ -24,7 +24,7 @@ int main()
 ```
 
 ##### `computer-with-tabs.c`<br>
-Create: 5 ก.ย. 2566 เวลา 11:47<br>
+Create: 5 ก.ย. 2566 time 11:47<br>
 ```c
 #include <stdio.h>
 
@@ -45,7 +45,7 @@ int main()
 ```
 
 ##### `getch.c`<br>
-Create: 5 ก.ย. 2566 เวลา 11:47<br>
+Create: 5 ก.ย. 2566 time 11:47<br>
 ```c
 #include <stdio.h>
 
@@ -69,7 +69,7 @@ int main()
 ```
 
 ##### `getchar.c`<br>
-Create: 5 ก.ย. 2566 เวลา 11:47<br>
+Create: 5 ก.ย. 2566 time 11:47<br>
 ```c
 #include <stdio.h>
 
@@ -93,7 +93,7 @@ int main()
 ```
 
 ##### `test.c`<br>
-Create: 5 ก.ย. 2566 เวลา 11:47<br>
+Create: 5 ก.ย. 2566 time 11:47<br>
 ```c
 #include <stdio.h>
 
@@ -112,7 +112,7 @@ int main()
 ```
 
 ##### `the-sum-is.c`<br>
-Create: 5 ก.ย. 2566 เวลา 11:47<br>
+Create: 5 ก.ย. 2566 time 11:47<br>
 ```c
 #include <stdio.h>
 
@@ -134,7 +134,7 @@ int main()
 ## 12-09-66
 
 ##### `minimum.c`<br>
-Create: 12 ก.ย. 2566 เวลา 11:59<br>
+Create: 12 ก.ย. 2566 time 11:59<br>
 ```c
 #include <stdio.h>
 
@@ -176,8 +176,8 @@ main()
 ```
 
 ##### `more-less-or-add.c`<br>
-Create: 12 ก.ย. 2566 เวลา 10:24<br>
-Update: 13 ก.ย. 2566 เวลา 13:23<br>
+Create: 12 ก.ย. 2566 time 10:24<br>
+Update: 13 ก.ย. 2566 time 13:23<br>
 ```c
 #include <stdio.h>
 
@@ -206,7 +206,7 @@ main(int argc, char const *argv[])
 ```
 
 ##### `score.c`<br>
-Create: 12 ก.ย. 2566 เวลา 11:59<br>
+Create: 12 ก.ย. 2566 time 11:59<br>
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -245,7 +245,7 @@ int main()
 ## 12-09-66/homework
 
 ##### `main.c`<br>
-Create: 14 ก.ย. 2566 เวลา 11:41<br>
+Create: 14 ก.ย. 2566 time 11:41<br>
 Last edited: Time 14:02<br>
 
 ```c
@@ -329,7 +329,7 @@ int main()
 ## 19-09-66
 
 ##### `break.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -350,7 +350,7 @@ main()
 ```
 
 ##### `continue.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -371,7 +371,7 @@ main()
 ```
 
 ##### `for.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -400,7 +400,7 @@ int main()
 ```
 
 ##### `while.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -432,8 +432,8 @@ main()
 ## 19-09-66/homework
 
 ##### `main.c`<br>
-Create: 19 ก.ย. 2566 เวลา 21:29<br>
-Update: 26 ก.ย. 2566 เวลา 09:36<br>
+Create: 19 ก.ย. 2566 time 21:29<br>
+Update: 26 ก.ย. 2566 time 09:36<br>
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -572,7 +572,7 @@ int main()
 ## 19-09-66/todo
 
 ##### `main.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 Last edited: Time 11:41<br>
 
 ```c
@@ -680,7 +680,7 @@ int main()
 ## 26-09-66
 
 ##### `asterisk.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -700,7 +700,7 @@ int main() {
 ```
 
 ##### `asterisk_box.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -729,7 +729,7 @@ int main() {
 ```
 
 ##### `pyramid_12345.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -758,7 +758,7 @@ int main() {
 ```
 
 ##### `pyramid_reverse.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 ```c
 #include <stdio.h>
 
@@ -796,7 +796,7 @@ int main() {
 ## 26-09-66/homework
 
 ##### `[merge].c`<br>
-Create: 28 ก.ย. 2566 เวลา 19:01<br>
+Create: 28 ก.ย. 2566 time 19:01<br>
 ```c
 #include <stdio.h>
 
@@ -857,8 +857,8 @@ int main() {
 ```
 
 ##### `left_top.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
-Update: 28 ก.ย. 2566 เวลา 18:43<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
+Update: 28 ก.ย. 2566 time 18:43<br>
 ```c
 #include <stdio.h>
 
@@ -887,8 +887,8 @@ int main() {
 ```
 
 ##### `right_top.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
-Update: 28 ก.ย. 2566 เวลา 18:43<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
+Update: 28 ก.ย. 2566 time 18:43<br>
 ```c
 #include <stdio.h>
 
@@ -921,7 +921,7 @@ int main() {
 ```
 
 ##### `triangle.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
 Last edited: Time 11:49<br>
 
 ```c
@@ -960,8 +960,8 @@ int main() {
 ## 29-08-66
 
 ##### `calculator.c`<br>
-Create: 29 ส.ค. 2566 เวลา 10:25<br>
-Update: 5 ก.ย. 2566 เวลา 09:34<br>
+Create: 29 ส.ค. 2566 time 10:25<br>
+Update: 5 ก.ย. 2566 time 09:34<br>
 ```c
 #include <stdio.h>
 
@@ -984,7 +984,7 @@ main()
 ## Operations Sheet/10
 
 ##### `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1042,7 +1042,7 @@ int main() {
 ```
 
 ##### `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1091,7 +1091,7 @@ int main() {
 ```
 
 ##### `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1124,7 +1124,7 @@ int main() {
 ```
 
 ##### `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1158,7 +1158,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <math.h>
 #include <stdio.h>
@@ -1233,7 +1233,7 @@ int main() {
 ## Operations Sheet/11
 
 ##### `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1251,7 +1251,7 @@ int main() {
 ```
 
 ##### `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1271,7 +1271,7 @@ int main() {
 ```
 
 ##### `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1305,8 +1305,8 @@ int main() {
 ```
 
 ##### `4.c`<br>
-Create: 26 ก.ย. 2566 เวลา 11:46<br>
-Update: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 26 ก.ย. 2566 time 11:46<br>
+Update: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1334,7 +1334,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1365,7 +1365,7 @@ int main() {
 ## Operations Sheet/12
 
 ##### `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1390,7 +1390,7 @@ int main() {
 ```
 
 ##### `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1411,7 +1411,7 @@ int main() {
 ```
 
 ##### `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1439,7 +1439,7 @@ int main() {
 ```
 
 ##### `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1472,7 +1472,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1535,7 +1535,7 @@ int main() {
 ## Operations Sheet/13
 
 ##### `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1554,7 +1554,7 @@ int main() {
 ```
 
 ##### `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1575,7 +1575,7 @@ int main() {
 ```
 
 ##### `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1598,7 +1598,7 @@ int main() {
 ```
 
 ##### `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1622,7 +1622,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:56<br>
+Create: 29 ก.ย. 2566 time 22:56<br>
 ```c
 #include <stdio.h>
 
@@ -1648,7 +1648,7 @@ int main() {
 ## Operations Sheet/7
 
 ##### `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1666,7 +1666,7 @@ int main() {
 ```
 
 ##### `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1702,7 +1702,7 @@ int main() {
 ```
 
 ##### `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1728,7 +1728,7 @@ int main() {
 ```
 
 ##### `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1759,7 +1759,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1781,7 +1781,7 @@ int main() {
 ```
 
 ##### `6.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1805,7 +1805,7 @@ int main() {
 ```
 
 ##### `7.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1829,7 +1829,7 @@ int main() {
 ## Operations Sheet/8
 
 ##### `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1844,7 +1844,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1879,7 +1879,7 @@ int main() {
 ```
 
 ##### `6.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1909,7 +1909,7 @@ int main() {
 ## Operations Sheet/9
 
 ##### `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1931,7 +1931,7 @@ int main() {
 ```
 
 ##### `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1957,7 +1957,7 @@ int main() {
 ```
 
 ##### `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -1982,7 +1982,7 @@ int main() {
 ```
 
 ##### `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -2005,7 +2005,7 @@ int main() {
 ```
 
 ##### `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -2043,7 +2043,7 @@ int main() {
 ## Section-1/14-09-66
 
 ##### `_1276.c`<br>
-Create: 14 ก.ย. 2566 เวลา 15:00<br>
+Create: 14 ก.ย. 2566 time 15:00<br>
 Last edited: Time 16:41<br>
 
 ```c
@@ -2069,7 +2069,7 @@ int main()
 ```
 
 ##### `1.5.c`<br>
-Create: 14 ก.ย. 2566 เวลา 15:00<br>
+Create: 14 ก.ย. 2566 time 15:00<br>
 Last edited: Time 16:11<br>
 
 ```c
@@ -2109,7 +2109,7 @@ int main()
 ```
 
 ##### `1.6.c`<br>
-Create: 14 ก.ย. 2566 เวลา 15:00<br>
+Create: 14 ก.ย. 2566 time 15:00<br>
 Last edited: Time 16:11<br>
 
 ```c
@@ -2147,7 +2147,7 @@ int main()
 ```
 
 ##### `2.2.c`<br>
-Create: 14 ก.ย. 2566 เวลา 16:11<br>
+Create: 14 ก.ย. 2566 time 16:11<br>
 Last edited: Time 16:41<br>
 
 ```c
@@ -2183,7 +2183,7 @@ int main()
 ```
 
 ##### `2.3.c`<br>
-Create: 14 ก.ย. 2566 เวลา 16:11<br>
+Create: 14 ก.ย. 2566 time 16:11<br>
 ```c
 #include <stdio.h>
 
@@ -2214,7 +2214,7 @@ int main()
 ```
 
 ##### `2.4.c`<br>
-Create: 14 ก.ย. 2566 เวลา 16:11<br>
+Create: 14 ก.ย. 2566 time 16:11<br>
 Last edited: Time 16:41<br>
 
 ```c
@@ -2242,7 +2242,7 @@ int main()
 ## Section-1/21-09-66/exam
 
 ##### `main.c`<br>
-Create: 21 ก.ย. 2566 เวลา 13:58<br>
+Create: 21 ก.ย. 2566 time 13:58<br>
 Last edited: Time 14:27<br>
 
 ```c

@@ -1,6 +1,6 @@
 `table.sql`<br>
-Create: 29 ม.ค. 2567 เวลา 15:53<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 29 ม.ค. 2567 time 15:53<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- 1 แสดงรายละเอียดการสร้างตารางสินค้า (Product) ด้วยคำสั่ง Show Create Table
 SHOW

@@ -1,6 +1,6 @@
 `init.ps1`<br>
-Create: 20 พ.ย. 2566 เวลา 15:58<br>
-Update: 22 ม.ค. 2567 เวลา 15:09<br>
+Create: 20 พ.ย. 2566 time 15:58<br>
+Update: 22 ม.ค. 2567 time 15:09<br>
 ```ps1
 Set-Location C:\xampp\mysql\bin
 .\mysql.exe -u root -p
@@ -27,8 +27,8 @@ insert into Supplier_461 values('SP001', 'Somjai Company', '120 Changphuak Chian
 select * from Supplier_461;
 ```
 `schema.sql`<br>
-Create: 20 พ.ย. 2566 เวลา 16:25<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 20 พ.ย. 2566 time 16:25<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create database
 CREATE DATABASE faelayis;

@@ -1,5 +1,5 @@
 `minimum.c`<br>
-Create: 12 ก.ย. 2566 เวลา 11:59<br>
+Create: 12 ก.ย. 2566 time 11:59<br>
 ```c
 #include <stdio.h>
 
@@ -40,8 +40,8 @@ main()
 
 ```
 `more-less-or-add.c`<br>
-Create: 12 ก.ย. 2566 เวลา 10:24<br>
-Update: 13 ก.ย. 2566 เวลา 13:23<br>
+Create: 12 ก.ย. 2566 time 10:24<br>
+Update: 13 ก.ย. 2566 time 13:23<br>
 ```c
 #include <stdio.h>
 
@@ -69,7 +69,7 @@ main(int argc, char const *argv[])
 
 ```
 `score.c`<br>
-Create: 12 ก.ย. 2566 เวลา 11:59<br>
+Create: 12 ก.ย. 2566 time 11:59<br>
 ```c
 #include <stdio.h>
 #include <string.h>

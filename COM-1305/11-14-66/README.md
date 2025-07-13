@@ -1,5 +1,5 @@
 `if.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 ```py
 score = 80
 
@@ -10,7 +10,7 @@ else:
 
 ```
 `index.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 ```py
 print("Hello Python")
 

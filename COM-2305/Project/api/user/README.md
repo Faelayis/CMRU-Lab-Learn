@@ -1,5 +1,5 @@
 `post.php`<br>
-Create: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 8 ต.ค. 2567 time 13:04<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -66,7 +66,7 @@ try {
 
 ```
 `schema.sql`<br>
-Create: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 CREATE TABLE `user` (
 	`id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -79,7 +79,7 @@ CREATE TABLE `user` (
 
 ```
 `values.sql`<br>
-Create: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 INSERT INTO
 	`user` (`student_id`, `username`, `password`)

@@ -1,6 +1,6 @@
 `calculator.c`<br>
-Create: 29 ส.ค. 2566 เวลา 10:25<br>
-Update: 5 ก.ย. 2566 เวลา 09:34<br>
+Create: 29 ส.ค. 2566 time 10:25<br>
+Update: 5 ก.ย. 2566 time 09:34<br>
 ```c
 #include <stdio.h>
 

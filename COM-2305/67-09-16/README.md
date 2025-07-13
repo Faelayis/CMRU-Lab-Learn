@@ -1,5 +1,5 @@
 `database.sql`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
 ```sql
 -- phpMyAdmin SQL Dump
 -- version 5.0.4
@@ -79,8 +79,8 @@ COMMIT;
 
 ```
 `index.html`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -128,8 +128,8 @@ Update: 24 ก.ย. 2567 เวลา 17:27<br>
 
 ```
 `script.js`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```js
 document.addEventListener("DOMContentLoaded", function () {
 	const links = document.querySelectorAll(".sidebar-link");

@@ -1,5 +1,5 @@
 `1.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -20,7 +20,7 @@ int main() {
 
 ```
 `2.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -45,7 +45,7 @@ int main() {
 
 ```
 `3.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -69,7 +69,7 @@ int main() {
 
 ```
 `4.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 
@@ -91,7 +91,7 @@ int main() {
 
 ```
 `5.c`<br>
-Create: 29 ก.ย. 2566 เวลา 22:09<br>
+Create: 29 ก.ย. 2566 time 22:09<br>
 ```c
 #include <stdio.h>
 

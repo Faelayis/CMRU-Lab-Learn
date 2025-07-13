@@ -1,5 +1,5 @@
 `index.php`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,7 @@ Create: 9 ก.ค. 2567 เวลา 17:05<br>
 </html>
 ```
 `togglePassword.js`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```js
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");

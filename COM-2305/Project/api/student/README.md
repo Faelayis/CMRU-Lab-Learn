@@ -1,6 +1,6 @@
 `get.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -51,15 +51,15 @@ try {
 
 ```
 `schema.sql`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 CREATE TABLE `student` (`id` int(11) PRIMARY KEY, `section` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `status` varchar(50) DEFAULT NULL)
 
 ```
 `values.sql`<br>
-Create: 6 ต.ค. 2567 เวลา 02:16<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 6 ต.ค. 2567 time 02:16<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 INSERT INTO
 	`student` (id, section, name)

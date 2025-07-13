@@ -1,5 +1,5 @@
 `1.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function copyright() {
@@ -13,7 +13,7 @@ copyright();
 
 ```
 `2.1.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function add() {
@@ -51,7 +51,7 @@ divide();
 
 ```
 `2.2.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function add($num1, $num2) {
@@ -85,7 +85,7 @@ divide(9, 1);
 
 ```
 `2.3.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function add($num1, $num2) {
@@ -123,7 +123,7 @@ echo "ผลหาร:  $result <br>";
 
 ```
 `3.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -157,8 +157,8 @@ Create: 30 ก.ค. 2567 เวลา 17:20<br>
 </html>
 ```
 `4.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 30 ก.ค. 2567 เวลา 20:23<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 30 ก.ค. 2567 time 20:23<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -210,7 +210,7 @@ Update: 30 ก.ค. 2567 เวลา 20:23<br>
 </html>
 ```
 `5..php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 Last edited: Time 20:24<br>
 
 ```php
@@ -232,7 +232,7 @@ Last edited: Time 20:24<br>
 </html>
 ```
 `5.API.php`<br>
-Create: 30 ก.ค. 2567 เวลา 20:23<br>
+Create: 30 ก.ค. 2567 time 20:23<br>
 ```php
 <?php
 if (isset($_POST['submit'])) {
@@ -249,7 +249,7 @@ if (isset($_POST['submit'])) {
 
 ```
 `6..php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <!DOCTYPE html>
 <html>
@@ -279,7 +279,7 @@ Create: 30 ก.ค. 2567 เวลา 17:20<br>
 </html>
 ```
 `6.API.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 if (isset($_POST["submit"])) {

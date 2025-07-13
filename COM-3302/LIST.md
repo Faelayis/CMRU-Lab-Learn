@@ -2,7 +2,7 @@
 ## Exercise/EX1
 
 ##### `Calculate.java`<br>
-Create: 10 ก.ค. 2568 เวลา 02:33<br>
+Create: 10 ก.ค. 2568 time 02:33<br>
 ```java
 package Exercise.EX1;
 
@@ -42,7 +42,7 @@ public class Calculate {
 ```
 
 ##### `Main.java`<br>
-Create: 10 ก.ค. 2568 เวลา 02:33<br>
+Create: 10 ก.ค. 2568 time 02:33<br>
 ```java
 package Exercise.EX1;
 

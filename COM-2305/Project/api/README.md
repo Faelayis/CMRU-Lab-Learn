@@ -1,5 +1,5 @@
 `connected.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
 ```php
 <?php
 $servername = "localhost";

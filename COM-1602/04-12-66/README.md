@@ -1,8 +1,8 @@
 ![Preview Image](./README.png)
 
 `billorder.sql`<br>
-Create: 6 ธ.ค. 2566 เวลา 16:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 6 ธ.ค. 2566 time 16:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create Billorder Table
 CREATE TABLE Billorder_461 (IdBillorder VARCHAR(10) PRIMARY KEY, Id_Sup VARCHAR(10)) ENGINE = MYISAM;
@@ -24,8 +24,8 @@ FROM
 
 ```
 `detail_order.sql`<br>
-Create: 6 ธ.ค. 2566 เวลา 16:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 6 ธ.ค. 2566 time 16:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create DetailOrder Table
 CREATE TABLE DetailOrder_461 (IdBillorder CHAR(5), IdProduct CHAR(4), Amount INT(8)) ENGINE = MYISAM;
@@ -52,8 +52,8 @@ FROM
 
 ```
 `product.sql`<br>
-Create: 6 ธ.ค. 2566 เวลา 16:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 6 ธ.ค. 2566 time 16:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create Product Table
 CREATE TABLE Product_461 (IdProduct CHAR(3) PRIMARY KEY, NameProduct VARCHAR(20), Price INT(4)) ENGINE = MYISAM;

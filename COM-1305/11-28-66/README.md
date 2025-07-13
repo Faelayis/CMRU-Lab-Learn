@@ -1,5 +1,5 @@
 `if.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 score = 85
 

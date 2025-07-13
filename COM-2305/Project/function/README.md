@@ -1,6 +1,6 @@
 `page.php`<br>
-Create: 1 ต.ค. 2567 เวลา 14:47<br>
-Update: 6 ต.ค. 2567 เวลา 02:16<br>
+Create: 1 ต.ค. 2567 time 14:47<br>
+Update: 6 ต.ค. 2567 time 02:16<br>
 ```php
 <?php
 class PageType {

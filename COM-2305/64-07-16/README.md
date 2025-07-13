@@ -1,5 +1,5 @@
 `loop.php`<br>
-Create: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $x = 0;

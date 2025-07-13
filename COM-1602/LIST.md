@@ -2,8 +2,8 @@
 ## 04-12-66
 
 ##### `billorder.sql`<br>
-Create: 6 ธ.ค. 2566 เวลา 16:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 6 ธ.ค. 2566 time 16:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create Billorder Table
 CREATE TABLE Billorder_461 (IdBillorder VARCHAR(10) PRIMARY KEY, Id_Sup VARCHAR(10)) ENGINE = MYISAM;
@@ -26,8 +26,8 @@ FROM
 ```
 
 ##### `detail_order.sql`<br>
-Create: 6 ธ.ค. 2566 เวลา 16:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 6 ธ.ค. 2566 time 16:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create DetailOrder Table
 CREATE TABLE DetailOrder_461 (IdBillorder CHAR(5), IdProduct CHAR(4), Amount INT(8)) ENGINE = MYISAM;
@@ -55,8 +55,8 @@ FROM
 ```
 
 ##### `product.sql`<br>
-Create: 6 ธ.ค. 2566 เวลา 16:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 6 ธ.ค. 2566 time 16:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create Product Table
 CREATE TABLE Product_461 (IdProduct CHAR(3) PRIMARY KEY, NameProduct VARCHAR(20), Price INT(4)) ENGINE = MYISAM;
@@ -85,8 +85,8 @@ FROM
 ## 05-02-67
 
 ##### `product.sql`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 CREATE TABLE products (product_code VARCHAR(10), product_type VARCHAR(50), price_per_unit DECIMAL(10, 2));
 
@@ -99,8 +99,8 @@ VALUES
 ```
 
 ##### `product_app.sql`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 CREATE TABLE products (product_code VARCHAR(10), product_type VARCHAR(50), price_per_unit DECIMAL(10, 2));
 
@@ -116,7 +116,7 @@ VALUES
 ```
 
 ##### `update-delete.sql`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
 ```sql
 
 ```
@@ -125,7 +125,7 @@ Create: 29 ม.ค. 2567 เวลา 16:33<br>
 ## 05-02-67-php
 
 ##### `test.php`<br>
-Create: 5 ก.พ. 2567 เวลา 16:00<br>
+Create: 5 ก.พ. 2567 time 16:00<br>
 ```php
 <html>
 
@@ -188,8 +188,8 @@ Create: 5 ก.พ. 2567 เวลา 16:00<br>
 ## 20-11-66
 
 ##### `init.ps1`<br>
-Create: 20 พ.ย. 2566 เวลา 15:58<br>
-Update: 22 ม.ค. 2567 เวลา 15:09<br>
+Create: 20 พ.ย. 2566 time 15:58<br>
+Update: 22 ม.ค. 2567 time 15:09<br>
 ```ps1
 Set-Location C:\xampp\mysql\bin
 .\mysql.exe -u root -p
@@ -217,8 +217,8 @@ select * from Supplier_461;
 ```
 
 ##### `schema.sql`<br>
-Create: 20 พ.ย. 2566 เวลา 16:25<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 20 พ.ย. 2566 time 16:25<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create database
 CREATE DATABASE faelayis;
@@ -251,8 +251,8 @@ FROM
 ## 22-01-67
 
 ##### `select.sql`<br>
-Create: 22 ม.ค. 2567 เวลา 14:43<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 22 ม.ค. 2567 time 14:43<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- 1
 SELECT
@@ -351,8 +351,8 @@ WHERE
 ## 25-12-66
 
 ##### `data.sql`<br>
-Create: 25 ธ.ค. 2566 เวลา 14:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 25 ธ.ค. 2566 time 14:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Insert into Books
 INSERT INTO
@@ -407,8 +407,8 @@ VALUES
 ```
 
 ##### `schema.sql`<br>
-Create: 25 ธ.ค. 2566 เวลา 14:35<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 25 ธ.ค. 2566 time 14:35<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- Create database
 CREATE DATABASE faelayis;
@@ -452,8 +452,8 @@ CREATE TABLE FineRate (rate_id VARCHAR(2) PRIMARY KEY, book_limit INT, fine_rate
 ## 27-11-66
 
 ##### `init.ps1`<br>
-Create: 27 พ.ย. 2566 เวลา 16:55<br>
-Update: 4 ธ.ค. 2566 เวลา 17:04<br>
+Create: 27 พ.ย. 2566 time 16:55<br>
+Update: 4 ธ.ค. 2566 time 17:04<br>
 ```ps1
 Set-Location C:\xampp\mysql\bin
 .\mysql.exe -u root -p
@@ -475,8 +475,8 @@ show create table supplier461;
 ## 29-01-67
 
 ##### `table.sql`<br>
-Create: 29 ม.ค. 2567 เวลา 15:53<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 29 ม.ค. 2567 time 15:53<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- 1 แสดงรายละเอียดการสร้างตารางสินค้า (Product) ด้วยคำสั่ง Show Create Table
 SHOW
@@ -554,8 +554,8 @@ DROP TABLE ProductDROP;
 ## Exam/1
 
 ##### `index.sql`<br>
-Create: 12 ก.พ. 2567 เวลา 16:50<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 12 ก.พ. 2567 time 16:50<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- 4
 ALTER TABLE product
@@ -633,8 +633,8 @@ GROUP BY
 ```
 
 ##### `order.sql`<br>
-Create: 12 ก.พ. 2567 เวลา 17:22<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 12 ก.พ. 2567 time 17:22<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 -- phpMyAdmin SQL Dump
 -- version 5.0.4
@@ -943,8 +943,8 @@ VALUES
 ## Project/Details of work system
 
 ##### `schema.sql`<br>
-Create: 25 ก.พ. 2567 เวลา 23:03<br>
-Update: 10 ก.ย. 2567 เวลา 16:53<br>
+Create: 25 ก.พ. 2567 time 23:03<br>
+Update: 10 ก.ย. 2567 time 16:53<br>
 ```sql
 CREATE TABLE `Reservation` (
 	`QueueNumber` INT NOT NULL,

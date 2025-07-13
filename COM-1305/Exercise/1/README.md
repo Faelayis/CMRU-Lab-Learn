@@ -1,5 +1,5 @@
 `1.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -15,7 +15,7 @@ print("จังหวัดที่อาศัย: ", province)
 
 ```
 `2.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -28,7 +28,7 @@ print("อายุ: ", age)
 
 ```
 `3.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -43,7 +43,7 @@ print("พื้นที่สามเหลี่ยม: ", area_triangle)
 
 ```
 `4.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -58,7 +58,7 @@ print("พื้นที่สี่เหลี่ยมผืนผ้า: ",
 
 ```
 `5.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -72,7 +72,7 @@ Last edited: Time 11:28<br>
 
 ```
 `6.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -87,7 +87,7 @@ print("พื้นที่เป็นชนิด int คือ:", type(area)
 
 ```
 `7.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 Last edited: Time 11:28<br>
 
 ```py

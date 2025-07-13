@@ -1,5 +1,5 @@
 `break.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -19,7 +19,7 @@ main()
 }
 ```
 `continue.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -39,7 +39,7 @@ main()
 }
 ```
 `for.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 
@@ -67,7 +67,7 @@ int main()
 
 ```
 `while.c`<br>
-Create: 19 ก.ย. 2566 เวลา 10:54<br>
+Create: 19 ก.ย. 2566 time 10:54<br>
 ```c
 #include <stdio.h>
 

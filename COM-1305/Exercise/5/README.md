@@ -1,19 +1,19 @@
 `1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for x in range(5):
     print("name - last name")
 
 ```
 `2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for number in range(1, 11, 2):
     print(number)
 
 ```
 `3.1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 sum = 0
 
@@ -23,7 +23,7 @@ for number in range(1, 51):
 
 ```
 `3.2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for number in range(1, 11):
     print(number)
@@ -32,14 +32,14 @@ print("Good bye")
 
 ```
 `3.3.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for number in range(1, 13):
     print(f"{2 * number}")
 
 ```
 `4.1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 i = 1
 
@@ -51,7 +51,7 @@ print("Good bye")
 
 ```
 `4.2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 i = 9
 
@@ -63,7 +63,7 @@ print("Good bye")
 
 ```
 `4.3.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:23<br>
 
 ```py
@@ -76,7 +76,7 @@ print("Good bye")
 
 ```
 `4.4.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 sum = 0
 number = 1
@@ -89,7 +89,7 @@ print(sum)
 
 ```
 `4.5.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:14<br>
 
 ```py
@@ -109,7 +109,7 @@ while count <= 5:
 
 ```
 `5.1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for x in range(1, 4):
     for i in range(1, x + 1):
@@ -117,7 +117,7 @@ for x in range(1, 4):
 
 ```
 `5.2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:14<br>
 
 ```py
@@ -128,7 +128,7 @@ for x in range(5):
 
 ```
 `6.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:23<br>
 
 ```py

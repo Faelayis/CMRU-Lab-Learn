@@ -1,5 +1,5 @@
 `list.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
 ```py
 y = list([10, 20, 30, 40])
 

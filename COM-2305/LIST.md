@@ -2,7 +2,7 @@
 ## 64-07-16
 
 ##### `loop.php`<br>
-Create: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $x = 0;
@@ -30,7 +30,7 @@ for ($x = 0; $x < 10; $x++) {
 ## 67-06-25
 
 ##### `form.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -55,7 +55,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `link.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -71,7 +71,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `table.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -125,7 +125,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `text.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -174,7 +174,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ## 67-07-02
 
 ##### `1.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -197,7 +197,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `2.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 $num1 = 90;
@@ -210,7 +210,7 @@ echo "ผล - ของ $num1 + $num2 = " . ($num1 - $num2) . "<br>";
 ```
 
 ##### `3.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -249,7 +249,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `4.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 if ($_GET['submit'] == "บวก") {
@@ -259,7 +259,7 @@ if ($_GET['submit'] == "บวก") {
 ```
 
 ##### `5.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -288,7 +288,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `form.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -333,7 +333,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ## 67-07-09
 
 ##### `1.php`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```php
 <?php
 $days = array("sun" => "วันอาทิตย์", "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันศุกร์", "วันเสาร์");
@@ -346,7 +346,7 @@ print_r($days);
 ## 67-07-09/login
 
 ##### `index.php`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -405,7 +405,7 @@ Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```
 
 ##### `togglePassword.js`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```js
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
@@ -425,7 +425,7 @@ if (togglePassword && passwordInput) {
 ## 67-07-23
 
 ##### `max_min.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 echo "Maximum: " . max(5000, 4600, 7800) . "<br>";
@@ -434,7 +434,7 @@ echo "Minimum: " . min(5000, 4600, 7800) . '<br>';
 ```
 
 ##### `rand.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $randomNumber = rand(1, 10);
@@ -444,7 +444,7 @@ echo "Random number: " . $randomNumber;
 ```
 
 ##### `round.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 echo round(3.4) . "<br>";
@@ -457,7 +457,7 @@ echo round(5.055, 2) . "<br>";
 ## 67-08-27
 
 ##### `index.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 Last edited: Time 15:51<br>
 
 ```php
@@ -550,7 +550,7 @@ Last edited: Time 15:51<br>
 ## 67-09-16
 
 ##### `database.sql`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
 ```sql
 -- phpMyAdmin SQL Dump
 -- version 5.0.4
@@ -631,8 +631,8 @@ COMMIT;
 ```
 
 ##### `index.html`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -681,8 +681,8 @@ Update: 24 ก.ย. 2567 เวลา 17:27<br>
 ```
 
 ##### `script.js`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```js
 document.addEventListener("DOMContentLoaded", function () {
 	const links = document.querySelectorAll(".sidebar-link");
@@ -729,7 +729,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ## 67-09-16/functions
 
 ##### `editFaculty.js`<br>
-Create: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 24 ก.ย. 2567 time 17:27<br>
 ```js
 window.editFaculty = function (id, name) {
 	document.getElementById("fac_id").value = id;
@@ -740,8 +740,8 @@ window.editFaculty = function (id, name) {
 ```
 
 ##### `previous_page.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 16:53<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 16:53<br>
 ```php
 <?php
 function previousPage() {
@@ -755,8 +755,8 @@ function previousPage() {
 ## 67-09-16/php/faculty
 
 ##### `add.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -791,8 +791,8 @@ mysqli_close($db);
 ```
 
 ##### `delete.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -822,8 +822,8 @@ mysqli_close($db);
 ```
 
 ##### `get.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 18 ก.ย. 2567 เวลา 21:13<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 18 ก.ย. 2567 time 21:13<br>
 ```php
 <?php
 include("../../../Exercise/8/connected_database.php");
@@ -836,8 +836,8 @@ mysqli_close($db);
 ```
 
 ##### `save.php`<br>
-Create: 24 ก.ย. 2567 เวลา 17:27<br>
-Update: 25 ก.ย. 2567 เวลา 09:10<br>
+Create: 24 ก.ย. 2567 time 17:27<br>
+Update: 25 ก.ย. 2567 time 09:10<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "POST") return;
@@ -900,7 +900,7 @@ mysqli_close($db);
 ```
 
 ##### `search.php`<br>
-Create: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <?php
 if (!$_SERVER["REQUEST_METHOD"] == "GET") return;
@@ -928,7 +928,7 @@ mysqli_close($db);
 ```
 
 ##### `table.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
 ```php
 <?php
 include("../../../Exercise/8/connected_database.php");
@@ -961,8 +961,8 @@ mysqli_close($db);
 ## 67-09-16/sidebar/faculty
 
 ##### `add.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 24 ก.ย. 2567 เวลา 17:27<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 24 ก.ย. 2567 time 17:27<br>
 ```php
 <style>
    input::-webkit-outer-spin-button,
@@ -1030,8 +1030,8 @@ Update: 24 ก.ย. 2567 เวลา 17:27<br>
 ```
 
 ##### `report.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 18 ก.ย. 2567 เวลา 21:13<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 18 ก.ย. 2567 time 21:13<br>
 ```php
 <?php
 include("../../php/faculty/get.php");
@@ -1068,8 +1068,8 @@ include("../../php/faculty/get.php");
 ```
 
 ##### `search.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 25 ก.ย. 2567 เวลา 09:10<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 25 ก.ย. 2567 time 09:10<br>
 ```php
 <body>
    <h1 class="text-2xl font-bold mb-4">Faculty Data</h1>
@@ -1116,7 +1116,7 @@ Update: 25 ก.ย. 2567 เวลา 09:10<br>
 ## Exam/67-09-03
 
 ##### `index.php`<br>
-Create: 3 ก.ย. 2567 เวลา 14:21<br>
+Create: 3 ก.ย. 2567 time 14:21<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1174,8 +1174,8 @@ Create: 3 ก.ย. 2567 เวลา 14:21<br>
 ## Exercise/1
 
 ##### `1.html`<br>
-Create: 23 มิ.ย. 2567 เวลา 22:34<br>
-Update: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 23 มิ.ย. 2567 time 22:34<br>
+Update: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <h1>First</h1>
 <h2>First</h2>
@@ -1187,8 +1187,8 @@ Update: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `2.html`<br>
-Create: 23 มิ.ย. 2567 เวลา 22:34<br>
-Update: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 23 มิ.ย. 2567 time 22:34<br>
+Update: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html>
@@ -1220,7 +1220,7 @@ Update: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `3.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -1241,8 +1241,8 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `4.html`<br>
-Create: 23 มิ.ย. 2567 เวลา 22:34<br>
-Update: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 23 มิ.ย. 2567 time 22:34<br>
+Update: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html>
@@ -1280,7 +1280,7 @@ Update: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `5.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -1305,7 +1305,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ## Exercise/2
 
 ##### `1.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 $studentID = "123456789";
@@ -1319,7 +1319,7 @@ echo "Section: " . $section;
 ```
 
 ##### `2.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 $studentID = "123456789";
@@ -1333,7 +1333,7 @@ print "Section: " . $section;
 ```
 
 ##### `3.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 $courseID = "COM 2305-63";
@@ -1347,7 +1347,7 @@ printf("หน่วยกิต: %d", $credits);
 ```
 
 ##### `4.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 $courseID = "COM 2305-63";
@@ -1361,7 +1361,7 @@ echo $courseInfo;
 ```
 
 ##### `5.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1400,7 +1400,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `6.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1429,7 +1429,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `7.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1469,7 +1469,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `8.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1507,7 +1507,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ```
 
 ##### `9.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1549,8 +1549,8 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 ## Exercise/3
 
 ##### `1.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $christ = 2024;
@@ -1562,8 +1562,8 @@ echo "ปีพุทธศักราช: $buddhist";
 ```
 
 ##### `2.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $thaiArray = array(
@@ -1586,8 +1586,8 @@ foreach ($thaiArray as $number) {
 ```
 
 ##### `3.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1658,7 +1658,7 @@ Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```
 
 ##### `4.php`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1701,7 +1701,7 @@ Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```
 
 ##### `5.php`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1752,7 +1752,7 @@ Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```
 
 ##### `6.php`<br>
-Create: 9 ก.ค. 2567 เวลา 17:05<br>
+Create: 9 ก.ค. 2567 time 17:05<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1813,8 +1813,8 @@ Create: 9 ก.ค. 2567 เวลา 17:05<br>
 ```
 
 ##### `7.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $name = "Fae";
@@ -1840,8 +1840,8 @@ do {
 ```
 
 ##### `8.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -1881,7 +1881,7 @@ Update: 16 ก.ค. 2567 เวลา 15:26<br>
 ```
 
 ##### `8.1.php`<br>
-Create: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $input = $_GET["input"];
@@ -1893,7 +1893,7 @@ for ($count = 1; $count <= 12; $count++) {
 ```
 
 ##### `8.2.php`<br>
-Create: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $input = $_GET["input"];
@@ -1907,7 +1907,7 @@ while ($count <= 12) {
 ```
 
 ##### `8.3.php`<br>
-Create: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $input = $_GET["input"];
@@ -1921,8 +1921,8 @@ do {
 ```
 
 ##### `9.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 16 ก.ค. 2567 เวลา 15:26<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 16 ก.ค. 2567 time 15:26<br>
 ```php
 <?php
 $days = array(
@@ -1945,7 +1945,7 @@ foreach ($days as $key => $value) {
 ## Exercise/4
 
 ##### `1.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $originalSalary = 12345.6789;
@@ -1957,7 +1957,7 @@ echo "เงินเดือนหลังปัดเศษ: " . $roundedSal
 ```
 
 ##### `2.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $numbers = [10, 5, 8, 3, 12];
@@ -1980,7 +1980,7 @@ echo "Minimum number: " . $min . "<br>";
 ```
 
 ##### `3.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -2036,7 +2036,7 @@ Create: 23 ก.ค. 2567 เวลา 16:42<br>
 ```
 
 ##### `4.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 // แสดงชื่อและนามสกุลนักศึกษาเป็นภาษาอังกฤษ
@@ -2070,7 +2070,7 @@ echo "Current date: " . date("Y-m-d") . "<br>";
 ```
 
 ##### `5.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 $array = array(
@@ -2110,7 +2110,7 @@ echo "วัน {$array["day"][$dayOfWeek]}ที่ {$dayOfMonth} {$array["mont
 ```
 
 ##### `6.php`<br>
-Create: 23 ก.ค. 2567 เวลา 16:42<br>
+Create: 23 ก.ค. 2567 time 16:42<br>
 ```php
 <?php
 echo "<h3> ฟังก์ชัน md5() <br>";
@@ -2128,7 +2128,7 @@ echo htmlspecialchars($str);
 ## Exercise/5
 
 ##### `1.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function copyright() {
@@ -2143,7 +2143,7 @@ copyright();
 ```
 
 ##### `2.1.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function add() {
@@ -2182,7 +2182,7 @@ divide();
 ```
 
 ##### `2.2.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function add($num1, $num2) {
@@ -2217,7 +2217,7 @@ divide(9, 1);
 ```
 
 ##### `2.3.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 function add($num1, $num2) {
@@ -2256,7 +2256,7 @@ echo "ผลหาร:  $result <br>";
 ```
 
 ##### `3.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -2291,8 +2291,8 @@ Create: 30 ก.ค. 2567 เวลา 17:20<br>
 ```
 
 ##### `4.php`<br>
-Create: 29 ม.ค. 2567 เวลา 16:33<br>
-Update: 30 ก.ค. 2567 เวลา 20:23<br>
+Create: 29 ม.ค. 2567 time 16:33<br>
+Update: 30 ก.ค. 2567 time 20:23<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -2345,7 +2345,7 @@ Update: 30 ก.ค. 2567 เวลา 20:23<br>
 ```
 
 ##### `5..php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 Last edited: Time 20:24<br>
 
 ```php
@@ -2368,7 +2368,7 @@ Last edited: Time 20:24<br>
 ```
 
 ##### `5.API.php`<br>
-Create: 30 ก.ค. 2567 เวลา 20:23<br>
+Create: 30 ก.ค. 2567 time 20:23<br>
 ```php
 <?php
 if (isset($_POST['submit'])) {
@@ -2386,7 +2386,7 @@ if (isset($_POST['submit'])) {
 ```
 
 ##### `6..php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <!DOCTYPE html>
 <html>
@@ -2417,7 +2417,7 @@ Create: 30 ก.ค. 2567 เวลา 17:20<br>
 ```
 
 ##### `6.API.php`<br>
-Create: 30 ก.ค. 2567 เวลา 17:20<br>
+Create: 30 ก.ค. 2567 time 17:20<br>
 ```php
 <?php
 if (isset($_POST["submit"])) {
@@ -2464,7 +2464,7 @@ if (isset($_POST["submit"])) {
 ## Exercise/6/cookie
 
 ##### `login.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -2488,7 +2488,7 @@ Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ```
 
 ##### `logout.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <?php
 setcookie("first_name", '', time() - 3600, "/");
@@ -2498,7 +2498,7 @@ header("Refresh:0; url=welcome.php");
 ```
 
 ##### `setcookie.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <?php
 
@@ -2521,7 +2521,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ```
 
 ##### `welcome.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -2550,7 +2550,7 @@ Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ## Exercise/6/session
 
 ##### `login.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -2574,7 +2574,7 @@ Create: 27 ส.ค. 2567 เวลา 15:47<br>
 ```
 
 ##### `logout.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <?php
 session_start();
@@ -2588,7 +2588,7 @@ header("Refresh:0; url=welcome.php");
 ```
 
 ##### `session.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <?php
 session_start();
@@ -2612,7 +2612,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ```
 
 ##### `welcome.php`<br>
-Create: 27 ส.ค. 2567 เวลา 15:47<br>
+Create: 27 ส.ค. 2567 time 15:47<br>
 ```php
 <?php
 session_start();
@@ -2645,29 +2645,29 @@ session_start();
 ## Exercise/7
 
 ##### `2.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 SHOW DATABASES;
 
 ```
 
 ##### `3.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 CREATE DATABASE myproject;
 
 ```
 
 ##### `4.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
-Update: 18 ก.ย. 2567 เวลา 21:12<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
+Update: 18 ก.ย. 2567 time 21:12<br>
 ```sql
 DROP DATABASE myproject;
 
 ```
 
 ##### `5.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 CREATE DATABASE myproject;
 
@@ -2676,7 +2676,7 @@ USE myproject;
 ```
 
 ##### `6.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 CREATE TABLE faculty (Fac_id INT(3) PRIMARY KEY, Fac_name VARCHAR(50));
 
@@ -2693,7 +2693,7 @@ FROM
 ```
 
 ##### `7.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 SHOW TABLES;
 
@@ -2704,7 +2704,7 @@ DESCRIBE faculty;
 ```
 
 ##### `8.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 DROP TABLE faculty;
 
@@ -2713,7 +2713,7 @@ SHOW TABLES;
 ```
 
 ##### `9.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 CREATE TABLE faculty (Fac_id INT(3) PRIMARY KEY, Fac_name VARCHAR(50), Fac_addr INT(50));
 
@@ -2730,21 +2730,21 @@ DROP COLUMN Fac_addr;
 ```
 
 ##### `10.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 CREATE TABLE student (Student_id VARCHAR(10) PRIMARY KEY, Student_name VARCHAR(50), Student_surname VARCHAR(50), Student_tel VARCHAR(10), Fac_id INT(3), FOREIGN KEY (Fac_id) REFERENCES faculty (Fac_id));
 
 ```
 
 ##### `11.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 ALTER TABLE faculty ADD Fac_name VARCHAR(50);
 
 ```
 
 ##### `12.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 USE myproject;
 
@@ -2753,14 +2753,14 @@ SHOW TABLES;
 ```
 
 ##### `13.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 ALTER TABLE student ADD Friend_name VARCHAR(50);
 
 ```
 
 ##### `14.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 UPDATE student
 SET
@@ -2771,7 +2771,7 @@ WHERE
 ```
 
 ##### `15.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 UPDATE student
 SET
@@ -2782,7 +2782,7 @@ WHERE
 ```
 
 ##### `16.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 -- 16.1
 SELECT
@@ -2870,7 +2870,7 @@ LIMIT
 ```
 
 ##### `17.sql`<br>
-Create: 10 ก.ย. 2567 เวลา 16:55<br>
+Create: 10 ก.ย. 2567 time 16:55<br>
 ```sql
 SELECT
 	COUNT(Friend_name)
@@ -2883,8 +2883,8 @@ FROM
 ## Exercise/8
 
 ##### `3.1.html`<br>
-Create: 30 ก.ย. 2567 เวลา 23:57<br>
-Update: 1 ต.ค. 2567 เวลา 13:24<br>
+Create: 30 ก.ย. 2567 time 23:57<br>
+Update: 1 ต.ค. 2567 time 13:24<br>
 ```html
 <form method="post" action="./3.2.php">
 	<input type="hidden" id="fac_id" name="fac_id" />
@@ -2902,8 +2902,8 @@ Update: 1 ต.ค. 2567 เวลา 13:24<br>
 ```
 
 ##### `3.2.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -2928,8 +2928,8 @@ mysqli_close($db);
 ```
 
 ##### `4.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -2942,8 +2942,8 @@ mysqli_close($db);
 ```
 
 ##### `5.php`<br>
-Create: 24 ก.ย. 2567 เวลา 17:27<br>
-Update: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 24 ก.ย. 2567 time 17:27<br>
+Update: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -2969,8 +2969,8 @@ mysqli_close($db);
 ```
 
 ##### `6.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
-Update: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
+Update: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -2997,7 +2997,7 @@ mysqli_close($db);
 ```
 
 ##### `7.php`<br>
-Create: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -3020,7 +3020,7 @@ if ($stmt) {
 ```
 
 ##### `8.php`<br>
-Create: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -3091,7 +3091,7 @@ function deleteStudent($db, $id) {
 ```
 
 ##### `9.php`<br>
-Create: 30 ก.ย. 2567 เวลา 23:57<br>
+Create: 30 ก.ย. 2567 time 23:57<br>
 ```php
 <?php
 include("./connected_database.php");
@@ -3162,7 +3162,7 @@ function deleteTeacher($db, $id) {
 ```
 
 ##### `connected_database.php`<br>
-Create: 17 ก.ย. 2567 เวลา 01:33<br>
+Create: 17 ก.ย. 2567 time 01:33<br>
 ```php
 <?php
 $servername = "localhost";
@@ -3192,8 +3192,8 @@ if (!mysqli_set_charset($db, "utf8")) {
 ## Project
 
 ##### `index.html`<br>
-Create: 6 ต.ค. 2567 เวลา 02:16<br>
-Update: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 02:16<br>
+Update: 6 ต.ค. 2567 time 20:52<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -3243,7 +3243,7 @@ Update: 6 ต.ค. 2567 เวลา 20:52<br>
 ## Project/api
 
 ##### `connected.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
 ```php
 <?php
 $servername = "localhost";
@@ -3263,8 +3263,8 @@ if ($db->connect_error) {
 ## Project/api/reservation
 
 ##### `delete.php`<br>
-Create: 1 ต.ค. 2567 เวลา 14:47<br>
-Update: 8 ต.ค. 2567 เวลา 13:05<br>
+Create: 1 ต.ค. 2567 time 14:47<br>
+Update: 8 ต.ค. 2567 time 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -3340,8 +3340,8 @@ try {
 ```
 
 ##### `enum.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 6 ต.ค. 2567 เวลา 14:24<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 6 ต.ค. 2567 time 14:24<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -3375,8 +3375,8 @@ try {
 ```
 
 ##### `get.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:05<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -3425,8 +3425,8 @@ try {
 ```
 
 ##### `post.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:05<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:05<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -3525,8 +3525,8 @@ exit;
 ```
 
 ##### `schema.sql`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 6 ต.ค. 2567 เวลา 02:16<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 6 ต.ค. 2567 time 02:16<br>
 ```sql
 CREATE TABLE `reservations` (
 	`reservation_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -3547,8 +3547,8 @@ CREATE TABLE `reservations` (
 ## Project/api/student
 
 ##### `get.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -3600,16 +3600,16 @@ try {
 ```
 
 ##### `schema.sql`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 CREATE TABLE `student` (`id` int(11) PRIMARY KEY, `section` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `status` varchar(50) DEFAULT NULL)
 
 ```
 
 ##### `values.sql`<br>
-Create: 6 ต.ค. 2567 เวลา 02:16<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 6 ต.ค. 2567 time 02:16<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 INSERT INTO
 	`student` (id, section, name)
@@ -3633,7 +3633,7 @@ WHERE
 ## Project/api/user
 
 ##### `post.php`<br>
-Create: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 8 ต.ค. 2567 time 13:04<br>
 ```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
@@ -3701,7 +3701,7 @@ try {
 ```
 
 ##### `schema.sql`<br>
-Create: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 CREATE TABLE `user` (
 	`id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -3715,7 +3715,7 @@ CREATE TABLE `user` (
 ```
 
 ##### `values.sql`<br>
-Create: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 8 ต.ค. 2567 time 13:04<br>
 ```sql
 INSERT INTO
 	`user` (`student_id`, `username`, `password`)
@@ -3728,8 +3728,8 @@ VALUES
 ## Project/function
 
 ##### `page.php`<br>
-Create: 1 ต.ค. 2567 เวลา 14:47<br>
-Update: 6 ต.ค. 2567 เวลา 02:16<br>
+Create: 1 ต.ค. 2567 time 14:47<br>
+Update: 6 ต.ค. 2567 time 02:16<br>
 ```php
 <?php
 class PageType {
@@ -3753,7 +3753,7 @@ function reloadPage() {
 ## Project/function/reservation
 
 ##### `get_enum_values.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
 ```php
 <?php
 function get_enum_values($db, $table, $column) {
@@ -3768,8 +3768,8 @@ function get_enum_values($db, $table, $column) {
 ```
 
 ##### `valid-reservation.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 6 ต.ค. 2567 เวลา 02:16<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 6 ต.ค. 2567 time 02:16<br>
 ```php
 <?php
 include("get_enum_values.php");
@@ -3786,8 +3786,8 @@ $fields_to_validate = [
 ```
 
 ##### `valid-student.php`<br>
-Create: 1 ต.ค. 2567 เวลา 03:36<br>
-Update: 8 ต.ค. 2567 เวลา 13:04<br>
+Create: 1 ต.ค. 2567 time 03:36<br>
+Update: 8 ต.ค. 2567 time 13:04<br>
 ```php
 <?php
 function is_valid_student($db, $student_id) {
@@ -3813,7 +3813,7 @@ function is_valid_student($db, $student_id) {
 ## Project/script
 
 ##### `alerts.js`<br>
-Create: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 20:52<br>
 ```js
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
@@ -3881,7 +3881,7 @@ export { showDeleteConfirmation, showErrorMessage, showReservationForm, showSucc
 ```
 
 ##### `calendar.js`<br>
-Create: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 20:52<br>
 ```js
 /* eslint-disable no-undef */
 import { handleEventClick, handleSelect } from "./events.js";
@@ -3912,7 +3912,7 @@ export { calendar };
 ```
 
 ##### `events.js`<br>
-Create: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 20:52<br>
 ```js
 /* eslint-disable no-undef */
 
@@ -4027,7 +4027,7 @@ export { handleEventClick, handleSelect };
 ```
 
 ##### `fetch.js`<br>
-Create: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 20:52<br>
 ```js
 /* eslint-disable no-undef */
 
@@ -4078,7 +4078,7 @@ export { fetchEvents };
 ```
 
 ##### `utils.js`<br>
-Create: 6 ต.ค. 2567 เวลา 20:52<br>
+Create: 6 ต.ค. 2567 time 20:52<br>
 ```js
 function addEvent(calendar, date, time_slot_1, goto_slot_1, time_slot_2, goto_slot_2) {
 	calendar.addEvent({
@@ -4148,7 +4148,7 @@ export { addEvent, createReservations, existingEvents };
 ## sphp
 
 ##### `pre_load.php`<br>
-Create: 30 ก.ค. 2567 เวลา 20:11<br>
+Create: 30 ก.ค. 2567 time 20:11<br>
 Last edited: Time 20:12<br>
 
 ```php

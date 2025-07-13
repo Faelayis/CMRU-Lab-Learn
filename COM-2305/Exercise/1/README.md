@@ -1,6 +1,6 @@
 `1.html`<br>
-Create: 23 มิ.ย. 2567 เวลา 22:34<br>
-Update: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 23 มิ.ย. 2567 time 22:34<br>
+Update: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <h1>First</h1>
 <h2>First</h2>
@@ -11,8 +11,8 @@ Update: 2 ก.ค. 2567 เวลา 20:50<br>
 
 ```
 `2.html`<br>
-Create: 23 มิ.ย. 2567 เวลา 22:34<br>
-Update: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 23 มิ.ย. 2567 time 22:34<br>
+Update: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html>
@@ -43,7 +43,7 @@ Update: 2 ก.ค. 2567 เวลา 20:50<br>
 
 ```
 `3.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">
@@ -63,8 +63,8 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 
 ```
 `4.html`<br>
-Create: 23 มิ.ย. 2567 เวลา 22:34<br>
-Update: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 23 มิ.ย. 2567 time 22:34<br>
+Update: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html>
@@ -101,7 +101,7 @@ Update: 2 ก.ค. 2567 เวลา 20:50<br>
 
 ```
 `5.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">

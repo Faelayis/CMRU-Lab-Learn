@@ -2,7 +2,7 @@
 ## 1-16-67
 
 ##### `list.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
 ```py
 y = list([10, 20, 30, 40])
 
@@ -16,7 +16,7 @@ print(y[4])  # IndexError: list index out of range
 ## 11-14-66
 
 ##### `if.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 ```py
 score = 80
 
@@ -28,7 +28,7 @@ else:
 ```
 
 ##### `index.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 ```py
 print("Hello Python")
 
@@ -38,7 +38,7 @@ print("Hello Python")
 ## 11-28-66
 
 ##### `if.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 score = 85
 
@@ -52,7 +52,7 @@ if score >= 85:
 ## 2-13-67
 
 ##### `1.1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import datetime
 
@@ -70,7 +70,7 @@ print(today)
 ```
 
 ##### `1.2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import datetime
 
@@ -86,7 +86,7 @@ print(t.hour, t.minute, t.second, t.microsecond)
 ```
 
 ##### `2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import time
 
@@ -105,7 +105,7 @@ print(time.asctime())
 ```
 
 ##### `3.1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import random
 
@@ -124,7 +124,7 @@ print(random.choices(a))
 ```
 
 ##### `3.2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import random
 
@@ -138,7 +138,7 @@ print(random.random())
 ```
 
 ##### `4.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import statistics
 
@@ -159,7 +159,7 @@ print(statistics.variance(gpas))
 ```
 
 ##### `5.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import math
 
@@ -175,7 +175,7 @@ print("sin(0) : ", math.sin(0))
 ```
 
 ##### `6.1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 str = "this is string example....wow!!!"
 print("Length of the string: ", len(str))
@@ -186,7 +186,7 @@ print("Length of the string: ", len(str))
 ```
 
 ##### `6.2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 str = "this is really a string example....wow!!!"
 print("Max character: " + max(str))
@@ -200,7 +200,7 @@ print("ตัวเลขที่มำกที่สุด ", max(num))
 ```
 
 ##### `6.3.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 str = "THIS IS STRING EXAMPLE....WOW!!!"
 print(str.lower())
@@ -214,7 +214,7 @@ print(str.lower())
 ## Exam
 
 ##### `5-20-67.py`<br>
-Create: 20 ก.พ. 2567 เวลา 10:38<br>
+Create: 20 ก.พ. 2567 time 10:38<br>
 ```py
 def find_zodiac(year):
     zodiac = [
@@ -269,8 +269,8 @@ main()
 ```
 
 ##### `12-26-66.py`<br>
-Create: 20 ธ.ค. 2566 เวลา 02:21<br>
-Update: 26 ธ.ค. 2566 เวลา 09:09<br>
+Create: 20 ธ.ค. 2566 time 02:21<br>
+Update: 26 ธ.ค. 2566 time 09:09<br>
 ```py
 month = {
     1: "มกราคม",
@@ -297,8 +297,8 @@ else:
 ```
 
 ##### `test.py`<br>
-Create: 26 ธ.ค. 2566 เวลา 09:25<br>
-Update: 16 ม.ค. 2567 เวลา 08:48<br>
+Create: 26 ธ.ค. 2566 time 09:25<br>
+Update: 16 ม.ค. 2567 time 08:48<br>
 ```py
 text = input("ป้อนสัญลักษณ์พิเศษ : ")
 num = int(input("ป้อนตัวเลข : "))
@@ -321,7 +321,7 @@ for i in range(1, num + 1):
 ## Exercise/1
 
 ##### `1.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -338,7 +338,7 @@ print("จังหวัดที่อาศัย: ", province)
 ```
 
 ##### `2.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -352,7 +352,7 @@ print("อายุ: ", age)
 ```
 
 ##### `3.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -368,7 +368,7 @@ print("พื้นที่สามเหลี่ยม: ", area_triangle)
 ```
 
 ##### `4.py`<br>
-Create: 14 พ.ย. 2566 เวลา 10:33<br>
+Create: 14 พ.ย. 2566 time 10:33<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -384,7 +384,7 @@ print("พื้นที่สี่เหลี่ยมผืนผ้า: ",
 ```
 
 ##### `5.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -399,7 +399,7 @@ Last edited: Time 11:28<br>
 ```
 
 ##### `6.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -415,7 +415,7 @@ print("พื้นที่เป็นชนิด int คือ:", type(area)
 ```
 
 ##### `7.py`<br>
-Create: 14 พ.ย. 2566 เวลา 11:16<br>
+Create: 14 พ.ย. 2566 time 11:16<br>
 Last edited: Time 11:28<br>
 
 ```py
@@ -434,7 +434,7 @@ print("พื้นที่เป็นชนิด area คือ:", type(area
 ## Exercise/2
 
 ##### `1.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 grade = 3.75
 
@@ -443,7 +443,7 @@ print("Grade = ", grade)
 ```
 
 ##### `1.2.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 name = "Computer", "Departhment"
 
@@ -452,7 +452,7 @@ print(name[0] + " " + name[1])
 ```
 
 ##### `1.3.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 num1 = 10
 num2 = 30
@@ -465,7 +465,7 @@ print("%d + %d = %d" % (num1, num2, num1 + num2))
 ```
 
 ##### `2.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 text = " Hello... \n Python Programming"
 
@@ -474,7 +474,7 @@ print(text)
 ```
 
 ##### `2.2.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 text = "ยินดีต้อนรับเข้าสู่"
 text2 = '\t" โปรแกรมภาษาไพธอน "'
@@ -485,7 +485,7 @@ print(text2)
 ```
 
 ##### `2.3.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 text = "ยินดีต้อนรับเข้าสู่"
 text2 = '\t "โปรแกรมภาษาไพธอน"'
@@ -496,7 +496,7 @@ print("***** %s *****" % text2)
 ```
 
 ##### `2.4.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 x = 10
 y = 20
@@ -507,7 +507,7 @@ print("%d + %d = %d " % (x, y, z))
 ```
 
 ##### `2.5.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 dept = "Computer " "Department"
 
@@ -524,7 +524,7 @@ print(CMRU)
 ```
 
 ##### `3.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 grade = input("Enter Grade :")
 section = input("Enter Section :")
@@ -534,7 +534,7 @@ avg = input("Enter avg :")
 ```
 
 ##### `3.1.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 name = input("Enter name :")
 inName = input("Enter inName :")
@@ -544,7 +544,7 @@ print(name, inName)
 ```
 
 ##### `3.2.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 width = int(input("Enter Width :"))
 length = int(input("Enter Length :"))
@@ -554,7 +554,7 @@ print(width * length)
 ```
 
 ##### `3.3.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:10<br>
+Create: 21 พ.ย. 2566 time 11:10<br>
 ```py
 number1 = int(input("Enter Number 1 :"))
 number2 = int(input("Enter Number 2 :"))
@@ -564,7 +564,7 @@ print(number1 + number2)
 ```
 
 ##### `4.py`<br>
-Create: 21 พ.ย. 2566 เวลา 11:35<br>
+Create: 21 พ.ย. 2566 time 11:35<br>
 ```py
 # 1
 N1 = int(input("Enter Number 1 :"))
@@ -587,7 +587,7 @@ print(2 * input3 + 1)
 ## Exercise/3
 
 ##### `1..py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 try:
     x = int(input("Enter X : "))
@@ -601,7 +601,7 @@ except ValueError:
 ```
 
 ##### `1.1.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 try:
     Score = int(input("Enter Score : "))
@@ -617,7 +617,7 @@ print("Good Bye")
 ```
 
 ##### `2..py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 try:
     x = int(input("Enter X : "))
@@ -636,7 +636,7 @@ print("Good Bye")
 ```
 
 ##### `2.1.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 try:
     Score = int(input("Enter Score : "))
@@ -652,7 +652,7 @@ except ValueError:
 ```
 
 ##### `3.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 number = int(input("Enter an integer : "))
 
@@ -666,7 +666,7 @@ else:
 ```
 
 ##### `4.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 def calculate(income):
     if income <= 5000:
@@ -701,7 +701,7 @@ print(f"รายได้สุทธิ: {net_income:.2f} บาท")
 ```
 
 ##### `5.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 def getGrade(score):
     if score >= 80 & score <= 100:
@@ -730,7 +730,7 @@ except ValueError:
 ```
 
 ##### `6.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 def add(x, y):
     return x + y
@@ -767,7 +767,7 @@ else:
 ```
 
 ##### `7.py`<br>
-Create: 28 พ.ย. 2566 เวลา 11:15<br>
+Create: 28 พ.ย. 2566 time 11:15<br>
 ```py
 try:
     Score = int(input("Enter Score : "))
@@ -782,7 +782,7 @@ except ValueError:
 ## Exercise/5
 
 ##### `1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for x in range(5):
     print("name - last name")
@@ -790,7 +790,7 @@ for x in range(5):
 ```
 
 ##### `2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for number in range(1, 11, 2):
     print(number)
@@ -798,7 +798,7 @@ for number in range(1, 11, 2):
 ```
 
 ##### `3.1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 sum = 0
 
@@ -809,7 +809,7 @@ for number in range(1, 51):
 ```
 
 ##### `3.2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for number in range(1, 11):
     print(number)
@@ -819,7 +819,7 @@ print("Good bye")
 ```
 
 ##### `3.3.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for number in range(1, 13):
     print(f"{2 * number}")
@@ -827,7 +827,7 @@ for number in range(1, 13):
 ```
 
 ##### `4.1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 i = 1
 
@@ -840,7 +840,7 @@ print("Good bye")
 ```
 
 ##### `4.2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 i = 9
 
@@ -853,7 +853,7 @@ print("Good bye")
 ```
 
 ##### `4.3.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:23<br>
 
 ```py
@@ -867,7 +867,7 @@ print("Good bye")
 ```
 
 ##### `4.4.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 sum = 0
 number = 1
@@ -881,7 +881,7 @@ print(sum)
 ```
 
 ##### `4.5.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:14<br>
 
 ```py
@@ -902,7 +902,7 @@ while count <= 5:
 ```
 
 ##### `5.1.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 ```py
 for x in range(1, 4):
     for i in range(1, x + 1):
@@ -911,7 +911,7 @@ for x in range(1, 4):
 ```
 
 ##### `5.2.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:14<br>
 
 ```py
@@ -923,7 +923,7 @@ for x in range(5):
 ```
 
 ##### `6.py`<br>
-Create: 19 ธ.ค. 2566 เวลา 11:09<br>
+Create: 19 ธ.ค. 2566 time 11:09<br>
 Last edited: Time 11:23<br>
 
 ```py
@@ -943,8 +943,8 @@ except ValueError:
 ## Exercise/6.1
 
 ##### `1.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 a = [99, 5000.75, "Cat", True]
 
@@ -960,8 +960,8 @@ for item in a:
 ```
 
 ##### `2.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 aeiou: list[str] = ["a", "e", "I", "o", "u"]
 
@@ -977,8 +977,8 @@ for x in aeiou:
 ```
 
 ##### `3.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 num: list[int] = [10, 20, 30, 40, 50]
 
@@ -994,8 +994,8 @@ print(num)
 ```
 
 ##### `4.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 program: list[str] = ["Python", "C", "PHP", "ASP"]
 
@@ -1009,8 +1009,8 @@ else:
 ```
 
 ##### `5.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 numbers: list[int] = [99, 10, 20, 50, 15]
 
@@ -1039,8 +1039,8 @@ print(numbers)
 ```
 
 ##### `6.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 p = ["Python", "C", "PHP", "ASP"]
 
@@ -1077,8 +1077,8 @@ print(p)
 ```
 
 ##### `7.1.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 a = (10, 2000.75, "Cat", "One")
 print(a[0], a[1], a[2], a[3])
@@ -1090,8 +1090,8 @@ print(a)
 ```
 
 ##### `7.2.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 L1 = ["a", "e", "i", "o", "u"]
 my_tuple = tuple(L1)
@@ -1115,8 +1115,8 @@ print("Good Bye")
 ```
 
 ##### `7.3.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 L1 = ["a", "e", "i", "o", "u"]
 my_tuple = tuple(L1)
@@ -1137,8 +1137,8 @@ type(my_tuple)
 ```
 
 ##### `8.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 x = ("apple", "banana", "cherry")
 y = list(x)
@@ -1151,8 +1151,8 @@ print(x)
 ```
 
 ##### `9.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 A = (10, 20, 30, 40, 50)
 B = ("a", "b", "c", "d", "e")
@@ -1164,8 +1164,8 @@ print(C)
 ```
 
 ##### `10.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:52<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:52<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 X = ("Hello", "Python")
 Y = X * 3
@@ -1176,8 +1176,8 @@ print(Y)
 ```
 
 ##### `11.py`<br>
-Create: 16 ม.ค. 2567 เวลา 11:56<br>
-Update: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 16 ม.ค. 2567 time 11:56<br>
+Update: 23 ม.ค. 2567 time 11:12<br>
 ```py
 # ตัวเลขไทย
 tp_thai_digits = ("๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙")
@@ -1213,7 +1213,7 @@ print(f"Thai year words: {thai_year_words}")
 ## Exercise/6.2
 
 ##### `1.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 txt = "The best things in life are free!"
 
@@ -1228,7 +1228,7 @@ else:
 ```
 
 ##### `2.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 fruits = ["apple", "banana", "Cherry"]
 x, y, z = fruits
@@ -1241,7 +1241,7 @@ print(x, y, z)
 ```
 
 ##### `3.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 x = {10, 20, 30, 40, 50}
 y = {1, "One", 2, "two"}
@@ -1267,7 +1267,7 @@ for i in z:
 ```
 
 ##### `4.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 setA = set("abracadabra")
 setB = set("alacazam")
@@ -1285,7 +1285,7 @@ print(setC)
 ```
 
 ##### `5.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 x = {10, 20, 30, 40, 50}
 print("จ ำนวนข้อมูลในเซตทั้งหมด คือ ", len(x))
@@ -1304,7 +1304,7 @@ print("ชนิดของตัวแปร x คือ ", type(x))
 ```
 
 ##### `6.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 s1 = {1, 3, 5, 7, 9}
 
@@ -1329,7 +1329,7 @@ print(s1)
 ```
 
 ##### `7.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 s1 = {1, 2, 3, 4, 5}
 s2 = {4, 5, 6, 7, 8}
@@ -1346,7 +1346,7 @@ print("Difference:", s1.difference(s2))
 ```
 
 ##### `8.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 
@@ -1365,7 +1365,7 @@ print("-" * 20)
 ```
 
 ##### `9.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 
@@ -1392,7 +1392,7 @@ for k in dict1:
 ```
 
 ##### `10.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 d1 = dict1.values()
@@ -1410,7 +1410,7 @@ for i in d1:
 ```
 
 ##### `11.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 
@@ -1427,7 +1427,7 @@ for i, j in dict1.items():
 ```
 
 ##### `12.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 dict2 = dict1.copy()
@@ -1442,7 +1442,7 @@ print(dict3)
 ```
 
 ##### `13.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 ```py
 dict1 = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five"}
 print(dict1.get(3))
@@ -1463,7 +1463,7 @@ print(dict1)
 ```
 
 ##### `14.py`<br>
-Create: 23 ม.ค. 2567 เวลา 11:12<br>
+Create: 23 ม.ค. 2567 time 11:12<br>
 Last edited: Time 11:27<br>
 
 ```py
@@ -1544,7 +1544,7 @@ ShowAllStudent()
 ## Exercise/7.1
 
 ##### `1.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1561,7 +1561,7 @@ DisplayNumber(1)
 ```
 
 ##### `2.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1580,7 +1580,7 @@ SumNumber(5)
 ```
 
 ##### `3.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1640,7 +1640,7 @@ print("\n")
 ```
 
 ##### `4.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1664,7 +1664,7 @@ Add(x, y)
 ```
 
 ##### `5.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1679,7 +1679,7 @@ multiplication_table(int(input("Enter a number: ")))
 ```
 
 ##### `6.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1701,7 +1701,7 @@ fNum(7)
 ```
 
 ##### `7.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1726,7 +1726,7 @@ print("The area is: ", triangle_area)
 ```
 
 ##### `8.1.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1747,7 +1747,7 @@ sumA(10, 20, 30)
 ```
 
 ##### `8.2.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1765,7 +1765,7 @@ printkv(name="Manaka Mukaido", age=14, sex="หญิง")
 ```
 
 ##### `9.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1786,7 +1786,7 @@ print()
 ```
 
 ##### `10.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1811,7 +1811,7 @@ print("ตัวเลขที่ป้อนเป็น ", result)
 ```
 
 ##### `11.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1836,7 +1836,7 @@ print("พื้นที่สามเหลี่ยมเท่ากับ 
 ```
 
 ##### `12.py`<br>
-Create: 6 ก.พ. 2567 เวลา 10:57<br>
+Create: 6 ก.พ. 2567 time 10:57<br>
 Last edited: Time 12:07<br>
 
 ```py
@@ -1902,7 +1902,7 @@ print("\n")
 ## Exercise/7.2
 
 ##### `1.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 from datetime import date
 
@@ -1921,7 +1921,7 @@ display_birthdate(1, 1, 1999)
 ```
 
 ##### `2.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import datetime
 
@@ -1940,7 +1940,7 @@ print("Your birthday is : ", birth_date)
 ```
 
 ##### `3.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import datetime
 
@@ -1966,7 +1966,7 @@ print(f"Create Custom Time : {create_time(*numbers)}")
 ```
 
 ##### `4.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import math
 
@@ -1991,7 +1991,7 @@ print(f"ค่า tan = {tan_value}")
 ```
 
 ##### `5.py`<br>
-Create: 13 ก.พ. 2567 เวลา 11:39<br>
+Create: 13 ก.พ. 2567 time 11:39<br>
 ```py
 import random
 

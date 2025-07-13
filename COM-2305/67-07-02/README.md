@@ -1,5 +1,5 @@
 `1.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 </html>
 ```
 `2.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 $num1 = 90;
@@ -33,7 +33,7 @@ echo "ผล - ของ $num1 + $num2 = " . ($num1 - $num2) . "<br>";
 
 ```
 `3.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +71,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 </html>
 ```
 `4.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <?php
 if ($_GET['submit'] == "บวก") {
@@ -80,7 +80,7 @@ if ($_GET['submit'] == "บวก") {
 
 ```
 `5.php`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +108,7 @@ Create: 2 ก.ค. 2567 เวลา 20:50<br>
 </html>
 ```
 `form.html`<br>
-Create: 2 ก.ค. 2567 เวลา 20:50<br>
+Create: 2 ก.ค. 2567 time 20:50<br>
 ```html
 <!doctype html>
 <html lang="en">

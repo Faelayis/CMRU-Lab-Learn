@@ -2,7 +2,7 @@
 ## Exercise/1
 
 ##### `1.py`<br>
-Create: 13 ก.ค. 2568 เวลา 23:42<br>
+Create: 13 ก.ค. 2568 time 23:42<br>
 ```py
 num_books = int(input("How many books: "))
 total_price = float(input("How much: "))
@@ -15,7 +15,7 @@ print(f"You have to pay {int(total_price)} bath.")
 ```
 
 ##### `2.py`<br>
-Create: 13 ก.ค. 2568 เวลา 23:42<br>
+Create: 13 ก.ค. 2568 time 23:42<br>
 ```py
 print('Enter number:')
 x = input()
@@ -26,7 +26,7 @@ for i in range(len(x)-1,-1,-1):
 ```
 
 ##### `3.py`<br>
-Create: 13 ก.ค. 2568 เวลา 23:42<br>
+Create: 13 ก.ค. 2568 time 23:42<br>
 ```py
 text = """
 Python is a high-level, interpreted, general-purpose programming language. Its design philosophy
@@ -48,7 +48,7 @@ print(text.count("Python"))
 ```
 
 ##### `4.py`<br>
-Create: 13 ก.ค. 2568 เวลา 23:42<br>
+Create: 13 ก.ค. 2568 time 23:42<br>
 ```py
 list = ['abc', 'xyz', 'aba', '1221', 'กนก','dawdad']
 result = []
@@ -62,7 +62,7 @@ print("Expected Result :" , len(result))
 ```
 
 ##### `5.py`<br>
-Create: 13 ก.ค. 2568 เวลา 23:42<br>
+Create: 13 ก.ค. 2568 time 23:42<br>
 ```py
 text = "w3resource"
 char_count = {}
