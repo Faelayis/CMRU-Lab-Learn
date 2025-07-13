@@ -6,12 +6,12 @@ Chiang Mai Rajabhat University
 > [!WARNING]
 > ***Sticking to using things outside the box and better***
 
-## รายวิชา
+## Subject
 
 <!-- prettier-ignore-start -->
 <!-- course-start -->
 
-|รหัส|วิชา|เริ่มต้น|โฟลเดอร์|โค้ดทั้งหมด|สิ่งที่ใช้|
+|Code|Subject|Start|Folder|All Code|What's Used|
  |:---:|:---:|:---:|:---:|:---:|:---:|
 | [COM 1308 63](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16390) | Principles of Computer Design and Programming | [⚙️](./COM-1308/README.md) | [📁](./COM-1308/) | [📑](./COM-1308/LIST.md) | <a href="#" target="_blank"><img width="20px" src="./resources/c.svg" alt="C"/></a> |
 | [COM 1602 63](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16391) | Database System 1 | [⚙️](./COM-1602/README.md) | [📁](./COM-1602/) | [📑](./COM-1602/LIST.md) | <a href="#" target="_blank"><img width="20px" src="./resources/sql.svg" alt="MySQL"/></a>  <a href="#" target="_blank"><img width="20px" src="./resources/php.svg" alt="PHP"/></a> |

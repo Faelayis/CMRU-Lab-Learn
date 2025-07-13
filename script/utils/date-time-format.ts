@@ -14,5 +14,5 @@ export const get = (date?: Date, options?: Intl.DateTimeFormatOptions): string =
 		),
 		timeFormatter = new Intl.DateTimeFormat(locales, { hour: "numeric", minute: "numeric", timeZone });
 
-	return `${dateFormatter.format(date)} เวลา ${timeFormatter.format(date)}`;
+	return `${dateFormatter.format(date)} time ${timeFormatter.format(date)}`;
 };
