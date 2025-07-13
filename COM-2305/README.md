@@ -1,6 +1,6 @@
-# COM 2305 การเขียนโปรแกรมเว็บ
+# COM 2305 Web Programming
 
-## การพัฒนา
+## Development 🚀
 
 แนะนำ [VS Code](https://code.visualstudio.com) เพื่อพัฒนา<br>
 ต้องใช้ [XAMPP](#xampp) หรือ [PHP Desktop](https://github.com/cztomczak/phpdesktop) และ [NodeJS](#nodejs-expressjs) (ทางเลือก)
@@ -10,7 +10,7 @@
 > **แนะนำ**
 > PHP Desktop ง่ายต่อการพัฒนาอย่างมาก
 
-### ส่วนขยาย
+### VS Code Extensions 🧩
 
 - แนะนำ [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
 - แนะนำ [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)

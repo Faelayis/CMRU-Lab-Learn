@@ -1,12 +1,12 @@
-# COM 1305 การเขียนโปรแกรมภาษาคอมพิวเตอร์
+# COM 1305 Computer Programming
 
-## การพัฒนา
+## Development 🚀
 
 แนะนำ [Windows Terminal](https://www.microsoft.com/store/productid/9N0DX20HK701?ocid=pdpshare) เพื่อการทดสอบ<br>
 ต้องใช้ [VS Code](https://code.visualstudio.com) เพื่อพัฒนาหรือการสร้าง<br>
 ต้องใช้ [Python](https://www.python.org/downloads) เวอร์ชัน 3.12.X หรือมากกว่า
 
-### ส่วนขยาย
+### VS Code Extensions 🧩
 
 - ต้องใช้ [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - ต้องใช้ [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)<!-- -   แนะนำ [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) -->
@@ -16,7 +16,7 @@
 
 ### Windows
 
-สำหลับติดตั้ง Python 3.12 แบบด่วน<br>
+สำหรับติดตั้ง Python 3.12 แบบด่วน<br>
 
 [![](https://img.shields.io/badge/Microsoft%20Store-005FB8?logo=microsoftstore&logoColor=white)](https://www.microsoft.com/store/productId/9NCVDN91XZQP)
 [![](https://img.shields.io/badge/PowerShell-5391FE?logo=PowerShell&logoColor=white)](https://aka.ms/powershell-release?tag=stable)
@@ -73,7 +73,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 }
 ```
 
-### เสร็จสิ้น
+### Complete 🎉
 
 กด F5 ในไฟล์ที่ต้องการเพื่อทดสอบ<br>
 

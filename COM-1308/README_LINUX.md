@@ -1,4 +1,4 @@
-## การกำหนดค่า (Linux)
+## Development (Linux)
 
 <!-- prettier-ignore -->
 > [!WARNING]

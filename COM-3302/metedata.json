@@ -1,10 +1,10 @@
 {
-	"index": 5,
 	"$schema": "../schema/metedata.json",
-	"coursecode": "COM 3302-63",
-	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2882",
 	"complete": null,
-	"name": "การเขียนโปรแกรมเชิงวัตถุ",
+	"coursecode": "COM 3302-63",
+	"index": 5,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2882",
+	"name": "Object-Oriented Programming",
 	"preview": {
 		"enable": true,
 		"files": [

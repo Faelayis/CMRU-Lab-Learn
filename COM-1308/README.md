@@ -1,6 +1,6 @@
-# COM 1308 หลักการออกแบบและการเขียนโปรแกรม
+# COM 1308 Principles of Computer Design and Programming
 
-## การพัฒนา
+## Development 🚀
 
 แนะนำ [Windows Terminal](https://www.microsoft.com/store/productid/9N0DX20HK701?ocid=pdpshare) เพื่อการทดสอบ<br>
 ต้องใช้ [VS Code](https://code.visualstudio.com) เพื่อพัฒนาหรือการสร้าง<br>
@@ -10,7 +10,7 @@
 > [!WARNING]
 > ต้องติดตั้งใน Path: `C:\Program Files (x86)\Dev-Cpp` เท่านั้น
 
-### ส่วนขยาย
+### VS Code Extensions 🧩
 
 - ต้องใช้ [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - ต้องใช้ [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
@@ -99,7 +99,7 @@
 }
 ```
 
-### เสร็จสิ้น
+### Complete 🎉
 
 กด F5 ในไฟล์ที่ต้องการเพื่อทดสอบ<br>
 กด Shift + F5 เพื่อยกเลิก

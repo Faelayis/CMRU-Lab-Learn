@@ -1,10 +1,10 @@
 {
-	"index": 4,
 	"$schema": "../schema/metedata.json",
-	"coursecode": "COM 2303-63",
-	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2814",
 	"complete": "14-02-2568",
-	"name": "การวิเคราะห์และออกแบบขั้นตอนวิธี",
+	"coursecode": "COM 2303-63",
+	"index": 4,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2814",
+	"name": "Analysis and Design of Algorithms",
 	"preview": {
 		"enable": true,
 		"files": [

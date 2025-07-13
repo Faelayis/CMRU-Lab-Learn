@@ -118,17 +118,17 @@ export default async function generateContent(path: string, type: GeneratorType)
 
 function formatHeader(file: Entry, date: { created: Date; modified: Date }, type?: GeneratorType) {
 	return `${type === GeneratorType.List ? "##### " : ""}\`${file.name}\`<br>
-      สร้าง: ${utils_time(date.created)}<br>${
+      Create: ${utils_time(date.created)}<br>${
 			date.created.getDate() === date.modified.getDate()
 				? `${
 						date.created.getTime() === date.modified.getTime()
 							? ""
-							: `\nแก้ไขล่าสุด: เวลา ${date.modified.toLocaleTimeString("th-th", {
+							: `\nLast edited: Time ${date.modified.toLocaleTimeString("th-th", {
 									timeStyle: "short",
 									timeZone,
 								})}<br>\n`
 					}`
-				: `\nอัปเดต: ${utils_time(date.modified)}<br>`
+				: `\nUpdate: ${utils_time(date.modified)}<br>`
 		}`
 		.split("\n")
 		.map((line) => line.trim())

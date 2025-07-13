@@ -16,11 +16,11 @@
 	"dependencies": {
 		"fast-glob": "3.3.3",
 		"git-date-extractor": "4.0.1",
-		"simple-icons": "15.5.0"
+		"simple-icons": "15.6.0"
 	},
 	"devDependencies": {
 		"@types/bun": "1.2.18",
-		"@types/node": "24.0.12",
+		"@types/node": "24.0.13",
 		"@typescript-eslint/eslint-plugin": "8.36.0",
 		"@typescript-eslint/parser": "8.36.0",
 		"eslint": "8.57.1",
@@ -33,7 +33,7 @@
 		"eslint-plugin-unicorn": "59.0.1",
 		"prettier": "3.6.2",
 		"prettier-plugin-sort-json": "4.1.1",
-		"prettier-plugin-sql": "0.19.1",
+		"prettier-plugin-sql": "0.19.2",
 		"typescript": "5.8.3"
 	},
 	"engines": {

@@ -1,10 +1,10 @@
 {
-	"index": 1,
 	"$schema": "../schema/metedata.json",
-	"coursecode": "COM 1602-63",
-	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16391",
 	"complete": "19-02-2567",
-	"name": "ระบบฐานข้อมูล 1",
+	"coursecode": "COM 1602-63",
+	"index": 1,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16391",
+	"name": "Database System 1",
 	"preview": {
 		"enable": true,
 		"files": [

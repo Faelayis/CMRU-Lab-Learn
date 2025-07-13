@@ -1,1 +1,1 @@
-# COM 2303 การวิเคราะห์และออกแบบขั้นตอนวิธี
+# COM 2303 Analysis and Design of Algorithms

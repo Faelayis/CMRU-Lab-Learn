@@ -1,10 +1,10 @@
 {
-	"index": 3,
 	"$schema": "../schema/metedata.json",
-	"coursecode": "COM 2305-63",
-	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16401",
 	"complete": "15-10-2567",
-	"name": "การเขียนโปรแกรมเว็บ",
+	"coursecode": "COM 2305-63",
+	"index": 3,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16401",
+	"name": "Web Programming",
 	"preview": {
 		"enable": true,
 		"files": [
