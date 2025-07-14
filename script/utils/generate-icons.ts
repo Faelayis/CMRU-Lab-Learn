@@ -18,6 +18,8 @@ export async function generateIcons(files: string[]): Promise<string> {
 		html: siHtml5,
 		js: siJavascript,
 		ts: siTypescript,
+		flowgorithm: "flowgorithm.ico",
+		java: "java.svg",
 	};
 
 	const iconHTML = await Promise.all(

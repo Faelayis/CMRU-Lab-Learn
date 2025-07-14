@@ -10,13 +10,13 @@ const mainReadmePath = path.join(import.meta.dirname, "../../README.md");
 async function generateHeader(metedataList: MeteData[]) {
 	metedataList.sort((a, b) => a.index - b.index);
 
-	const header = `|รหัส|วิชา|เริ่มต้น|โฟลเดอร์|โค้ดทั้งหมด|สิ่งที่ใช้|\n |:---:|:---:|:---:|:---:|:---:|:---:|\n`,
+	const header = `|Code|Subject|Start|Folder|All Code|What's Used|\n |:---:|:---:|:---:|:---:|:---:|:---:|\n`,
 		rows = await Promise.all(
 			metedataList.map(async (metadata) => {
 				const folderName = metadata.coursecode.replace(/-\d{2}$/, "").replaceAll(/\s+/g, "-"),
 					icons = await generateIcons(metadata.preview?.files || []);
 
-				return `| [${metadata.coursecode.replaceAll("-", " ")}](${metadata.info}) | ${metadata.name} | [⚙️](./${folderName}/README.md) | [📁](./${folderName}/) | [📑](./${folderName}/LIST.md) | ${icons} |`;
+				return `| [${metadata.coursecode.replaceAll("-63", "")}](${metadata.info}) | ${metadata.name} | [⚙️](./${folderName}/README.md) | [📁](./${folderName}/) | [📑](./${folderName}/LIST.md) | ${icons} |`;
 			}),
 		);
 
