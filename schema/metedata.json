@@ -33,6 +33,7 @@
 				"html",
 				"js",
 				"ts",
+				"ino",
 				"java"
 			],
 			"type": "string"
