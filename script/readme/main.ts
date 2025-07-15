@@ -16,7 +16,7 @@ async function generateHeader(metedataList: MeteData[]) {
 				const folderName = metadata.coursecode.replace(/-\d{2}$/, "").replaceAll(/\s+/g, "-"),
 					icons = await generateIcons(metadata.preview?.files || []);
 
-				return `| [${metadata.coursecode.replaceAll("-63", "")}](${metadata.info}) | ${metadata.name} | [⚙️](./${folderName}/README.md) | [📁](./${folderName}/) | [📑](./${folderName}/LIST.md) | ${icons} |`;
+				return `| [${metadata.coursecode.split(" ")[1].replaceAll("-63", "")}](${metadata.info}) | ${metadata.name} | [⚙️](./${folderName}/README.md) | [📁](./${folderName}/) | [📑](./${folderName}/LIST.md) | ${icons} |`;
 			}),
 		);
 
