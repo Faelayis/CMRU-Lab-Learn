@@ -318,6 +318,27 @@ public class Switch_to_if_25 {
 
 ## Exercise/EX2
 
+##### `Do_While.java`<br>
+Create: 25 ก.ค. 2568 time 10:08<br>
+```java
+package Exercise.EX2;
+
+public class Do_While {
+   public static void main(String[] args) {
+      int row = 1;
+
+      do {
+         int col = 1;
+
+         do {
+            System.out.println("row = " + row + " col = " + col);
+         } while (++col <= 3);
+      } while (++row <= 2);
+   }
+}
+
+```
+
 ##### `Loop.java`<br>
 Create: 24 ก.ค. 2568 time 20:55<br>
 ```java
@@ -396,6 +417,27 @@ public class Loop {
       System.out.println("\n");
 
       scanner.close();
+   }
+}
+
+```
+
+##### `While.java`<br>
+Create: 25 ก.ค. 2568 time 10:08<br>
+```java
+package Exercise.EX2;
+
+public class While {
+   public static void main(String[] args) {
+      int count = 1;
+
+      while (count <= 2) {
+         for (int num = 1; num <= 3; num++) {
+            System.out.println("count = " + count + " num = " + num);
+         }
+
+         count++;
+      }
    }
 }
 
