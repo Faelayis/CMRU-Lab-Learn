@@ -189,6 +189,8 @@ void loop() {
 
 ##### `Lab-2.ino`<br>
 Create: 29 ก.ค. 2568 time 15:24<br>
+Last edited: Time 15:58<br>
+
 ```ino
 const int LED_1 = D1;
 const int LED_2 = D2;
@@ -199,8 +201,6 @@ int ledPins[] = { LED_1, LED_2, LED_3 };
 
 int currentLED = 0;
 bool lastButtonState = LOW;
-unsigned long lastDebounceTime = 0;
-unsigned long debounceDelay = 50;
 
 void setup() {
   pinMode(LED_1, OUTPUT);
@@ -214,15 +214,15 @@ void setup() {
 void loop() {
   int reading = digitalRead(Button_Pin_1);
 
-  if (reading == LOW && lastButtonState == HIGH && (millis() - lastDebounceTime) > debounceDelay) {
-    lastDebounceTime = millis();
+  if (reading == LOW && lastButtonState == HIGH) {
     currentLED++;
-    if (currentLED > 2) currentLED = 0;
+
+    if (currentLED > 2) {
+      currentLED = 0;
+    }
   }
 
   lastButtonState = reading;
-
-  Serial.print("Now the ");
 
   if (currentLED == 0) {
     Serial.print("Red");
@@ -231,11 +231,12 @@ void loop() {
   } else {
     Serial.print("Green");
   }
+
   Serial.println(" LED is blinking.");
 
   digitalWrite(ledPins[currentLED], HIGH);
-  delay(300);
+  delay(150);
   digitalWrite(ledPins[currentLED], LOW);
-  delay(300);
+  delay(150);
 }
 ```
