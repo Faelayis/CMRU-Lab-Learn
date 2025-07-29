@@ -9,9 +9,9 @@ void flashLED(int ledPin, const char* ledName, int count) {
     Serial.print(":");
     Serial.println(i);
     digitalWrite(ledPin, HIGH);
-    delay(1000);
+    delay(150);
     digitalWrite(ledPin, LOW);
-    delay(1000);
+    delay(150);
   }
 }
 
