@@ -10,6 +10,8 @@ Additional Boards Manager URLs (ESP8266) <br>
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ```
 
+Board: NodeMCU 1.0 (ESP-12E Module)
+
 ### Linux
 
 Fix Permission denied <br>
