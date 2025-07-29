@@ -155,6 +155,8 @@ void loop() {
 
 ##### `Lab-1.ino`<br>
 Create: 29 ก.ค. 2568 time 15:24<br>
+Last edited: Time 16:07<br>
+
 ```ino
 
 #define LED_1 D1  // Green
@@ -167,9 +169,9 @@ void flashLED(int ledPin, const char* ledName, int count) {
     Serial.print(":");
     Serial.println(i);
     digitalWrite(ledPin, HIGH);
-    delay(1000);
+    delay(150);
     digitalWrite(ledPin, LOW);
-    delay(1000);
+    delay(150);
   }
 }
 
