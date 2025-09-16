@@ -29,6 +29,7 @@
 		"eslint-plugin-prettier": "5.5.1",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"eslint-plugin-sort-destructure-keys": "2.0.0",
+		"prettier-plugin-packagejson": "2.5.19",
 		"eslint-plugin-typescript-sort-keys": "3.3.0",
 		"eslint-plugin-unicorn": "59.0.1",
 		"prettier": "3.6.2",
@@ -114,12 +115,16 @@
 		"tabWidth": 4,
 		"trailingComma": "all",
 		"useTabs": true,
+		"plugins": [
+			"prettier-plugin-packagejson"
+		],
 		"overrides": [
 			{
 				"files": [
 					"*.json",
 					"*.code-workspace"
 				],
+            "excludeFiles":["package.json"],
 				"options": {
 					"jsonRecursiveSort": true,
 					"parser": "json-stringify",
@@ -147,3 +152,4 @@
 		]
 	}
 }
+
