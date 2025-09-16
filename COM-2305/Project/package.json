@@ -1,13 +1,14 @@
 {
 	"name": "com-2305-project",
-	"mysql": {
-		"name": "com_2305-project"
-	},
 	"type": "module",
 	"main": "mysql.ts",
 	"scripts": {
-		"start": "bun mysql.ts",
-		"dev": "nodemon"
+		"dev": "nodemon",
+		"start": "bun mysql.ts"
+	},
+	"nodemonConfig": {
+		"exec": "bun --watch mysql.ts",
+		"ext": "sql"
 	},
 	"dependencies": {
 		"crypto": "1.0.1",
@@ -16,8 +17,7 @@
 	"devDependencies": {
 		"nodemon": "3.1.7"
 	},
-	"nodemonConfig": {
-		"ext": "sql",
-		"exec": "bun --watch mysql.ts"
+	"mysql": {
+		"name": "com_2305-project"
 	}
 }

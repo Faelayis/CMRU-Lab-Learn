@@ -13,64 +13,80 @@
 		"prettier": "prettier --write . --ignore-unknown",
 		"prettier:package-json": "bunx prettier-package-json --write ./package.json --use-tabs false"
 	},
-	"dependencies": {
-		"fast-glob": "3.3.3",
-		"git-date-extractor": "4.0.1",
-		"simple-icons": "15.6.0"
-	},
-	"devDependencies": {
-		"@types/bun": "1.2.18",
-		"@types/node": "24.0.13",
-		"@typescript-eslint/eslint-plugin": "8.36.0",
-		"@typescript-eslint/parser": "8.36.0",
-		"eslint": "8.57.1",
-		"eslint-config-prettier": "10.1.5",
-		"eslint-plugin-import": "2.32.0",
-		"eslint-plugin-prettier": "5.5.1",
-		"eslint-plugin-simple-import-sort": "12.1.1",
-		"eslint-plugin-sort-destructure-keys": "2.0.0",
-		"prettier-plugin-packagejson": "2.5.19",
-		"eslint-plugin-typescript-sort-keys": "3.3.0",
-		"eslint-plugin-unicorn": "59.0.1",
-		"prettier": "3.6.2",
-		"prettier-plugin-sort-json": "4.1.1",
-		"prettier-plugin-sql": "0.19.2",
-		"typescript": "5.8.3"
-	},
-	"engines": {
-		"bun": ">=1",
-		"node": ">=18"
+	"prettier": {
+		"bracketSameLine": true,
+		"bracketSpacing": true,
+		"plugins": [
+			"prettier-plugin-packagejson"
+		],
+		"printWidth": 180,
+		"semi": true,
+		"singleQuote": false,
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true,
+		"overrides": [
+			{
+				"excludeFiles": [
+					"package.json"
+				],
+				"files": [
+					"*.json",
+					"*.code-workspace"
+				],
+				"options": {
+					"jsonRecursiveSort": true,
+					"parser": "json-stringify",
+					"plugins": [
+						"prettier-plugin-sort-json"
+					]
+				}
+			},
+			{
+				"files": [
+					"*.sql"
+				],
+				"options": {
+					"denseOperators": false,
+					"expressionWidth": 180,
+					"functionCase": "upper",
+					"indentStyle": "standard",
+					"linesBetweenQueries": 1,
+					"newlineBeforeSemicolon": false,
+					"plugins": [
+						"prettier-plugin-sql"
+					]
+				}
+			}
+		]
 	},
 	"eslintConfig": {
 		"env": {
-			"node": true,
-			"es2024": true
+			"es2024": true,
+			"node": true
 		},
 		"parserOptions": {
 			"ecmaVersion": "latest",
 			"sourceType": "module"
 		},
-		"extends": [
-			"eslint:recommended",
-			"prettier"
-		],
-		"ignorePatterns": [
-			"./COM-2305/phpdesktop"
-		],
 		"plugins": [
 			"import",
 			"simple-import-sort",
 			"sort-destructure-keys",
 			"prettier"
 		],
+		"extends": [
+			"eslint:recommended",
+			"prettier"
+		],
 		"rules": {
 			"import/first": "warn",
 			"import/newline-after-import": "warn",
 			"import/no-duplicates": "warn",
-			"simple-import-sort/imports": "warn",
+			"prettier/prettier": "warn",
 			"simple-import-sort/exports": "warn",
-			"sort-destructure-keys/sort-destructure-keys": "warn",
-			"prettier/prettier": "warn"
+			"simple-import-sort/imports": "warn",
+			"sort-destructure-keys/sort-destructure-keys": "warn"
 		},
 		"overrides": [
 			{
@@ -99,57 +115,42 @@
 					"./COM-2305/**/*.js"
 				],
 				"env": {
-					"es6": true,
-					"browser": true
+					"browser": true,
+					"es6": true
 				}
 			}
+		],
+		"ignorePatterns": [
+			"./COM-2305/phpdesktop"
 		]
 	},
+	"dependencies": {
+		"fast-glob": "3.3.3",
+		"git-date-extractor": "4.0.1",
+		"simple-icons": "15.6.0"
+	},
+	"devDependencies": {
+		"@types/bun": "1.2.18",
+		"@types/node": "24.0.13",
+		"@typescript-eslint/eslint-plugin": "8.36.0",
+		"@typescript-eslint/parser": "8.36.0",
+		"eslint": "8.57.1",
+		"eslint-config-prettier": "10.1.5",
+		"eslint-plugin-import": "2.32.0",
+		"eslint-plugin-prettier": "5.5.1",
+		"eslint-plugin-simple-import-sort": "12.1.1",
+		"eslint-plugin-sort-destructure-keys": "2.0.0",
+		"eslint-plugin-typescript-sort-keys": "3.3.0",
+		"eslint-plugin-unicorn": "59.0.1",
+		"prettier": "3.6.2",
+		"prettier-plugin-packagejson": "2.5.19",
+		"prettier-plugin-sort-json": "4.1.1",
+		"prettier-plugin-sql": "0.19.2",
+		"typescript": "5.8.3"
+	},
 	"packageManager": "bun@1.2.18",
-	"prettier": {
-		"bracketSameLine": true,
-		"bracketSpacing": true,
-		"printWidth": 180,
-		"semi": true,
-		"singleQuote": false,
-		"tabWidth": 4,
-		"trailingComma": "all",
-		"useTabs": true,
-		"plugins": [
-			"prettier-plugin-packagejson"
-		],
-		"overrides": [
-			{
-				"files": [
-					"*.json",
-					"*.code-workspace"
-				],
-            "excludeFiles":["package.json"],
-				"options": {
-					"jsonRecursiveSort": true,
-					"parser": "json-stringify",
-					"plugins": [
-						"prettier-plugin-sort-json"
-					]
-				}
-			},
-			{
-				"files": [
-					"*.sql"
-				],
-				"options": {
-					"denseOperators": false,
-					"indentStyle": "standard",
-					"functionCase": "upper",
-					"linesBetweenQueries": 1,
-					"expressionWidth": 180,
-					"newlineBeforeSemicolon": false,
-					"plugins": [
-						"prettier-plugin-sql"
-					]
-				}
-			}
-		]
+	"engines": {
+		"bun": ">=1",
+		"node": ">=18"
 	}
 }
-

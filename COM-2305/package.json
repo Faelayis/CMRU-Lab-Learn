@@ -1,12 +1,12 @@
 {
 	"name": "com-2305",
-	"scripts": {
-		"start": "bun run ./express.ts",
-		"linux-xampp": "sudo /opt/lampp/./manager-linux-x64.run"
-	},
 	"workspaces": [
 		"Project/**"
 	],
+	"scripts": {
+		"linux-xampp": "sudo /opt/lampp/./manager-linux-x64.run",
+		"start": "bun run ./express.ts"
+	},
 	"dependencies": {
 		"express": "4.21.0",
 		"ip": "2.0.1",
