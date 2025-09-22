@@ -1,0 +1,17 @@
+{
+	"name": "com-3705",
+	"private": true,
+	"type": "module",
+	"module": "./server/index.ts",
+	"scripts": {
+		"db": "sqlite_web server/bun.db",
+		"dev": "bun --watch run server/index.ts",
+		"start": "npm-run-all2 --parallel dev db"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}
