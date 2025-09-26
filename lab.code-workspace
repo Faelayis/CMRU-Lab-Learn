@@ -77,6 +77,12 @@
 		"prettier.documentSelectors": [
 			"**/*.sql"
 		],
-		"editor.inlayHints.enabled": "on"
+		"editor.inlayHints.enabled": "on",
+		"java.project.sourcePaths": [
+			"Project/Simple/src"
+		],
+		"java.project.referencedLibraries": [
+			"Project/Simple/lib/mysql-connector-j-9.4.0.jar"
+		]
 	}
 }

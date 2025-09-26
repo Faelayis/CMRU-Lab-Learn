@@ -10,3 +10,6 @@
 
 # Cache
 __pycache__
+
+# Java bin
+/COM-3302/Project/Simple/bin
