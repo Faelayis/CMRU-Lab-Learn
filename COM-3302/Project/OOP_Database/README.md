@@ -128,13 +128,13 @@ password=pass
 
 ```text
                     ┌─────────────────┐
-                    │      App        │ ◄─── Entry Point
+                    │       App       │ ◄─── Entry Point
                     │   + main()      │
                     └─────────────────┘
                              │
                              ▼
                     ┌─────────────────┐
-                    │      GUI        │ ◄─── Main Interface
+                    │       GUI       │ ◄─── Main Interface
                     │  - noteManager  │
                     │  - noteTable    │
                     │  + GUI()        │
@@ -142,7 +142,7 @@ password=pass
                              │
                              ▼
 ┌─────────────────┐          │          ┌─────────────────┐
-│   NoteManager   │◄─────────┼─────────▶│      Note       │
+│   NoteManager   │◄─────────┼─────────►│      Note       │
 │  - notes        │          │          │  - id           │
 │  - categoryIdx  │          │          │  - title        │
 │  - dbManager    │          │          │  - content      │
