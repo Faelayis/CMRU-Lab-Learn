@@ -1013,6 +1013,2674 @@ public class TestAreaShape {
 ```
 
 
+## Project/OOP_Database/src
+
+##### `App.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+import javax.swing.SwingUtilities;
+
+public class App {
+   public static void main(String[] args) {
+      System.out.println("Starting ...");
+
+      SwingUtilities.invokeLater(() -> {
+         try {
+            GUI gui = new GUI();
+            gui.setVisible(true);
+
+         } catch (Exception error) {
+            System.err.println("Error starting application: " + error.getMessage());
+            error.printStackTrace();
+         }
+      });
+   }
+}
+
+```
+
+##### `GUI.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import java.awt.*;
+import java.util.List;
+import model.Note;
+import model.NoteManager;
+
+public class GUI extends JFrame {
+   private NoteManager noteManager;
+   private JTable noteTable;
+   private DefaultTableModel tableModel;
+   private TableRowSorter<DefaultTableModel> sorter;
+   private JTextField searchField;
+   private JTextField titleField;
+   private JTextArea contentArea;
+   private JTextField categoryField;
+   private JComboBox<Note.Priority> priorityComboBox;
+
+   private JLabel statusLabel;
+
+   public GUI() {
+      this.noteManager = new NoteManager();
+      initializeGUI();
+      setupEventHandlers();
+
+      SwingUtilities.invokeLater(() -> {
+         String dbStatus = noteManager.getDatabaseStatus();
+         updateStatus(dbStatus);
+
+         if (noteManager.isDatabaseConnected()) {
+            refreshTable();
+            System.out.println("Initial table refresh after database sync completed");
+         }
+      });
+   }
+
+   private void initializeGUI() {
+      setTitle("Note Management System");
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      setLayout(new BorderLayout());
+      createMenuBar();
+
+      JPanel mainPanel = new JPanel(new BorderLayout());
+
+      mainPanel.add(createSearchPanel(), BorderLayout.NORTH);
+
+      JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+      splitPane.setLeftComponent(createTablePanel());
+      splitPane.setRightComponent(createFormPanel());
+      splitPane.setDividerLocation(500);
+
+      mainPanel.add(splitPane, BorderLayout.CENTER);
+
+      mainPanel.add(createStatusPanel(), BorderLayout.SOUTH);
+
+      add(mainPanel);
+
+      setSize(1000, 700);
+      setLocationRelativeTo(null);
+      setMinimumSize(new Dimension(800, 600));
+   }
+
+   private void createMenuBar() {
+      JMenuBar menuBar = new JMenuBar();
+      JMenu fileMenu = new JMenu("File");
+      JMenuItem newItem = new JMenuItem("New Note (Ctrl+N)");
+      JMenuItem exitItem = new JMenuItem("Exit");
+
+      newItem.addActionListener(_ -> clearForm());
+      exitItem.addActionListener(_ -> System.exit(0));
+
+      fileMenu.add(newItem);
+      fileMenu.addSeparator();
+      fileMenu.addSeparator();
+      fileMenu.add(exitItem);
+
+      JMenu editMenu = new JMenu("Edit");
+      JMenuItem clearAllItem = new JMenuItem("Delete All Notes");
+
+      clearAllItem.addActionListener(_ -> clearAllNotes());
+
+      editMenu.add(clearAllItem);
+
+      JMenu viewMenu = new JMenu("View");
+      JMenuItem refreshItem = new JMenuItem("Refresh");
+      JMenuItem statsItem = new JMenuItem("Statistics");
+
+      refreshItem.addActionListener(_ -> refreshTable());
+      statsItem.addActionListener(_ -> showStatistics());
+
+      viewMenu.add(refreshItem);
+      viewMenu.add(statsItem);
+
+      JMenu databaseMenu = new JMenu("Database");
+      JMenuItem settingsItem = new JMenuItem("Database Settings");
+      JMenuItem connectItem = new JMenuItem("Connect to Database");
+      JMenuItem disconnectItem = new JMenuItem("Disconnect from Database");
+      JMenuItem backupItem = new JMenuItem("Backup to File");
+      JMenuItem restoreItem = new JMenuItem("Restore from File");
+
+      settingsItem.addActionListener(_ -> openDatabaseSettings());
+      connectItem.addActionListener(_ -> connectToDatabase());
+      disconnectItem.addActionListener(_ -> disconnectFromDatabase());
+      backupItem.addActionListener(_ -> backupNotesToFile());
+      restoreItem.addActionListener(_ -> restoreNotesFromFile());
+
+      databaseMenu.add(settingsItem);
+      databaseMenu.addSeparator();
+      databaseMenu.add(connectItem);
+      databaseMenu.add(disconnectItem);
+      databaseMenu.addSeparator();
+      databaseMenu.add(backupItem);
+      databaseMenu.add(restoreItem);
+
+      menuBar.add(fileMenu);
+      menuBar.add(editMenu);
+      menuBar.add(viewMenu);
+      menuBar.add(databaseMenu);
+
+      setJMenuBar(menuBar);
+   }
+
+   private JPanel createSearchPanel() {
+      JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      panel.setBorder(BorderFactory.createTitledBorder("Search Notes"));
+
+      panel.add(new JLabel("Search:"));
+      searchField = new JTextField(20);
+
+      panel.add(searchField);
+      searchField.addActionListener(_ -> performSearch());
+
+      return panel;
+   }
+
+   private JPanel createTablePanel() {
+      JPanel panel = new JPanel(new BorderLayout());
+      panel.setBorder(BorderFactory.createTitledBorder("Note List"));
+
+      String[] columns = { "ID", "Title", "Category", "Priority", "Created Date" };
+      tableModel = new DefaultTableModel(columns, 0) {
+         @Override
+         public boolean isCellEditable(int row, int column) {
+            return false;
+         }
+      };
+
+      noteTable = new JTable(tableModel);
+      noteTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+      sorter = new TableRowSorter<>(tableModel);
+      noteTable.setRowSorter(sorter);
+
+      noteTable.getColumnModel().getColumn(0).setPreferredWidth(50); // ID
+      noteTable.getColumnModel().getColumn(1).setPreferredWidth(200); // Title
+      noteTable.getColumnModel().getColumn(2).setPreferredWidth(100); // Category
+      noteTable.getColumnModel().getColumn(3).setPreferredWidth(80); // Priority
+      noteTable.getColumnModel().getColumn(4).setPreferredWidth(120); // Date
+
+      JScrollPane scrollPane = new JScrollPane(noteTable);
+      panel.add(scrollPane, BorderLayout.CENTER);
+
+      return panel;
+   }
+
+   private JPanel createFormPanel() {
+      JPanel panel = new JPanel(new BorderLayout());
+      panel.setBorder(BorderFactory.createTitledBorder("Note Form"));
+
+      JPanel fieldsPanel = new JPanel(new GridBagLayout());
+      GridBagConstraints gbc = new GridBagConstraints();
+      gbc.insets = new Insets(5, 5, 5, 5);
+      gbc.anchor = GridBagConstraints.WEST;
+
+      gbc.gridx = 0;
+      gbc.gridy = 0;
+      fieldsPanel.add(new JLabel("Title:"), gbc);
+      gbc.gridx = 1;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      gbc.weightx = 1.0;
+      titleField = new JTextField(20);
+      fieldsPanel.add(titleField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 1;
+      gbc.fill = GridBagConstraints.NONE;
+      gbc.weightx = 0;
+      fieldsPanel.add(new JLabel("Category:"), gbc);
+      gbc.gridx = 1;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      gbc.weightx = 1.0;
+      categoryField = new JTextField(20);
+      fieldsPanel.add(categoryField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 2;
+      gbc.fill = GridBagConstraints.NONE;
+      gbc.weightx = 0;
+      fieldsPanel.add(new JLabel("Priority:"), gbc);
+      gbc.gridx = 1;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      gbc.weightx = 1.0;
+      priorityComboBox = new JComboBox<>(Note.Priority.values());
+      fieldsPanel.add(priorityComboBox, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 3;
+      gbc.fill = GridBagConstraints.NONE;
+      gbc.weightx = 0;
+      fieldsPanel.add(new JLabel("Content:"), gbc);
+      gbc.gridx = 1;
+      gbc.gridy = 4;
+      gbc.fill = GridBagConstraints.BOTH;
+      gbc.weightx = 1.0;
+      gbc.weighty = 1.0;
+      gbc.gridwidth = 2;
+
+      contentArea = new JTextArea(10, 25);
+      contentArea.setLineWrap(true);
+      contentArea.setWrapStyleWord(true);
+      JScrollPane contentScroll = new JScrollPane(contentArea);
+      fieldsPanel.add(contentScroll, gbc);
+
+      panel.add(fieldsPanel, BorderLayout.CENTER);
+
+      JPanel buttonsPanel = new JPanel(new FlowLayout());
+      JButton saveButton = new JButton("Save");
+      JButton updateButton = new JButton("Update");
+      JButton clearButton = new JButton("Clear Form");
+      JButton deleteButton = new JButton("Delete");
+
+      buttonsPanel.add(saveButton);
+      buttonsPanel.add(updateButton);
+      buttonsPanel.add(clearButton);
+      buttonsPanel.add(deleteButton);
+
+      panel.add(buttonsPanel, BorderLayout.SOUTH);
+
+      saveButton.addActionListener(_ -> saveNote());
+      updateButton.addActionListener(_ -> updateNote());
+      clearButton.addActionListener(_ -> clearForm());
+      deleteButton.addActionListener(_ -> deleteSelectedNote());
+
+      return panel;
+   }
+
+   private JPanel createStatusPanel() {
+      JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      statusLabel = new JLabel("Ready");
+      panel.add(statusLabel);
+      return panel;
+   }
+
+   private void setupEventHandlers() {
+      noteTable.getSelectionModel().addListSelectionListener(e -> {
+         if (!e.getValueIsAdjusting()) {
+            loadSelectedNote();
+         }
+      });
+
+      searchField.getDocument().addDocumentListener(new DocumentListener() {
+         @Override
+         public void insertUpdate(DocumentEvent e) {
+            performSearch();
+         }
+
+         @Override
+         public void removeUpdate(DocumentEvent e) {
+            performSearch();
+         }
+
+         @Override
+         public void changedUpdate(DocumentEvent e) {
+            performSearch();
+         }
+      });
+   }
+
+   private void performSearch() {
+      String searchTerm = searchField.getText().trim();
+
+      if (searchTerm.isEmpty()) {
+         refreshTable();
+         updateStatus("Showing all notes");
+         return;
+      }
+
+      List<Note> results = noteManager.searchNotes(searchTerm);
+      updateTable(results);
+
+      if (results.isEmpty()) {
+         updateStatus("No notes found for '" + searchTerm + "' in title, content, category, priority, or date");
+      } else {
+         updateStatus("Found " + results.size() + " note(s) matching '" + searchTerm + "' in all fields");
+      }
+   }
+
+......
+```
+
+
+## Project/OOP_Database/src/database
+
+##### `DatabaseConfig.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package database;
+
+import java.io.*;
+import java.util.Properties;
+
+public class DatabaseConfig {
+   public enum DatabaseType {
+      OFFLINE("Offline Mode"),
+      MYSQL("MySQL Database"),
+      FIREBASE("Firebase Database");
+
+      private final String displayName;
+
+      DatabaseType(String displayName) {
+         this.displayName = displayName;
+      }
+
+      public String getDisplayName() {
+         return displayName;
+      }
+   }
+
+   private DatabaseType type;
+   private String host;
+   private String port;
+   private String database;
+   private String username;
+   private String password;
+   private String firebaseUrl;
+   private String firebaseApiKey;
+   private boolean autoConnect;
+   private static final String CONFIG_FILE = "database.properties";
+
+   public DatabaseConfig() {
+      this.type = DatabaseType.OFFLINE;
+      this.host = "localhost";
+      this.port = "3306";
+      this.database = "notedb";
+      this.username = "";
+      this.password = "";
+      this.firebaseUrl = "";
+      this.firebaseApiKey = "";
+      this.autoConnect = true;
+   }
+
+   public DatabaseType getType() {
+      return type;
+   }
+
+   public String getHost() {
+      return host;
+   }
+
+   public String getPort() {
+      return port;
+   }
+
+   public String getDatabase() {
+      return database;
+   }
+
+   public String getUsername() {
+      return username;
+   }
+
+   public String getPassword() {
+      return password;
+   }
+
+   public String getFirebaseUrl() {
+      return firebaseUrl;
+   }
+
+   public String getFirebaseApiKey() {
+      return firebaseApiKey;
+   }
+
+   public boolean isAutoConnect() {
+      return autoConnect;
+   }
+
+   public void setType(DatabaseType type) {
+      this.type = type;
+   }
+
+   public void setHost(String host) {
+      this.host = host != null ? host : "localhost";
+   }
+
+   public void setPort(String port) {
+      this.port = port != null ? port : "3306";
+   }
+
+   public void setDatabase(String database) {
+      this.database = database != null ? database : "notedb";
+   }
+
+   public void setUsername(String username) {
+      this.username = username != null ? username : "";
+   }
+
+   public void setPassword(String password) {
+      this.password = password != null ? password : "";
+   }
+
+   public void setFirebaseUrl(String firebaseUrl) {
+      this.firebaseUrl = firebaseUrl != null ? firebaseUrl : "";
+   }
+
+   public void setFirebaseApiKey(String firebaseApiKey) {
+      this.firebaseApiKey = firebaseApiKey != null ? firebaseApiKey : "";
+   }
+
+   public void setAutoConnect(boolean autoConnect) {
+      this.autoConnect = autoConnect;
+   }
+
+   public String getMySQLConnectionString() {
+      return String.format("jdbc:mysql://%s:%s/%s", host, port, database);
+   }
+
+   public boolean isValidMySQLConfig() {
+      return host != null && !host.trim().isEmpty() &&
+            port != null && !port.trim().isEmpty() &&
+            database != null && !database.trim().isEmpty() &&
+            username != null && !username.trim().isEmpty();
+   }
+
+   public boolean isValidFirebaseConfig() {
+      return firebaseUrl != null && !firebaseUrl.trim().isEmpty() &&
+            firebaseApiKey != null && !firebaseApiKey.trim().isEmpty();
+   }
+
+   public void saveToFile() {
+      Properties props = new Properties();
+      props.setProperty("type", type.name());
+      props.setProperty("host", host);
+      props.setProperty("port", port);
+      props.setProperty("database", database);
+      props.setProperty("username", username);
+      props.setProperty("password", password);
+      props.setProperty("firebaseUrl", firebaseUrl);
+      props.setProperty("firebaseApiKey", firebaseApiKey);
+      props.setProperty("autoConnect", String.valueOf(autoConnect));
+
+      try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
+         props.store(fos, "Database Configuration");
+         System.out.println("Configuration saved to " + CONFIG_FILE);
+      } catch (IOException e) {
+         System.err.println("Error saving configuration: " + e.getMessage());
+      }
+   }
+
+   public void loadFromFile() {
+      Properties props = new Properties();
+      try (FileInputStream fis = new FileInputStream(CONFIG_FILE)) {
+         props.load(fis);
+
+         String typeStr = props.getProperty("type", "OFFLINE");
+         try {
+            this.type = DatabaseType.valueOf(typeStr);
+         } catch (IllegalArgumentException e) {
+            this.type = DatabaseType.OFFLINE;
+         }
+
+         this.host = props.getProperty("host", "localhost");
+         this.port = props.getProperty("port", "3306");
+         this.database = props.getProperty("database", "note");
+         this.username = props.getProperty("username", "");
+         this.password = props.getProperty("password", "");
+         this.firebaseUrl = props.getProperty("firebaseUrl", "");
+         this.firebaseApiKey = props.getProperty("firebaseApiKey", "");
+         this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
+
+         System.out.println("Configuration loaded from " + CONFIG_FILE);
+      } catch (FileNotFoundException e) {
+         System.out.println("Configuration file not found. Using default settings.");
+      } catch (IOException e) {
+         System.err.println("Error loading configuration: " + e.getMessage());
+      }
+   }
+
+   public static boolean configFileExists() {
+      return new File(CONFIG_FILE).exists();
+   }
+
+   @Override
+   public String toString() {
+      return String.format(
+            "DatabaseConfig{type=%s, host='%s', port='%s', database='%s', username='%s', autoConnect=%s}",
+            type, host, port, database, username, autoConnect);
+   }
+}
+```
+
+##### `DatabaseInterface.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package database;
+
+import java.util.List;
+import model.Note;
+
+public interface DatabaseInterface {
+   boolean connect();
+
+   void disconnect();
+
+   boolean isConnected();
+
+   boolean testConnection();
+
+   boolean saveNote(Note note);
+
+   List<Note> loadAllNotes();
+
+   boolean updateNote(Note note);
+
+   boolean deleteNote(int id);
+
+   List<Note> searchNotes(String searchTerm);
+
+   boolean clearAllNotes();
+
+   String getDatabaseType();
+
+   String getConnectionStatus();
+}
+```
+
+##### `DatabaseManager.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package database;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import database.providers.Firebase;
+import database.providers.MySQL;
+import model.Note;
+import model.NoteManager;
+
+public class DatabaseManager {
+   private DatabaseInterface database;
+   private DatabaseConfig config;
+   private NoteManager noteManager;
+
+   public DatabaseManager(NoteManager noteManager) {
+      this.noteManager = noteManager;
+      this.config = new DatabaseConfig();
+
+      if (DatabaseConfig.configFileExists()) {
+         config.loadFromFile();
+      }
+
+      initializeDatabase();
+   }
+
+   public void initializeDatabase() {
+      if (database != null && database.isConnected()) {
+         database.disconnect();
+      }
+
+      database = createDatabaseInstance(config.getType());
+
+      if (config.isAutoConnect()) {
+         connectToDatabase(noteManager != null);
+      }
+   }
+
+   private DatabaseInterface createDatabaseInstance(DatabaseConfig.DatabaseType type) {
+      switch (type) {
+         case MYSQL:
+            return new MySQL(config);
+         case FIREBASE:
+            return new Firebase(config);
+         case OFFLINE:
+         default:
+            return new OfflineDatabase();
+      }
+   }
+
+   public boolean connectToDatabase() {
+      return connectToDatabase(true);
+   }
+
+   public boolean connectToDatabase(boolean syncAfterConnection) {
+      if (database == null) {
+         initializeDatabase();
+      }
+
+      boolean connected = database.connect();
+
+      if (connected && syncAfterConnection && noteManager != null) {
+         syncNotesFromDatabase();
+      }
+
+      return connected;
+   }
+
+   public void disconnectFromDatabase() {
+      if (database != null && database.isConnected()) {
+         database.disconnect();
+      }
+   }
+
+   public boolean testDatabaseConnection() {
+      if (database == null) {
+         initializeDatabase();
+      }
+      return database.testConnection();
+   }
+
+   public void syncNotesFromDatabase() {
+      if (database == null || !database.isConnected() || noteManager == null) {
+         return;
+      }
+
+      try {
+         List<Note> dbNotes = database.loadAllNotes();
+
+         noteManager.clearAllNotes(false);
+
+         for (Note note : dbNotes) {
+            noteManager.addNote(note, false);
+         }
+
+         System.out.println("Synced " + dbNotes.size() + " notes from database");
+
+      } catch (Exception e) {
+         System.err.println("Error syncing notes from database: " + e.getMessage());
+      }
+   }
+
+   public boolean syncNotesToDatabase() {
+      if (database == null || !database.isConnected() || noteManager == null) {
+         return false;
+      }
+
+      try {
+         List<Note> notes = noteManager.getAllNotes();
+
+         database.clearAllNotes();
+
+         for (Note note : notes) {
+            if (!database.saveNote(note)) {
+               System.err.println("Failed to save note: " + note.getTitle());
+               return false;
+            }
+         }
+
+         System.out.println("Synced " + notes.size() + " notes to database");
+         return true;
+
+      } catch (Exception e) {
+         System.err.println("Error syncing notes to database: " + e.getMessage());
+         return false;
+      }
+   }
+
+   public boolean saveNoteToDatabase(Note note) {
+      if (database == null || !database.isConnected()) {
+         return false;
+      }
+
+      return database.saveNote(note);
+   }
+
+   public boolean updateNoteInDatabase(Note note) {
+      if (database == null || !database.isConnected()) {
+         return false;
+      }
+
+      return database.updateNote(note);
+   }
+
+   public boolean deleteNoteFromDatabase(int noteId) {
+      if (database == null || !database.isConnected()) {
+         return false;
+      }
+
+      return database.deleteNote(noteId);
+   }
+
+   public List<Note> searchNotesInDatabase(String searchTerm) {
+      if (database == null || !database.isConnected()) {
+         return noteManager != null ? noteManager.searchNotes(searchTerm) : new ArrayList<>();
+      }
+
+      return database.searchNotes(searchTerm);
+   }
+
+   public DatabaseConfig getDatabaseConfig() {
+      return config;
+   }
+
+   public void updateDatabaseConfig(DatabaseConfig newConfig) {
+      this.config = newConfig;
+      config.saveToFile();
+      initializeDatabase();
+   }
+
+   public DatabaseInterface getCurrentDatabase() {
+      return database;
+   }
+
+   public String getConnectionStatus() {
+      if (database == null) {
+         return "No database initialized";
+      }
+      return database.getConnectionStatus();
+   }
+
+   public String getDatabaseType() {
+      if (database == null) {
+         return "Unknown";
+      }
+      return database.getDatabaseType();
+   }
+
+   public boolean isConnected() {
+      return database != null && database.isConnected();
+   }
+
+   public void enableAutoSave(boolean enable) {
+      config.setAutoConnect(enable);
+      config.saveToFile();
+   }
+
+   public boolean backupNotesToFile() {
+      if (noteManager == null) {
+         System.err.println("Cannot backup: noteManager is null");
+         return false;
+      }
+
+      try {
+         OfflineDatabase backupDb = new OfflineDatabase();
+         if (backupDb.connect()) {
+            List<Note> notes = noteManager.getAllNotes();
+
+            backupDb.clearAllNotes();
+            for (Note note : notes) {
+               backupDb.saveNote(note);
+            }
+
+            backupDb.disconnect();
+            System.out.println("Notes backed up successfully");
+            return true;
+         }
+      } catch (Exception e) {
+         System.err.println("Error backing up notes: " + e.getMessage());
+      }
+      return false;
+   }
+
+   public boolean restoreNotesFromFile() {
+      if (noteManager == null) {
+         System.err.println("Cannot restore: noteManager is null");
+         return false;
+      }
+
+      try {
+         OfflineDatabase backupDb = new OfflineDatabase();
+         if (backupDb.connect()) {
+            List<Note> backupNotes = backupDb.loadAllNotes();
+
+            if (!backupNotes.isEmpty()) {
+               noteManager.clearAllNotes();
+               for (Note note : backupNotes) {
+                  noteManager.addNote(note);
+               }
+
+               if (isConnected()) {
+                  syncNotesToDatabase();
+               }
+
+               backupDb.disconnect();
+               System.out.println("Notes restored from backup");
+               return true;
+            }
+
+            backupDb.disconnect();
+         }
+      } catch (Exception e) {
+         System.err.println("Error restoring notes: " + e.getMessage());
+      }
+      return false;
+   }
+
+   public String getDatabaseStatistics() {
+      if (database == null) {
+         return "No database configured";
+      }
+
+      StringBuilder stats = new StringBuilder();
+      stats.append("Database Type: ").append(getDatabaseType()).append("\n");
+      stats.append("Connection Status: ").append(getConnectionStatus()).append("\n");
+      stats.append("Configuration: ").append(config.getType().getDisplayName()).append("\n");
+
+      if (config.getType() == DatabaseConfig.DatabaseType.MYSQL) {
+         stats.append("Host: ").append(config.getHost()).append(":").append(config.getPort()).append("\n");
+         stats.append("Database: ").append(config.getDatabase()).append("\n");
+      } else if (config.getType() == DatabaseConfig.DatabaseType.FIREBASE) {
+         stats.append("Firebase URL: ").append(config.getFirebaseUrl()).append("\n");
+      }
+
+      return stats.toString();
+   }
+}
+```
+
+##### `OfflineDatabase.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package database;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import model.Note;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class OfflineDatabase implements DatabaseInterface {
+   private List<Note> notes;
+   private final String DATA_FILE = "notes_data.txt";
+   private boolean connected;
+
+   public OfflineDatabase() {
+      this.notes = new ArrayList<>();
+      this.connected = false;
+   }
+
+   @Override
+   public boolean connect() {
+      try {
+         loadNotesFromFile();
+         connected = true;
+         System.out.println("Offline database connected successfully");
+         return true;
+      } catch (Exception e) {
+         System.err.println("Error connecting to offline database: " + e.getMessage());
+         connected = false;
+         return false;
+      }
+   }
+
+   @Override
+   public void disconnect() {
+      if (connected) {
+         saveNotesToFile();
+         connected = false;
+         System.out.println("Offline database disconnected");
+      }
+   }
+
+   @Override
+   public boolean isConnected() {
+      return connected;
+   }
+
+   @Override
+   public boolean testConnection() {
+      try {
+
+         File file = new File(DATA_FILE);
+         if (!file.exists()) {
+            file.createNewFile();
+            file.delete();
+         }
+         return true;
+      } catch (Exception e) {
+         return false;
+      }
+   }
+
+   @Override
+   public boolean saveNote(Note note) {
+      if (!connected)
+         return false;
+
+      try {
+         // Generate ID for new notes (ID = 0)
+         if (note.getId() == 0) {
+            note.setId(Note.generateLocalId());
+            System.out.println("Generated new ID for offline note: " + note.getId());
+         }
+
+         notes.removeIf(n -> n.getId() == note.getId());
+         notes.add(note);
+         saveNotesToFile();
+         return true;
+      } catch (Exception e) {
+         System.err.println("Error saving note: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public List<Note> loadAllNotes() {
+      if (!connected)
+         return new ArrayList<>();
+      return new ArrayList<>(notes);
+   }
+
+   @Override
+   public boolean updateNote(Note note) {
+      return saveNote(note);
+   }
+
+   @Override
+   public boolean deleteNote(int id) {
+      if (!connected)
+         return false;
+
+      boolean removed = notes.removeIf(note -> note.getId() == id);
+      if (removed) {
+         saveNotesToFile();
+      }
+      return removed;
+   }
+
+   @Override
+   public List<Note> searchNotes(String searchTerm) {
+      if (!connected)
+         return new ArrayList<>();
+
+      return notes.stream()
+            .filter(note -> note.matches(searchTerm))
+            .collect(Collectors.toList());
+   }
+
+   @Override
+   public boolean clearAllNotes() {
+      if (!connected)
+         return false;
+
+      notes.clear();
+      Note.resetIdCounter(); // Reset ID counter to start from 1
+      saveNotesToFile();
+      return true;
+   }
+
+   @Override
+   public String getDatabaseType() {
+      return "Offline File Storage";
+   }
+
+   @Override
+   public String getConnectionStatus() {
+      if (connected) {
+         return "Connected to offline storage (" + notes.size() + " notes)";
+      }
+      return "Disconnected from offline storage";
+   }
+
+   private void saveNotesToFile() {
+      try (PrintWriter writer = new PrintWriter(new FileWriter(DATA_FILE))) {
+         writer.println("# Note Management System - Offline Data");
+         writer.println("# Format: ID|Title|Content|Category|Priority|CreatedDate|ModifiedDate");
+         writer.println(
+               "# Generated: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+         writer.println();
+
+         for (Note note : notes) {
+            String line = String.format("%d|%s|%s|%s|%s|%s|%s",
+                  note.getId(),
+                  escapeDelimiters(note.getTitle()),
+                  escapeDelimiters(note.getContent()),
+                  escapeDelimiters(note.getCategory()),
+                  note.getPriority().name(),
+                  note.getCreatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
+                  note.getModifiedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+            writer.println(line);
+         }
+
+         System.out.println("Notes saved to " + DATA_FILE + " (" + notes.size() + " notes)");
+      } catch (IOException e) {
+         System.err.println("Error saving notes to file: " + e.getMessage());
+      }
+   }
+
+   private void loadNotesFromFile() {
+      notes.clear();
+      Note.resetIdCounter(); // Reset ID counter before loading
+      File file = new File(DATA_FILE);
+
+      if (!file.exists()) {
+         System.out.println("Data file not found. Starting with empty database.");
+         return;
+      }
+
+      try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+         String line;
+         int loadedCount = 0;
+
+         while ((line = reader.readLine()) != null) {
+            line = line.trim();
+            if (line.isEmpty() || line.startsWith("#")) {
+               continue;
+            }
+
+            try {
+               Note note = parseNoteFromLine(line);
+               if (note != null) {
+                  notes.add(note);
+                  loadedCount++;
+               }
+            } catch (Exception e) {
+               System.err.println("Error parsing line: " + line + " - " + e.getMessage());
+            }
+         }
+
+         System.out.println("Loaded " + loadedCount + " notes from " + DATA_FILE);
+      } catch (IOException e) {
+         System.err.println("Error loading notes from file: " + e.getMessage());
+      }
+   }
+
+   private Note parseNoteFromLine(String line) {
+      String[] parts = line.split("\\|");
+      if (parts.length != 7) {
+         throw new IllegalArgumentException("Invalid line format");
+      }
+
+      try {
+         int id = Integer.parseInt(parts[0]);
+         String title = unescapeDelimiters(parts[1]);
+         String content = unescapeDelimiters(parts[2]);
+         String category = unescapeDelimiters(parts[3]);
+         Note.Priority priority = Note.Priority.valueOf(parts[4]);
+
+         Note note = new Note(title, content, category, priority);
+         note.setId(id); // Set the ID from file
+
+         // Update the next ID counter to ensure new notes get higher IDs
+         Note.updateNextIdIfNeeded(id + 1);
+
+         return note;
+      } catch (Exception e) {
+         throw new IllegalArgumentException("Error parsing note data: " + e.getMessage());
+      }
+   }
+
+   private String escapeDelimiters(String text) {
+      if (text == null)
+         return "";
+      return text.replace("|", "&#124;").replace("\n", "\\n").replace("\r", "\\r");
+   }
+
+   private String unescapeDelimiters(String text) {
+      if (text == null)
+         return "";
+      return text.replace("&#124;", "|").replace("\\n", "\n").replace("\\r", "\r");
+   }
+
+   public String getFileInfo() {
+      File file = new File(DATA_FILE);
+      if (file.exists()) {
+         long size = file.length();
+         return String.format("File: %s (%.2f KB)", DATA_FILE, size / 1024.0);
+      }
+      return "File: " + DATA_FILE + " (not found)";
+   }
+}
+```
+
+
+## Project/OOP_Database/src/database/providers
+
+##### `Firebase.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package database.providers;
+
+import java.util.*;
+
+import database.DatabaseConfig;
+import database.DatabaseInterface;
+import model.Note;
+
+import java.net.http.*;
+import java.net.URI;
+import java.time.format.DateTimeFormatter;
+
+public class Firebase implements DatabaseInterface {
+   private DatabaseConfig config;
+   private boolean connected;
+   private HttpClient httpClient;
+   private String baseUrl;
+
+   public Firebase(DatabaseConfig config) {
+      this.config = config;
+      this.connected = false;
+      this.httpClient = HttpClient.newHttpClient();
+      this.baseUrl = config.getFirebaseUrl();
+      if (!baseUrl.endsWith("/")) {
+         baseUrl += "/";
+      }
+      baseUrl += "notes";
+   }
+
+   @Override
+   public boolean connect() {
+      try {
+         if (testConnection()) {
+            connected = true;
+            System.out.println("Firebase database connected successfully");
+            return true;
+         } else {
+            connected = false;
+            return false;
+         }
+      } catch (Exception e) {
+         System.err.println("Error connecting to Firebase: " + e.getMessage());
+         connected = false;
+         return false;
+      }
+   }
+
+   @Override
+   public void disconnect() {
+      connected = false;
+      System.out.println("Firebase database disconnected");
+   }
+
+   @Override
+   public boolean isConnected() {
+      return connected;
+   }
+
+   @Override
+   public boolean testConnection() {
+      try {
+         String url = baseUrl + ".json";
+         if (!config.getFirebaseApiKey().isEmpty()) {
+            url += "?auth=" + config.getFirebaseApiKey();
+         }
+
+         HttpRequest request = HttpRequest.newBuilder()
+               .uri(URI.create(url))
+               .GET()
+               .build();
+
+         HttpResponse<String> response = httpClient.send(request,
+               HttpResponse.BodyHandlers.ofString());
+
+         return response.statusCode() == 200;
+
+      } catch (Exception e) {
+         System.err.println("Firebase connection test failed: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public boolean saveNote(Note note) {
+      if (!isConnected())
+         return false;
+
+      try {
+         String noteJson = convertNoteToJson(note);
+         String url = baseUrl + "/" + note.getId() + ".json";
+
+         if (!config.getFirebaseApiKey().isEmpty()) {
+            url += "?auth=" + config.getFirebaseApiKey();
+         }
+
+         HttpRequest request = HttpRequest.newBuilder()
+               .uri(URI.create(url))
+               .header("Content-Type", "application/json")
+               .PUT(HttpRequest.BodyPublishers.ofString(noteJson))
+               .build();
+
+         HttpResponse<String> response = httpClient.send(request,
+               HttpResponse.BodyHandlers.ofString());
+
+         return response.statusCode() == 200;
+
+      } catch (Exception e) {
+         System.err.println("Error saving note to Firebase: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public List<Note> loadAllNotes() {
+      List<Note> notes = new ArrayList<>();
+      if (!isConnected())
+         return notes;
+
+      try {
+         String url = baseUrl + ".json";
+         if (!config.getFirebaseApiKey().isEmpty()) {
+            url += "?auth=" + config.getFirebaseApiKey();
+         }
+
+         HttpRequest request = HttpRequest.newBuilder()
+               .uri(URI.create(url))
+               .GET()
+               .build();
+
+         HttpResponse<String> response = httpClient.send(request,
+               HttpResponse.BodyHandlers.ofString());
+
+         if (response.statusCode() == 200) {
+            String jsonResponse = response.body();
+            notes = parseNotesFromJson(jsonResponse);
+         }
+
+      } catch (Exception e) {
+         System.err.println("Error loading notes from Firebase: " + e.getMessage());
+      }
+
+      return notes;
+   }
+
+   @Override
+   public boolean updateNote(Note note) {
+      return saveNote(note);
+   }
+
+   @Override
+   public boolean deleteNote(int id) {
+      if (!isConnected())
+         return false;
+
+      try {
+         String url = baseUrl + "/" + id + ".json";
+         if (!config.getFirebaseApiKey().isEmpty()) {
+            url += "?auth=" + config.getFirebaseApiKey();
+         }
+
+         HttpRequest request = HttpRequest.newBuilder()
+               .uri(URI.create(url))
+               .DELETE()
+               .build();
+
+         HttpResponse<String> response = httpClient.send(request,
+               HttpResponse.BodyHandlers.ofString());
+
+         return response.statusCode() == 200;
+
+      } catch (Exception e) {
+         System.err.println("Error deleting note from Firebase: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public List<Note> searchNotes(String searchTerm) {
+
+      List<Note> allNotes = loadAllNotes();
+      List<Note> results = new ArrayList<>();
+
+      for (Note note : allNotes) {
+         if (note.matches(searchTerm)) {
+            results.add(note);
+         }
+      }
+
+      return results;
+   }
+
+   @Override
+   public boolean clearAllNotes() {
+      if (!isConnected())
+         return false;
+
+      try {
+         String url = baseUrl + ".json";
+         if (!config.getFirebaseApiKey().isEmpty()) {
+            url += "?auth=" + config.getFirebaseApiKey();
+         }
+
+         HttpRequest request = HttpRequest.newBuilder()
+               .uri(URI.create(url))
+               .DELETE()
+               .build();
+
+         HttpResponse<String> response = httpClient.send(request,
+               HttpResponse.BodyHandlers.ofString());
+
+         return response.statusCode() == 200;
+
+      } catch (Exception e) {
+         System.err.println("Error clearing notes from Firebase: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public String getDatabaseType() {
+      return "Firebase Realtime Database";
+   }
+
+   @Override
+   public String getConnectionStatus() {
+      if (connected) {
+         try {
+            List<Note> notes = loadAllNotes();
+            return String.format("Connected to Firebase (%d notes)", notes.size());
+         } catch (Exception e) {
+            return "Connected to Firebase (error counting notes)";
+         }
+      }
+      return "Disconnected from Firebase";
+   }
+
+   private String convertNoteToJson(Note note) {
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+      return String.format("""
+            {
+                "id": %d,
+                "title": "%s",
+                "content": "%s",
+                "category": "%s",
+                "priority": "%s",
+                "createdDate": "%s",
+                "modifiedDate": "%s"
+            }
+            """,
+            note.getId(),
+            escapeJson(note.getTitle()),
+            escapeJson(note.getContent()),
+            escapeJson(note.getCategory()),
+            note.getPriority().name(),
+            note.getCreatedDate().format(formatter),
+            note.getModifiedDate().format(formatter));
+   }
+
+   private List<Note> parseNotesFromJson(String json) {
+      List<Note> notes = new ArrayList<>();
+
+      if (json == null || json.trim().equals("null") || json.trim().isEmpty()) {
+         return notes;
+      }
+
+      try {
+
+         System.out.println("Firebase data loaded (simplified parsing)");
+      } catch (Exception e) {
+         System.err.println("Error parsing Firebase JSON: " + e.getMessage());
+      }
+
+      return notes;
+   }
+
+   private String escapeJson(String text) {
+      if (text == null)
+         return "";
+      return text.replace("\"", "\\\"")
+            .replace("\n", "\\n")
+            .replace("\r", "\\r")
+            .replace("\t", "\\t");
+   }
+
+   public String getFirebaseInfo() {
+      if (config.getFirebaseUrl().isEmpty()) {
+         return "Firebase URL not configured";
+      }
+
+      String projectId = extractProjectIdFromUrl(config.getFirebaseUrl());
+      return String.format("Firebase Project: %s", projectId);
+   }
+
+   private String extractProjectIdFromUrl(String url) {
+      try {
+
+         String[] parts = url.split("\\.");
+         if (parts.length > 0) {
+            String projectPart = parts[0];
+......
+```
+
+##### `MySQL.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package database.providers;
+
+import java.sql.*;
+import java.util.*;
+
+import database.DatabaseConfig;
+import database.DatabaseInterface;
+import model.Note;
+
+public class MySQL implements DatabaseInterface {
+   private Connection connection;
+   private DatabaseConfig config;
+   private boolean connected;
+
+   public MySQL(DatabaseConfig config) {
+      this.config = config;
+      this.connected = false;
+   }
+
+   @Override
+   public boolean connect() {
+      try {
+         Class.forName("com.mysql.cj.jdbc.Driver");
+
+         String url = config.getMySQLConnectionString();
+         connection = DriverManager.getConnection(url, config.getUsername(), config.getPassword());
+
+         createTablesIfNotExists();
+
+         connected = true;
+         System.out.println("MySQL database connected successfully");
+         return true;
+
+      } catch (ClassNotFoundException e) {
+         System.err.println("MySQL JDBC driver not found: " + e.getMessage());
+         connected = false;
+         return false;
+      } catch (SQLException e) {
+         System.err.println("Error connecting to MySQL database: " + e.getMessage());
+         connected = false;
+         return false;
+      }
+   }
+
+   @Override
+   public void disconnect() {
+      if (connection != null) {
+         try {
+            connection.close();
+            connected = false;
+            System.out.println("MySQL database disconnected");
+         } catch (SQLException e) {
+            System.err.println("Error disconnecting from MySQL: " + e.getMessage());
+         }
+      }
+   }
+
+   @Override
+   public boolean isConnected() {
+      try {
+         return connected && connection != null && !connection.isClosed();
+      } catch (SQLException e) {
+         return false;
+      }
+   }
+
+   @Override
+   public boolean testConnection() {
+      try {
+         Class.forName("com.mysql.cj.jdbc.Driver");
+         String url = config.getMySQLConnectionString();
+
+         try (Connection testConn = DriverManager.getConnection(url, config.getUsername(), config.getPassword())) {
+            return testConn != null && !testConn.isClosed();
+         }
+      } catch (Exception e) {
+         return false;
+      }
+   }
+
+   @Override
+   public boolean saveNote(Note note) {
+      if (!isConnected())
+         return false;
+
+      // If note has no ID (new note), insert and get generated ID
+      if (note.getId() == 0) {
+         String sql = "INSERT INTO notes (title, content, category, priority, created_date, modified_date) " +
+               "VALUES (?, ?, ?, ?, ?, ?)";
+
+         try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, note.getTitle());
+            stmt.setString(2, note.getContent());
+            stmt.setString(3, note.getCategory());
+            stmt.setString(4, note.getPriority().name());
+            stmt.setTimestamp(5, Timestamp.valueOf(note.getCreatedDate()));
+            stmt.setTimestamp(6, Timestamp.valueOf(note.getModifiedDate()));
+
+            int rowsAffected = stmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+               // Get the generated ID and set it in the note
+               try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                  if (generatedKeys.next()) {
+                     note.setId(generatedKeys.getInt(1));
+                     System.out.println("New note saved with database ID: " + note.getId());
+                     return true;
+                  }
+               }
+            }
+
+         } catch (SQLException e) {
+            System.err.println("Error saving new note to MySQL: " + e.getMessage());
+            return false;
+         }
+      } else {
+         // Update existing note
+         String sql = "UPDATE notes SET title=?, content=?, category=?, priority=?, modified_date=? WHERE id=?";
+
+         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, note.getTitle());
+            stmt.setString(2, note.getContent());
+            stmt.setString(3, note.getCategory());
+            stmt.setString(4, note.getPriority().name());
+            stmt.setTimestamp(5, Timestamp.valueOf(note.getModifiedDate()));
+            stmt.setInt(6, note.getId());
+
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+
+         } catch (SQLException e) {
+            System.err.println("Error updating note in MySQL: " + e.getMessage());
+            return false;
+         }
+      }
+
+      return false;
+   }
+
+   @Override
+   public List<Note> loadAllNotes() {
+      List<Note> notes = new ArrayList<>();
+      if (!isConnected())
+         return notes;
+
+      String sql = "SELECT * FROM notes ORDER BY created_date DESC";
+
+      try (Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+
+         while (rs.next()) {
+            Note note = createNoteFromResultSet(rs);
+            if (note != null) {
+               notes.add(note);
+            }
+         }
+
+      } catch (SQLException e) {
+         System.err.println("Error loading notes from MySQL: " + e.getMessage());
+      }
+
+      return notes;
+   }
+
+   @Override
+   public boolean updateNote(Note note) {
+      return saveNote(note);
+   }
+
+   @Override
+   public boolean deleteNote(int id) {
+      if (!isConnected())
+         return false;
+
+      String sql = "DELETE FROM notes WHERE id = ?";
+
+      try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+         stmt.setInt(1, id);
+         int rowsAffected = stmt.executeUpdate();
+         return rowsAffected > 0;
+
+      } catch (SQLException e) {
+         System.err.println("Error deleting note from MySQL: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public List<Note> searchNotes(String searchTerm) {
+      List<Note> notes = new ArrayList<>();
+      if (!isConnected())
+         return notes;
+
+      String sql = "SELECT * FROM notes WHERE " +
+            "title LIKE ? OR content LIKE ? OR category LIKE ? OR priority LIKE ? " +
+            "ORDER BY created_date DESC";
+
+      try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+         String searchPattern = "%" + searchTerm + "%";
+         stmt.setString(1, searchPattern);
+         stmt.setString(2, searchPattern);
+         stmt.setString(3, searchPattern);
+         stmt.setString(4, searchPattern);
+
+         try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+               Note note = createNoteFromResultSet(rs);
+               if (note != null) {
+                  notes.add(note);
+               }
+            }
+         }
+
+      } catch (SQLException e) {
+         System.err.println("Error searching notes in MySQL: " + e.getMessage());
+      }
+
+      return notes;
+   }
+
+   @Override
+   public boolean clearAllNotes() {
+      if (!isConnected())
+         return false;
+
+      try (Statement stmt = connection.createStatement()) {
+         // Method 1: Drop and recreate table (more thorough)
+         String dropSql = "DROP TABLE IF EXISTS notes";
+         stmt.executeUpdate(dropSql);
+         System.out.println("MySQL notes table dropped");
+
+         // Recreate the table (this will reset AUTO_INCREMENT to 1)
+         createTablesIfNotExists();
+         System.out.println("MySQL notes table recreated - ID counter reset to 1");
+
+         /*
+          * Alternative Method 2: Delete all records and reset AUTO_INCREMENT
+          * String deleteSql = "DELETE FROM notes";
+          * stmt.executeUpdate(deleteSql);
+          * 
+          * String resetSql = "ALTER TABLE notes AUTO_INCREMENT = 1";
+          * stmt.executeUpdate(resetSql);
+          * System.out.println("All notes deleted and ID counter reset to 1");
+          */
+
+         return true;
+
+      } catch (SQLException e) {
+         System.err.println("Error clearing notes and resetting ID counter in MySQL: " + e.getMessage());
+         return false;
+      }
+   }
+
+   @Override
+   public String getDatabaseType() {
+      return "MySQL Database";
+   }
+
+   @Override
+   public String getConnectionStatus() {
+      if (isConnected()) {
+         try {
+            String sql = "SELECT COUNT(*) FROM notes";
+            try (Statement stmt = connection.createStatement();
+                  ResultSet rs = stmt.executeQuery(sql)) {
+               if (rs.next()) {
+                  int count = rs.getInt(1);
+                  return String.format("Connected to MySQL (%d notes) - %s", count, config.getHost());
+               }
+            }
+         } catch (SQLException e) {
+            return "Connected to MySQL (error counting notes)";
+         }
+      }
+      return "Disconnected from MySQL";
+   }
+
+   private void createTablesIfNotExists() throws SQLException {
+      String sql = """
+            CREATE TABLE IF NOT EXISTS notes (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                content TEXT,
+                category VARCHAR(100),
+                priority VARCHAR(20),
+                created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                INDEX idx_category (category),
+                INDEX idx_priority (priority),
+                INDEX idx_created_date (created_date)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+            """;
+
+      try (Statement stmt = connection.createStatement()) {
+         stmt.executeUpdate(sql);
+         System.out.println("MySQL tables created/verified successfully");
+      }
+   }
+
+   private Note createNoteFromResultSet(ResultSet rs) {
+......
+```
+
+
+## Project/OOP_Database/src/gui
+
+##### `SettingsGUI.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package gui;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
+import database.DatabaseConfig;
+import database.DatabaseManager;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+public class SettingsGUI extends JDialog {
+   private DatabaseManager databaseManager;
+   private DatabaseConfig config;
+
+   private JComboBox<DatabaseConfig.DatabaseType> databaseTypeCombo;
+   private JTextField hostField;
+   private JTextField portField;
+   private JTextField databaseField;
+   private JTextField usernameField;
+   private JPasswordField passwordField;
+   private JTextField firebaseUrlField;
+   private JTextField firebaseApiKeyField;
+
+   private JPanel mysqlPanel;
+   private JPanel firebasePanel;
+   private JPanel statusPanel;
+
+   private JLabel statusLabel;
+   private JButton saveButton;
+   private JButton cancelButton;
+   private JButton resetButton;
+
+   public SettingsGUI(JFrame parent, DatabaseManager databaseManager) {
+      super(parent, "Database Settings", true);
+      this.databaseManager = databaseManager;
+      this.config = new DatabaseConfig();
+
+      DatabaseConfig currentConfig = databaseManager.getDatabaseConfig();
+      copyConfig(currentConfig, this.config);
+
+      initializeComponents();
+      setupLayout();
+      setupEventHandlers();
+      updateUIBasedOnDatabaseType();
+
+      setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+      setResizable(true);
+      pack();
+      setLocationRelativeTo(parent);
+   }
+
+   private void initializeComponents() {
+      databaseTypeCombo = new JComboBox<>(DatabaseConfig.DatabaseType.values());
+      databaseTypeCombo.setSelectedItem(config.getType());
+
+      hostField = new JTextField(config.getHost(), 20);
+      portField = new JTextField(config.getPort(), 8);
+      databaseField = new JTextField(config.getDatabase(), 20);
+      usernameField = new JTextField(config.getUsername(), 20);
+      passwordField = new JPasswordField(config.getPassword(), 20);
+
+      firebaseUrlField = new JTextField(config.getFirebaseUrl(), 30);
+      firebaseApiKeyField = new JTextField(config.getFirebaseApiKey(), 30);
+
+      statusLabel = new JLabel("Ready");
+      statusLabel.setForeground(Color.BLUE);
+
+      saveButton = new JButton("Save & Apply");
+      cancelButton = new JButton("Cancel");
+      resetButton = new JButton("Reset to Defaults");
+
+      saveButton.setBackground(new Color(46, 125, 50));
+      saveButton.setForeground(Color.WHITE);
+
+      createMySQLPanel();
+      createFirebasePanel();
+   }
+
+   private void createMySQLPanel() {
+      mysqlPanel = new JPanel(new GridBagLayout());
+      mysqlPanel.setBorder(new TitledBorder("MySQL Database Configuration"));
+
+      GridBagConstraints gbc = new GridBagConstraints();
+      gbc.insets = new Insets(5, 5, 5, 5);
+      gbc.anchor = GridBagConstraints.WEST;
+
+      gbc.gridx = 0;
+      gbc.gridy = 0;
+      mysqlPanel.add(new JLabel("Host:"), gbc);
+      gbc.gridx = 1;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      mysqlPanel.add(hostField, gbc);
+
+      gbc.gridx = 2;
+      gbc.fill = GridBagConstraints.NONE;
+      mysqlPanel.add(new JLabel("Port:"), gbc);
+      gbc.gridx = 3;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      mysqlPanel.add(portField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 1;
+      gbc.fill = GridBagConstraints.NONE;
+      mysqlPanel.add(new JLabel("Database:"), gbc);
+      gbc.gridx = 1;
+      gbc.gridwidth = 3;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      mysqlPanel.add(databaseField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 2;
+      gbc.gridwidth = 1;
+      gbc.fill = GridBagConstraints.NONE;
+      mysqlPanel.add(new JLabel("Username:"), gbc);
+      gbc.gridx = 1;
+      gbc.gridwidth = 3;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      mysqlPanel.add(usernameField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 3;
+      gbc.gridwidth = 1;
+      gbc.fill = GridBagConstraints.NONE;
+      mysqlPanel.add(new JLabel("Password:"), gbc);
+      gbc.gridx = 1;
+      gbc.gridwidth = 3;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      mysqlPanel.add(passwordField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 4;
+      gbc.gridwidth = 4;
+      JLabel connectionLabel = new JLabel();
+      connectionLabel.setFont(connectionLabel.getFont().deriveFont(Font.ITALIC));
+      connectionLabel.setForeground(Color.GRAY);
+      updateConnectionLabel(connectionLabel);
+      mysqlPanel.add(connectionLabel, gbc);
+
+      ActionListener updateConnection = _ -> updateConnectionLabel(connectionLabel);
+      hostField.addActionListener(updateConnection);
+      portField.addActionListener(updateConnection);
+      databaseField.addActionListener(updateConnection);
+   }
+
+   private void updateConnectionLabel(JLabel label) {
+      String connectionString = String.format("jdbc:mysql://%s:%s/%s",
+            hostField.getText(), portField.getText(), databaseField.getText());
+      label.setText("Connection: " + connectionString);
+   }
+
+   private void createFirebasePanel() {
+      firebasePanel = new JPanel(new GridBagLayout());
+      firebasePanel.setBorder(new TitledBorder("Firebase Configuration"));
+
+      GridBagConstraints gbc = new GridBagConstraints();
+      gbc.insets = new Insets(5, 5, 5, 5);
+      gbc.anchor = GridBagConstraints.WEST;
+
+      gbc.gridx = 0;
+      gbc.gridy = 0;
+      firebasePanel.add(new JLabel("Firebase URL:"), gbc);
+      gbc.gridx = 1;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      gbc.weightx = 1.0;
+      firebasePanel.add(firebaseUrlField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 1;
+      gbc.fill = GridBagConstraints.NONE;
+      gbc.weightx = 0;
+      firebasePanel.add(new JLabel("API Key:"), gbc);
+      gbc.gridx = 1;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      gbc.weightx = 1.0;
+      firebasePanel.add(firebaseApiKeyField, gbc);
+
+      gbc.gridx = 0;
+      gbc.gridy = 2;
+      gbc.gridwidth = 2;
+      JLabel helpLabel = new JLabel(
+            "<html><small>Example URL: https://halo.firebaseio.com/<br>Get API key from Firebase Console</small></html>");
+      helpLabel.setForeground(Color.GRAY);
+      firebasePanel.add(helpLabel, gbc);
+   }
+
+   private void setupLayout() {
+      setLayout(new BorderLayout());
+
+      JPanel mainPanel = new JPanel(new BorderLayout());
+      JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      topPanel.setBorder(new TitledBorder("Database Type"));
+      topPanel.add(new JLabel("Select Database:"));
+      topPanel.add(databaseTypeCombo);
+
+      JPanel centerPanel = new JPanel(new CardLayout());
+
+      // สร้าง panel สำหรับ offline mode ที่เรียบง่าย
+      JPanel offlinePanel = new JPanel(new BorderLayout());
+      JLabel offlineLabel = new JLabel("", JLabel.CENTER);
+      offlinePanel.add(offlineLabel, BorderLayout.CENTER);
+
+      centerPanel.add(offlinePanel, "OFFLINE");
+      centerPanel.add(mysqlPanel, "MYSQL");
+      centerPanel.add(firebasePanel, "FIREBASE");
+
+      statusPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      statusPanel.setBorder(new TitledBorder("Connection Status"));
+      statusPanel.add(statusLabel);
+
+      JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+      buttonPanel.add(resetButton);
+      buttonPanel.add(cancelButton);
+      buttonPanel.add(saveButton);
+
+      mainPanel.add(topPanel, BorderLayout.NORTH);
+      mainPanel.add(centerPanel, BorderLayout.CENTER);
+      mainPanel.add(statusPanel, BorderLayout.SOUTH);
+
+      add(mainPanel, BorderLayout.CENTER);
+      add(buttonPanel, BorderLayout.SOUTH);
+   }
+
+   private void setupEventHandlers() {
+      databaseTypeCombo.addActionListener(_ -> {
+         updateUIBasedOnDatabaseType();
+         autoTestConnection();
+      });
+      saveButton.addActionListener(_ -> saveConfiguration());
+      cancelButton.addActionListener(_ -> dispose());
+      resetButton.addActionListener(_ -> resetToDefaults());
+
+      setupAutoTesting();
+   }
+
+   private void updateUIBasedOnDatabaseType() {
+      DatabaseConfig.DatabaseType selectedType = (DatabaseConfig.DatabaseType) databaseTypeCombo.getSelectedItem();
+
+      Container parent = mysqlPanel.getParent();
+      if (parent instanceof JPanel) {
+         CardLayout cardLayout = (CardLayout) parent.getLayout();
+         cardLayout.show(parent, selectedType.name());
+      }
+
+      if (selectedType == DatabaseConfig.DatabaseType.OFFLINE) {
+         statusPanel.setVisible(false);
+         SwingUtilities.invokeLater(() -> {
+            pack();
+            setSize(400, 150);
+            setLocationRelativeTo(getParent());
+         });
+      } else {
+         statusPanel.setVisible(true);
+         statusLabel.setText("Configuration ready for testing");
+         statusLabel.setForeground(Color.BLACK);
+
+         SwingUtilities.invokeLater(() -> {
+            pack();
+            setLocationRelativeTo(getParent());
+         });
+      }
+   }
+
+   private void autoTestConnection() {
+      DatabaseConfig.DatabaseType selectedType = (DatabaseConfig.DatabaseType) databaseTypeCombo.getSelectedItem();
+      if (selectedType == DatabaseConfig.DatabaseType.OFFLINE) {
+         return;
+      }
+
+      saveFormDataToConfig();
+
+      statusLabel.setText("Testing connection...");
+      statusLabel.setForeground(Color.ORANGE);
+
+      SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
+         @Override
+         protected Boolean doInBackground() throws Exception {
+            DatabaseManager tempManager = new DatabaseManager(null);
+            tempManager.updateDatabaseConfig(config);
+            return tempManager.testDatabaseConnection();
+         }
+
+         @Override
+         protected void done() {
+            try {
+               boolean success = get();
+               if (success) {
+                  statusLabel.setText("✓ Connection successful!");
+                  statusLabel.setForeground(new Color(46, 125, 50));
+               } else {
+                  statusLabel.setText("✗ Connection failed!");
+                  statusLabel.setForeground(Color.RED);
+               }
+            } catch (Exception e) {
+               statusLabel.setText("✗ Connection error: " + e.getMessage());
+               statusLabel.setForeground(Color.RED);
+            }
+         }
+......
+```
+
+
+## Project/OOP_Database/src/model
+
+##### `Category.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package model;
+
+import java.util.*;
+
+public class Category {
+   private String name;
+   private String description;
+   private String color;
+   private int noteCount;
+
+   private static final List<Category> DEFAULT_CATEGORIES = Arrays.asList(
+         new Category("General", "General notes", "#808080"),
+         new Category("Work", "Work and job related", "#3498db"),
+         new Category("Personal", "Personal matters", "#e74c3c"),
+         new Category("Study", "Study and education", "#f39c12"),
+         new Category("Health", "Health and self-care", "#2ecc71"),
+         new Category("Project", "Various projects", "#9b59b6"),
+         new Category("Ideas", "Ideas and thoughts", "#1abc9c"));
+
+   public Category(String name, String description, String color) {
+      this.name = name;
+      this.description = description;
+      this.color = color;
+      this.noteCount = 0;
+   }
+
+   public Category(Category other) {
+      this.name = other.name;
+      this.description = other.description;
+      this.color = other.color;
+      this.noteCount = other.noteCount;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public String getDescription() {
+      return description;
+   }
+
+   public String getColor() {
+      return color;
+   }
+
+   public int getNoteCount() {
+      return noteCount;
+   }
+
+   public void setName(String name) {
+      if (name != null && !name.trim().isEmpty()) {
+         this.name = name.trim();
+      } else {
+         throw new IllegalArgumentException("Category name cannot be empty");
+      }
+   }
+
+   public void setDescription(String description) {
+      this.description = description != null ? description.trim() : "";
+   }
+
+   public void setColor(String color) {
+      if (color != null && color.matches("^#[0-9A-Fa-f]{6}$")) {
+         this.color = color;
+      } else {
+         this.color = "#808080";
+      }
+   }
+
+   public void incrementNoteCount() {
+      this.noteCount++;
+   }
+
+   public void decrementNoteCount() {
+      if (this.noteCount > 0) {
+         this.noteCount--;
+      }
+   }
+
+   public void resetNoteCount() {
+      this.noteCount = 0;
+   }
+
+   public void setNoteCount(int count) {
+      this.noteCount = Math.max(0, count);
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj)
+         return true;
+      if (obj == null || getClass() != obj.getClass())
+         return false;
+      Category category = (Category) obj;
+      return Objects.equals(name, category.name);
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(name);
+   }
+
+   @Override
+   public String toString() {
+      return name + " (" + noteCount + ")";
+   }
+
+   public String getFullInfo() {
+      return String.format("Category: %s\nDescription: %s\nNote Count: %d\nColor: %s",
+            name, description, noteCount, color);
+   }
+
+   public static List<Category> getDefaultCategories() {
+      List<Category> categories = new ArrayList<>();
+      for (Category cat : DEFAULT_CATEGORIES) {
+         categories.add(new Category(cat));
+      }
+      return categories;
+   }
+
+   public static Category createCategory(String name) {
+      return new Category(name, "Category " + name, "#808080");
+   }
+
+   public static boolean isValidCategoryName(String name) {
+      return name != null && !name.trim().isEmpty() && name.trim().length() <= 50;
+   }
+
+   public static boolean isValidColorCode(String color) {
+      return color != null && color.matches("^#[0-9A-Fa-f]{6}$");
+   }
+}
+```
+
+##### `Note.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package model;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Note implements Comparable<Note> {
+   private static int nextId = 1;
+
+   public static int generateLocalId() {
+      return nextId++;
+   }
+
+   public static void updateNextIdIfNeeded(int minId) {
+      if (minId > nextId) {
+         nextId = minId;
+      }
+   }
+
+   public static void resetIdCounter() {
+      nextId = 1;
+   }
+
+   private int id;
+   private String title;
+   private String content;
+   private LocalDateTime createdDate;
+   private LocalDateTime modifiedDate;
+   private String category;
+   private Priority priority;
+
+   public enum Priority {
+      LOW(1, "Low"),
+      MEDIUM(2, "Medium"),
+      HIGH(3, "High");
+
+      private final int level;
+      private final String description;
+
+      Priority(int level, String description) {
+         this.level = level;
+         this.description = description;
+      }
+
+      public int getLevel() {
+         return level;
+      }
+
+      public String getDescription() {
+         return description;
+      }
+
+      @Override
+      public String toString() {
+         return description;
+      }
+   }
+
+   public Note(String title, String content, String category, Priority priority) {
+      this.id = 0;
+      this.title = title;
+      this.content = content;
+      this.category = category;
+      this.priority = priority;
+      this.createdDate = LocalDateTime.now();
+      this.modifiedDate = LocalDateTime.now();
+   }
+
+   public Note(int id, String title, String content, String category, Priority priority,
+         LocalDateTime createdDate, LocalDateTime modifiedDate) {
+      this.id = id;
+      this.title = title;
+      this.content = content;
+      this.category = category;
+      this.priority = priority;
+      this.createdDate = createdDate;
+      this.modifiedDate = modifiedDate;
+   }
+
+   public Note(Note other) {
+      this.id = other.id;
+      this.title = other.title;
+      this.content = other.content;
+      this.category = other.category;
+      this.priority = other.priority;
+      this.createdDate = other.createdDate;
+      this.modifiedDate = other.modifiedDate;
+   }
+
+   public int getId() {
+      return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
+   }
+
+   public String getTitle() {
+      return title;
+   }
+
+   public String getContent() {
+      return content;
+   }
+
+   public LocalDateTime getCreatedDate() {
+      return createdDate;
+   }
+
+   public LocalDateTime getModifiedDate() {
+      return modifiedDate;
+   }
+
+   public String getCategory() {
+      return category;
+   }
+
+   public Priority getPriority() {
+      return priority;
+   }
+
+   public void setTitle(String title) {
+      if (title != null && !title.trim().isEmpty()) {
+         this.title = title;
+         updateModifiedDate();
+      } else {
+         throw new IllegalArgumentException("Title cannot be empty");
+      }
+   }
+
+   public void setContent(String content) {
+      this.content = content != null ? content : "";
+      updateModifiedDate();
+   }
+
+   public void setCategory(String category) {
+      this.category = category != null ? category : "General";
+      updateModifiedDate();
+   }
+
+   public void setPriority(Priority priority) {
+      this.priority = priority != null ? priority : Priority.MEDIUM;
+      updateModifiedDate();
+   }
+
+   private void updateModifiedDate() {
+      this.modifiedDate = LocalDateTime.now();
+   }
+
+   public boolean matches(String searchTerm) {
+      if (searchTerm == null || searchTerm.trim().isEmpty()) {
+         return true;
+      }
+
+      String search = searchTerm.toLowerCase();
+      return title.toLowerCase().contains(search) ||
+            content.toLowerCase().contains(search) ||
+            category.toLowerCase().contains(search) ||
+            priority.toString().toLowerCase().contains(search) ||
+            getFormattedCreatedDate().toLowerCase().contains(search) ||
+            getFormattedModifiedDate().toLowerCase().contains(search);
+   }
+
+   @Override
+   public int compareTo(Note other) {
+      return other.createdDate.compareTo(this.createdDate);
+   }
+
+   public String getFormattedCreatedDate() {
+      return createdDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+   }
+
+   public String getFormattedModifiedDate() {
+      return modifiedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+   }
+
+   @Override
+   public String toString() {
+      return String.format("ID: %d | Title: %s | Category: %s | Priority: %s | Created: %s",
+            id, title, category, priority, getFormattedCreatedDate());
+   }
+
+   public String getSummary() {
+      String contentPreview = content.length() > 50 ? content.substring(0, 50) + "..." : content;
+      return String.format("[%s] %s - %s", category, title, contentPreview);
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj)
+         return true;
+      if (obj == null || getClass() != obj.getClass())
+         return false;
+      Note note = (Note) obj;
+      return id == note.id;
+   }
+
+   @Override
+   public int hashCode() {
+      return Integer.hashCode(id);
+   }
+}
+```
+
+##### `NoteManager.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+```java
+package model;
+
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import database.DatabaseManager;
+
+public class NoteManager {
+   private List<Note> notes;
+   private Map<String, List<Note>> categoryIndex;
+   private DatabaseManager databaseManager;
+
+   public NoteManager() {
+      this.notes = new ArrayList<>();
+      this.categoryIndex = new HashMap<>();
+      this.databaseManager = new DatabaseManager(this);
+   }
+
+   public boolean addNote(Note note) {
+      return addNote(note, true);
+   }
+
+   public boolean addNote(Note note, boolean triggerAutoSync) {
+      if (note == null) {
+         throw new IllegalArgumentException("Note cannot be null");
+      }
+
+      boolean added = notes.add(note);
+      if (added) {
+         updateCategoryIndex(note);
+         if (triggerAutoSync && isAutoSyncEnabled() && databaseManager != null) {
+            autoSyncToDatabase(note, "ADD");
+         }
+      }
+      return added;
+   }
+
+   public Note addNote(String title, String content, String category, Note.Priority priority) {
+      Note note = new Note(title, content, category, priority);
+
+      if (isDatabaseConnected() && isAutoSyncEnabled() && databaseManager != null) {
+         try {
+            if (databaseManager.saveNoteToDatabase(note)) {
+               System.out.println("Note saved to database with ID: " + note.getId());
+               addNote(note, false);
+            } else {
+               System.err.println("Failed to save note to database");
+               note.setId(Note.generateLocalId());
+               addNote(note, false);
+            }
+         } catch (Exception e) {
+            System.err.println("Error saving note to database: " + e.getMessage());
+            note.setId(Note.generateLocalId());
+            addNote(note, false);
+         }
+      } else {
+         note.setId(Note.generateLocalId());
+         addNote(note, true);
+      }
+
+      return note;
+   }
+
+   public boolean removeNote(int id) {
+      Note noteToRemove = findNoteById(id);
+      if (noteToRemove != null) {
+         notes.remove(noteToRemove);
+         removeCategoryIndex(noteToRemove);
+         autoSyncToDatabase(noteToRemove, "DELETE");
+         return true;
+      }
+      return false;
+   }
+
+   public Note findNoteById(int id) {
+      return notes.stream()
+            .filter(note -> note.getId() == id)
+            .findFirst()
+            .orElse(null);
+   }
+
+   public boolean updateNote(int id, String title, String content, String category, Note.Priority priority) {
+      Note note = findNoteById(id);
+      if (note != null) {
+         String oldCategory = note.getCategory();
+
+         note.setTitle(title);
+         note.setContent(content);
+         note.setCategory(category);
+         note.setPriority(priority);
+
+         removeCategoryIndexEntry(note, oldCategory);
+         updateCategoryIndex(note);
+         autoSyncToDatabase(note, "UPDATE");
+
+         return true;
+      }
+      return false;
+   }
+
+   public List<Note> searchNotes(String searchTerm) {
+      return notes.stream()
+            .filter(note -> note.matches(searchTerm))
+            .collect(Collectors.toList());
+   }
+
+   public List<Note> getNotesByCategory(String category) {
+      return categoryIndex.getOrDefault(category, new ArrayList<>());
+   }
+
+   public List<Note> getNotesByPriority(Note.Priority priority) {
+      return notes.stream()
+            .filter(note -> note.getPriority() == priority)
+            .collect(Collectors.toList());
+   }
+
+   public List<Note> searchNotes(Predicate<Note> condition) {
+      return notes.stream()
+            .filter(condition)
+            .collect(Collectors.toList());
+   }
+
+   public List<Note> getAllNotes() {
+      return new ArrayList<>(notes);
+   }
+
+   public List<Note> getAllNotesSorted() {
+      return notes.stream()
+            .sorted()
+            .collect(Collectors.toList());
+   }
+
+   public List<Note> getAllNotesSortedByPriority() {
+      return notes.stream()
+            .sorted((n1, n2) -> Integer.compare(n2.getPriority().getLevel(), n1.getPriority().getLevel()))
+            .collect(Collectors.toList());
+   }
+
+   public Set<String> getAllCategories() {
+      return notes.stream()
+            .map(Note::getCategory)
+            .collect(Collectors.toSet());
+   }
+
+   public int getTotalNotes() {
+      return notes.size();
+   }
+
+   public int getNotesCountByCategory(String category) {
+      return categoryIndex.getOrDefault(category, new ArrayList<>()).size();
+   }
+
+   public Map<Note.Priority, Long> getPriorityStatistics() {
+      return notes.stream()
+            .collect(Collectors.groupingBy(Note::getPriority, Collectors.counting()));
+   }
+
+   public void clearAllNotes() {
+      clearAllNotes(true);
+   }
+
+   public void clearAllNotes(boolean triggerAutoSync) {
+      notes.clear();
+      categoryIndex.clear();
+
+      if (triggerAutoSync && isAutoSyncEnabled() && databaseManager != null && isDatabaseConnected()) {
+         Thread syncThread = new Thread(() -> {
+            try {
+               if (databaseManager.getCurrentDatabase().clearAllNotes()) {
+                  System.out.println("Auto-cleared all notes from database");
+               } else {
+                  System.err.println("Failed to auto-clear notes from database");
+               }
+            } catch (Exception e) {
+               System.err.println("Auto-sync clear error: " + e.getMessage());
+            }
+         });
+         syncThread.setDaemon(true);
+         syncThread.start();
+      }
+   }
+
+   public boolean isEmpty() {
+      return notes.isEmpty();
+   }
+
+   private void updateCategoryIndex(Note note) {
+      categoryIndex.computeIfAbsent(note.getCategory(), _ -> new ArrayList<>()).add(note);
+   }
+
+   private void removeCategoryIndex(Note note) {
+      removeCategoryIndexEntry(note, note.getCategory());
+   }
+
+   private void removeCategoryIndexEntry(Note note, String category) {
+      List<Note> categoryNotes = categoryIndex.get(category);
+      if (categoryNotes != null) {
+         categoryNotes.remove(note);
+         if (categoryNotes.isEmpty()) {
+            categoryIndex.remove(category);
+         }
+      }
+   }
+
+   public DatabaseManager getDatabaseManager() {
+      return databaseManager;
+   }
+
+   public boolean connectToDatabase() {
+      return databaseManager != null && databaseManager.connectToDatabase();
+   }
+
+   public void disconnectFromDatabase() {
+      if (databaseManager != null) {
+         databaseManager.disconnectFromDatabase();
+      }
+   }
+
+   public boolean isDatabaseConnected() {
+      return databaseManager != null && databaseManager.isConnected();
+   }
+
+   public String getDatabaseStatus() {
+      return databaseManager != null ? databaseManager.getConnectionStatus() : "Database not initialized";
+   }
+
+   public boolean isAutoSyncEnabled() {
+      return true;
+   }
+
+   private void autoSyncToDatabase(Note note, String operation) {
+      if (!isAutoSyncEnabled() || databaseManager == null || !isDatabaseConnected()) {
+         return;
+      }
+
+      Thread syncThread = new Thread(() -> {
+         try {
+            switch (operation) {
+               case "ADD":
+               case "UPDATE":
+                  if (databaseManager.saveNoteToDatabase(note)) {
+                     System.out.println("Auto-synced note to database: " + note.getTitle());
+                  } else {
+                     System.err.println("Failed to auto-sync note: " + note.getTitle());
+                  }
+                  break;
+               case "DELETE":
+                  if (databaseManager.deleteNoteFromDatabase(note.getId())) {
+                     System.out.println("Auto-deleted note from database: " + note.getTitle());
+                  } else {
+                     System.err.println("Failed to auto-delete note: " + note.getTitle());
+                  }
+                  break;
+            }
+         } catch (Exception e) {
+            System.err.println("Auto-sync error for note " + note.getTitle() + ": " + e.getMessage());
+         }
+      });
+
+      syncThread.setDaemon(true);
+      syncThread.start();
+   }
+
+   public void autoSyncAllToDatabase() {
+      if (!isAutoSyncEnabled() || databaseManager == null || !isDatabaseConnected()) {
+         return;
+      }
+
+      Thread syncThread = new Thread(() -> {
+         try {
+            if (databaseManager.syncNotesToDatabase()) {
+               System.out.println("Auto-synced all notes to database");
+            } else {
+               System.err.println("Failed to auto-sync all notes to database");
+            }
+         } catch (Exception e) {
+            System.err.println("Auto-sync error: " + e.getMessage());
+         }
+      });
+
+      syncThread.setDaemon(true);
+      syncThread.start();
+   }
+}
+```
+
+
 ## Project/Simple/src
 
 ##### `App.java`<br>
