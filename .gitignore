@@ -14,3 +14,7 @@ __pycache__
 # Java bin
 /COM-3302/Project/Simple/bin
 /COM-3302/Project/OOP_Database/bin
+
+# Java Project
+COM-3302/Project/OOP_Database/database.properties
+COM-3302/Project/OOP_Database/notes_data.txt

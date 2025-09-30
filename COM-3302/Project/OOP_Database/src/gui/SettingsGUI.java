@@ -321,7 +321,6 @@ public class SettingsGUI extends JDialog {
          }
       };
 
-      // Add listeners to all input fields
       hostField.getDocument().addDocumentListener(autoTestListener);
       portField.getDocument().addDocumentListener(autoTestListener);
       databaseField.getDocument().addDocumentListener(autoTestListener);
