@@ -1350,6 +1350,8 @@ public class GUI extends JFrame {
 
 ##### `DatabaseConfig.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database;
 
@@ -1359,8 +1361,7 @@ import java.util.Properties;
 public class DatabaseConfig {
    public enum DatabaseType {
       OFFLINE("Offline Mode"),
-      MYSQL("MySQL Database"),
-      FIREBASE("Firebase Database");
+      MYSQL("MySQL Database");
 
       private final String displayName;
 
@@ -1379,8 +1380,6 @@ public class DatabaseConfig {
    private String database;
    private String username;
    private String password;
-   private String firebaseUrl;
-   private String firebaseApiKey;
    private boolean autoConnect;
    private static final String CONFIG_FILE = "database.properties";
 
@@ -1388,11 +1387,9 @@ public class DatabaseConfig {
       this.type = DatabaseType.OFFLINE;
       this.host = "localhost";
       this.port = "3306";
-      this.database = "notedb";
-      this.username = "";
+      this.database = "note";
+      this.username = "root";
       this.password = "";
-      this.firebaseUrl = "";
-      this.firebaseApiKey = "";
       this.autoConnect = true;
    }
 
@@ -1420,14 +1417,6 @@ public class DatabaseConfig {
       return password;
    }
 
-   public String getFirebaseUrl() {
-      return firebaseUrl;
-   }
-
-   public String getFirebaseApiKey() {
-      return firebaseApiKey;
-   }
-
    public boolean isAutoConnect() {
       return autoConnect;
    }
@@ -1445,23 +1434,15 @@ public class DatabaseConfig {
    }
 
    public void setDatabase(String database) {
-      this.database = database != null ? database : "notedb";
+      this.database = database != null ? database : "note";
    }
 
    public void setUsername(String username) {
-      this.username = username != null ? username : "";
+      this.username = username != null ? username : "root";
    }
 
    public void setPassword(String password) {
       this.password = password != null ? password : "";
-   }
-
-   public void setFirebaseUrl(String firebaseUrl) {
-      this.firebaseUrl = firebaseUrl != null ? firebaseUrl : "";
-   }
-
-   public void setFirebaseApiKey(String firebaseApiKey) {
-      this.firebaseApiKey = firebaseApiKey != null ? firebaseApiKey : "";
    }
 
    public void setAutoConnect(boolean autoConnect) {
@@ -1479,11 +1460,6 @@ public class DatabaseConfig {
             username != null && !username.trim().isEmpty();
    }
 
-   public boolean isValidFirebaseConfig() {
-      return firebaseUrl != null && !firebaseUrl.trim().isEmpty() &&
-            firebaseApiKey != null && !firebaseApiKey.trim().isEmpty();
-   }
-
    public void saveToFile() {
       Properties props = new Properties();
       props.setProperty("type", type.name());
@@ -1492,8 +1468,6 @@ public class DatabaseConfig {
       props.setProperty("database", database);
       props.setProperty("username", username);
       props.setProperty("password", password);
-      props.setProperty("firebaseUrl", firebaseUrl);
-      props.setProperty("firebaseApiKey", firebaseApiKey);
       props.setProperty("autoConnect", String.valueOf(autoConnect));
 
       try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
@@ -1519,13 +1493,13 @@ public class DatabaseConfig {
          this.host = props.getProperty("host", "localhost");
          this.port = props.getProperty("port", "3306");
          this.database = props.getProperty("database", "note");
-         this.username = props.getProperty("username", "");
+         this.username = props.getProperty("username", "root");
          this.password = props.getProperty("password", "");
-         this.firebaseUrl = props.getProperty("firebaseUrl", "");
-         this.firebaseApiKey = props.getProperty("firebaseApiKey", "");
          this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
 
          System.out.println("Configuration loaded from " + CONFIG_FILE);
+         System.out.println("Database Type: " + this.type);
+         System.out.println("Auto Connect: " + this.autoConnect);
       } catch (FileNotFoundException e) {
          System.out.println("Configuration file not found. Using default settings.");
       } catch (IOException e) {
@@ -1583,13 +1557,14 @@ public interface DatabaseInterface {
 
 ##### `DatabaseManager.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import database.providers.Firebase;
 import database.providers.MySQL;
 import model.Note;
 import model.NoteManager;
@@ -1626,8 +1601,6 @@ public class DatabaseManager {
       switch (type) {
          case MYSQL:
             return new MySQL(config);
-         case FIREBASE:
-            return new Firebase(config);
          case OFFLINE:
          default:
             return new OfflineDatabase();
@@ -1854,8 +1827,6 @@ public class DatabaseManager {
       if (config.getType() == DatabaseConfig.DatabaseType.MYSQL) {
          stats.append("Host: ").append(config.getHost()).append(":").append(config.getPort()).append("\n");
          stats.append("Database: ").append(config.getDatabase()).append("\n");
-      } else if (config.getType() == DatabaseConfig.DatabaseType.FIREBASE) {
-         stats.append("Firebase URL: ").append(config.getFirebaseUrl()).append("\n");
       }
 
       return stats.toString();
@@ -1865,6 +1836,8 @@ public class DatabaseManager {
 
 ##### `OfflineDatabase.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database;
 
@@ -1936,7 +1909,6 @@ public class OfflineDatabase implements DatabaseInterface {
          return false;
 
       try {
-         // Generate ID for new notes (ID = 0)
          if (note.getId() == 0) {
             note.setId(Note.generateLocalId());
             System.out.println("Generated new ID for offline note: " + note.getId());
@@ -1992,7 +1964,7 @@ public class OfflineDatabase implements DatabaseInterface {
          return false;
 
       notes.clear();
-      Note.resetIdCounter(); // Reset ID counter to start from 1
+      Note.resetIdCounter();
       saveNotesToFile();
       return true;
    }
@@ -2038,7 +2010,7 @@ public class OfflineDatabase implements DatabaseInterface {
 
    private void loadNotesFromFile() {
       notes.clear();
-      Note.resetIdCounter(); // Reset ID counter before loading
+      Note.resetIdCounter();
       File file = new File(DATA_FILE);
 
       if (!file.exists()) {
@@ -2085,11 +2057,8 @@ public class OfflineDatabase implements DatabaseInterface {
          String content = unescapeDelimiters(parts[2]);
          String category = unescapeDelimiters(parts[3]);
          Note.Priority priority = Note.Priority.valueOf(parts[4]);
-
          Note note = new Note(title, content, category, priority);
-         note.setId(id); // Set the ID from file
-
-         // Update the next ID counter to ensure new notes get higher IDs
+         note.setId(id);
          Note.updateNextIdIfNeeded(id + 1);
 
          return note;
@@ -2124,314 +2093,10 @@ public class OfflineDatabase implements DatabaseInterface {
 
 ## Project/OOP_Database/src/database/providers
 
-##### `Firebase.java`<br>
-Create: 1 ต.ค. 2568 time 03:49<br>
-```java
-package database.providers;
-
-import java.util.*;
-
-import database.DatabaseConfig;
-import database.DatabaseInterface;
-import model.Note;
-
-import java.net.http.*;
-import java.net.URI;
-import java.time.format.DateTimeFormatter;
-
-public class Firebase implements DatabaseInterface {
-   private DatabaseConfig config;
-   private boolean connected;
-   private HttpClient httpClient;
-   private String baseUrl;
-
-   public Firebase(DatabaseConfig config) {
-      this.config = config;
-      this.connected = false;
-      this.httpClient = HttpClient.newHttpClient();
-      this.baseUrl = config.getFirebaseUrl();
-      if (!baseUrl.endsWith("/")) {
-         baseUrl += "/";
-      }
-      baseUrl += "notes";
-   }
-
-   @Override
-   public boolean connect() {
-      try {
-         if (testConnection()) {
-            connected = true;
-            System.out.println("Firebase database connected successfully");
-            return true;
-         } else {
-            connected = false;
-            return false;
-         }
-      } catch (Exception e) {
-         System.err.println("Error connecting to Firebase: " + e.getMessage());
-         connected = false;
-         return false;
-      }
-   }
-
-   @Override
-   public void disconnect() {
-      connected = false;
-      System.out.println("Firebase database disconnected");
-   }
-
-   @Override
-   public boolean isConnected() {
-      return connected;
-   }
-
-   @Override
-   public boolean testConnection() {
-      try {
-         String url = baseUrl + ".json";
-         if (!config.getFirebaseApiKey().isEmpty()) {
-            url += "?auth=" + config.getFirebaseApiKey();
-         }
-
-         HttpRequest request = HttpRequest.newBuilder()
-               .uri(URI.create(url))
-               .GET()
-               .build();
-
-         HttpResponse<String> response = httpClient.send(request,
-               HttpResponse.BodyHandlers.ofString());
-
-         return response.statusCode() == 200;
-
-      } catch (Exception e) {
-         System.err.println("Firebase connection test failed: " + e.getMessage());
-         return false;
-      }
-   }
-
-   @Override
-   public boolean saveNote(Note note) {
-      if (!isConnected())
-         return false;
-
-      try {
-         String noteJson = convertNoteToJson(note);
-         String url = baseUrl + "/" + note.getId() + ".json";
-
-         if (!config.getFirebaseApiKey().isEmpty()) {
-            url += "?auth=" + config.getFirebaseApiKey();
-         }
-
-         HttpRequest request = HttpRequest.newBuilder()
-               .uri(URI.create(url))
-               .header("Content-Type", "application/json")
-               .PUT(HttpRequest.BodyPublishers.ofString(noteJson))
-               .build();
-
-         HttpResponse<String> response = httpClient.send(request,
-               HttpResponse.BodyHandlers.ofString());
-
-         return response.statusCode() == 200;
-
-      } catch (Exception e) {
-         System.err.println("Error saving note to Firebase: " + e.getMessage());
-         return false;
-      }
-   }
-
-   @Override
-   public List<Note> loadAllNotes() {
-      List<Note> notes = new ArrayList<>();
-      if (!isConnected())
-         return notes;
-
-      try {
-         String url = baseUrl + ".json";
-         if (!config.getFirebaseApiKey().isEmpty()) {
-            url += "?auth=" + config.getFirebaseApiKey();
-         }
-
-         HttpRequest request = HttpRequest.newBuilder()
-               .uri(URI.create(url))
-               .GET()
-               .build();
-
-         HttpResponse<String> response = httpClient.send(request,
-               HttpResponse.BodyHandlers.ofString());
-
-         if (response.statusCode() == 200) {
-            String jsonResponse = response.body();
-            notes = parseNotesFromJson(jsonResponse);
-         }
-
-      } catch (Exception e) {
-         System.err.println("Error loading notes from Firebase: " + e.getMessage());
-      }
-
-      return notes;
-   }
-
-   @Override
-   public boolean updateNote(Note note) {
-      return saveNote(note);
-   }
-
-   @Override
-   public boolean deleteNote(int id) {
-      if (!isConnected())
-         return false;
-
-      try {
-         String url = baseUrl + "/" + id + ".json";
-         if (!config.getFirebaseApiKey().isEmpty()) {
-            url += "?auth=" + config.getFirebaseApiKey();
-         }
-
-         HttpRequest request = HttpRequest.newBuilder()
-               .uri(URI.create(url))
-               .DELETE()
-               .build();
-
-         HttpResponse<String> response = httpClient.send(request,
-               HttpResponse.BodyHandlers.ofString());
-
-         return response.statusCode() == 200;
-
-      } catch (Exception e) {
-         System.err.println("Error deleting note from Firebase: " + e.getMessage());
-         return false;
-      }
-   }
-
-   @Override
-   public List<Note> searchNotes(String searchTerm) {
-
-      List<Note> allNotes = loadAllNotes();
-      List<Note> results = new ArrayList<>();
-
-      for (Note note : allNotes) {
-         if (note.matches(searchTerm)) {
-            results.add(note);
-         }
-      }
-
-      return results;
-   }
-
-   @Override
-   public boolean clearAllNotes() {
-      if (!isConnected())
-         return false;
-
-      try {
-         String url = baseUrl + ".json";
-         if (!config.getFirebaseApiKey().isEmpty()) {
-            url += "?auth=" + config.getFirebaseApiKey();
-         }
-
-         HttpRequest request = HttpRequest.newBuilder()
-               .uri(URI.create(url))
-               .DELETE()
-               .build();
-
-         HttpResponse<String> response = httpClient.send(request,
-               HttpResponse.BodyHandlers.ofString());
-
-         return response.statusCode() == 200;
-
-      } catch (Exception e) {
-         System.err.println("Error clearing notes from Firebase: " + e.getMessage());
-         return false;
-      }
-   }
-
-   @Override
-   public String getDatabaseType() {
-      return "Firebase Realtime Database";
-   }
-
-   @Override
-   public String getConnectionStatus() {
-      if (connected) {
-         try {
-            List<Note> notes = loadAllNotes();
-            return String.format("Connected to Firebase (%d notes)", notes.size());
-         } catch (Exception e) {
-            return "Connected to Firebase (error counting notes)";
-         }
-      }
-      return "Disconnected from Firebase";
-   }
-
-   private String convertNoteToJson(Note note) {
-      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-      return String.format("""
-            {
-                "id": %d,
-                "title": "%s",
-                "content": "%s",
-                "category": "%s",
-                "priority": "%s",
-                "createdDate": "%s",
-                "modifiedDate": "%s"
-            }
-            """,
-            note.getId(),
-            escapeJson(note.getTitle()),
-            escapeJson(note.getContent()),
-            escapeJson(note.getCategory()),
-            note.getPriority().name(),
-            note.getCreatedDate().format(formatter),
-            note.getModifiedDate().format(formatter));
-   }
-
-   private List<Note> parseNotesFromJson(String json) {
-      List<Note> notes = new ArrayList<>();
-
-      if (json == null || json.trim().equals("null") || json.trim().isEmpty()) {
-         return notes;
-      }
-
-      try {
-
-         System.out.println("Firebase data loaded (simplified parsing)");
-      } catch (Exception e) {
-         System.err.println("Error parsing Firebase JSON: " + e.getMessage());
-      }
-
-      return notes;
-   }
-
-   private String escapeJson(String text) {
-      if (text == null)
-         return "";
-      return text.replace("\"", "\\\"")
-            .replace("\n", "\\n")
-            .replace("\r", "\\r")
-            .replace("\t", "\\t");
-   }
-
-   public String getFirebaseInfo() {
-      if (config.getFirebaseUrl().isEmpty()) {
-         return "Firebase URL not configured";
-      }
-
-      String projectId = extractProjectIdFromUrl(config.getFirebaseUrl());
-      return String.format("Firebase Project: %s", projectId);
-   }
-
-   private String extractProjectIdFromUrl(String url) {
-      try {
-
-         String[] parts = url.split("\\.");
-         if (parts.length > 0) {
-            String projectPart = parts[0];
-......
-```
-
 ##### `MySQL.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database.providers;
 
@@ -2518,7 +2183,6 @@ public class MySQL implements DatabaseInterface {
       if (!isConnected())
          return false;
 
-      // If note has no ID (new note), insert and get generated ID
       if (note.getId() == 0) {
          String sql = "INSERT INTO notes (title, content, category, priority, created_date, modified_date) " +
                "VALUES (?, ?, ?, ?, ?, ?)";
@@ -2534,7 +2198,6 @@ public class MySQL implements DatabaseInterface {
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-               // Get the generated ID and set it in the note
                try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                   if (generatedKeys.next()) {
                      note.setId(generatedKeys.getInt(1));
@@ -2549,7 +2212,6 @@ public class MySQL implements DatabaseInterface {
             return false;
          }
       } else {
-         // Update existing note
          String sql = "UPDATE notes SET title=?, content=?, category=?, priority=?, modified_date=? WHERE id=?";
 
          try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -2659,12 +2321,10 @@ public class MySQL implements DatabaseInterface {
          return false;
 
       try (Statement stmt = connection.createStatement()) {
-         // Method 1: Drop and recreate table (more thorough)
          String dropSql = "DROP TABLE IF EXISTS notes";
          stmt.executeUpdate(dropSql);
          System.out.println("MySQL notes table dropped");
 
-         // Recreate the table (this will reset AUTO_INCREMENT to 1)
          createTablesIfNotExists();
          System.out.println("MySQL notes table recreated - ID counter reset to 1");
 
@@ -2733,6 +2393,11 @@ public class MySQL implements DatabaseInterface {
    }
 
    private Note createNoteFromResultSet(ResultSet rs) {
+      try {
+         int id = rs.getInt("id");
+         String title = rs.getString("title");
+         String content = rs.getString("content");
+         String category = rs.getString("category");
 ......
 ```
 
@@ -2741,7 +2406,7 @@ public class MySQL implements DatabaseInterface {
 
 ##### `SettingsGUI.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
-Last edited: Time 04:13<br>
+Last edited: Time 05:33<br>
 
 ```java
 package gui;
@@ -2767,11 +2432,8 @@ public class SettingsGUI extends JDialog {
    private JTextField databaseField;
    private JTextField usernameField;
    private JPasswordField passwordField;
-   private JTextField firebaseUrlField;
-   private JTextField firebaseApiKeyField;
 
    private JPanel mysqlPanel;
-   private JPanel firebasePanel;
    private JPanel statusPanel;
 
    private JLabel statusLabel;
@@ -2808,9 +2470,6 @@ public class SettingsGUI extends JDialog {
       usernameField = new JTextField(config.getUsername(), 20);
       passwordField = new JPasswordField(config.getPassword(), 20);
 
-      firebaseUrlField = new JTextField(config.getFirebaseUrl(), 30);
-      firebaseApiKeyField = new JTextField(config.getFirebaseApiKey(), 30);
-
       statusLabel = new JLabel("Ready");
       statusLabel.setForeground(Color.BLUE);
 
@@ -2822,7 +2481,6 @@ public class SettingsGUI extends JDialog {
       saveButton.setForeground(Color.WHITE);
 
       createMySQLPanel();
-      createFirebasePanel();
    }
 
    private void createMySQLPanel() {
@@ -2897,41 +2555,6 @@ public class SettingsGUI extends JDialog {
       label.setText("Connection: " + connectionString);
    }
 
-   private void createFirebasePanel() {
-      firebasePanel = new JPanel(new GridBagLayout());
-      firebasePanel.setBorder(new TitledBorder("Firebase Configuration"));
-
-      GridBagConstraints gbc = new GridBagConstraints();
-      gbc.insets = new Insets(5, 5, 5, 5);
-      gbc.anchor = GridBagConstraints.WEST;
-
-      gbc.gridx = 0;
-      gbc.gridy = 0;
-      firebasePanel.add(new JLabel("Firebase URL:"), gbc);
-      gbc.gridx = 1;
-      gbc.fill = GridBagConstraints.HORIZONTAL;
-      gbc.weightx = 1.0;
-      firebasePanel.add(firebaseUrlField, gbc);
-
-      gbc.gridx = 0;
-      gbc.gridy = 1;
-      gbc.fill = GridBagConstraints.NONE;
-      gbc.weightx = 0;
-      firebasePanel.add(new JLabel("API Key:"), gbc);
-      gbc.gridx = 1;
-      gbc.fill = GridBagConstraints.HORIZONTAL;
-      gbc.weightx = 1.0;
-      firebasePanel.add(firebaseApiKeyField, gbc);
-
-      gbc.gridx = 0;
-      gbc.gridy = 2;
-      gbc.gridwidth = 2;
-      JLabel helpLabel = new JLabel(
-            "<html><small>Example URL: https://halo.firebaseio.com/<br>Get API key from Firebase Console</small></html>");
-      helpLabel.setForeground(Color.GRAY);
-      firebasePanel.add(helpLabel, gbc);
-   }
-
    private void setupLayout() {
       setLayout(new BorderLayout());
 
@@ -2950,7 +2573,6 @@ public class SettingsGUI extends JDialog {
 
       centerPanel.add(offlinePanel, "OFFLINE");
       centerPanel.add(mysqlPanel, "MYSQL");
-      centerPanel.add(firebasePanel, "FIREBASE");
 
       statusPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
       statusPanel.setBorder(new TitledBorder("Connection Status"));
@@ -3044,6 +2666,49 @@ public class SettingsGUI extends JDialog {
                statusLabel.setForeground(Color.RED);
             }
          }
+      };
+
+      worker.execute();
+   }
+
+   private void setupAutoTesting() {
+      DocumentListener autoTestListener = new DocumentListener() {
+         @Override
+         public void insertUpdate(DocumentEvent e) {
+            autoTestConnection();
+         }
+
+         @Override
+         public void removeUpdate(DocumentEvent e) {
+            autoTestConnection();
+         }
+
+         @Override
+         public void changedUpdate(DocumentEvent e) {
+            autoTestConnection();
+         }
+      };
+
+      hostField.getDocument().addDocumentListener(autoTestListener);
+      portField.getDocument().addDocumentListener(autoTestListener);
+      databaseField.getDocument().addDocumentListener(autoTestListener);
+      usernameField.getDocument().addDocumentListener(autoTestListener);
+      passwordField.getDocument().addDocumentListener(autoTestListener);
+   }
+
+   private void saveConfiguration() {
+      saveFormDataToConfig();
+
+      if (!validateConfiguration()) {
+         return;
+      }
+
+      databaseManager.updateDatabaseConfig(config);
+
+      dispose();
+   }
+
+   private void saveFormDataToConfig() {
 ......
 ```
 

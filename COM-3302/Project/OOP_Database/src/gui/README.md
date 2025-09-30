@@ -1,6 +1,6 @@
 `SettingsGUI.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
-Last edited: Time 04:13<br>
+Last edited: Time 05:33<br>
 
 ```java
 package gui;
@@ -26,11 +26,8 @@ public class SettingsGUI extends JDialog {
    private JTextField databaseField;
    private JTextField usernameField;
    private JPasswordField passwordField;
-   private JTextField firebaseUrlField;
-   private JTextField firebaseApiKeyField;
 
    private JPanel mysqlPanel;
-   private JPanel firebasePanel;
    private JPanel statusPanel;
 
    private JLabel statusLabel;
@@ -67,9 +64,6 @@ public class SettingsGUI extends JDialog {
       usernameField = new JTextField(config.getUsername(), 20);
       passwordField = new JPasswordField(config.getPassword(), 20);
 
-      firebaseUrlField = new JTextField(config.getFirebaseUrl(), 30);
-      firebaseApiKeyField = new JTextField(config.getFirebaseApiKey(), 30);
-
       statusLabel = new JLabel("Ready");
       statusLabel.setForeground(Color.BLUE);
 
@@ -81,7 +75,6 @@ public class SettingsGUI extends JDialog {
       saveButton.setForeground(Color.WHITE);
 
       createMySQLPanel();
-      createFirebasePanel();
    }
 
    private void createMySQLPanel() {
@@ -156,41 +149,6 @@ public class SettingsGUI extends JDialog {
       label.setText("Connection: " + connectionString);
    }
 
-   private void createFirebasePanel() {
-      firebasePanel = new JPanel(new GridBagLayout());
-      firebasePanel.setBorder(new TitledBorder("Firebase Configuration"));
-
-      GridBagConstraints gbc = new GridBagConstraints();
-      gbc.insets = new Insets(5, 5, 5, 5);
-      gbc.anchor = GridBagConstraints.WEST;
-
-      gbc.gridx = 0;
-      gbc.gridy = 0;
-      firebasePanel.add(new JLabel("Firebase URL:"), gbc);
-      gbc.gridx = 1;
-      gbc.fill = GridBagConstraints.HORIZONTAL;
-      gbc.weightx = 1.0;
-      firebasePanel.add(firebaseUrlField, gbc);
-
-      gbc.gridx = 0;
-      gbc.gridy = 1;
-      gbc.fill = GridBagConstraints.NONE;
-      gbc.weightx = 0;
-      firebasePanel.add(new JLabel("API Key:"), gbc);
-      gbc.gridx = 1;
-      gbc.fill = GridBagConstraints.HORIZONTAL;
-      gbc.weightx = 1.0;
-      firebasePanel.add(firebaseApiKeyField, gbc);
-
-      gbc.gridx = 0;
-      gbc.gridy = 2;
-      gbc.gridwidth = 2;
-      JLabel helpLabel = new JLabel(
-            "<html><small>Example URL: https://halo.firebaseio.com/<br>Get API key from Firebase Console</small></html>");
-      helpLabel.setForeground(Color.GRAY);
-      firebasePanel.add(helpLabel, gbc);
-   }
-
    private void setupLayout() {
       setLayout(new BorderLayout());
 
@@ -209,7 +167,6 @@ public class SettingsGUI extends JDialog {
 
       centerPanel.add(offlinePanel, "OFFLINE");
       centerPanel.add(mysqlPanel, "MYSQL");
-      centerPanel.add(firebasePanel, "FIREBASE");
 
       statusPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
       statusPanel.setBorder(new TitledBorder("Connection Status"));
@@ -331,8 +288,6 @@ public class SettingsGUI extends JDialog {
       databaseField.getDocument().addDocumentListener(autoTestListener);
       usernameField.getDocument().addDocumentListener(autoTestListener);
       passwordField.getDocument().addDocumentListener(autoTestListener);
-      firebaseUrlField.getDocument().addDocumentListener(autoTestListener);
-      firebaseApiKeyField.getDocument().addDocumentListener(autoTestListener);
    }
 
    private void saveConfiguration() {
@@ -354,8 +309,6 @@ public class SettingsGUI extends JDialog {
       config.setDatabase(databaseField.getText().trim());
       config.setUsername(usernameField.getText().trim());
       config.setPassword(new String(passwordField.getPassword()));
-      config.setFirebaseUrl(firebaseUrlField.getText().trim());
-      config.setFirebaseApiKey(firebaseApiKeyField.getText().trim());
       config.setAutoConnect(true);
    }
 
@@ -367,15 +320,6 @@ public class SettingsGUI extends JDialog {
             JOptionPane.showMessageDialog(this,
                   "Please fill in all required MySQL fields:\n" +
                         "Host, Port, Database, and Username are required.",
-                  "Invalid Configuration",
-                  JOptionPane.ERROR_MESSAGE);
-            return false;
-         }
-      } else if (type == DatabaseConfig.DatabaseType.FIREBASE) {
-         if (!config.isValidFirebaseConfig()) {
-            JOptionPane.showMessageDialog(this,
-                  "Please fill in all required Firebase fields:\n" +
-                        "Firebase URL and API Key are required.",
                   "Invalid Configuration",
                   JOptionPane.ERROR_MESSAGE);
             return false;
@@ -404,8 +348,6 @@ public class SettingsGUI extends JDialog {
       databaseField.setText(config.getDatabase());
       usernameField.setText(config.getUsername());
       passwordField.setText(config.getPassword());
-      firebaseUrlField.setText(config.getFirebaseUrl());
-      firebaseApiKeyField.setText(config.getFirebaseApiKey());
 
       updateUIBasedOnDatabaseType();
    }
@@ -417,8 +359,6 @@ public class SettingsGUI extends JDialog {
       to.setDatabase(from.getDatabase());
       to.setUsername(from.getUsername());
       to.setPassword(from.getPassword());
-      to.setFirebaseUrl(from.getFirebaseUrl());
-      to.setFirebaseApiKey(from.getFirebaseApiKey());
       to.setAutoConnect(from.isAutoConnect());
    }
 }

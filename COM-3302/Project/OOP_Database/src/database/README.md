@@ -1,5 +1,7 @@
 `DatabaseConfig.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database;
 
@@ -9,8 +11,7 @@ import java.util.Properties;
 public class DatabaseConfig {
    public enum DatabaseType {
       OFFLINE("Offline Mode"),
-      MYSQL("MySQL Database"),
-      FIREBASE("Firebase Database");
+      MYSQL("MySQL Database");
 
       private final String displayName;
 
@@ -29,8 +30,6 @@ public class DatabaseConfig {
    private String database;
    private String username;
    private String password;
-   private String firebaseUrl;
-   private String firebaseApiKey;
    private boolean autoConnect;
    private static final String CONFIG_FILE = "database.properties";
 
@@ -38,11 +37,9 @@ public class DatabaseConfig {
       this.type = DatabaseType.OFFLINE;
       this.host = "localhost";
       this.port = "3306";
-      this.database = "notedb";
-      this.username = "";
+      this.database = "note";
+      this.username = "root";
       this.password = "";
-      this.firebaseUrl = "";
-      this.firebaseApiKey = "";
       this.autoConnect = true;
    }
 
@@ -70,14 +67,6 @@ public class DatabaseConfig {
       return password;
    }
 
-   public String getFirebaseUrl() {
-      return firebaseUrl;
-   }
-
-   public String getFirebaseApiKey() {
-      return firebaseApiKey;
-   }
-
    public boolean isAutoConnect() {
       return autoConnect;
    }
@@ -95,23 +84,15 @@ public class DatabaseConfig {
    }
 
    public void setDatabase(String database) {
-      this.database = database != null ? database : "notedb";
+      this.database = database != null ? database : "note";
    }
 
    public void setUsername(String username) {
-      this.username = username != null ? username : "";
+      this.username = username != null ? username : "root";
    }
 
    public void setPassword(String password) {
       this.password = password != null ? password : "";
-   }
-
-   public void setFirebaseUrl(String firebaseUrl) {
-      this.firebaseUrl = firebaseUrl != null ? firebaseUrl : "";
-   }
-
-   public void setFirebaseApiKey(String firebaseApiKey) {
-      this.firebaseApiKey = firebaseApiKey != null ? firebaseApiKey : "";
    }
 
    public void setAutoConnect(boolean autoConnect) {
@@ -129,11 +110,6 @@ public class DatabaseConfig {
             username != null && !username.trim().isEmpty();
    }
 
-   public boolean isValidFirebaseConfig() {
-      return firebaseUrl != null && !firebaseUrl.trim().isEmpty() &&
-            firebaseApiKey != null && !firebaseApiKey.trim().isEmpty();
-   }
-
    public void saveToFile() {
       Properties props = new Properties();
       props.setProperty("type", type.name());
@@ -142,8 +118,6 @@ public class DatabaseConfig {
       props.setProperty("database", database);
       props.setProperty("username", username);
       props.setProperty("password", password);
-      props.setProperty("firebaseUrl", firebaseUrl);
-      props.setProperty("firebaseApiKey", firebaseApiKey);
       props.setProperty("autoConnect", String.valueOf(autoConnect));
 
       try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
@@ -169,13 +143,13 @@ public class DatabaseConfig {
          this.host = props.getProperty("host", "localhost");
          this.port = props.getProperty("port", "3306");
          this.database = props.getProperty("database", "note");
-         this.username = props.getProperty("username", "");
+         this.username = props.getProperty("username", "root");
          this.password = props.getProperty("password", "");
-         this.firebaseUrl = props.getProperty("firebaseUrl", "");
-         this.firebaseApiKey = props.getProperty("firebaseApiKey", "");
          this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
 
          System.out.println("Configuration loaded from " + CONFIG_FILE);
+         System.out.println("Database Type: " + this.type);
+         System.out.println("Auto Connect: " + this.autoConnect);
       } catch (FileNotFoundException e) {
          System.out.println("Configuration file not found. Using default settings.");
       } catch (IOException e) {
@@ -231,13 +205,14 @@ public interface DatabaseInterface {
 ```
 `DatabaseManager.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import database.providers.Firebase;
 import database.providers.MySQL;
 import model.Note;
 import model.NoteManager;
@@ -274,8 +249,6 @@ public class DatabaseManager {
       switch (type) {
          case MYSQL:
             return new MySQL(config);
-         case FIREBASE:
-            return new Firebase(config);
          case OFFLINE:
          default:
             return new OfflineDatabase();
@@ -502,8 +475,6 @@ public class DatabaseManager {
       if (config.getType() == DatabaseConfig.DatabaseType.MYSQL) {
          stats.append("Host: ").append(config.getHost()).append(":").append(config.getPort()).append("\n");
          stats.append("Database: ").append(config.getDatabase()).append("\n");
-      } else if (config.getType() == DatabaseConfig.DatabaseType.FIREBASE) {
-         stats.append("Firebase URL: ").append(config.getFirebaseUrl()).append("\n");
       }
 
       return stats.toString();
@@ -512,6 +483,8 @@ public class DatabaseManager {
 ```
 `OfflineDatabase.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 05:33<br>
+
 ```java
 package database;
 
@@ -583,7 +556,6 @@ public class OfflineDatabase implements DatabaseInterface {
          return false;
 
       try {
-         // Generate ID for new notes (ID = 0)
          if (note.getId() == 0) {
             note.setId(Note.generateLocalId());
             System.out.println("Generated new ID for offline note: " + note.getId());
@@ -639,7 +611,7 @@ public class OfflineDatabase implements DatabaseInterface {
          return false;
 
       notes.clear();
-      Note.resetIdCounter(); // Reset ID counter to start from 1
+      Note.resetIdCounter();
       saveNotesToFile();
       return true;
    }
@@ -685,7 +657,7 @@ public class OfflineDatabase implements DatabaseInterface {
 
    private void loadNotesFromFile() {
       notes.clear();
-      Note.resetIdCounter(); // Reset ID counter before loading
+      Note.resetIdCounter();
       File file = new File(DATA_FILE);
 
       if (!file.exists()) {
@@ -732,11 +704,8 @@ public class OfflineDatabase implements DatabaseInterface {
          String content = unescapeDelimiters(parts[2]);
          String category = unescapeDelimiters(parts[3]);
          Note.Priority priority = Note.Priority.valueOf(parts[4]);
-
          Note note = new Note(title, content, category, priority);
-         note.setId(id); // Set the ID from file
-
-         // Update the next ID counter to ensure new notes get higher IDs
+         note.setId(id);
          Note.updateNextIdIfNeeded(id + 1);
 
          return note;
