@@ -6,6 +6,22 @@
 			"request": "launch",
 			"mainClass": "${file}",
 			"console": "integratedTerminal"
+		},
+		{
+			"type": "java",
+			"name": "Run OOP Database Project",
+			"request": "launch",
+			"mainClass": "App",
+			"cwd": "${workspaceFolder}/Project/OOP_Database",
+			"console": "integratedTerminal"
+		},
+		{
+			"type": "java",
+			"name": "Run Simple Project",
+			"request": "launch",
+			"mainClass": "App",
+			"cwd": "${workspaceFolder}/Project/Simple/",
+			"console": "integratedTerminal"
 		}
 	],
 	"version": "0.2.0"

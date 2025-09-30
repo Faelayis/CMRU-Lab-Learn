@@ -79,10 +79,10 @@
 		],
 		"editor.inlayHints.enabled": "on",
 		"java.project.sourcePaths": [
-			"Project/Simple/src"
+			"Project/OOP_Database/src"
 		],
 		"java.project.referencedLibraries": [
-			"Project/Simple/lib/mysql-connector-j-9.4.0.jar"
+			"Project/OOP_Database/lib/*.jar"
 		]
 	}
 }
