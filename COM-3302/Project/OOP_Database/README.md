@@ -104,8 +104,8 @@ java -cp "lib/*:src" App
 
 ```properties
 # Database Configuration
-type=OFFLINE # OFFLINE, MYSQL, FIREBASE
-autoConnect=true # เชื่อมต่ออัตโนมัติเมื่อเริ่มโปรแกรม
+type=OFFLINE # OFFLINE, MYSQL
+autoConnect=true
 
 # MySQL Settings
 host=localhost
