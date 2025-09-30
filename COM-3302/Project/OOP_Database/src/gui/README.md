@@ -1,5 +1,7 @@
 `SettingsGUI.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
+Last edited: Time 04:13<br>
+
 ```java
 package gui;
 
@@ -324,7 +326,6 @@ public class SettingsGUI extends JDialog {
          }
       };
 
-      // Add listeners to all input fields
       hostField.getDocument().addDocumentListener(autoTestListener);
       portField.getDocument().addDocumentListener(autoTestListener);
       databaseField.getDocument().addDocumentListener(autoTestListener);
