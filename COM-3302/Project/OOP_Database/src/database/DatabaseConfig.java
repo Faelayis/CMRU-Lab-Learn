@@ -6,8 +6,7 @@ import java.util.Properties;
 public class DatabaseConfig {
    public enum DatabaseType {
       OFFLINE("Offline Mode"),
-      MYSQL("MySQL Database"),
-      FIREBASE("Firebase Database");
+      MYSQL("MySQL Database");
 
       private final String displayName;
 
@@ -26,8 +25,6 @@ public class DatabaseConfig {
    private String database;
    private String username;
    private String password;
-   private String firebaseUrl;
-   private String firebaseApiKey;
    private boolean autoConnect;
    private static final String CONFIG_FILE = "database.properties";
 
@@ -35,11 +32,9 @@ public class DatabaseConfig {
       this.type = DatabaseType.OFFLINE;
       this.host = "localhost";
       this.port = "3306";
-      this.database = "notedb";
-      this.username = "";
+      this.database = "note";
+      this.username = "root";
       this.password = "";
-      this.firebaseUrl = "";
-      this.firebaseApiKey = "";
       this.autoConnect = true;
    }
 
@@ -67,14 +62,6 @@ public class DatabaseConfig {
       return password;
    }
 
-   public String getFirebaseUrl() {
-      return firebaseUrl;
-   }
-
-   public String getFirebaseApiKey() {
-      return firebaseApiKey;
-   }
-
    public boolean isAutoConnect() {
       return autoConnect;
    }
@@ -92,23 +79,15 @@ public class DatabaseConfig {
    }
 
    public void setDatabase(String database) {
-      this.database = database != null ? database : "notedb";
+      this.database = database != null ? database : "note";
    }
 
    public void setUsername(String username) {
-      this.username = username != null ? username : "";
+      this.username = username != null ? username : "root";
    }
 
    public void setPassword(String password) {
       this.password = password != null ? password : "";
-   }
-
-   public void setFirebaseUrl(String firebaseUrl) {
-      this.firebaseUrl = firebaseUrl != null ? firebaseUrl : "";
-   }
-
-   public void setFirebaseApiKey(String firebaseApiKey) {
-      this.firebaseApiKey = firebaseApiKey != null ? firebaseApiKey : "";
    }
 
    public void setAutoConnect(boolean autoConnect) {
@@ -126,11 +105,6 @@ public class DatabaseConfig {
             username != null && !username.trim().isEmpty();
    }
 
-   public boolean isValidFirebaseConfig() {
-      return firebaseUrl != null && !firebaseUrl.trim().isEmpty() &&
-            firebaseApiKey != null && !firebaseApiKey.trim().isEmpty();
-   }
-
    public void saveToFile() {
       Properties props = new Properties();
       props.setProperty("type", type.name());
@@ -139,8 +113,6 @@ public class DatabaseConfig {
       props.setProperty("database", database);
       props.setProperty("username", username);
       props.setProperty("password", password);
-      props.setProperty("firebaseUrl", firebaseUrl);
-      props.setProperty("firebaseApiKey", firebaseApiKey);
       props.setProperty("autoConnect", String.valueOf(autoConnect));
 
       try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
@@ -166,13 +138,13 @@ public class DatabaseConfig {
          this.host = props.getProperty("host", "localhost");
          this.port = props.getProperty("port", "3306");
          this.database = props.getProperty("database", "note");
-         this.username = props.getProperty("username", "");
+         this.username = props.getProperty("username", "root");
          this.password = props.getProperty("password", "");
-         this.firebaseUrl = props.getProperty("firebaseUrl", "");
-         this.firebaseApiKey = props.getProperty("firebaseApiKey", "");
          this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
 
          System.out.println("Configuration loaded from " + CONFIG_FILE);
+         System.out.println("Database Type: " + this.type);
+         System.out.println("Auto Connect: " + this.autoConnect);
       } catch (FileNotFoundException e) {
          System.out.println("Configuration file not found. Using default settings.");
       } catch (IOException e) {

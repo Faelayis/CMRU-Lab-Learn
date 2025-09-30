@@ -13,6 +13,7 @@ bun.lock
 # script update content
 */LIST.md
 */*/**/*.md
+!COM-3302/Project/OOP_Database/README.md
 
 # PHP Desktop
 COM-2305/phpdesktop/*

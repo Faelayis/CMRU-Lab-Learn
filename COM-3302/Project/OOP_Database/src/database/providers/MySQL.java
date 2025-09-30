@@ -83,7 +83,6 @@ public class MySQL implements DatabaseInterface {
       if (!isConnected())
          return false;
 
-      // If note has no ID (new note), insert and get generated ID
       if (note.getId() == 0) {
          String sql = "INSERT INTO notes (title, content, category, priority, created_date, modified_date) " +
                "VALUES (?, ?, ?, ?, ?, ?)";
@@ -99,7 +98,6 @@ public class MySQL implements DatabaseInterface {
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-               // Get the generated ID and set it in the note
                try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                   if (generatedKeys.next()) {
                      note.setId(generatedKeys.getInt(1));
@@ -114,7 +112,6 @@ public class MySQL implements DatabaseInterface {
             return false;
          }
       } else {
-         // Update existing note
          String sql = "UPDATE notes SET title=?, content=?, category=?, priority=?, modified_date=? WHERE id=?";
 
          try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -224,12 +221,10 @@ public class MySQL implements DatabaseInterface {
          return false;
 
       try (Statement stmt = connection.createStatement()) {
-         // Method 1: Drop and recreate table (more thorough)
          String dropSql = "DROP TABLE IF EXISTS notes";
          stmt.executeUpdate(dropSql);
          System.out.println("MySQL notes table dropped");
 
-         // Recreate the table (this will reset AUTO_INCREMENT to 1)
          createTablesIfNotExists();
          System.out.println("MySQL notes table recreated - ID counter reset to 1");
 
@@ -314,7 +309,6 @@ public class MySQL implements DatabaseInterface {
             priority = Note.Priority.MEDIUM;
          }
 
-         // Use the constructor that sets ID and timestamps from database
          Note note = new Note(id, title, content, category, priority,
                createdTimestamp.toLocalDateTime(),
                modifiedTimestamp.toLocalDateTime());

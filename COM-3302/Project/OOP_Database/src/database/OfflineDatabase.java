@@ -68,7 +68,6 @@ public class OfflineDatabase implements DatabaseInterface {
          return false;
 
       try {
-         // Generate ID for new notes (ID = 0)
          if (note.getId() == 0) {
             note.setId(Note.generateLocalId());
             System.out.println("Generated new ID for offline note: " + note.getId());
@@ -124,7 +123,7 @@ public class OfflineDatabase implements DatabaseInterface {
          return false;
 
       notes.clear();
-      Note.resetIdCounter(); // Reset ID counter to start from 1
+      Note.resetIdCounter();
       saveNotesToFile();
       return true;
    }
@@ -170,7 +169,7 @@ public class OfflineDatabase implements DatabaseInterface {
 
    private void loadNotesFromFile() {
       notes.clear();
-      Note.resetIdCounter(); // Reset ID counter before loading
+      Note.resetIdCounter();
       File file = new File(DATA_FILE);
 
       if (!file.exists()) {
@@ -217,11 +216,8 @@ public class OfflineDatabase implements DatabaseInterface {
          String content = unescapeDelimiters(parts[2]);
          String category = unescapeDelimiters(parts[3]);
          Note.Priority priority = Note.Priority.valueOf(parts[4]);
-
          Note note = new Note(title, content, category, priority);
-         note.setId(id); // Set the ID from file
-
-         // Update the next ID counter to ensure new notes get higher IDs
+         note.setId(id);
          Note.updateNextIdIfNeeded(id + 1);
 
          return note;

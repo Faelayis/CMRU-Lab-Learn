@@ -3,7 +3,6 @@ package database;
 import java.util.ArrayList;
 import java.util.List;
 
-import database.providers.Firebase;
 import database.providers.MySQL;
 import model.Note;
 import model.NoteManager;
@@ -40,8 +39,6 @@ public class DatabaseManager {
       switch (type) {
          case MYSQL:
             return new MySQL(config);
-         case FIREBASE:
-            return new Firebase(config);
          case OFFLINE:
          default:
             return new OfflineDatabase();
@@ -268,8 +265,6 @@ public class DatabaseManager {
       if (config.getType() == DatabaseConfig.DatabaseType.MYSQL) {
          stats.append("Host: ").append(config.getHost()).append(":").append(config.getPort()).append("\n");
          stats.append("Database: ").append(config.getDatabase()).append("\n");
-      } else if (config.getType() == DatabaseConfig.DatabaseType.FIREBASE) {
-         stats.append("Firebase URL: ").append(config.getFirebaseUrl()).append("\n");
       }
 
       return stats.toString();
