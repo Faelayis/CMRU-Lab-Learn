@@ -563,7 +563,7 @@ public class MainGUI extends JFrame {
 ```
 `SettingsGUI.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
-Update: 6 ต.ค. 2568 time 08:11<br>
+Update: 6 ต.ค. 2568 time 08:29<br>
 ```java
 package gui;
 
@@ -868,7 +868,6 @@ public class SettingsGUI extends JDialog {
       config.setDatabase(databaseField.getText().trim());
       config.setUsername(usernameField.getText().trim());
       config.setPassword(new String(passwordField.getPassword()));
-      config.setAutoConnect(true);
    }
 
    private boolean validateConfiguration() {
@@ -918,7 +917,6 @@ public class SettingsGUI extends JDialog {
       to.setDatabase(from.getDatabase());
       to.setUsername(from.getUsername());
       to.setPassword(from.getPassword());
-      to.setAutoConnect(from.isAutoConnect());
    }
 }
 ```
