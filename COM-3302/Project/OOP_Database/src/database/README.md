@@ -1,7 +1,42 @@
+`Database.java`<br>
+Create: 1 ต.ค. 2568 time 03:49<br>
+Update: 6 ต.ค. 2568 time 08:11<br>
+```java
+package database;
+
+import java.util.List;
+
+import core.Note;
+
+public interface Database {
+   boolean connect();
+
+   void disconnect();
+
+   boolean isConnected();
+
+   boolean testConnection();
+
+   boolean saveNote(Note note);
+
+   List<Note> loadAllNotes();
+
+   boolean updateNote(Note note);
+
+   boolean deleteNote(int id);
+
+   List<Note> searchNotes(String searchTerm);
+
+   boolean clearAllNotes();
+
+   String getDatabaseType();
+
+   String getConnectionStatus();
+}
+```
 `DatabaseConfig.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
-Last edited: Time 05:33<br>
-
+Update: 6 ต.ค. 2568 time 08:11<br>
 ```java
 package database;
 
@@ -122,9 +157,7 @@ public class DatabaseConfig {
 
       try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
          props.store(fos, "Database Configuration");
-         System.out.println("Configuration saved to " + CONFIG_FILE);
       } catch (IOException e) {
-         System.err.println("Error saving configuration: " + e.getMessage());
       }
    }
 
@@ -147,13 +180,8 @@ public class DatabaseConfig {
          this.password = props.getProperty("password", "");
          this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
 
-         System.out.println("Configuration loaded from " + CONFIG_FILE);
-         System.out.println("Database Type: " + this.type);
-         System.out.println("Auto Connect: " + this.autoConnect);
       } catch (FileNotFoundException e) {
-         System.out.println("Configuration file not found. Using default settings.");
       } catch (IOException e) {
-         System.err.println("Error loading configuration: " + e.getMessage());
       }
    }
 
@@ -169,56 +197,21 @@ public class DatabaseConfig {
    }
 }
 ```
-`DatabaseInterface.java`<br>
-Create: 1 ต.ค. 2568 time 03:49<br>
-```java
-package database;
-
-import java.util.List;
-import model.Note;
-
-public interface DatabaseInterface {
-   boolean connect();
-
-   void disconnect();
-
-   boolean isConnected();
-
-   boolean testConnection();
-
-   boolean saveNote(Note note);
-
-   List<Note> loadAllNotes();
-
-   boolean updateNote(Note note);
-
-   boolean deleteNote(int id);
-
-   List<Note> searchNotes(String searchTerm);
-
-   boolean clearAllNotes();
-
-   String getDatabaseType();
-
-   String getConnectionStatus();
-}
-```
 `DatabaseManager.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
-Last edited: Time 05:33<br>
-
+Update: 6 ต.ค. 2568 time 08:11<br>
 ```java
 package database;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import core.Note;
+import core.NoteManager;
 import database.providers.MySQL;
-import model.Note;
-import model.NoteManager;
 
 public class DatabaseManager {
-   private DatabaseInterface database;
+   private Database database;
    private DatabaseConfig config;
    private NoteManager noteManager;
 
@@ -245,7 +238,7 @@ public class DatabaseManager {
       }
    }
 
-   private DatabaseInterface createDatabaseInstance(DatabaseConfig.DatabaseType type) {
+   private Database createDatabaseInstance(DatabaseConfig.DatabaseType type) {
       switch (type) {
          case MYSQL:
             return new MySQL(config);
@@ -291,19 +284,12 @@ public class DatabaseManager {
          return;
       }
 
-      try {
-         List<Note> dbNotes = database.loadAllNotes();
+      List<Note> dbNotes = database.loadAllNotes();
 
-         noteManager.clearAllNotes(false);
+      noteManager.clearAllNotes(false);
 
-         for (Note note : dbNotes) {
-            noteManager.addNote(note, false);
-         }
-
-         System.out.println("Synced " + dbNotes.size() + " notes from database");
-
-      } catch (Exception e) {
-         System.err.println("Error syncing notes from database: " + e.getMessage());
+      for (Note note : dbNotes) {
+         noteManager.addNote(note, false);
       }
    }
 
@@ -312,25 +298,17 @@ public class DatabaseManager {
          return false;
       }
 
-      try {
-         List<Note> notes = noteManager.getAllNotes();
+      List<Note> notes = noteManager.getAllNotes();
 
-         database.clearAllNotes();
+      database.clearAllNotes();
 
-         for (Note note : notes) {
-            if (!database.saveNote(note)) {
-               System.err.println("Failed to save note: " + note.getTitle());
-               return false;
-            }
+      for (Note note : notes) {
+         if (!database.saveNote(note)) {
+            return false;
          }
-
-         System.out.println("Synced " + notes.size() + " notes to database");
-         return true;
-
-      } catch (Exception e) {
-         System.err.println("Error syncing notes to database: " + e.getMessage());
-         return false;
       }
+
+      return true;
    }
 
    public boolean saveNoteToDatabase(Note note) {
@@ -375,7 +353,7 @@ public class DatabaseManager {
       initializeDatabase();
    }
 
-   public DatabaseInterface getCurrentDatabase() {
+   public Database getCurrentDatabase() {
       return database;
    }
 
@@ -397,114 +375,84 @@ public class DatabaseManager {
       return database != null && database.isConnected();
    }
 
-   public void enableAutoSave(boolean enable) {
-      config.setAutoConnect(enable);
-      config.saveToFile();
-   }
-
    public boolean backupNotesToFile() {
       if (noteManager == null) {
-         System.err.println("Cannot backup: noteManager is null");
          return false;
       }
 
-      try {
-         OfflineDatabase backupDb = new OfflineDatabase();
-         if (backupDb.connect()) {
-            List<Note> notes = noteManager.getAllNotes();
+      OfflineDatabase backupDb = new OfflineDatabase();
+      if (backupDb.connect()) {
+         List<Note> notes = noteManager.getAllNotes();
 
-            backupDb.clearAllNotes();
-            for (Note note : notes) {
-               backupDb.saveNote(note);
-            }
-
-            backupDb.disconnect();
-            System.out.println("Notes backed up successfully");
-            return true;
+         backupDb.clearAllNotes();
+         for (Note note : notes) {
+            backupDb.saveNote(note);
          }
-      } catch (Exception e) {
-         System.err.println("Error backing up notes: " + e.getMessage());
+
+         backupDb.disconnect();
+         return true;
       }
       return false;
    }
 
    public boolean restoreNotesFromFile() {
       if (noteManager == null) {
-         System.err.println("Cannot restore: noteManager is null");
          return false;
       }
 
-      try {
-         OfflineDatabase backupDb = new OfflineDatabase();
-         if (backupDb.connect()) {
-            List<Note> backupNotes = backupDb.loadAllNotes();
+      OfflineDatabase backupDb = new OfflineDatabase();
+      if (backupDb.connect()) {
+         List<Note> backupNotes = backupDb.loadAllNotes();
 
-            if (!backupNotes.isEmpty()) {
-               noteManager.clearAllNotes();
-               for (Note note : backupNotes) {
-                  noteManager.addNote(note);
-               }
+         if (!backupNotes.isEmpty()) {
+            noteManager.clearAllNotes();
+            for (Note note : backupNotes) {
+               noteManager.addNote(note);
+            }
 
-               if (isConnected()) {
-                  syncNotesToDatabase();
-               }
-
-               backupDb.disconnect();
-               System.out.println("Notes restored from backup");
-               return true;
+            if (isConnected()) {
+               syncNotesToDatabase();
             }
 
             backupDb.disconnect();
+            return true;
          }
-      } catch (Exception e) {
-         System.err.println("Error restoring notes: " + e.getMessage());
+
+         backupDb.disconnect();
       }
       return false;
    }
 
-   public String getDatabaseStatistics() {
-      if (database == null) {
-         return "No database configured";
-      }
-
-      StringBuilder stats = new StringBuilder();
-      stats.append("Database Type: ").append(getDatabaseType()).append("\n");
-      stats.append("Connection Status: ").append(getConnectionStatus()).append("\n");
-      stats.append("Configuration: ").append(config.getType().getDisplayName()).append("\n");
-
-      if (config.getType() == DatabaseConfig.DatabaseType.MYSQL) {
-         stats.append("Host: ").append(config.getHost()).append(":").append(config.getPort()).append("\n");
-         stats.append("Database: ").append(config.getDatabase()).append("\n");
-      }
-
-      return stats.toString();
-   }
 }
 ```
 `OfflineDatabase.java`<br>
 Create: 1 ต.ค. 2568 time 03:49<br>
-Last edited: Time 05:33<br>
-
+Update: 6 ต.ค. 2568 time 08:11<br>
 ```java
 package database;
 
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import model.Note;
-
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class OfflineDatabase implements DatabaseInterface {
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+import core.Note;
+
+import com.fasterxml.jackson.databind.node.ArrayNode;
+
+public class OfflineDatabase implements Database {
    private List<Note> notes;
-   private final String DATA_FILE = "notes_data.txt";
+   private final String DATA_FILE = "notes_data.json";
    private boolean connected;
+   private ObjectMapper objectMapper;
 
    public OfflineDatabase() {
       this.notes = new ArrayList<>();
       this.connected = false;
+      this.objectMapper = new ObjectMapper();
    }
 
    @Override
@@ -512,10 +460,8 @@ public class OfflineDatabase implements DatabaseInterface {
       try {
          loadNotesFromFile();
          connected = true;
-         System.out.println("Offline database connected successfully");
          return true;
       } catch (Exception e) {
-         System.err.println("Error connecting to offline database: " + e.getMessage());
          connected = false;
          return false;
       }
@@ -526,7 +472,6 @@ public class OfflineDatabase implements DatabaseInterface {
       if (connected) {
          saveNotesToFile();
          connected = false;
-         System.out.println("Offline database disconnected");
       }
    }
 
@@ -551,28 +496,22 @@ public class OfflineDatabase implements DatabaseInterface {
    }
 
    @Override
-   public boolean saveNote(Note note) {
+   public synchronized boolean saveNote(Note note) {
       if (!connected)
          return false;
 
-      try {
-         if (note.getId() == 0) {
-            note.setId(Note.generateLocalId());
-            System.out.println("Generated new ID for offline note: " + note.getId());
-         }
-
-         notes.removeIf(n -> n.getId() == note.getId());
-         notes.add(note);
-         saveNotesToFile();
-         return true;
-      } catch (Exception e) {
-         System.err.println("Error saving note: " + e.getMessage());
-         return false;
+      if (note.getId() == 0) {
+         note.setId(Note.generateLocalId());
       }
+
+      notes.removeIf(n -> n.getId() == note.getId());
+      notes.add(note);
+      saveNotesToFile();
+      return true;
    }
 
    @Override
-   public List<Note> loadAllNotes() {
+   public synchronized List<Note> loadAllNotes() {
       if (!connected)
          return new ArrayList<>();
       return new ArrayList<>(notes);
@@ -584,7 +523,7 @@ public class OfflineDatabase implements DatabaseInterface {
    }
 
    @Override
-   public boolean deleteNote(int id) {
+   public synchronized boolean deleteNote(int id) {
       if (!connected)
          return false;
 
@@ -596,7 +535,7 @@ public class OfflineDatabase implements DatabaseInterface {
    }
 
    @Override
-   public List<Note> searchNotes(String searchTerm) {
+   public synchronized List<Note> searchNotes(String searchTerm) {
       if (!connected)
          return new ArrayList<>();
 
@@ -606,7 +545,7 @@ public class OfflineDatabase implements DatabaseInterface {
    }
 
    @Override
-   public boolean clearAllNotes() {
+   public synchronized boolean clearAllNotes() {
       if (!connected)
          return false;
 
@@ -629,110 +568,68 @@ public class OfflineDatabase implements DatabaseInterface {
       return "Disconnected from offline storage";
    }
 
-   private void saveNotesToFile() {
-      try (PrintWriter writer = new PrintWriter(new FileWriter(DATA_FILE))) {
-         writer.println("# Note Management System - Offline Data");
-         writer.println("# Format: ID|Title|Content|Category|Priority|CreatedDate|ModifiedDate");
-         writer.println(
-               "# Generated: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-         writer.println();
+   private synchronized void saveNotesToFile() {
+      try {
+         ObjectNode rootNode = objectMapper.createObjectNode();
+         ArrayNode notesArray = objectMapper.createArrayNode();
+         List<Note> notesCopy = new ArrayList<>(notes);
 
-         for (Note note : notes) {
-            String line = String.format("%d|%s|%s|%s|%s|%s|%s",
-                  note.getId(),
-                  escapeDelimiters(note.getTitle()),
-                  escapeDelimiters(note.getContent()),
-                  escapeDelimiters(note.getCategory()),
-                  note.getPriority().name(),
-                  note.getCreatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
+         for (Note note : notesCopy) {
+            ObjectNode noteNode = objectMapper.createObjectNode();
+            noteNode.put("id", note.getId());
+            noteNode.put("title", note.getTitle());
+            noteNode.put("content", note.getContent());
+            noteNode.put("category", note.getCategory());
+            noteNode.put("priority", note.getPriority().name());
+            noteNode.put("createdDate",
+                  note.getCreatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+            noteNode.put("modifiedDate",
                   note.getModifiedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-            writer.println(line);
+            notesArray.add(noteNode);
          }
+         rootNode.set("notes", notesArray);
+         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(DATA_FILE), rootNode);
 
-         System.out.println("Notes saved to " + DATA_FILE + " (" + notes.size() + " notes)");
       } catch (IOException e) {
-         System.err.println("Error saving notes to file: " + e.getMessage());
       }
    }
 
-   private void loadNotesFromFile() {
+   private synchronized void loadNotesFromFile() {
       notes.clear();
       Note.resetIdCounter();
       File file = new File(DATA_FILE);
 
       if (!file.exists()) {
-         System.out.println("Data file not found. Starting with empty database.");
          return;
       }
 
-      try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-         String line;
-         int loadedCount = 0;
+      try {
+         ObjectNode rootNode = (ObjectNode) objectMapper.readTree(file);
 
-         while ((line = reader.readLine()) != null) {
-            line = line.trim();
-            if (line.isEmpty() || line.startsWith("#")) {
-               continue;
-            }
+         if (rootNode.has("notes")) {
+            ArrayNode notesArray = (ArrayNode) rootNode.get("notes");
 
-            try {
-               Note note = parseNoteFromLine(line);
-               if (note != null) {
-                  notes.add(note);
-                  loadedCount++;
-               }
-            } catch (Exception e) {
-               System.err.println("Error parsing line: " + line + " - " + e.getMessage());
+            for (int i = 0; i < notesArray.size(); i++) {
+               ObjectNode noteNode = (ObjectNode) notesArray.get(i);
+
+               int id = noteNode.get("id").asInt();
+               String title = noteNode.get("title").asText();
+               String content = noteNode.get("content").asText();
+               String category = noteNode.get("category").asText();
+               String priorityStr = noteNode.get("priority").asText();
+
+               Note.Priority priority = Note.Priority.valueOf(priorityStr);
+               Note note = new Note(title, content, category, priority);
+               note.setId(id);
+               Note.updateNextIdIfNeeded(id + 1);
+
+               notes.add(note);
             }
          }
 
-         System.out.println("Loaded " + loadedCount + " notes from " + DATA_FILE);
       } catch (IOException e) {
-         System.err.println("Error loading notes from file: " + e.getMessage());
       }
    }
 
-   private Note parseNoteFromLine(String line) {
-      String[] parts = line.split("\\|");
-      if (parts.length != 7) {
-         throw new IllegalArgumentException("Invalid line format");
-      }
-
-      try {
-         int id = Integer.parseInt(parts[0]);
-         String title = unescapeDelimiters(parts[1]);
-         String content = unescapeDelimiters(parts[2]);
-         String category = unescapeDelimiters(parts[3]);
-         Note.Priority priority = Note.Priority.valueOf(parts[4]);
-         Note note = new Note(title, content, category, priority);
-         note.setId(id);
-         Note.updateNextIdIfNeeded(id + 1);
-
-         return note;
-      } catch (Exception e) {
-         throw new IllegalArgumentException("Error parsing note data: " + e.getMessage());
-      }
-   }
-
-   private String escapeDelimiters(String text) {
-      if (text == null)
-         return "";
-      return text.replace("|", "&#124;").replace("\n", "\\n").replace("\r", "\\r");
-   }
-
-   private String unescapeDelimiters(String text) {
-      if (text == null)
-         return "";
-      return text.replace("&#124;", "|").replace("\\n", "\n").replace("\\r", "\r");
-   }
-
-   public String getFileInfo() {
-      File file = new File(DATA_FILE);
-      if (file.exists()) {
-         long size = file.length();
-         return String.format("File: %s (%.2f KB)", DATA_FILE, size / 1024.0);
-      }
-      return "File: " + DATA_FILE + " (not found)";
-   }
 }
 ```
