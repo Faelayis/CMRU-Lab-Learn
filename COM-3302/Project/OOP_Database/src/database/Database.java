@@ -1,9 +1,10 @@
 package database;
 
 import java.util.List;
-import model.Note;
 
-public interface DatabaseInterface {
+import core.Note;
+
+public interface Database {
    boolean connect();
 
    void disconnect();

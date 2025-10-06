@@ -1,16 +1,15 @@
 import javax.swing.SwingUtilities;
 
+import gui.MainGUI;
+
 public class App {
    public static void main(String[] args) {
-      System.out.println("Starting ...");
-
       SwingUtilities.invokeLater(() -> {
          try {
-            GUI gui = new GUI();
+            MainGUI gui = new MainGUI();
             gui.setVisible(true);
 
          } catch (Exception error) {
-            System.err.println("Error starting application: " + error.getMessage());
             error.printStackTrace();
          }
       });

@@ -3,11 +3,11 @@ package database.providers;
 import java.sql.*;
 import java.util.*;
 
+import core.Note;
+import database.Database;
 import database.DatabaseConfig;
-import database.DatabaseInterface;
-import model.Note;
 
-public class MySQL implements DatabaseInterface {
+public class MySQL implements Database {
    private Connection connection;
    private DatabaseConfig config;
    private boolean connected;
@@ -21,22 +21,20 @@ public class MySQL implements DatabaseInterface {
    public boolean connect() {
       try {
          Class.forName("com.mysql.cj.jdbc.Driver");
-
          String url = config.getMySQLConnectionString();
          connection = DriverManager.getConnection(url, config.getUsername(), config.getPassword());
 
          createTablesIfNotExists();
 
          connected = true;
-         System.out.println("MySQL database connected successfully");
          return true;
 
       } catch (ClassNotFoundException e) {
-         System.err.println("MySQL JDBC driver not found: " + e.getMessage());
+         e.printStackTrace();
          connected = false;
          return false;
       } catch (SQLException e) {
-         System.err.println("Error connecting to MySQL database: " + e.getMessage());
+         e.printStackTrace();
          connected = false;
          return false;
       }
@@ -47,11 +45,9 @@ public class MySQL implements DatabaseInterface {
       if (connection != null) {
          try {
             connection.close();
-            connected = false;
-            System.out.println("MySQL database disconnected");
          } catch (SQLException e) {
-            System.err.println("Error disconnecting from MySQL: " + e.getMessage());
          }
+         connected = false;
       }
    }
 
@@ -71,9 +67,11 @@ public class MySQL implements DatabaseInterface {
          String url = config.getMySQLConnectionString();
 
          try (Connection testConn = DriverManager.getConnection(url, config.getUsername(), config.getPassword())) {
-            return testConn != null && !testConn.isClosed();
+            boolean result = testConn != null && !testConn.isClosed();
+            return result;
          }
       } catch (Exception e) {
+         e.printStackTrace();
          return false;
       }
    }
@@ -101,14 +99,12 @@ public class MySQL implements DatabaseInterface {
                try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                   if (generatedKeys.next()) {
                      note.setId(generatedKeys.getInt(1));
-                     System.out.println("New note saved with database ID: " + note.getId());
                      return true;
                   }
                }
             }
 
          } catch (SQLException e) {
-            System.err.println("Error saving new note to MySQL: " + e.getMessage());
             return false;
          }
       } else {
@@ -126,7 +122,6 @@ public class MySQL implements DatabaseInterface {
             return rowsAffected > 0;
 
          } catch (SQLException e) {
-            System.err.println("Error updating note in MySQL: " + e.getMessage());
             return false;
          }
       }
@@ -153,7 +148,6 @@ public class MySQL implements DatabaseInterface {
          }
 
       } catch (SQLException e) {
-         System.err.println("Error loading notes from MySQL: " + e.getMessage());
       }
 
       return notes;
@@ -177,7 +171,6 @@ public class MySQL implements DatabaseInterface {
          return rowsAffected > 0;
 
       } catch (SQLException e) {
-         System.err.println("Error deleting note from MySQL: " + e.getMessage());
          return false;
       }
    }
@@ -209,7 +202,6 @@ public class MySQL implements DatabaseInterface {
          }
 
       } catch (SQLException e) {
-         System.err.println("Error searching notes in MySQL: " + e.getMessage());
       }
 
       return notes;
@@ -223,25 +215,10 @@ public class MySQL implements DatabaseInterface {
       try (Statement stmt = connection.createStatement()) {
          String dropSql = "DROP TABLE IF EXISTS notes";
          stmt.executeUpdate(dropSql);
-         System.out.println("MySQL notes table dropped");
-
          createTablesIfNotExists();
-         System.out.println("MySQL notes table recreated - ID counter reset to 1");
-
-         /*
-          * Alternative Method 2: Delete all records and reset AUTO_INCREMENT
-          * String deleteSql = "DELETE FROM notes";
-          * stmt.executeUpdate(deleteSql);
-          * 
-          * String resetSql = "ALTER TABLE notes AUTO_INCREMENT = 1";
-          * stmt.executeUpdate(resetSql);
-          * System.out.println("All notes deleted and ID counter reset to 1");
-          */
 
          return true;
-
       } catch (SQLException e) {
-         System.err.println("Error clearing notes and resetting ID counter in MySQL: " + e.getMessage());
          return false;
       }
    }
@@ -288,7 +265,6 @@ public class MySQL implements DatabaseInterface {
 
       try (Statement stmt = connection.createStatement()) {
          stmt.executeUpdate(sql);
-         System.out.println("MySQL tables created/verified successfully");
       }
    }
 
@@ -316,24 +292,8 @@ public class MySQL implements DatabaseInterface {
          return note;
 
       } catch (SQLException e) {
-         System.err.println("Error creating note from ResultSet: " + e.getMessage());
          return null;
       }
    }
 
-   public String getDatabaseInfo() {
-      if (!isConnected())
-         return "Not connected";
-
-      try {
-         DatabaseMetaData metaData = connection.getMetaData();
-         return String.format("MySQL %s at %s:%s/%s",
-               metaData.getDatabaseProductVersion(),
-               config.getHost(),
-               config.getPort(),
-               config.getDatabase());
-      } catch (SQLException e) {
-         return "Connected (info unavailable)";
-      }
-   }
 }

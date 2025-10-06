@@ -154,8 +154,6 @@ public class SettingsGUI extends JDialog {
       topPanel.add(databaseTypeCombo);
 
       JPanel centerPanel = new JPanel(new CardLayout());
-
-      // สร้าง panel สำหรับ offline mode ที่เรียบง่าย
       JPanel offlinePanel = new JPanel(new BorderLayout());
       JLabel offlineLabel = new JLabel("", JLabel.CENTER);
       offlinePanel.add(offlineLabel, BorderLayout.CENTER);
@@ -293,7 +291,6 @@ public class SettingsGUI extends JDialog {
       }
 
       databaseManager.updateDatabaseConfig(config);
-
       dispose();
    }
 

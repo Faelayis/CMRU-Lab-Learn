@@ -1,8 +1,10 @@
-package model;
+
+package core;
 
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
 import database.DatabaseManager;
 
 public class NoteManager {
@@ -39,20 +41,10 @@ public class NoteManager {
       Note note = new Note(title, content, category, priority);
 
       if (isDatabaseConnected() && isAutoSyncEnabled() && databaseManager != null) {
-         try {
-            if (databaseManager.saveNoteToDatabase(note)) {
-               System.out.println("Note saved to database with ID: " + note.getId());
-               addNote(note, false);
-            } else {
-               System.err.println("Failed to save note to database");
-               note.setId(Note.generateLocalId());
-               addNote(note, false);
-            }
-         } catch (Exception e) {
-            System.err.println("Error saving note to database: " + e.getMessage());
+         if (!databaseManager.saveNoteToDatabase(note)) {
             note.setId(Note.generateLocalId());
-            addNote(note, false);
          }
+         addNote(note, false);
       } else {
          note.setId(Note.generateLocalId());
          addNote(note, true);
@@ -130,12 +122,6 @@ public class NoteManager {
             .collect(Collectors.toList());
    }
 
-   public List<Note> getAllNotesSortedByPriority() {
-      return notes.stream()
-            .sorted((n1, n2) -> Integer.compare(n2.getPriority().getLevel(), n1.getPriority().getLevel()))
-            .collect(Collectors.toList());
-   }
-
    public Set<String> getAllCategories() {
       return notes.stream()
             .map(Note::getCategory)
@@ -165,15 +151,7 @@ public class NoteManager {
 
       if (triggerAutoSync && isAutoSyncEnabled() && databaseManager != null && isDatabaseConnected()) {
          Thread syncThread = new Thread(() -> {
-            try {
-               if (databaseManager.getCurrentDatabase().clearAllNotes()) {
-                  System.out.println("Auto-cleared all notes from database");
-               } else {
-                  System.err.println("Failed to auto-clear notes from database");
-               }
-            } catch (Exception e) {
-               System.err.println("Auto-sync clear error: " + e.getMessage());
-            }
+            databaseManager.getCurrentDatabase().clearAllNotes();
          });
          syncThread.setDaemon(true);
          syncThread.start();
@@ -234,26 +212,14 @@ public class NoteManager {
       }
 
       Thread syncThread = new Thread(() -> {
-         try {
-            switch (operation) {
-               case "ADD":
-               case "UPDATE":
-                  if (databaseManager.saveNoteToDatabase(note)) {
-                     System.out.println("Auto-synced note to database: " + note.getTitle());
-                  } else {
-                     System.err.println("Failed to auto-sync note: " + note.getTitle());
-                  }
-                  break;
-               case "DELETE":
-                  if (databaseManager.deleteNoteFromDatabase(note.getId())) {
-                     System.out.println("Auto-deleted note from database: " + note.getTitle());
-                  } else {
-                     System.err.println("Failed to auto-delete note: " + note.getTitle());
-                  }
-                  break;
-            }
-         } catch (Exception e) {
-            System.err.println("Auto-sync error for note " + note.getTitle() + ": " + e.getMessage());
+         switch (operation) {
+            case "ADD":
+            case "UPDATE":
+               databaseManager.saveNoteToDatabase(note);
+               break;
+            case "DELETE":
+               databaseManager.deleteNoteFromDatabase(note.getId());
+               break;
          }
       });
 
@@ -267,15 +233,7 @@ public class NoteManager {
       }
 
       Thread syncThread = new Thread(() -> {
-         try {
-            if (databaseManager.syncNotesToDatabase()) {
-               System.out.println("Auto-synced all notes to database");
-            } else {
-               System.err.println("Failed to auto-sync all notes to database");
-            }
-         } catch (Exception e) {
-            System.err.println("Auto-sync error: " + e.getMessage());
-         }
+         databaseManager.syncNotesToDatabase();
       });
 
       syncThread.setDaemon(true);

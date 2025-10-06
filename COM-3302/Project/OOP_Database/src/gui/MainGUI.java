@@ -1,14 +1,18 @@
+package gui;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+
+import core.Note;
+import core.NoteManager;
+
 import java.awt.*;
 import java.util.List;
-import model.Note;
-import model.NoteManager;
 
-public class GUI extends JFrame {
+public class MainGUI extends JFrame {
    private NoteManager noteManager;
    private JTable noteTable;
    private DefaultTableModel tableModel;
@@ -21,18 +25,14 @@ public class GUI extends JFrame {
 
    private JLabel statusLabel;
 
-   public GUI() {
+   public MainGUI() {
       this.noteManager = new NoteManager();
       initializeGUI();
       setupEventHandlers();
 
       SwingUtilities.invokeLater(() -> {
-         String dbStatus = noteManager.getDatabaseStatus();
-         updateStatus(dbStatus);
-
          if (noteManager.isDatabaseConnected()) {
             refreshTable();
-            System.out.println("Initial table refresh after database sync completed");
          }
       });
    }
@@ -54,8 +54,6 @@ public class GUI extends JFrame {
 
       mainPanel.add(splitPane, BorderLayout.CENTER);
 
-      mainPanel.add(createStatusPanel(), BorderLayout.SOUTH);
-
       add(mainPanel);
 
       setSize(1000, 700);
@@ -73,7 +71,6 @@ public class GUI extends JFrame {
       exitItem.addActionListener(_ -> System.exit(0));
 
       fileMenu.add(newItem);
-      fileMenu.addSeparator();
       fileMenu.addSeparator();
       fileMenu.add(exitItem);
 
@@ -154,11 +151,11 @@ public class GUI extends JFrame {
       sorter = new TableRowSorter<>(tableModel);
       noteTable.setRowSorter(sorter);
 
-      noteTable.getColumnModel().getColumn(0).setPreferredWidth(50); // ID
-      noteTable.getColumnModel().getColumn(1).setPreferredWidth(200); // Title
-      noteTable.getColumnModel().getColumn(2).setPreferredWidth(100); // Category
-      noteTable.getColumnModel().getColumn(3).setPreferredWidth(80); // Priority
-      noteTable.getColumnModel().getColumn(4).setPreferredWidth(120); // Date
+      noteTable.getColumnModel().getColumn(0).setPreferredWidth(50);
+      noteTable.getColumnModel().getColumn(1).setPreferredWidth(200);
+      noteTable.getColumnModel().getColumn(2).setPreferredWidth(100);
+      noteTable.getColumnModel().getColumn(3).setPreferredWidth(80);
+      noteTable.getColumnModel().getColumn(4).setPreferredWidth(120);
 
       JScrollPane scrollPane = new JScrollPane(noteTable);
       panel.add(scrollPane, BorderLayout.CENTER);
@@ -229,13 +226,13 @@ public class GUI extends JFrame {
       JPanel buttonsPanel = new JPanel(new FlowLayout());
       JButton saveButton = new JButton("Save");
       JButton updateButton = new JButton("Update");
-      JButton clearButton = new JButton("Clear Form");
       JButton deleteButton = new JButton("Delete");
+      JButton clearButton = new JButton("Clear Form");
 
       buttonsPanel.add(saveButton);
       buttonsPanel.add(updateButton);
-      buttonsPanel.add(clearButton);
       buttonsPanel.add(deleteButton);
+      buttonsPanel.add(clearButton);
 
       panel.add(buttonsPanel, BorderLayout.SOUTH);
 
@@ -244,13 +241,6 @@ public class GUI extends JFrame {
       clearButton.addActionListener(_ -> clearForm());
       deleteButton.addActionListener(_ -> deleteSelectedNote());
 
-      return panel;
-   }
-
-   private JPanel createStatusPanel() {
-      JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-      statusLabel = new JLabel("Ready");
-      panel.add(statusLabel);
       return panel;
    }
 
@@ -284,86 +274,61 @@ public class GUI extends JFrame {
 
       if (searchTerm.isEmpty()) {
          refreshTable();
-         updateStatus("Showing all notes");
          return;
       }
 
       List<Note> results = noteManager.searchNotes(searchTerm);
       updateTable(results);
-
-      if (results.isEmpty()) {
-         updateStatus("No notes found for '" + searchTerm + "' in title, content, category, priority, or date");
-      } else {
-         updateStatus("Found " + results.size() + " note(s) matching '" + searchTerm + "' in all fields");
-      }
    }
 
    private void saveNote() {
-      try {
-         String title = titleField.getText().trim();
-         if (title.isEmpty()) {
-            showError("Please enter note title");
-            return;
-         }
-
-         String content = contentArea.getText();
-         String category = categoryField.getText().trim();
-         if (category.isEmpty())
-            category = "General";
-
-         Note.Priority priority = (Note.Priority) priorityComboBox.getSelectedItem();
-
-         Note note = noteManager.addNote(title, content, category, priority);
-         refreshTable();
-         clearForm();
-         updateStatus("Note ID: " + note.getId() + " saved successfully");
-
-      } catch (Exception e) {
-         showError("Error occurred: " + e.getMessage());
+      String title = titleField.getText().trim();
+      if (title.isEmpty()) {
+         return;
       }
+
+      String content = contentArea.getText();
+      String category = categoryField.getText().trim();
+      if (category.isEmpty())
+         category = "General";
+
+      Note.Priority priority = (Note.Priority) priorityComboBox.getSelectedItem();
+
+      noteManager.addNote(title, content, category, priority);
+      refreshTable();
+      clearForm();
    }
 
    private void updateNote() {
       int selectedRow = noteTable.getSelectedRow();
       if (selectedRow == -1) {
-         showError("Please select a note to update");
          return;
       }
 
-      try {
-         int modelRow = noteTable.convertRowIndexToModel(selectedRow);
-         int noteId = (Integer) tableModel.getValueAt(modelRow, 0);
+      int modelRow = noteTable.convertRowIndexToModel(selectedRow);
+      int noteId = (Integer) tableModel.getValueAt(modelRow, 0);
 
-         String title = titleField.getText().trim();
-         if (title.isEmpty()) {
-            showError("Please enter note title");
-            return;
-         }
+      String title = titleField.getText().trim();
+      if (title.isEmpty()) {
+         return;
+      }
 
-         String content = contentArea.getText();
-         String category = categoryField.getText().trim();
-         if (category.isEmpty())
-            category = "General";
+      String content = contentArea.getText();
+      String category = categoryField.getText().trim();
+      if (category.isEmpty())
+         category = "General";
 
-         Note.Priority priority = (Note.Priority) priorityComboBox.getSelectedItem();
+      Note.Priority priority = (Note.Priority) priorityComboBox.getSelectedItem();
 
-         boolean success = noteManager.updateNote(noteId, title, content, category, priority);
-         if (success) {
-            refreshTable();
-            updateStatus("Note ID: " + noteId + " updated successfully");
-         } else {
-            showError("Unable to update note");
-         }
-
-      } catch (Exception e) {
-         showError("Error occurred: " + e.getMessage());
+      boolean success = noteManager.updateNote(noteId, title, content, category, priority);
+      if (success) {
+         refreshTable();
       }
    }
 
    private void deleteSelectedNote() {
       int selectedRow = noteTable.getSelectedRow();
       if (selectedRow == -1) {
-         showError("Please select a note to delete");
          return;
       }
 
@@ -374,21 +339,13 @@ public class GUI extends JFrame {
             JOptionPane.YES_NO_OPTION);
 
       if (confirm == JOptionPane.YES_OPTION) {
-         try {
-            int modelRow = noteTable.convertRowIndexToModel(selectedRow);
-            int noteId = (Integer) tableModel.getValueAt(modelRow, 0);
+         int modelRow = noteTable.convertRowIndexToModel(selectedRow);
+         int noteId = (Integer) tableModel.getValueAt(modelRow, 0);
 
-            boolean success = noteManager.removeNote(noteId);
-            if (success) {
-               refreshTable();
-               clearForm();
-               updateStatus("Note ID: " + noteId + " deleted successfully");
-            } else {
-               showError("Unable to delete note");
-            }
-
-         } catch (Exception e) {
-            showError("Error occurred: " + e.getMessage());
+         boolean success = noteManager.removeNote(noteId);
+         if (success) {
+            refreshTable();
+            clearForm();
          }
       }
    }
@@ -409,7 +366,6 @@ public class GUI extends JFrame {
          noteManager.clearAllNotes();
          refreshTable();
          clearForm();
-         updateStatus("All notes deleted successfully");
       }
    }
 
@@ -439,7 +395,6 @@ public class GUI extends JFrame {
 
    private void refreshTable() {
       updateTable(noteManager.getAllNotesSorted());
-      updateStatus("Loaded all " + noteManager.getTotalNotes() + " notes");
    }
 
    private void updateTable(List<Note> notes) {
@@ -460,7 +415,6 @@ public class GUI extends JFrame {
    private void showStatistics() {
       StringBuilder stats = new StringBuilder();
       stats.append("Total Notes: ").append(noteManager.getTotalNotes()).append("\n\n");
-
       stats.append("Notes by Category:\n");
       for (String category : noteManager.getAllCategories()) {
          stats.append("- ").append(category).append(": ")
@@ -475,20 +429,12 @@ public class GUI extends JFrame {
       showInfo(stats.toString());
    }
 
-   private void updateStatus(String message) {
-      statusLabel.setText(message);
-   }
-
-   private void showError(String message) {
-      JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
-   }
-
    private void showInfo(String message) {
       JOptionPane.showMessageDialog(this, message, "Information", JOptionPane.INFORMATION_MESSAGE);
    }
 
    private void connectToDatabase() {
-      updateStatus("Connecting to database...");
+      statusLabel.setText("Connecting to database...");
 
       SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
          @Override
@@ -501,15 +447,30 @@ public class GUI extends JFrame {
             try {
                boolean success = get();
                if (success) {
+                  statusLabel.setText("Connected to database successfully");
+                  JOptionPane.showMessageDialog(MainGUI.this,
+                        "Successfully connected to MySQL database!",
+                        "Connection Success",
+                        JOptionPane.INFORMATION_MESSAGE);
                   refreshTable();
-                  updateStatus(noteManager.getDatabaseStatus());
                } else {
-                  showError("Failed to connect to database. Check your settings.");
-                  updateStatus("Database connection failed");
+                  statusLabel.setText("Failed to connect to database");
+                  JOptionPane.showMessageDialog(MainGUI.this,
+                        "Failed to connect to MySQL database.\n" +
+                              "Please check:\n" +
+                              "1. MySQL server is running\n" +
+                              "2. Database credentials are correct\n" +
+                              "3. Database 'note' exists\n" +
+                              "4. Network connectivity",
+                        "Connection Failed",
+                        JOptionPane.ERROR_MESSAGE);
                }
             } catch (Exception e) {
-               showError("Database connection error: " + e.getMessage());
-               updateStatus("Database connection error");
+               statusLabel.setText("Connection error occurred");
+               JOptionPane.showMessageDialog(MainGUI.this,
+                     "Connection error: " + e.getMessage(),
+                     "Error",
+                     JOptionPane.ERROR_MESSAGE);
             }
          }
       };
@@ -519,32 +480,13 @@ public class GUI extends JFrame {
 
    private void disconnectFromDatabase() {
       noteManager.disconnectFromDatabase();
-      updateStatus("Disconnected from database");
    }
 
    private void backupNotesToFile() {
-      updateStatus("Backing up notes to file...");
-
       SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
          @Override
          protected Boolean doInBackground() throws Exception {
             return noteManager.getDatabaseManager().backupNotesToFile();
-         }
-
-         @Override
-         protected void done() {
-            try {
-               boolean success = get();
-               if (success) {
-                  updateStatus("Notes backed up to file");
-               } else {
-                  showError("Failed to backup notes to file.");
-                  updateStatus("Backup failed");
-               }
-            } catch (Exception e) {
-               showError("Backup error: " + e.getMessage());
-               updateStatus("Backup error");
-            }
          }
       };
 
@@ -559,8 +501,6 @@ public class GUI extends JFrame {
             JOptionPane.WARNING_MESSAGE);
 
       if (result == JOptionPane.YES_OPTION) {
-         updateStatus("Restoring notes from file...");
-
          SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
             @Override
             protected Boolean doInBackground() throws Exception {
@@ -573,14 +513,8 @@ public class GUI extends JFrame {
                   boolean success = get();
                   if (success) {
                      refreshTable();
-                     updateStatus("Notes restored from file");
-                  } else {
-                     showError("Failed to restore notes from file.");
-                     updateStatus("Restore failed");
                   }
                } catch (Exception e) {
-                  showError("Restore error: " + e.getMessage());
-                  updateStatus("Restore error");
                }
             }
          };
@@ -597,12 +531,7 @@ public class GUI extends JFrame {
       settingsDialog.setVisible(true);
 
       SwingUtilities.invokeLater(() -> {
-         String dbStatus = noteManager.getDatabaseStatus();
-         updateStatus(dbStatus);
-
          if (noteManager.isDatabaseConnected()) {
-            updateStatus("Loading notes from database...");
-
             SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
                @Override
                protected Void doInBackground() throws Exception {
@@ -616,12 +545,7 @@ public class GUI extends JFrame {
                      get();
                      refreshTable();
 
-                     String dbStatus = noteManager.getDatabaseStatus();
-                     updateStatus(dbStatus);
-
                   } catch (Exception e) {
-                     showError("Error loading notes from database: " + e.getMessage());
-                     updateStatus("Error loading notes from database");
                   }
                }
             };

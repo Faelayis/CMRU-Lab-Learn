@@ -117,9 +117,7 @@ public class DatabaseConfig {
 
       try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
          props.store(fos, "Database Configuration");
-         System.out.println("Configuration saved to " + CONFIG_FILE);
       } catch (IOException e) {
-         System.err.println("Error saving configuration: " + e.getMessage());
       }
    }
 
@@ -142,13 +140,8 @@ public class DatabaseConfig {
          this.password = props.getProperty("password", "");
          this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
 
-         System.out.println("Configuration loaded from " + CONFIG_FILE);
-         System.out.println("Database Type: " + this.type);
-         System.out.println("Auto Connect: " + this.autoConnect);
       } catch (FileNotFoundException e) {
-         System.out.println("Configuration file not found. Using default settings.");
       } catch (IOException e) {
-         System.err.println("Error loading configuration: " + e.getMessage());
       }
    }
 

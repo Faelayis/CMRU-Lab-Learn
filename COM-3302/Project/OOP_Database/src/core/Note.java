@@ -1,4 +1,4 @@
-package model;
+package core;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -177,11 +177,6 @@ public class Note implements Comparable<Note> {
    public String toString() {
       return String.format("ID: %d | Title: %s | Category: %s | Priority: %s | Created: %s",
             id, title, category, priority, getFormattedCreatedDate());
-   }
-
-   public String getSummary() {
-      String contentPreview = content.length() > 50 ? content.substring(0, 50) + "..." : content;
-      return String.format("[%s] %s - %s", category, title, contentPreview);
    }
 
    @Override
