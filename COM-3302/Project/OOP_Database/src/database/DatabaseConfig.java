@@ -25,7 +25,6 @@ public class DatabaseConfig {
    private String database;
    private String username;
    private String password;
-   private boolean autoConnect;
    private static final String CONFIG_FILE = "database.properties";
 
    public DatabaseConfig() {
@@ -35,7 +34,6 @@ public class DatabaseConfig {
       this.database = "note";
       this.username = "root";
       this.password = "";
-      this.autoConnect = true;
    }
 
    public DatabaseType getType() {
@@ -62,10 +60,6 @@ public class DatabaseConfig {
       return password;
    }
 
-   public boolean isAutoConnect() {
-      return autoConnect;
-   }
-
    public void setType(DatabaseType type) {
       this.type = type;
    }
@@ -90,10 +84,6 @@ public class DatabaseConfig {
       this.password = password != null ? password : "";
    }
 
-   public void setAutoConnect(boolean autoConnect) {
-      this.autoConnect = autoConnect;
-   }
-
    public String getMySQLConnectionString() {
       return String.format("jdbc:mysql://%s:%s/%s", host, port, database);
    }
@@ -113,7 +103,6 @@ public class DatabaseConfig {
       props.setProperty("database", database);
       props.setProperty("username", username);
       props.setProperty("password", password);
-      props.setProperty("autoConnect", String.valueOf(autoConnect));
 
       try (FileOutputStream fos = new FileOutputStream(CONFIG_FILE)) {
          props.store(fos, "Database Configuration");
@@ -138,7 +127,6 @@ public class DatabaseConfig {
          this.database = props.getProperty("database", "note");
          this.username = props.getProperty("username", "root");
          this.password = props.getProperty("password", "");
-         this.autoConnect = Boolean.parseBoolean(props.getProperty("autoConnect", "false"));
 
       } catch (FileNotFoundException e) {
       } catch (IOException e) {
@@ -152,7 +140,7 @@ public class DatabaseConfig {
    @Override
    public String toString() {
       return String.format(
-            "DatabaseConfig{type=%s, host='%s', port='%s', database='%s', username='%s', autoConnect=%s}",
-            type, host, port, database, username, autoConnect);
+            "DatabaseConfig{type=%s, host='%s', port='%s', database='%s', username='%s'}",
+            type, host, port, database, username);
    }
 }

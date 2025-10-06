@@ -301,7 +301,6 @@ public class SettingsGUI extends JDialog {
       config.setDatabase(databaseField.getText().trim());
       config.setUsername(usernameField.getText().trim());
       config.setPassword(new String(passwordField.getPassword()));
-      config.setAutoConnect(true);
    }
 
    private boolean validateConfiguration() {
@@ -351,6 +350,5 @@ public class SettingsGUI extends JDialog {
       to.setDatabase(from.getDatabase());
       to.setUsername(from.getUsername());
       to.setPassword(from.getPassword());
-      to.setAutoConnect(from.isAutoConnect());
    }
 }

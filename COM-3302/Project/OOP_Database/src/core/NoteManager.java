@@ -30,7 +30,7 @@ public class NoteManager {
       boolean added = notes.add(note);
       if (added) {
          updateCategoryIndex(note);
-         if (triggerAutoSync && isAutoSyncEnabled() && databaseManager != null) {
+         if (triggerAutoSync && databaseManager != null) {
             autoSyncToDatabase(note, "ADD");
          }
       }
@@ -40,7 +40,7 @@ public class NoteManager {
    public Note addNote(String title, String content, String category, Note.Priority priority) {
       Note note = new Note(title, content, category, priority);
 
-      if (isDatabaseConnected() && isAutoSyncEnabled() && databaseManager != null) {
+      if (isDatabaseConnected() && databaseManager != null) {
          if (!databaseManager.saveNoteToDatabase(note)) {
             note.setId(Note.generateLocalId());
          }
@@ -149,7 +149,7 @@ public class NoteManager {
       notes.clear();
       categoryIndex.clear();
 
-      if (triggerAutoSync && isAutoSyncEnabled() && databaseManager != null && isDatabaseConnected()) {
+      if (triggerAutoSync && databaseManager != null && isDatabaseConnected()) {
          Thread syncThread = new Thread(() -> {
             databaseManager.getCurrentDatabase().clearAllNotes();
          });
@@ -202,12 +202,8 @@ public class NoteManager {
       return databaseManager != null ? databaseManager.getConnectionStatus() : "Database not initialized";
    }
 
-   public boolean isAutoSyncEnabled() {
-      return true;
-   }
-
    private void autoSyncToDatabase(Note note, String operation) {
-      if (!isAutoSyncEnabled() || databaseManager == null || !isDatabaseConnected()) {
+      if (databaseManager == null || !isDatabaseConnected()) {
          return;
       }
 
@@ -228,7 +224,7 @@ public class NoteManager {
    }
 
    public void autoSyncAllToDatabase() {
-      if (!isAutoSyncEnabled() || databaseManager == null || !isDatabaseConnected()) {
+      if (databaseManager == null || !isDatabaseConnected()) {
          return;
       }
 

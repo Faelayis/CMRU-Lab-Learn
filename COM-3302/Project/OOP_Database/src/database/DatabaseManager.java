@@ -30,9 +30,7 @@ public class DatabaseManager {
 
       database = createDatabaseInstance(config.getType());
 
-      if (config.isAutoConnect()) {
-         connectToDatabase(noteManager != null);
-      }
+      connectToDatabase(noteManager != null);
    }
 
    private Database createDatabaseInstance(DatabaseConfig.DatabaseType type) {
