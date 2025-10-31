@@ -121,7 +121,8 @@
 			}
 		],
 		"ignorePatterns": [
-			"./COM-2305/phpdesktop"
+			"COM-2305/phpdesktop",
+			"COM-3705/server"
 		]
 	},
 	"dependencies": {
