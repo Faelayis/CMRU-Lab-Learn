@@ -14,28 +14,32 @@ import { readJsonFile } from "./utils/read.js";
 		}),
 		metedataList: MeteData[] = [];
 
-	for (const path of metedataPaths) {
-		const metedata = (await readJsonFile(path)) as MeteData;
+	const results = await Promise.all(
+		metedataPaths.map(async (path) => {
+			const metedata = (await readJsonFile(path)) as MeteData;
 
-		console.info("[Script]: Found " + path);
-		console.info(`[Script]: Config metedata.json`, metedata);
+			console.info("[Script]: Found " + path);
+			console.info(`[Script]: Config metedata.json`, metedata);
 
-		if (!metedata.preview?.enable) {
-			console.info(`[Script]: Preview is disabled`);
-			continue;
-		}
+			if (!metedata.preview?.enable) {
+				console.info(`[Script]: Preview is disabled`);
+				return null;
+			}
 
-		metedataList.push(metedata);
+			// if (metedata.complete) {
+			// 	const date = new Date(metedata.complete.split("-").reverse().join("-"));
+			// 	console.log(`[Script]: The course is complete ${date.toLocaleDateString("en-US", { timeZone: "Asia/Bangkok" })}`);
+			// } else {
+			// 	await Promise.all(Object.values(GeneratorType).map((type) => generateContent(path, type)));
+			// }
 
-		// if (metedata.complete) {
-		// 	const date = new Date(metedata.complete.split("-").reverse().join("-"));
-		// 	console.log(`[Script]: The course is complete ${date.toLocaleDateString("en-US", { timeZone: "Asia/Bangkok" })}`);
-		// } else {
-		// 	await Promise.all(Object.values(GeneratorType).map((type) => generateContent(path, type)));
-		// }
+			await Promise.all(Object.values(GeneratorType).map((type) => generateContent(path, type)));
 
-		await Promise.all(Object.values(GeneratorType).map((type) => generateContent(path, type)));
-	}
+			return metedata;
+		}),
+	);
+
+	metedataList.push(...results.filter((metedata): metedata is MeteData => metedata !== null));
 
 	if (metedataList.length > 0) {
 		await updateReadme(metedataList);

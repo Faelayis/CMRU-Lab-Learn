@@ -42,8 +42,7 @@ export default async function generateContent(path: string, type: GeneratorType)
 			});
 
 		const sortedFiles = await sortFiles(files);
-
-		for (const file of sortedFiles) {
+		const fileProcessingPromises = sortedFiles.map(async (file) => {
 			const match = file.path.match(/\.([^.]+)$/);
 
 			if (match?.[1] && metedata.preview?.files?.includes(match[1] as never)) {
@@ -88,8 +87,17 @@ export default async function generateContent(path: string, type: GeneratorType)
 
 					fileContent += `\`\`\`${match[1]}\n${trimmedContent}\n\`\`\`\n`;
 
-					folderDataMap.get(folder)!.push(fileContent);
+					return { folder, fileContent };
 				}
+			}
+			return null;
+		});
+
+		const processedFiles = await Promise.all(fileProcessingPromises);
+
+		for (const result of processedFiles) {
+			if (result) {
+				folderDataMap.get(result.folder)!.push(result.fileContent);
 			}
 		}
 
@@ -105,11 +113,12 @@ export default async function generateContent(path: string, type: GeneratorType)
 				await fs.writeFile(`${path.split("/")[0]}/LIST.md`, listContent.sort().join("\n"));
 			}
 		} else if (type === GeneratorType.Readme) {
-			for (const [folder, markdownContent] of folderDataMap) {
-				await fs.writeFile(`${folder}/README.md`, await ImageHeader(markdownContent, folder)).then(() => {
+			await Promise.all(
+				[...folderDataMap.entries()].map(async ([folder, markdownContent]) => {
+					await fs.writeFile(`${folder}/README.md`, await ImageHeader(markdownContent, folder));
 					console.info(`[Script]: Generator ${`${folder}/README.md`} Done.`);
-				});
-			}
+				}),
+			);
 		}
 	} catch (error) {
 		console.error("[Script]: Error:", error);

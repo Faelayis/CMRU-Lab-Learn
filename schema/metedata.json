@@ -35,7 +35,8 @@
 				"ts",
 				"ino",
 				"java",
-				"dart"
+				"dart",
+				"flutter"
 			],
 			"type": "string"
 		},
