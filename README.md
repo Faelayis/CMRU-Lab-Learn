@@ -23,7 +23,7 @@ Chiang Mai Rajabhat University
 | [3302](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=2882) | Object-Oriented Programming | [⚙️](./COM-3302/README.md) | [📁](./COM-3302/) | [📑](./COM-3302/LIST.md) | <a href="#" target="_blank"><img width="20px" src="./resources/java.svg" alt="JAVA"/></a> <a href="#" target="_blank"><img width="20px" src="./resources/fprg.ico" alt="FPRG"/></a> |
 | [3604](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16370) | Data Mining | [⚙️](./COM-3604/README.md) | [📁](./COM-3604/) | [📑](./COM-3604/LIST.md) |  |
 | [3414](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16395) | Computer and Network Security | [⚙️](./COM-3414/README.md) | [📁](./COM-3414/) | [📑](./COM-3414/LIST.md) |  |
-| [4304](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16345) | Mobile Application Development | [⚙️](./COM-4304/README.md) | [📁](./COM-4304/) | [📑](./COM-4304/LIST.md) |  |
+| [4304](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16345) | Mobile Application Development | [⚙️](./COM-4304/README.md) | [📁](./COM-4304/) | [📑](./COM-4304/LIST.md) | <a href="#" target="_blank"><img width="20px" src="./resources/dart.svg" alt="Dart"/></a> <a href="#" target="_blank"><img width="20px" src="./resources/flutter.svg" alt="Flutter"/></a> |
 | [3218](https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16404) | Research Methodology in Computer Science | [⚙️](./COM-3218/README.md) | [📁](./COM-3218/) | [📑](./COM-3218/LIST.md) |  |
 
 <!-- course-end -->
