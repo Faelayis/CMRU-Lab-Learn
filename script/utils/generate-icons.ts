@@ -1,7 +1,8 @@
 import * as fs from "node:fs";
 import path from "node:path";
 
-import { siC, siHtml5, siJavascript, siMysql, siPhp, siPython, siTypescript, SimpleIcon, siArduino } from "simple-icons";
+import { siArduino, siC, siDart, siHtml5, siJavascript, SimpleIcon, siMysql, siPhp, siPython, siTypescript } from "simple-icons";
+
 import type { FileType } from "../types/filetype";
 
 const iconOutputDirectory = path.join(import.meta.dirname, "../../resources");
@@ -20,6 +21,7 @@ export async function generateIcons(files: string[]): Promise<string> {
 		js: siJavascript,
 		ts: siTypescript,
 		ino: siArduino,
+		dart: siDart,
 		fprg: "fprg.ico",
 		java: "java.svg",
 	};

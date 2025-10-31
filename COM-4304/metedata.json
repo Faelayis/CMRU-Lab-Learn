@@ -1,0 +1,16 @@
+{
+	"$schema": "../schema/metedata.json",
+	"complete": null,
+	"coursecode": "COM 4304-63",
+	"index": 10,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16345",
+	"name": "Mobile Application Development",
+	"preview": {
+		"enable": true,
+		"files": [],
+		"list": true
+	},
+	"time_formats": {
+		"folder": "yy-mm-dd"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"$schema": "../schema/metedata.json",
+	"complete": null,
+	"coursecode": "COM 3218-63",
+	"index": 11,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16404",
+	"name": "Research Methodology in Computer Science",
+	"preview": {
+		"enable": true,
+		"files": [],
+		"list": true
+	},
+	"time_formats": {
+		"folder": "yy-mm-dd"
+	}
+}

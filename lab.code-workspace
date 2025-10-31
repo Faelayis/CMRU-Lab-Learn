@@ -47,6 +47,22 @@
 		{
 			"name": "[Java] การเขียนโปรแกรมเชิงวัตถุ",
 			"path": "COM-3302"
+		},
+		{
+			"name": "[?] เหมืองข้อมูล",
+			"path": "COM-3604"
+		},
+		{
+			"name": "[?] ความมั่นคงปลอดภัยคอมพิวเตอร์และเครือข่าย",
+			"path": "COM-3414"
+		},
+		{
+			"name": "[Dart] การพัฒนาแอปพลิเคชันบนอุปกรณ์เคลื่อนที่",
+			"path": "COM-4304"
+		},
+		{
+			"name": "[?] ระเบียบวิธีวิจัยทางวิทยาการคอมพิวเตอร์",
+			"path": "COM-3218"
 		}
 	],
 	"extensions": {
@@ -77,12 +93,6 @@
 		"prettier.documentSelectors": [
 			"**/*.sql"
 		],
-		"editor.inlayHints.enabled": "on",
-		"java.project.sourcePaths": [
-			"Project/OOP_Database/src"
-		],
-		"java.project.referencedLibraries": [
-			"Project/OOP_Database/lib/*.jar"
-		]
+		"editor.inlayHints.enabled": "on"
 	}
 }

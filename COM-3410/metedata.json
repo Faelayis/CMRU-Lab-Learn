@@ -1,6 +1,6 @@
 {
 	"$schema": "../schema/metedata.json",
-	"complete": null,
+	"complete": "10-10-2568",
 	"coursecode": "COM 3410-63",
 	"index": 5,
 	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16405",

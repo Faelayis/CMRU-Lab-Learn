@@ -34,16 +34,14 @@
 				"js",
 				"ts",
 				"ino",
-				"java"
+				"java",
+				"dart"
 			],
 			"type": "string"
 		},
 		"MeteData": {
 			"additionalProperties": false,
 			"properties": {
-				"index": {
-					"type": "number"
-				},
 				"$schema": {
 					"type": "string"
 				},
@@ -53,6 +51,9 @@
 				},
 				"coursecode": {
 					"type": "string"
+				},
+				"index": {
+					"type": "number"
 				},
 				"info": {
 					"type": "string"
