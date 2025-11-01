@@ -6,7 +6,7 @@ Chiang Mai Rajabhat University
 > [!WARNING]
 > ***Sticking to using things outside the box and better***
 
-## Subject
+## Subject <a href="#"><img width="20px" src="./resources/evernight.gif"/></a>
 
 <!-- prettier-ignore-start -->
 <!-- course-start -->

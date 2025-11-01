@@ -104,3 +104,5 @@ sudo dnf install -y android-tools
 ### เสร็จสิ้น 🎉
 
 ![image](resources/image/12.png)
+
+<div align="center"><a href="#"><img src="../resources/evernight.gif"/></a></div>
