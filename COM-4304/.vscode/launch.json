@@ -1,0 +1,16 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Dart: Run Current File",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Dart: Watch with nodemon",
+			"skipFiles": [
+				"<node_internals>/**"
+			]
+		}
+	]
+}
