@@ -7,7 +7,9 @@
 	"name": "Research Methodology in Computer Science",
 	"preview": {
 		"enable": true,
-		"files": [],
+		"files": [
+			"spss"
+		],
 		"list": true
 	},
 	"time_formats": {

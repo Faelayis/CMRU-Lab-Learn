@@ -7,7 +7,9 @@
 	"name": "Data Mining",
 	"preview": {
 		"enable": true,
-		"files": [],
+		"files": [
+			"py"
+		],
 		"list": true
 	},
 	"time_formats": {

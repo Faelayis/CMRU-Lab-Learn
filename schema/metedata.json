@@ -36,7 +36,9 @@
 				"ino",
 				"java",
 				"dart",
-				"flutter"
+				"flutter",
+				"vmware",
+				"spss"
 			],
 			"type": "string"
 		},

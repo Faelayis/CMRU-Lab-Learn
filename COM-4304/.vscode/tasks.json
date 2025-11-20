@@ -5,10 +5,12 @@
 			"label": "Dart: Watch with nodemon",
 			"type": "shell",
 			"command": "bunx",
+			"isBackground": true,
 			"args": [
 				"nodemon",
+				"--quiet",
 				"--exec",
-				"cls && dart --no-serve-devtools",
+				"clear && dart --no-serve-devtools",
 				"--ext",
 				"dart",
 				"--watch",

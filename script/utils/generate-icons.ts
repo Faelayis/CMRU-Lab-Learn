@@ -1,7 +1,7 @@
 import * as fs from "node:fs";
 import path from "node:path";
 
-import { siArduino, siC, siDart, siFlutter, siHtml5, siJavascript, SimpleIcon, siMysql, siPhp, siPython, siTypescript } from "simple-icons";
+import { siArduino, siC, siDart, siFlutter, siHtml5, siJavascript, SimpleIcon, siMysql, siPhp, siPython, siTypescript, siVmware } from "simple-icons";
 
 import type { FileType } from "../types/filetype";
 
@@ -23,6 +23,8 @@ export async function generateIcons(files: string[]): Promise<string> {
 		ino: siArduino,
 		dart: siDart,
 		flutter: siFlutter,
+		vmware: siVmware,
+		spss: "spss.svg",
 		fprg: "fprg.ico",
 		java: "java.svg",
 	};

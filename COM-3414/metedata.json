@@ -7,7 +7,9 @@
 	"name": "Computer and Network Security",
 	"preview": {
 		"enable": true,
-		"files": [],
+		"files": [
+			"vmware"
+		],
 		"list": true
 	},
 	"time_formats": {
