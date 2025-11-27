@@ -248,7 +248,7 @@ void main() {
 
 ##### `main.dart`<br>
 Create: 20 พ.ย. 2568 time 15:41<br>
-Update: 27 พ.ย. 2568 time 15:48<br>
+Update: 27 พ.ย. 2568 time 15:56<br>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -298,17 +298,31 @@ class MyWidgetState extends State<MyWidget> {
                 width: (200 + counter * 10).toDouble(),
                 height: (200 + counter * 10).toDouble(),
               ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        counter--;
+                      });
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                  SizedBox(width: 20),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        counter++;
+                      });
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                ],
+              ),
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              counter++;
-            });
-          },
-          tooltip: 'Increment',
-          child: Icon(Icons.add),
         ),
       ),
     );
