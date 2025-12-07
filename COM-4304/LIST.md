@@ -332,10 +332,12 @@ class MyWidgetState extends State<MyWidget> {
 ```
 
 
-## simple2/lib
+## project/simple2/lib
 
 ##### `main.dart`<br>
 Create: 7 ธ.ค. 2568 time 21:48<br>
+Last edited: Time 21:52<br>
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:simple2/widget/dropdown.dart';
@@ -444,10 +446,12 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 
-## simple2/lib/widget
+## project/simple2/lib/widget
 
 ##### `dropdown.dart`<br>
 Create: 7 ธ.ค. 2568 time 21:48<br>
+Last edited: Time 21:52<br>
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -540,10 +544,12 @@ class _DropdownWidgetState extends State<DropdownWidget> {
 ```
 
 
-## simple2/test
+## project/simple2/test
 
 ##### `widget_test.dart`<br>
 Create: 7 ธ.ค. 2568 time 21:48<br>
+Last edited: Time 21:52<br>
+
 ```dart
 // This is a basic Flutter widget test.
 //
