@@ -1,4 +1,559 @@
 
+## Project/menu/lib
+
+##### `main.dart`<br>
+Create: 21 ธ.ค. 2568 time 13:24<br>
+Update: 8 ม.ค. 2569 time 13:22<br>
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MenuItem {
+  final String nameTH;
+  final String nameEN;
+  final double price;
+  final String imageUrl;
+
+  const MenuItem({
+    required this.nameTH,
+    required this.nameEN,
+    required this.price,
+    required this.imageUrl,
+  });
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(title: 'เมนูอาหาร', home: const MenuPage());
+  }
+}
+
+class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<MenuItem> menuItems = [
+      const MenuItem(
+        nameTH: 'ผัดไทย',
+        nameEN: 'Pad Thai',
+        price: 60,
+        imageUrl:
+            'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400',
+      ),
+      const MenuItem(
+        nameTH: 'ต้มยำกุ้ง',
+        nameEN: 'Tom Yum Goong',
+        price: 120,
+        imageUrl:
+            'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400',
+      ),
+      const MenuItem(
+        nameTH: 'ข้าวผัด',
+        nameEN: 'Fried Rice',
+        price: 50,
+        imageUrl:
+            'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400',
+      ),
+      const MenuItem(
+        nameTH: 'แกงเขียวหวาน',
+        nameEN: 'Green Curry',
+        price: 80,
+        imageUrl:
+            'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400',
+      ),
+      const MenuItem(
+        nameTH: 'ส้มตำ',
+        nameEN: 'Som Tam (Papaya Salad)',
+        price: 45,
+        imageUrl:
+            'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400',
+      ),
+    ];
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'เมนูอาหาร',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+        ),
+        centerTitle: true,
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(16),
+        itemCount: menuItems.length,
+        itemBuilder: (context, index) {
+          final item = menuItems[index];
+          return Card(
+            margin: const EdgeInsets.only(bottom: 16),
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.network(
+                    item.imageUrl,
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+
+                      return SizedBox(
+                        height: 200,
+                        child: const Center(child: CircularProgressIndicator()),
+                      );
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return SizedBox(
+                        height: 200,
+                        child: const Center(
+                          child: Icon(Icons.restaurant, size: 64),
+                        ),
+                      );
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          item.nameTH,
+                          style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          item.nameEN,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            '฿${item.price.toStringAsFixed(0)}',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+```
+
+
+## Project/menu/test
+
+##### `widget_test.dart`<br>
+Create: 7 ธ.ค. 2568 time 21:48<br>
+Update: 8 ม.ค. 2569 time 13:22<br>
+```dart
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility in the flutter_test package. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'package:menu/main.dart';
+
+void main() {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
+
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
+  });
+}
+
+```
+
+
+## Project/simple/lib
+
+##### `main.dart`<br>
+Create: 20 พ.ย. 2568 time 15:41<br>
+Update: 8 ม.ค. 2569 time 13:22<br>
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyWidget());
+}
+
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => MyWidgetState();
+}
+
+class MyWidgetState extends State<MyWidget> {
+  int counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "My Evernight",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Row(children: [SizedBox(width: 8), Text("My Evernight")]),
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          backgroundColor: Colors.orange,
+        ),
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Hello Evernight",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                '$counter',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              Image.network(
+                'https://raw.githubusercontent.com/Faelayis/CMRU-Lab-Learn/main/resources/evernight.gif',
+                width: (200 + counter * 10).toDouble(),
+                height: (200 + counter * 10).toDouble(),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        counter--;
+                      });
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                  SizedBox(width: 20),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        counter++;
+                      });
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+
+## Project/simple2/lib
+
+##### `main.dart`<br>
+Create: 7 ธ.ค. 2568 time 21:48<br>
+Update: 8 ม.ค. 2569 time 13:22<br>
+```dart
+import 'package:flutter/material.dart';
+import 'package:simple2/widget/dropdown.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // TRY THIS: Try running your application with "flutter run". You'll see
+        // the application has a purple toolbar. Then, without quitting the app,
+        // try changing the seedColor in the colorScheme below to Colors.green
+        // and then invoke "hot reload" (save your changes or press the "hot
+        // reload" button in a Flutter-supported IDE, or press "r" if you used
+        // the command line to start the app).
+        //
+        // Notice that the counter didn't reset back to zero; the application
+        // state is not lost during the reload. To reset the state, use hot
+        // restart instead.
+        //
+        // This works for code too, not just values: Most code changes can be
+        // tested with just a hot reload.
+        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(
+      appBar: AppBar(
+        // TRY THIS: Try changing the color here to a specific color (to
+        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+        // change color while the other colors stay the same.
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [const DropdownWidget()],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+```
+
+
+## Project/simple2/lib/widget
+
+##### `dropdown.dart`<br>
+Create: 7 ธ.ค. 2568 time 21:48<br>
+Update: 8 ม.ค. 2569 time 13:22<br>
+```dart
+import 'package:flutter/material.dart';
+
+class DropdownWidget extends StatefulWidget {
+  const DropdownWidget({super.key});
+
+  @override
+  State<DropdownWidget> createState() => _DropdownWidgetState();
+}
+
+class _DropdownWidgetState extends State<DropdownWidget> {
+  String? _selectedItem = 'Option A';
+
+  final List<String> _dropdownItems = [
+    'Option A',
+    'Option B',
+    'Option C',
+    'Option D',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'เลือกตัวเลือก:',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 16),
+
+          DropdownButton<String>(
+            value: _selectedItem,
+            isExpanded: true,
+            icon: const Icon(Icons.arrow_drop_down),
+            elevation: 16,
+            style: const TextStyle(color: Colors.blue, fontSize: 16),
+            underline: Container(height: 2, color: Colors.blueAccent),
+            onChanged: (String? newValue) {
+              setState(() {
+                _selectedItem = newValue;
+              });
+              if (newValue != null) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('คุณเลือก: $newValue'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+              }
+            },
+            items: _dropdownItems.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(value: value, child: Text(value));
+            }).toList(),
+          ),
+
+          const SizedBox(height: 24),
+
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.blue.shade50,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.blue.shade200),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.info_outline, color: Colors.blue),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'ตัวเลือกปัจจุบัน: ${_selectedItem ?? "ไม่ได้เลือก"}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+```
+
+
+## Project/simple2/test
+
+##### `widget_test.dart`<br>
+Create: 7 ธ.ค. 2568 time 21:48<br>
+Update: 8 ม.ค. 2569 time 13:22<br>
+```dart
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility in the flutter_test package. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'package:simple2/main.dart';
+
+void main() {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
+
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
+  });
+}
+
+```
+
+
 ## Work/68-11-06
 
 ##### `average_calculator.dart`<br>
@@ -239,563 +794,6 @@ void main() {
   }
 
   print(numbers.join(', '));
-}
-
-```
-
-
-## project/menu/lib
-
-##### `main.dart`<br>
-Create: 21 ธ.ค. 2568 time 13:24<br>
-```dart
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MenuItem {
-  final String nameTH;
-  final String nameEN;
-  final double price;
-  final String imageUrl;
-
-  const MenuItem({
-    required this.nameTH,
-    required this.nameEN,
-    required this.price,
-    required this.imageUrl,
-  });
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(title: 'เมนูอาหาร', home: const MenuPage());
-  }
-}
-
-class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final List<MenuItem> menuItems = [
-      const MenuItem(
-        nameTH: 'ผัดไทย',
-        nameEN: 'Pad Thai',
-        price: 60,
-        imageUrl:
-            'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400',
-      ),
-      const MenuItem(
-        nameTH: 'ต้มยำกุ้ง',
-        nameEN: 'Tom Yum Goong',
-        price: 120,
-        imageUrl:
-            'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400',
-      ),
-      const MenuItem(
-        nameTH: 'ข้าวผัด',
-        nameEN: 'Fried Rice',
-        price: 50,
-        imageUrl:
-            'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400',
-      ),
-      const MenuItem(
-        nameTH: 'แกงเขียวหวาน',
-        nameEN: 'Green Curry',
-        price: 80,
-        imageUrl:
-            'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400',
-      ),
-      const MenuItem(
-        nameTH: 'ส้มตำ',
-        nameEN: 'Som Tam (Papaya Salad)',
-        price: 45,
-        imageUrl:
-            'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400',
-      ),
-    ];
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'เมนูอาหาร',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-        ),
-        centerTitle: true,
-      ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: menuItems.length,
-        itemBuilder: (context, index) {
-          final item = menuItems[index];
-          return Card(
-            margin: const EdgeInsets.only(bottom: 16),
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.network(
-                    item.imageUrl,
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-
-                      return SizedBox(
-                        height: 200,
-                        child: const Center(child: CircularProgressIndicator()),
-                      );
-                    },
-                    errorBuilder: (context, error, stackTrace) {
-                      return SizedBox(
-                        height: 200,
-                        child: const Center(
-                          child: Icon(Icons.restaurant, size: 64),
-                        ),
-                      );
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          item.nameTH,
-                          style: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          item.nameEN,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontStyle: FontStyle.italic,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            '฿${item.price.toStringAsFixed(0)}',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-```
-
-
-## project/menu/test
-
-##### `widget_test.dart`<br>
-Create: 7 ธ.ค. 2568 time 21:48<br>
-Update: 21 ธ.ค. 2568 time 13:24<br>
-```dart
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:menu/main.dart';
-
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
-}
-
-```
-
-
-## project/simple/lib
-
-##### `main.dart`<br>
-Create: 20 พ.ย. 2568 time 15:41<br>
-Update: 27 พ.ย. 2568 time 15:56<br>
-```dart
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyWidget());
-}
-
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
-
-  @override
-  State<MyWidget> createState() => MyWidgetState();
-}
-
-class MyWidgetState extends State<MyWidget> {
-  int counter = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "My Evernight",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Row(children: [SizedBox(width: 8), Text("My Evernight")]),
-          titleTextStyle: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-          backgroundColor: Colors.orange,
-        ),
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Hello Evernight",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                '$counter',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              Image.network(
-                'https://raw.githubusercontent.com/Faelayis/CMRU-Lab-Learn/main/resources/evernight.gif',
-                width: (200 + counter * 10).toDouble(),
-                height: (200 + counter * 10).toDouble(),
-              ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FloatingActionButton(
-                    onPressed: () {
-                      setState(() {
-                        counter--;
-                      });
-                    },
-                    child: Icon(Icons.remove),
-                  ),
-                  SizedBox(width: 20),
-                  FloatingActionButton(
-                    onPressed: () {
-                      setState(() {
-                        counter++;
-                      });
-                    },
-                    child: Icon(Icons.add),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-```
-
-
-## project/simple2/lib
-
-##### `main.dart`<br>
-Create: 7 ธ.ค. 2568 time 21:48<br>
-Last edited: Time 21:52<br>
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:simple2/widget/dropdown.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [const DropdownWidget()],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-```
-
-
-## project/simple2/lib/widget
-
-##### `dropdown.dart`<br>
-Create: 7 ธ.ค. 2568 time 21:48<br>
-Last edited: Time 21:52<br>
-
-```dart
-import 'package:flutter/material.dart';
-
-class DropdownWidget extends StatefulWidget {
-  const DropdownWidget({super.key});
-
-  @override
-  State<DropdownWidget> createState() => _DropdownWidgetState();
-}
-
-class _DropdownWidgetState extends State<DropdownWidget> {
-  String? _selectedItem = 'Option A';
-
-  final List<String> _dropdownItems = [
-    'Option A',
-    'Option B',
-    'Option C',
-    'Option D',
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'เลือกตัวเลือก:',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 16),
-
-          DropdownButton<String>(
-            value: _selectedItem,
-            isExpanded: true,
-            icon: const Icon(Icons.arrow_drop_down),
-            elevation: 16,
-            style: const TextStyle(color: Colors.blue, fontSize: 16),
-            underline: Container(height: 2, color: Colors.blueAccent),
-            onChanged: (String? newValue) {
-              setState(() {
-                _selectedItem = newValue;
-              });
-              if (newValue != null) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('คุณเลือก: $newValue'),
-                    duration: const Duration(seconds: 2),
-                  ),
-                );
-              }
-            },
-            items: _dropdownItems.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(value: value, child: Text(value));
-            }).toList(),
-          ),
-
-          const SizedBox(height: 24),
-
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.blue.shade50,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.blue.shade200),
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.info_outline, color: Colors.blue),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    'ตัวเลือกปัจจุบัน: ${_selectedItem ?? "ไม่ได้เลือก"}',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-```
-
-
-## project/simple2/test
-
-##### `widget_test.dart`<br>
-Create: 7 ธ.ค. 2568 time 21:48<br>
-Last edited: Time 21:52<br>
-
-```dart
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:simple2/main.dart';
-
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
 }
 
 ```

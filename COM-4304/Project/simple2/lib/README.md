@@ -1,7 +1,6 @@
 `main.dart`<br>
 Create: 7 ธ.ค. 2568 time 21:48<br>
-Last edited: Time 21:52<br>
-
+Update: 8 ม.ค. 2569 time 13:22<br>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:simple2/widget/dropdown.dart';
