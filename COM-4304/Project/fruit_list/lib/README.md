@@ -1,6 +1,6 @@
 `main.dart`<br>
 Create: 25 ม.ค. 2569 time 20:39<br>
-Last edited: Time 21:42<br>
+Last edited: Time 21:45<br>
 
 ```dart
 import 'package:flutter/material.dart';
@@ -85,10 +85,9 @@ class ProductListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('🍎 รายการผลไม้'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
           IconButton(
-            icon: const Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite, color: Color(0xFFFE926B)),
             onPressed: () {
               Navigator.push(
                 context,
@@ -162,10 +161,7 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('🧡 รายการโปรด'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
+      appBar: AppBar(title: const Text('🧡 รายการโปรด')),
       body: Consumer<FavoriteProvider>(
         builder: (context, favoriteProvider, child) {
           final favorites = favoriteProvider.favorites;
