@@ -158,7 +158,7 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('❤️ รายการโปรด'),
+        title: const Text('🧡 รายการโปรด'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Consumer<FavoriteProvider>(
