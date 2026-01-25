@@ -1,0 +1,16 @@
+{
+	"$schema": "../schema/metedata.json",
+	"complete": null,
+	"coursecode": "COM 4501-63",
+	"index": 9,
+	"info": "https://reg.cmru.ac.th/registrar/class_info_5.asp?courseid=16349",
+	"name": "Software Testing",
+	"preview": {
+		"enable": false,
+		"files": [],
+		"list": false
+	},
+	"time_formats": {
+		"folder": "yy-mm-dd"
+	}
+}
