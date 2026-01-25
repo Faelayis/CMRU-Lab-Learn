@@ -122,7 +122,7 @@ class ProductListScreen extends StatelessWidget {
                   trailing: IconButton(
                     icon: Icon(
                       isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.red : Colors.grey,
+                      color: isFavorite ? const Color(0xFFFE926B) : Colors.grey,
                       size: 28,
                     ),
                     onPressed: () {
