@@ -18,5 +18,12 @@
 	},
 	"prettier.documentSelectors": [
 		"**/*.sql"
-	]
+	],
+	"dart.analysisExcludedFolders": [
+		"COM-4304/project/"
+	],
+	"java.import.exclusions": [
+		"**/COM-4304/project/**"
+	],
+	"java.configuration.updateBuildConfiguration": "disabled"
 }
