@@ -21,3 +21,8 @@ COM-2305/phpdesktop/*
 # sql
 COM-1602/Exam/1/order.sql
 COM-2305/67-09-16/database.sql
+
+# Svelte
+COM-3414/Exercise/md5-login-system/.svelte-kit/*
+COM-3414/Exercise/md5-login-system/**/*.svelte
+COM-3414/Exercise/md5-login-system/static/*

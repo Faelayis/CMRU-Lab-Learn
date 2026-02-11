@@ -18,3 +18,21 @@ __pycache__
 # Java Project
 COM-3302/Project/OOP_Database/database.properties
 COM-3302/Project/OOP_Database/notes_data.txt
+
+# Java Project
+node_modules
+
+# Svelte
+.output
+.vercel
+.netlify
+.wrangler
+.svelte-kit
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
