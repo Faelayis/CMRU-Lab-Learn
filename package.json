@@ -11,7 +11,8 @@
 		"generator:json-schema": "bunx ts-json-schema-generator --path ./script/types/**/*.d.ts",
 		"preinstall": "npx only-allow bun",
 		"prettier": "prettier --write . --ignore-unknown",
-		"prettier:package-json": "bunx prettier-package-json --write ./package.json --use-tabs false"
+		"prettier:package-json": "bunx prettier-package-json --write ./package.json --use-tabs false",
+		"submodule:update": "git submodule update --rebase --remote"
 	},
 	"prettier": {
 		"bracketSameLine": true,
