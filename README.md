@@ -4,7 +4,7 @@ Chiang Mai Rajabhat University
 
 <!-- prettier-ignore -->
 > [!WARNING]
-> ***Sticking to using things outside the box and better***
+> ***Not your usual approach — just building better.***
 
 ## Subject <a href="#"><img width="20px" src="./resources/evernight.gif"/></a>
 
