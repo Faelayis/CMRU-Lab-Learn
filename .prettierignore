@@ -6,6 +6,10 @@ resources
 
 # dependency directories
 node_modules
+.dart_tool
+
+# build
+build
 
 # ignore files for bun
 bun.lock
@@ -21,8 +25,10 @@ COM-2305/phpdesktop/*
 # sql
 COM-1602/Exam/1/order.sql
 COM-2305/67-09-16/database.sql
+COM-4304/Project/drink_shop/supabase/**/*.sql
 
-# Svelte
-COM-3414/Exercise/md5-login-system/.svelte-kit/*
-COM-3414/Exercise/md5-login-system/**/*.svelte
-COM-3414/Exercise/md5-login-system/static/*
+# already prettier
+COM-3414/Exercise/md5-login-system
+
+# ignore submodule
+COM-4304/Project/drink_shop
