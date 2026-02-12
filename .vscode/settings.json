@@ -9,7 +9,8 @@
 		"editor.formatOnSave": true
 	},
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "always"
+		"source.fixAll": "always",
+		"source.fixAll.sortJSON": "never"
 	},
 	"editor.formatOnSave": true,
 	"files.exclude": {

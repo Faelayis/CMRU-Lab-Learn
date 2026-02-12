@@ -1,5 +1,7 @@
 {
+	"packageManager": "bun",
 	"reject": [
-		"eslint"
+		"eslint",
+		"eslint-plugin-unicorn"
 	]
 }
